@@ -17,6 +17,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { TournamentsComponent } from './pages/tournaments/tournaments.component';
 import { FaqComponent } from './pages/faq/faq.component';
+import { CarrouselComponent } from './components/carrousel/carrousel.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { FaqComponent } from './pages/faq/faq.component';
     AboutComponent,
     BlogComponent,
     TournamentsComponent,
-    FaqComponent
+    FaqComponent,
+    CarrouselComponent
   ],
   imports: [
     BrowserModule,

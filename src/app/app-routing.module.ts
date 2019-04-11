@@ -13,6 +13,7 @@ import { NewProductsComponent } from './pages/new-products/new-products.componen
 import { ShopComponent } from './pages/shop/shop.component';
 import { TournamentsComponent } from './pages/tournaments/tournaments.component';
 import { TrophiesComponent } from './pages/trophies/trophies.component';
+import { CarrouselComponent } from './components/carrousel/carrousel.component';
 
 const routes: Routes = [
   {
@@ -62,6 +63,10 @@ const routes: Routes = [
   {
     path: 'trofeos',
     component: TrophiesComponent
+  },
+  {
+    path: 'carrousel',
+    component:CarrouselComponent
   }
 ];
 
