@@ -19,6 +19,7 @@ import { TournamentsComponent } from './pages/tournaments/tournaments.component'
 import { FaqComponent } from './pages/faq/faq.component';
 import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { PrincipalesComponent } from './components/principales/principales.component';
+import { CategoriesComponent } from './pages/categories/categories.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PrincipalesComponent } from './components/principales/principales.compo
     TournamentsComponent,
     FaqComponent,
     CarrouselComponent,
-    PrincipalesComponent
+    PrincipalesComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,

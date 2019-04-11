@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './pages/about/about.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { CartComponent } from './pages/cart/cart.component';
+import { CategoriesComponent } from './pages/categories/categories.component';
 import { CombosComponent } from './pages/combos/combos.component';
 import { CreateUserComponent } from './pages/create-user/create-user.component';
 import { FaqComponent } from './pages/faq/faq.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'carrito',
     component: CartComponent
+  },
+  {
+    path: 'categoria/:category',
+    component: CategoriesComponent
   },
   {
     path: 'combos',
@@ -66,7 +71,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(
+    routes,
+    { enableTracing: true }
+  )],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
