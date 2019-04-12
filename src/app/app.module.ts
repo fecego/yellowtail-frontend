@@ -23,6 +23,8 @@ import { PrincipalesComponent } from './components/principales/principales.compo
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { ProductComponent } from './pages/product/product.component';
 import { ModalUserComponent } from './components/modal-user/modal-user.component';
+import { ModalProductComponent } from './components/modal-product/modal-product.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,9 @@ import { ModalUserComponent } from './components/modal-user/modal-user.component
     PrincipalesComponent,
     CategoriesComponent,
     ProductComponent,
-    ModalUserComponent
+    ModalUserComponent,
+    ModalProductComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
