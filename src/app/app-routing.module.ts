@@ -14,11 +14,16 @@ import { NewProductsComponent } from './pages/new-products/new-products.componen
 import { ShopComponent } from './pages/shop/shop.component';
 import { TournamentsComponent } from './pages/tournaments/tournaments.component';
 import { TrophiesComponent } from './pages/trophies/trophies.component';
+import { ProductComponent } from './pages/product/product.component';
 
 const routes: Routes = [
   {
     path: 'acerca',
     component: AboutComponent
+  },
+  {
+    path: 'productomx',
+    component: ProductComponent
   },
   {
     path: 'blog',

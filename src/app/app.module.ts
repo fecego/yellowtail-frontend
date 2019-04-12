@@ -20,6 +20,7 @@ import { FaqComponent } from './pages/faq/faq.component';
 import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { PrincipalesComponent } from './components/principales/principales.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
+import { ProductComponent } from './pages/product/product.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CategoriesComponent } from './pages/categories/categories.component';
     FaqComponent,
     CarrouselComponent,
     PrincipalesComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
