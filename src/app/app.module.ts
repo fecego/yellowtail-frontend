@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,7 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { PrincipalesComponent } from './components/principales/principales.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { ProductComponent } from './pages/product/product.component';
+import { ModalUserComponent } from './components/modal-user/modal-user.component';
 
 @NgModule({
   declarations: [
@@ -42,13 +44,18 @@ import { ProductComponent } from './pages/product/product.component';
     CarrouselComponent,
     PrincipalesComponent,
     CategoriesComponent,
-    ProductComponent
+    ProductComponent,
+    ModalUserComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ModalUserComponent
+  ]
 })
 export class AppModule { }
