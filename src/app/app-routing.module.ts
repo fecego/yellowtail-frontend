@@ -11,6 +11,7 @@ import { FaqComponent } from './pages/faq/faq.component';
 import { FeaturedProductsComponent } from './pages/featured-products/featured-products.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NewProductsComponent } from './pages/new-products/new-products.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { TournamentsComponent } from './pages/tournaments/tournaments.component';
 import { TrophiesComponent } from './pages/trophies/trophies.component';
@@ -72,6 +73,15 @@ const routes: Routes = [
   {
     path: 'trofeos',
     component: TrophiesComponent
+  },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
+  { 
+    path: '**', 
+    component: NotFoundComponent
   }
 ];
 

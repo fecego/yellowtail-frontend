@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +23,10 @@ import { PrincipalesComponent } from './components/principales/principales.compo
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { ProductComponent } from './pages/product/product.component';
 import { NewsProductsComponent } from './pages/news-products/news-products.component';
+import { ModalUserComponent } from './components/modal-user/modal-user.component';
+import { ModalProductComponent } from './components/modal-product/modal-product.component';
+import { UserProfileComponent } from './pages/user-profile/user-profile.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -44,13 +49,22 @@ import { NewsProductsComponent } from './pages/news-products/news-products.compo
     PrincipalesComponent,
     CategoriesComponent,
     ProductComponent,
-    NewsProductsComponent
+    NewsProductsComponent,
+    ModalUserComponent,
+    ModalProductComponent,
+    UserProfileComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule.forRoot()
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    ModalUserComponent,
+    ModalProductComponent
+  ]
 })
 export class AppModule { }
