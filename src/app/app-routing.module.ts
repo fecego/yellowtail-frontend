@@ -22,7 +22,7 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
-    path: 'productomx',
+    path: 'producto',
     component: ProductComponent
   },
   {

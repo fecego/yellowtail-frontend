@@ -21,6 +21,7 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { PrincipalesComponent } from './components/principales/principales.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { ProductComponent } from './pages/product/product.component';
+import { NewsProductsComponent } from './pages/news-products/news-products.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ProductComponent } from './pages/product/product.component';
     CarrouselComponent,
     PrincipalesComponent,
     CategoriesComponent,
-    ProductComponent
+    ProductComponent,
+    NewsProductsComponent
   ],
   imports: [
     BrowserModule,
