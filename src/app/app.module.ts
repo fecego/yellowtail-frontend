@@ -59,7 +59,8 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [
-    ModalUserComponent
+    ModalUserComponent,
+    ModalProductComponent
   ]
 })
 export class AppModule { }

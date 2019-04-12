@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-modal-product',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModalProductComponent implements OnInit {
 
-  constructor() { }
+  constructor(public activeModal: NgbActiveModal) {
+
+  }
 
   ngOnInit() {
+  }
+
+  closeModal() {
+    this.activeModal.close('Modal Closed');
   }
 
 }
