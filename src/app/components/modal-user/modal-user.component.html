@@ -1,23 +1,60 @@
 <div class="modal-body">
-  
-    <ul class="nav nav-tabs" role="tablist">
-      <li class="nav-item">
-        <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">Registrate</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Inicio de sesion</a>
-      </li>
-    </ul>
-      
-    <!-- Tab panes -->
-    <div class="tab-content">
-      <div role="tabpanel" class="tab-pane fade in active" id="profile">Registrate</div>
-      <div role="tabpanel" class="tab-pane fade" id="buzz">Inicio de sesion</div>
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Inicio de sesión</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">Registrate</a>
+    </li>
+  </ul> 
+  <!-- CONTENIDO DEL MODAL INTERNO -->
+  <div class="tab-content">
+    <!-- APARTADO DE REGISTRO-->
+    <div role="tabpanel" class="tab-pane fade in active" id="profile">
+      <form class="pt-3">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Nombre</label>
+          <input type="name" class="form-control" id="nameInputEmail1" aria-describedby="nameHelp" placeholder="Nombre">
+          <label for="exampleInputEmail1" class="pt-3">Correo Electrónico</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@correo.com">
+          <!--<small id="emailHelp" class="form-text text-muted">Recuerda que nunca compartiremos tu datos con terceros</small> -->
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Contraseña</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="****">
+          <small id="emailHelp" class="form-text text-muted">Recuerda utilizar 8 carácteres, entre ellos 1 número y 1 carácter especial</small> 
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-warning">Registrarse</button>
+        </div>
+      </form>
     </div>
 
+    <!-- APARTADO DE INICIO DE SESIÓN-->
+    <div role="tabpanel" class="tab-pane fade" id="buzz">
+      <form class="pt-3">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Correo Electrónico</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@correo.com">
+          <!--<small id="emailHelp" class="form-text text-muted">Recuerda que nunca compartiremos tu datos con terceros</small> -->
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Contraseña</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+        </div>
+        <div class="form-group form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-warning">Iniciar Sesión</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>
 <div class="modal-footer">
-  <button (click)="activeModal.dismiss('Close clicked')">
-    Iniciar sesion
+  <button class="btn btn-link" (click)="activeModal.dismiss('Close clicked')">
+    Cerrar
   </button>
 </div>
