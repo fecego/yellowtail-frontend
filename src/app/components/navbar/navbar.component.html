@@ -2,7 +2,13 @@
   <!--NAVBAR INICIO DE SESION-->
   <nav class="navbar-dark bg-dark">
     <ul class="nav justify-content-end">
-      <li class="nav-item nav-link text-white pointer" (click)="logout()" *ngIf="isLoggedIn | async ; else notLogged">
+      <li *ngIf="isLoggedIn | async as isLogged; else notLogged">
+        <a class=" nav-link text-decoration-none text-white" href="">
+          <span>Hola &nbsp;&nbsp;</span>
+          <i class="fas fa-user"></i>
+        </a>
+      </li>
+      <li class="nav-item nav-link text-white pointer" (click)="logout()" *ngIf="isLogged">
         Salir
       </li>
       <ng-template #notLogged>
