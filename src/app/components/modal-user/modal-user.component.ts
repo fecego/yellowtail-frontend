@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from './../../services/auth.service';
 
 @Component({
   selector: 'app-modal-user',
@@ -8,7 +9,8 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class ModalUserComponent implements OnInit {
 
-  constructor(public activeModal: NgbActiveModal) {
+  constructor(public activeModal: NgbActiveModal,
+              private authService: AuthService) {
 
   }
 
@@ -16,6 +18,13 @@ export class ModalUserComponent implements OnInit {
   }
 
   closeModal() {
+    this.activeModal.close('Modal Closed');
+  }
+
+  login(loginForm: any) {
+    console.log(loginForm);
+    const credentials = loginForm.form.value;
+    this.authService.login(credentials);
     this.activeModal.close('Modal Closed');
   }
 

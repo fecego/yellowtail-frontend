@@ -2,10 +2,17 @@
   <!--NAVBAR INICIO DE SESION-->
   <nav class="navbar-dark bg-dark">
     <ul class="nav justify-content-end">
-      <li class="nav-item nav-link text-white pointer" (click)="openFormModal()"> Iniciar sesión
+      <li class="nav-item nav-link text-white pointer" (click)="logout()" *ngIf="isLoggedIn | async ; else notLogged">
+        Salir
       </li>
-      <li class="nav-item nav-link text-decoration-none text-white pointer" (click)="openFormModal()">Crear cuenta
-      </li>
+      <ng-template #notLogged>
+        <li class="nav-item nav-link text-white pointer" (click)="openFormModal()">
+          Iniciar sesión
+        </li>
+        <li class="nav-item nav-link text-decoration-none text-white pointer" (click)="openFormModal()">
+          Crear cuenta
+        </li>
+      </ng-template>
       <li>
         <a class=" nav-link text-decoration-none text-white" href="">
           <i class="fas fa-shopping-cart"></i>

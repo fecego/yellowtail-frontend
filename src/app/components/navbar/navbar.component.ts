@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Observable } from 'rxjs';
+import { AuthService } from './../../services/auth.service';
 
 import { ModalUserComponent } from './../modal-user/modal-user.component';
 @Component({
@@ -9,11 +11,20 @@ import { ModalUserComponent } from './../modal-user/modal-user.component';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) {
+  isLoggedIn: Observable<boolean>; 
+
+  constructor(private modalService: NgbModal,
+              private authService: AuthService) {
 
   }
 
   ngOnInit() {
+    this.isLoggedIn = this.authService.isLoggedIn();
+    this.isLoggedIn.subscribe(
+      x => console.log('Observer got a next value: ' + x),
+      err => console.error('Observer got an error: ' + err),
+      () => console.log('Observer got a complete notification')
+    );
   }
 
   openFormModal() {
@@ -25,6 +36,10 @@ export class NavbarComponent implements OnInit {
       console.log(error);
     });
     
+  }
+
+  logout(){
+    this.authService.logout();
   }
 
 }

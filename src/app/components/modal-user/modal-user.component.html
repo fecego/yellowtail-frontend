@@ -1,7 +1,7 @@
 <div class="modal-body">
   <ul class="nav nav-tabs" role="tablist">
     <li class="nav-item">
-      <a class="nav-link" href="#buzz" role="tab" data-toggle="tab">Inicio de sesión</a>
+      <a class="nav-link" href="#login" role="tab" data-toggle="tab">Inicio de sesión</a>
     </li>
     <li class="nav-item">
       <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">Registrate</a>
@@ -31,26 +31,28 @@
     </div>
 
     <!-- APARTADO DE INICIO DE SESIÓN-->
-    <div role="tabpanel" class="tab-pane fade" id="buzz">
-      <form class="pt-3">
+    <div role="tabpanel" class="tab-pane fade" id="login">
+      <form class="pt-3" name="loginForm" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
         <div class="form-group">
-          <label for="exampleInputEmail1">Correo Electrónico</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@correo.com">
-          <!--<small id="emailHelp" class="form-text text-muted">Recuerda que nunca compartiremos tu datos con terceros</small> -->
+          <label for="loginInputEmail">Correo Electrónico</label>
+          <input type="email" name="email" class="form-control" id="loginInputEmail" aria-describedby="emailHelp" placeholder="ejemplo@correo.com" ngModel email required>
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Contraseña</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="">
+          <label for="loginInputPassword">Contraseña</label>
+          <input type="password" name="password" class="form-control" id="loginInputPassword" placeholder="" ngModel required>
         </div>
         <div class="form-group form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
         </div>
         <div class="text-center">
-          <button type="submit" class="btn btn-warning">Iniciar Sesión</button>
+          <button type="submit" class="btn btn-warning" [disabled]="!loginForm.form.valid">
+            Iniciar Sesión
+          </button>
         </div>
       </form>
     </div>
+    
   </div>
 </div>
 <div class="modal-footer">
