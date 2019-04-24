@@ -4,28 +4,37 @@
       <a class="nav-link" href="#login" role="tab" data-toggle="tab">Inicio de sesión</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link active" href="#profile" role="tab" data-toggle="tab">Registrate</a>
+      <a class="nav-link" href="#register" role="tab" data-toggle="tab">Registrate</a>
     </li>
   </ul> 
   <!-- CONTENIDO DEL MODAL INTERNO -->
   <div class="tab-content">
+    
     <!-- APARTADO DE REGISTRO-->
-    <div role="tabpanel" class="tab-pane fade in active" id="profile">
-      <form class="pt-3">
+    <div role="tabpanel" class="tab-pane fade in active" id="register">
+      <form class="pt-3" name="registerForm" #registerForm="ngForm" (ngSubmit)="register(registerForm)">
         <div class="form-group">
-          <label for="exampleInputEmail1">Nombre</label>
-          <input type="name" class="form-control" id="nameInputEmail1" aria-describedby="nameHelp" placeholder="Nombre">
-          <label for="exampleInputEmail1" class="pt-3">Correo Electrónico</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="ejemplo@correo.com">
-          <!--<small id="emailHelp" class="form-text text-muted">Recuerda que nunca compartiremos tu datos con terceros</small> -->
+          <label for="registerInputName">Nombre</label>
+          <input name="name" class="form-control" id="registerInputName" aria-describedby="nameHelp" placeholder="Nombre" ngModel required>
         </div>
         <div class="form-group">
-          <label for="exampleInputPassword1">Contraseña</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="****">
+          <label for="registerInputLastName">Apellido</label>
+          <input name="lastName" class="form-control" id="registerInputLastName" aria-describedby="nameHelp" placeholder="Apellido" ngModel required>
+        </div>
+        <div class="form-group">
+            <label for="registerInputEmail" class="pt-3">Correo Electrónico</label>
+            <input name="email" type="email" class="form-control" id="registerInputEmail" aria-describedby="emailHelp" placeholder="ejemplo@correo.com" ngModel email required>
+            <!--<small id="emailHelp" class="form-text text-muted">Recuerda que nunca compartiremos tu datos con terceros</small> -->
+          </div>
+        <div class="form-group">
+          <label for="registerInputPassword">Contraseña</label>
+          <input name="password" type="password" class="form-control" id="registerInputPassword" placeholder="********" ngModel required>
           <small id="emailHelp" class="form-text text-muted">Recuerda utilizar 8 carácteres, entre ellos 1 número y 1 carácter especial</small> 
         </div>
         <div class="text-center">
-          <button type="submit" class="btn btn-warning">Registrarse</button>
+          <button type="submit" class="btn btn-warning" [disabled]="!registerForm.form.valid">
+            Registrarse
+          </button>
         </div>
       </form>
     </div>

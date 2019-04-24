@@ -6,10 +6,10 @@
         Salir
       </li>
       <ng-template #notLogged>
-        <li class="nav-item nav-link text-white pointer" (click)="openFormModal()">
+        <li class="nav-item nav-link text-white pointer" (click)="openFormModal('login')">
           Iniciar sesión
         </li>
-        <li class="nav-item nav-link text-decoration-none text-white pointer" (click)="openFormModal()">
+        <li class="nav-item nav-link text-decoration-none text-white pointer" (click)="openFormModal('register')">
           Crear cuenta
         </li>
       </ng-template>

@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { AuthService } from './../../services/auth.service';
 
 import { ModalUserComponent } from './../modal-user/modal-user.component';
+
+declare var $: any;
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -27,15 +29,12 @@ export class NavbarComponent implements OnInit {
     );
   }
 
-  openFormModal() {
-    const modalRef = this.modalService.open(ModalUserComponent);
-    
-    modalRef.result.then((result) => {
-      console.log(result);
-    }).catch((error) => {
-      console.log(error);
-    });
-    
+  openFormModal(tab: string) {
+    console.log('Open => ', tab);
+    this.modalService.open(ModalUserComponent); 
+    setTimeout( () => {
+      $('.nav-tabs a[href="#' +  tab + '"]').tab('show'); 
+    }, 100);
   }
 
   logout(){
