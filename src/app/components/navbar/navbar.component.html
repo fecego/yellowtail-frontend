@@ -3,7 +3,7 @@
   <nav class="navbar-dark bg-dark">
     <ul class="nav justify-content-end">
       <li *ngIf="isLoggedIn | async as isLogged; else notLogged">
-        <a class=" nav-link text-decoration-none text-white" href="">
+        <a class=" nav-link text-decoration-none text-white" href="/perfil">
           <span>Hola &nbsp;&nbsp;</span>
           <i class="fas fa-user"></i>
         </a>
@@ -20,7 +20,7 @@
         </li>
       </ng-template>
       <li>
-        <a class=" nav-link text-decoration-none text-white" href="">
+        <a class=" nav-link text-decoration-none text-white" href="/carrito">
           <i class="fas fa-shopping-cart"></i>
           <span> (0)</span> carrito $<span>0</span> MX 
         </a>
@@ -46,7 +46,9 @@
   </nav>
   <!--NAVBAR SECCIONES-->
   <nav class="navbar navbar-expand-sm navbar-light bg-light">
-    <a class="navbar-brand" href="#">Logo</a>
+    <a class="navbar-brand" href="/home">
+      <img style="height: 70px; width: 150px;" src="/assets/img/logo/logo.png">
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

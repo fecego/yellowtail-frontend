@@ -12,10 +12,11 @@ import { FeaturedProductsComponent } from './pages/featured-products/featured-pr
 import { HomeComponent } from './pages/home/home.component';
 import { NewProductsComponent } from './pages/new-products/new-products.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ProductComponent } from './pages/product/product.component';
+import { ProfileComponent } from './pages/profile/profile.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { TournamentsComponent } from './pages/tournaments/tournaments.component';
 import { TrophiesComponent } from './pages/trophies/trophies.component';
-import { ProductComponent } from './pages/product/product.component';
 
 const routes: Routes = [
   {
@@ -61,6 +62,10 @@ const routes: Routes = [
   {
     path: 'productos-nuevos',
     component: NewProductsComponent
+  },
+  {
+    path: 'perfil',
+    component: ProfileComponent
   },
   {
     path: 'tienda',

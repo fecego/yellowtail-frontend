@@ -43,4 +43,10 @@ export class CategoriesComponent implements OnInit {
     this.name = categoryInfo? categoryInfo.name: 'No existe';
   }
 
+  getProducts() {
+    return [
+      {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}
+    ];
+  }
+
 }
