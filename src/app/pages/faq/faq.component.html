@@ -1,3 +1,11 @@
-<p>
-  faq works!
-</p>
+
+<div>
+  <h1>&nbsp;</h1>
+  <h1>&nbsp;</h1>
+
+  <div *ngFor="let faq of faqs">
+      <h1 (click)="toggle(faq.index)">{{faq.question}}</h1>
+      <p *ngIf="faq.show" [@slideInOut]>{{faq.answer}}</p>
+  </div>
+  
+</div>
