@@ -31,6 +31,7 @@ import { UserProfileComponent } from './pages/user-profile/user-profile.componen
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
+import { SearchResultsComponent } from './pages/search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { SearchBarComponent } from './components/search-bar/search-bar.component
     UserProfileComponent,
     NotFoundComponent,
     ProfileComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,

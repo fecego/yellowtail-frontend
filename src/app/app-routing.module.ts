@@ -17,6 +17,7 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { TournamentsComponent } from './pages/tournaments/tournaments.component';
 import { TrophiesComponent } from './pages/trophies/trophies.component';
+import { SearchResultsComponent } from './pages/search-results/search-results.component';
 
 const routes: Routes = [
   {
@@ -66,6 +67,10 @@ const routes: Routes = [
   {
     path: 'perfil',
     component: ProfileComponent
+  },
+  {
+    path: 'resultados',
+    component: SearchResultsComponent
   },
   {
     path: 'tienda',
