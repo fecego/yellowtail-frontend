@@ -13,8 +13,13 @@
           </button>
         </span>
       </div>
-      <div [className]="showResults? 'searchDropdownShown': 'searchDropdownHiden'">
+      <div class="resulsContainer" [ngClass]="{ 'searchDropdownShown': showResults, 'searchDropdownHiden': !showResults }">
           <app-search-bar-product [product]="result" *ngFor="let result of results"></app-search-bar-product>
+          <div>
+            <a href="/resultados">
+              Ver más resultados
+            </a>
+          </div>
       </div>
     </form>
   </div>

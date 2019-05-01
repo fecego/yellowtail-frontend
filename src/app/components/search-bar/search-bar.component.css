@@ -13,5 +13,9 @@
   position: absolute;
   border: 1px solid red;
   display: block;
-  z-index: 30;
+  z-index: 3000;
+}
+
+.resulsContainer {
+  overflow: scroll;
 }
