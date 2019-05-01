@@ -18,6 +18,8 @@ import { ShopComponent } from './pages/shop/shop.component';
 import { TournamentsComponent } from './pages/tournaments/tournaments.component';
 import { TrophiesComponent } from './pages/trophies/trophies.component';
 import { SearchResultsComponent } from './pages/search-results/search-results.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
 const routes: Routes = [
   {
@@ -57,6 +59,10 @@ const routes: Routes = [
     component: FeaturedProductsComponent
   },
   {
+    path: 'recuperar',
+    component: ForgotPasswordComponent
+  },
+  {
     path: 'home',
     component: HomeComponent
   },
@@ -67,6 +73,10 @@ const routes: Routes = [
   {
     path: 'perfil',
     component: ProfileComponent
+  },
+  {
+    path: 'restablecer',
+    component: ResetPasswordComponent
   },
   {
     path: 'resultados',

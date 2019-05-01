@@ -33,6 +33,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SearchResultsComponent } from './pages/search-results/search-results.component';
 import { SearchBarProductComponent } from './components/search-bar-product/search-bar-product.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -63,7 +65,9 @@ import { SearchBarProductComponent } from './components/search-bar-product/searc
     ProfileComponent,
     SearchBarComponent,
     SearchResultsComponent,
-    SearchBarProductComponent
+    SearchBarProductComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,
