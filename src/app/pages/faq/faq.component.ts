@@ -26,7 +26,7 @@ export class FaqComponent implements OnInit {
 
   constructor() {
     this.show = false;
-    const renderFaqs = data.faqs.map((faq, index) => {
+    const renderFaqs = data.faqs.map((faq: any, index: number) => {
       faq.index = index;
       faq.show = false;
       return faq;
@@ -38,7 +38,7 @@ export class FaqComponent implements OnInit {
 
   }
 
-  toggle(index) {
+  toggle(index: number) {
     const faq = this.faqs[index];
     faq.show = !faq.show;
     this.faqs[index] = faq;
