@@ -35,6 +35,10 @@ import { SearchResultsComponent } from './pages/search-results/search-results.co
 import { SearchBarProductComponent } from './components/search-bar-product/search-bar-product.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { PersonalDataComponent } from './pages/profile/personal-data/personal-data.component';
+import { AddressComponent } from './pages/profile/address/address.component';
+import { FavoritesComponent } from './pages/profile/favorites/favorites.component';
+import { HistoryComponent } from './pages/profile/history/history.component';
 
 @NgModule({
   declarations: [
@@ -67,7 +71,11 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
     SearchResultsComponent,
     SearchBarProductComponent,
     ForgotPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    PersonalDataComponent,
+    AddressComponent,
+    FavoritesComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
