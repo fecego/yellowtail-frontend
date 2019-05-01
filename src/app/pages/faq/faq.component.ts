@@ -32,7 +32,6 @@ export class FaqComponent implements OnInit {
       return faq;
     });
     this.faqs = renderFaqs;
-    console.log(this.faqs);
   }
 
   ngOnInit() {
@@ -40,7 +39,6 @@ export class FaqComponent implements OnInit {
   }
 
   toggle(index) {
-    console.log(index);
     const faq = this.faqs[index];
     faq.show = !faq.show;
     this.faqs[index] = faq;
