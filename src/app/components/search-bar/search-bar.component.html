@@ -1,0 +1,25 @@
+<nav class="nav navbar-light bg-light pt-2 justify-content-center holder">
+  <div class="col-sm-3"></div>
+  <div class="justify-content-center col-sm-7">
+    <form class="my-auto d-inline w-50">
+      <div class="input-group">
+        <input  type="text" 
+                class="form-control border border-right-0" 
+                placeholder="Buscar..."
+                (input)="onSearchChange($event.target.value)">
+        <span class="input-group-append">
+          <button class="btn btn-outline-secondary border border-left-0" type="button">
+            <i class="fa fa-search"></i>
+          </button>
+        </span>
+      </div>
+      <div [className]="showResults? 'searchDropdownShown': 'searchDropdownHiden'">
+          <p>Testing</p>
+          <p>Css ONLY</p>
+          <p>Dropdown</p>
+          <p>Dropdown2</p>
+      </div>
+    </form>
+  </div>
+  <!--DROPDOWN-->
+</nav>

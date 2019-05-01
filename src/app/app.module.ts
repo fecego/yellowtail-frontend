@@ -30,6 +30,7 @@ import { ModalProductComponent } from './components/modal-product/modal-product.
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { ProfileComponent } from './pages/profile/profile.component';
     ModalProductComponent,
     UserProfileComponent,
     NotFoundComponent,
-    ProfileComponent
+    ProfileComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,

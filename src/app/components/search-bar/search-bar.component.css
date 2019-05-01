@@ -1,0 +1,17 @@
+.holder {
+  position: relative;
+}
+
+.searchDropdownHiden {
+  position: absolute;
+  border: 1px solid red;
+  display: none;
+  z-index: 30;
+}
+
+.searchDropdownShown {
+  position: absolute;
+  border: 1px solid red;
+  display: block;
+  z-index: 30;
+}
