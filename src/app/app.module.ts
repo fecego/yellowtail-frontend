@@ -32,6 +32,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { SearchResultsComponent } from './pages/search-results/search-results.component';
+import { SearchBarProductComponent } from './components/search-bar-product/search-bar-product.component';
 
 @NgModule({
   declarations: [
@@ -61,7 +62,8 @@ import { SearchResultsComponent } from './pages/search-results/search-results.co
     NotFoundComponent,
     ProfileComponent,
     SearchBarComponent,
-    SearchResultsComponent
+    SearchResultsComponent,
+    SearchBarProductComponent
   ],
   imports: [
     BrowserModule,

@@ -14,10 +14,7 @@
         </span>
       </div>
       <div [className]="showResults? 'searchDropdownShown': 'searchDropdownHiden'">
-          <p>Testing</p>
-          <p>Css ONLY</p>
-          <p>Dropdown</p>
-          <p>Dropdown2</p>
+          <app-search-bar-product [product]="result" *ngFor="let result of results"></app-search-bar-product>
       </div>
     </form>
   </div>

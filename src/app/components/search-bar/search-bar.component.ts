@@ -8,13 +8,25 @@ import { Component, OnInit } from '@angular/core';
 export class SearchBarComponent implements OnInit {
 
   showResults: Boolean;
+  results: Array<any>;
 
   constructor() {
     this.showResults = false;
   }
 
   ngOnInit() {
-  
+    this.results = [
+      {
+        name: 'Kayak niño 1',
+        image: 'https://s7d2.scene7.com/is/image/SS/20705_29407_1?$256$',
+        price: 400
+      },
+      {
+        name: 'Kayak 2',
+        image: 'https://s7d2.scene7.com/is/image/SS/27415_29460_1?$256$',
+        price: 800
+      }
+    ]
   }
 
   onSearchChange(value: String) {
@@ -25,5 +37,7 @@ export class SearchBarComponent implements OnInit {
       this.showResults = false;  
     }
   }
+
+
 
 }
