@@ -1,7 +1,13 @@
 <header class="fixed-top">
   <!--NAVBAR INICIO DE SESION-->
   <nav class="navbar-dark bg-dark">
+
     <ul class="nav justify-content-end">
+
+      <li>
+        <app-search-bar></app-search-bar>
+      </li>
+
       <li *ngIf="isLoggedIn | async; else notLogged">
         <a class=" nav-link text-decoration-none text-white" href="/perfil">
           <span>Hola &nbsp;&nbsp;</span>
@@ -28,7 +34,7 @@
     </ul>
   </nav>
   <!--NAVBAR BUSQUEDA-->
-  <app-search-bar></app-search-bar>
+  
   <!--NAVBAR SECCIONES-->
   <nav class="navbar navbar-expand-sm navbar-light bg-light">
     <a class="navbar-brand" href="/home">
