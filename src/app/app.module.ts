@@ -23,7 +23,7 @@ import { FaqComponent } from './pages/faq/faq.component';
 import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { PrincipalesComponent } from './components/principales/principales.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
-import { ProductComponent } from './pages/product/product.component';
+import { ProductComponent } from './components/product/product.component';
 import { NewsProductsComponent } from './pages/news-products/news-products.component';
 import { ModalUserComponent } from './components/modal-user/modal-user.component';
 import { ModalProductComponent } from './components/modal-product/modal-product.component';

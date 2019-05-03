@@ -9,8 +9,10 @@ import { ModalProductComponent } from './../../components/modal-product/modal-pr
 })
 export class ProductComponent implements OnInit {
 
-  constructor(private modalService: NgbModal) {
+  quantity: number;
 
+  constructor(private modalService: NgbModal) {
+    this.quantity = 0;
   }
 
   ngOnInit() {
@@ -25,6 +27,16 @@ export class ProductComponent implements OnInit {
       console.log(error);
     });
     
+  }
+
+  addQuantity() {
+    this.quantity++;
+  }
+
+  subtractQuantity() {
+    if (this.quantity > 0) {
+      this.quantity--;
+    }
   }
 
 }
