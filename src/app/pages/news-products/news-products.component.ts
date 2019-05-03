@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-news-products',
@@ -7,9 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsProductsComponent implements OnInit {
 
-  constructor() { }
+  productsObservable: Observable<Array<any>>;
+  products: Array<any>;
+
+  constructor(private productsService: ProductsService) {
+    this.productsObservable = productsService.getNewProductsObservable();
+  }
 
   ngOnInit() {
+    this.productsObservable.subscribe(
+      products => { this.products = products; },
+      error => console.log('Error')
+    );
+
+    this.productsService.getNewProducts();
   }
 
 }

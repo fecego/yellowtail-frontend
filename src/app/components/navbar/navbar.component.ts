@@ -18,13 +18,13 @@ export class NavbarComponent implements OnInit {
   isLoggedIn: Observable<boolean>;
   cartObservable: Observable<Array<any>>;
 
-  productsInCartCount: number;
+  products: Array<any>;
 
   constructor(private modalService: NgbModal,
               private authService: AuthService,
               private notificationsService: NotificationsService,
               private cartService: CartService) {
-
+    this.products = [];
   }
 
   ngOnInit() {
@@ -37,7 +37,7 @@ export class NavbarComponent implements OnInit {
 
     this.cartObservable = this.cartService.getCartObservable();
     this.cartObservable.subscribe(
-      products => { this.productsInCartCount = products.length }
+      products => { this.products = products }
     );
   }
 
@@ -53,8 +53,15 @@ export class NavbarComponent implements OnInit {
     this.authService.logout();
   }
 
+  getAmmount() {
+    return this.products.reduce((accum, product) => {
+      const total = product.price * product.quantity;
+      return accum + total;
+    }, 0);
+  }
+
   getProductsInCartCount() {
-    return this.productsInCartCount;
+    return this.products.length;
   }
 
 }
