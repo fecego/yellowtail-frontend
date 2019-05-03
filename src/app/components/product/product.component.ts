@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationsService } from '../../services/notifications.service';
+import { CartService } from '../../services/cart.service';
 
 import { ModalProductComponent } from './../../components/modal-product/modal-product.component';
 @Component({
@@ -13,7 +14,8 @@ export class ProductComponent implements OnInit {
   quantity: number;
 
   constructor(private modalService: NgbModal,
-              public notificationsService: NotificationsService) {
+              private notificationsService: NotificationsService,
+              private cartService: CartService) {
     this.quantity = 0;
   }
 
@@ -44,6 +46,7 @@ export class ProductComponent implements OnInit {
   addProductToCart() {
     const product = {};
     this.notificationsService.addProductToCart(product);
+    this.cartService.addProductToCart(product);
   }
 
 }

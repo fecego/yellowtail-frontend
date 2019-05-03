@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 import { AuthService } from './../../services/auth.service';
+import { NotificationsService } from '../../services/notifications.service';
+import { CartService } from '../../services/cart.service';
 
 import { ModalUserComponent } from './../modal-user/modal-user.component';
 
@@ -13,19 +15,29 @@ declare var $: any;
 })
 export class NavbarComponent implements OnInit {
 
-  isLoggedIn: Observable<boolean>; 
+  isLoggedIn: Observable<boolean>;
+  cartObservable: Observable<Array<any>>;
+
+  productsInCartCount: number;
 
   constructor(private modalService: NgbModal,
-              private authService: AuthService) {
+              private authService: AuthService,
+              private notificationsService: NotificationsService,
+              private cartService: CartService) {
 
   }
 
   ngOnInit() {
     this.isLoggedIn = this.authService.isLoggedIn();
     this.isLoggedIn.subscribe(
-      x => console.log('Observer got a next value: ' + x),
-      err => console.error('Observer got an error: ' + err),
+      newValue => console.log('Observer got a next value: ' + newValue),
+      error => console.error('Observer got an error: ' + error),
       () => console.log('Observer got a complete notification')
+    );
+
+    this.cartObservable = this.cartService.getCartObservable();
+    this.cartObservable.subscribe(
+      products => { this.productsInCartCount = products.length }
     );
   }
 
@@ -39,6 +51,10 @@ export class NavbarComponent implements OnInit {
 
   logout(){
     this.authService.logout();
+  }
+
+  getProductsInCartCount() {
+    return this.productsInCartCount;
   }
 
 }
