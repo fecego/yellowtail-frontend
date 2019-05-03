@@ -39,6 +39,7 @@ import { PersonalDataComponent } from './pages/profile/personal-data/personal-da
 import { AddressComponent } from './pages/profile/address/address.component';
 import { FavoritesComponent } from './pages/profile/favorites/favorites.component';
 import { HistoryComponent } from './pages/profile/history/history.component';
+import { ToastComponent } from './components/toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { HistoryComponent } from './pages/profile/history/history.component';
     PersonalDataComponent,
     AddressComponent,
     FavoritesComponent,
-    HistoryComponent
+    HistoryComponent,
+    ToastComponent
   ],
   imports: [
     BrowserModule,
