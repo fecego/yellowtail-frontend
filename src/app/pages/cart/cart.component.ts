@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+  cartObservable: Observable<Array<any>>;
+
+  showPlaceholder: boolean;
+  products: Array<any>;
+
+  constructor(private cartService: CartService) {
+    this.showPlaceholder = true;
+    this.cartObservable = this.cartService.getCartObservable();
+  }
 
   ngOnInit() {
+    this.cartObservable.subscribe(
+      products => { 
+        this.products = products;
+        this.showPlaceholder = products.length == 0;
+      }
+    );
   }
 
 }

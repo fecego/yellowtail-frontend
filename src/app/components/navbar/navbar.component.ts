@@ -25,17 +25,17 @@ export class NavbarComponent implements OnInit {
               private notificationsService: NotificationsService,
               private cartService: CartService) {
     this.products = [];
+    this.isLoggedIn = this.authService.isLoggedIn();
+    this.cartObservable = this.cartService.getCartObservable();
   }
 
   ngOnInit() {
-    this.isLoggedIn = this.authService.isLoggedIn();
     this.isLoggedIn.subscribe(
       newValue => console.log('Observer got a next value: ' + newValue),
       error => console.error('Observer got an error: ' + error),
       () => console.log('Observer got a complete notification')
     );
-
-    this.cartObservable = this.cartService.getCartObservable();
+ 
     this.cartObservable.subscribe(
       products => { this.products = products }
     );
