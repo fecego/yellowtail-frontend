@@ -50,4 +50,8 @@ export class ProductComponent implements OnInit {
     this.cartService.addProductToCart(tempProduct);
   }
 
+  getImage() {
+    return this.product.images[0];
+  }
+
 }
