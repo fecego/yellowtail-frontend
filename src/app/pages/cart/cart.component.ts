@@ -2,7 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { CartService } from '../../services/cart.service';
+import { AuthService } from '../../services/auth.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalUserComponent } from '../../components/modal-user/modal-user.component';
 
+declare var $: any;
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -15,7 +19,9 @@ export class CartComponent implements OnInit {
   showPlaceholder: boolean;
   products: Array<any>;
 
-  constructor(private cartService: CartService) {
+  constructor(private cartService: CartService,
+              private authService: AuthService,
+              private modalService: NgbModal) {
     this.showPlaceholder = true;
     this.cartObservable = this.cartService.getCartObservable();
   }
@@ -34,6 +40,18 @@ export class CartComponent implements OnInit {
       const total = product.price * product.quantity;
       return accum + total;
     }, 0);
+  }
+
+  continuePurchase() {
+    const isLoggedIn = this.authService.getLoggedIn();
+    if (isLoggedIn) {
+
+    } else {
+      this.modalService.open(ModalUserComponent); 
+      setTimeout( () => {
+        $('.nav-tabs a[href="#login"]').tab('show'); 
+      }, 100);
+    }
   }
 
 }

@@ -25,7 +25,7 @@ export class NavbarComponent implements OnInit {
               private notificationsService: NotificationsService,
               private cartService: CartService) {
     this.products = [];
-    this.isLoggedIn = this.authService.isLoggedIn();
+    this.isLoggedIn = this.authService.getLoggedInObservable();
     this.cartObservable = this.cartService.getCartObservable();
   }
 

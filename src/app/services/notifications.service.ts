@@ -15,4 +15,8 @@ export class NotificationsService {
     $('.toast').toast('show');
   }
 
+  showError(error: string) {
+    $('.toast').toast('show');
+  }
+
 }
