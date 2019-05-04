@@ -10,7 +10,6 @@ import { CreateUserComponent } from './pages/create-user/create-user.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { FeaturedProductsComponent } from './pages/featured-products/featured-products.component';
 import { HomeComponent } from './pages/home/home.component';
-import { NewProductsComponent } from './pages/new-products/new-products.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ShopComponent } from './pages/shop/shop.component';
@@ -60,10 +59,6 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
-  },
-  {
-    path: 'productos-nuevos',
-    component: NewProductsComponent
   },
   {
     path: 'perfil',

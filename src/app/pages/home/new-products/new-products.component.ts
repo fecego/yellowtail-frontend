@@ -1,14 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
-import { ProductsService } from '../../services/products.service';
-
+import { ProductsService } from '../../../services/products.service';
 @Component({
-  selector: 'app-news-products',
-  templateUrl: './news-products.component.html',
-  styleUrls: ['./news-products.component.css']
+  selector: 'app-new-products',
+  templateUrl: './new-products.component.html',
+  styleUrls: ['./new-products.component.css']
 })
-export class NewsProductsComponent implements OnInit {
+export class NewProductsComponent implements OnInit {
 
   productsObservable: Observable<Array<any>>;
   products: Array<any>;

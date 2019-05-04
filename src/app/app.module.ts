@@ -13,7 +13,7 @@ import { CreateUserComponent } from './pages/create-user/create-user.component';
 import { CartComponent } from './pages/cart/cart.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { CombosComponent } from './pages/combos/combos.component';
-import { NewProductsComponent } from './pages/new-products/new-products.component';
+import { NewProductsComponent } from './pages/home/new-products/new-products.component';
 import { FeaturedProductsComponent } from './pages/featured-products/featured-products.component';
 import { TrophiesComponent } from './pages/trophies/trophies.component';
 import { AboutComponent } from './pages/about/about.component';
@@ -24,7 +24,6 @@ import { CarrouselComponent } from './components/carrousel/carrousel.component';
 import { PrincipalesComponent } from './components/principales/principales.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { ProductComponent } from './components/product/product.component';
-import { NewsProductsComponent } from './pages/news-products/news-products.component';
 import { ModalUserComponent } from './components/modal-user/modal-user.component';
 import { ModalProductComponent } from './components/modal-product/modal-product.component';
 import { UserProfileComponent } from './pages/user-profile/user-profile.component';
@@ -63,7 +62,6 @@ import { CartProductComponent } from './pages/cart/cart-product/cart-product.com
     PrincipalesComponent,
     CategoriesComponent,
     ProductComponent,
-    NewsProductsComponent,
     ModalUserComponent,
     ModalProductComponent,
     UserProfileComponent,
