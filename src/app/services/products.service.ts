@@ -8,9 +8,10 @@ import allproducts from './products.json';
 })
 export class ProductsService {
 
-  allProducts: Array<any>;
-  newProductsObservable = new BehaviorSubject<Array<any>>([]);
-  featuredProductsObservable = new BehaviorSubject<Array<any>>([]);
+  private allProducts: Array<any>;
+  private newProductsObservable = new BehaviorSubject<Array<any>>([]);
+  private featuredProductsObservable = new BehaviorSubject<Array<any>>([]);
+  private productsByCategoryObservable = new BehaviorSubject<Array<any>>([]);
 
   constructor() {
     this.allProducts= allproducts.allProducts;
@@ -24,6 +25,10 @@ export class ProductsService {
     return this.featuredProductsObservable;
   }
 
+  getProductsByCategoryObservable() {
+    return this.productsByCategoryObservable;
+  }
+
   getNewProducts() {
     const products : any = this.allProducts.filter(product => product.newProduct);
     return this.newProductsObservable.next(products);
@@ -32,6 +37,12 @@ export class ProductsService {
   getFeaturedProducts() {
     const products : any = this.allProducts.filter(product => product.featured);
     return this.featuredProductsObservable.next(products);
+  }
+
+
+  getProductsByCategory(category) {
+    const products : any = this.allProducts.filter(product => product.category == category);
+    return this.productsByCategoryObservable.next(products);
   }
 
 }

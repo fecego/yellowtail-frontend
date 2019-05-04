@@ -17,6 +17,30 @@
       </button>
     </div>
 
+    <div class="row">
+      <div class="col-sm">
+        Nombre
+      </div>
+      <div class="col-sm">
+        &nbsp;
+      </div>
+      <div class="col-sm">
+        Cantidad
+      </div>
+      <div class="col-sm">
+        &nbsp;
+      </div>
+      <div class="col-sm">
+        Precio unitario
+      </div>
+      <div class="col-sm">
+        Precio total
+      </div>
+      <div class="col-sm">
+        Borrar
+      </div>
+    </div>
+
     <div class="row pt-5" *ngIf="!showPlaceholder">
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" *ngFor="let product of products">
         <app-cart-product [product]="product"></app-cart-product>

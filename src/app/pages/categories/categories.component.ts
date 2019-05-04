@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
+import { Observable } from 'rxjs';
+
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'app-categories',
@@ -10,43 +13,61 @@ export class CategoriesComponent implements OnInit {
 
   readonly CATEGORIES_INFO = {
     accesorios: {
-      name: 'Accesorios'
+      name: 'Accesorios',
+      key: 'accesorios'
     },
     canas: {
-      name: 'Cañas'
+      name: 'Cañas',
+      key: 'canas'
     },
     carretes: {
-      name: 'Carretes'
+      name: 'Carretes',
+      key: 'carretes'
     },
     combos: {
-      name: 'Combos'
+      name: 'Combos',
+      key: 'combos'
     },
     kayaks: {
-      name: 'Kayaks'
+      name: 'Kayaks',
+      key: 'kayaks'
     },
     lineas: {
-      name: 'Lineas'
+      name: 'Lineas',
+      key: 'lineas'
     },
     senuelos: {
-      name: 'Señuelos'
+      name: 'Señuelos',
+      key: 'senuelos'
     }
   };
 
-  name: String;
+  productsObservable: Observable<Array<any>>;
 
-  constructor(private route: ActivatedRoute) { }
+  name: String;
+  products: Array<any>;
+
+  constructor(private route: ActivatedRoute,
+              private productsService: ProductsService) {
+    this.productsObservable = this.productsService.getProductsByCategoryObservable();
+  }
 
   ngOnInit() {
     const category = this.route.snapshot.paramMap.get("category")
     console.log('Category => ', category);
     const categoryInfo = this.CATEGORIES_INFO[category];
     this.name = categoryInfo? categoryInfo.name: 'No existe';
+
+    this.productsObservable.subscribe(
+      products => this.products = products,
+      error => console.log(error)
+    );
+
+    this.productsService.getProductsByCategory(categoryInfo.key);
   }
 
   getProducts() {
-    return [
-      {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}
-    ];
+    return this.products;
   }
 
 }
