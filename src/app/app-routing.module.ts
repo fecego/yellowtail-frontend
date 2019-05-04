@@ -93,7 +93,10 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forRoot(
     routes,
-    //{ enableTracing: true }
+    {
+      enableTracing: true,
+      anchorScrolling: 'enabled',
+    }
   )],
   exports: [RouterModule]
 })

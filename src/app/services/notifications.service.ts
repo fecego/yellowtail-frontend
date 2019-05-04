@@ -12,11 +12,13 @@ export class NotificationsService {
   }
 
   addProductToCart(product: any) {
+    $('#toastContainer').show();
     $('.toast').toast('show');
   }
 
   showError(error: string) {
     $('.toast').toast('show');
+    $('#toastContainer').show();
   }
 
 }

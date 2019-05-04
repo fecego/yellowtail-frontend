@@ -39,6 +39,9 @@ export class NavbarComponent implements OnInit {
     this.cartObservable.subscribe(
       products => { this.products = products }
     );
+
+    //Quitar el toast para poder dar click en el menu
+    $('#toastContainer').hide();
   }
 
   openFormModal(tab: string) {

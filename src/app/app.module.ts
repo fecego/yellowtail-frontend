@@ -39,6 +39,7 @@ import { FavoritesComponent } from './pages/profile/favorites/favorites.componen
 import { HistoryComponent } from './pages/profile/history/history.component';
 import { ToastComponent } from './components/toast/toast.component';
 import { CartProductComponent } from './pages/cart/cart-product/cart-product.component';
+import { StoresComponent } from './pages/home/stores/stores.component';
 
 @NgModule({
   declarations: [
@@ -75,7 +76,8 @@ import { CartProductComponent } from './pages/cart/cart-product/cart-product.com
     FavoritesComponent,
     HistoryComponent,
     ToastComponent,
-    CartProductComponent
+    CartProductComponent,
+    StoresComponent
   ],
   imports: [
     BrowserModule,
