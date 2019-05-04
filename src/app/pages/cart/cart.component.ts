@@ -29,4 +29,11 @@ export class CartComponent implements OnInit {
     );
   }
 
+  getTotal() {
+    return this.products.reduce((accum, product) => {
+      const total = product.price * product.quantity;
+      return accum + total;
+    }, 0);
+  }
+
 }

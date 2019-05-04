@@ -26,6 +26,8 @@ export class CartService {
   }
 
   removeProductFromCart(productId: any) {
+    this.itemsInCart = this.itemsInCart.filter(item => item._id != productId);
+    this.cartObservable.next(this.itemsInCart);
     this.localStorageService.saveValue(LocalStorageService.KEY_CART, this.itemsInCart);
   }
 

@@ -1,4 +1,23 @@
-<p>
-  {{product._id}}
-  {{product.price}}
-</p>
+<div class="row">
+  <div class="col-sm">
+    {{product._id}}
+  </div>
+  <div class="col-sm">
+    <button class="btn btn-warning" (click)="subtractQuantity()">-</button>
+  </div>
+  <div class="col-sm">
+    {{product.quantity}}
+  </div>
+  <div class="col-sm">
+    <button class="btn btn-warning" (click)="addQuantity()">+</button>
+  </div>
+  <div class="col-sm">
+    {{product.price}}
+  </div>
+  <div class="col-sm">
+    {{getTotalPrice()}}
+  </div>
+  <div class="col-sm">
+    <button class="btn btn-warning" (click)="removeProduct()">Borrar</button>
+  </div>
+</div>
