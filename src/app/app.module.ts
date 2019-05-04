@@ -14,14 +14,13 @@ import { CartComponent } from './pages/cart/cart.component';
 import { ShopComponent } from './pages/shop/shop.component';
 import { CombosComponent } from './pages/combos/combos.component';
 import { NewProductsComponent } from './pages/home/new-products/new-products.component';
-import { FeaturedProductsComponent } from './pages/featured-products/featured-products.component';
+import { FeaturedProductsComponent } from './pages/home/featured-products/featured-products.component';
 import { TrophiesComponent } from './pages/trophies/trophies.component';
 import { AboutComponent } from './pages/about/about.component';
 import { BlogComponent } from './pages/blog/blog.component';
 import { TournamentsComponent } from './pages/tournaments/tournaments.component';
 import { FaqComponent } from './pages/faq/faq.component';
-import { CarrouselComponent } from './components/carrousel/carrousel.component';
-import { PrincipalesComponent } from './components/principales/principales.component';
+import { CarrouselComponent } from './pages/home/carrousel/carrousel.component';
 import { CategoriesComponent } from './pages/categories/categories.component';
 import { ProductComponent } from './components/product/product.component';
 import { ModalUserComponent } from './components/modal-user/modal-user.component';
@@ -59,7 +58,6 @@ import { CartProductComponent } from './pages/cart/cart-product/cart-product.com
     TournamentsComponent,
     FaqComponent,
     CarrouselComponent,
-    PrincipalesComponent,
     CategoriesComponent,
     ProductComponent,
     ModalUserComponent,

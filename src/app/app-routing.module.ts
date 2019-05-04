@@ -8,7 +8,6 @@ import { CategoriesComponent } from './pages/categories/categories.component';
 import { CombosComponent } from './pages/combos/combos.component';
 import { CreateUserComponent } from './pages/create-user/create-user.component';
 import { FaqComponent } from './pages/faq/faq.component';
-import { FeaturedProductsComponent } from './pages/featured-products/featured-products.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
@@ -47,10 +46,6 @@ const routes: Routes = [
   {
     path: 'faq',
     component: FaqComponent
-  },
-  {
-    path: 'productos-destacados',
-    component: FeaturedProductsComponent
   },
   {
     path: 'recuperar',
