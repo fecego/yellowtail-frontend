@@ -9,6 +9,8 @@ import allproducts from './products.json';
 export class ProductsService {
 
   private allProducts: Array<any>;
+
+  private selectedProductObservable = new BehaviorSubject<any>(null);
   private newProductsObservable = new BehaviorSubject<Array<any>>([]);
   private featuredProductsObservable = new BehaviorSubject<Array<any>>([]);
   private productsByCategoryObservable = new BehaviorSubject<Array<any>>([]);
@@ -29,6 +31,10 @@ export class ProductsService {
     return this.productsByCategoryObservable;
   }
 
+  getSelectedProductObservable() {
+    return this.selectedProductObservable;
+  }
+
   getNewProducts() {
     const products : any = this.allProducts.filter(product => product.newProduct);
     return this.newProductsObservable.next(products);
@@ -43,6 +49,10 @@ export class ProductsService {
   getProductsByCategory(category) {
     const products : any = this.allProducts.filter(product => product.category == category);
     return this.productsByCategoryObservable.next(products);
+  }
+
+  changeSelectedProduct(product) {
+    this.selectedProductObservable.next(product);
   }
 
 }

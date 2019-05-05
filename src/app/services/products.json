@@ -190,7 +190,7 @@
       ],
       "category": "kayaks",
       "subcategory": "subcategoria2",
-      "newProduct": false,
+      "newProduct": true,
       "featured": false,
       "related": [
         "9",
@@ -208,7 +208,7 @@
       ],
       "category": "lineas",
       "subcategory": "subcategoria1",
-      "newProduct": true,
+      "newProduct": false,
       "featured": false,
       "related": [
         "12",

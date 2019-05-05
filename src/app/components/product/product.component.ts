@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationsService } from '../../services/notifications.service';
+import { ProductsService } from '../../services/products.service'
 import { CartService } from '../../services/cart.service';
 
 import { ModalProductComponent } from './../../components/modal-product/modal-product.component';
@@ -18,19 +19,16 @@ export class ProductComponent implements OnInit {
 
   constructor(private modalService: NgbModal,
               private notificationsService: NotificationsService,
-              private cartService: CartService) {
+              private cartService: CartService,
+              private productsService: ProductsService) {
     this.quantity = 1;
   }
 
   ngOnInit() { }
 
   openProductModal() {
-    const modalRef = this.modalService.open(ModalProductComponent);
-    modalRef.result.then((result) => {
-      console.log(result);
-    }).catch((error) => {
-      console.log(error);
-    });
+    this.productsService.changeSelectedProduct(this.product);
+    this.modalService.open(ModalProductComponent);
   }
 
   addQuantity() {
