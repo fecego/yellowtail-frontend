@@ -42,6 +42,7 @@ import { HistoryComponent } from './pages/profile/history/history.component';
 import { ToastComponent } from './components/toast/toast.component';
 import { CartProductComponent } from './pages/cart/cart-product/cart-product.component';
 import { StoresComponent } from './pages/home/stores/stores.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +80,8 @@ import { StoresComponent } from './pages/home/stores/stores.component';
     HistoryComponent,
     ToastComponent,
     CartProductComponent,
-    StoresComponent
+    StoresComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,

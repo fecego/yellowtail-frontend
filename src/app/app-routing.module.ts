@@ -9,6 +9,7 @@ import { CombosComponent } from './pages/combos/combos.component';
 import { CreateUserComponent } from './pages/create-user/create-user.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { ShopComponent } from './pages/shop/shop.component';
@@ -58,6 +59,10 @@ const routes: Routes = [
   {
     path: 'perfil',
     component: ProfileComponent
+  },
+  {
+    path: 'producto/:name',
+    component: ProductDetailComponent
   },
   {
     path: 'restablecer',
