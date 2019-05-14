@@ -1,3 +1,28 @@
-<p>
-  search-results works!
-</p>
+<div class="container pt-5 pb-5">
+    <div class="row">
+      <div class="col-12">
+        <h1>Buscar</h1>
+      </div>
+    </div>
+
+    <div class="row pt-5" *ngIf="showLoading">
+      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+        <h1>Buscando</h1>
+      </div>
+    </div>
+
+    <div class="row pt-5" *ngIf="!showLoading">
+
+      <div class="col-12" *ngIf="showNoResuls">
+        <h1>No hay resultados</h1>
+      </div>
+
+      <div class="row" *ngIf="!showNoResuls">
+        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3"  *ngFor="let product of products">
+          <app-product [product]="product"></app-product>
+        </div>
+      </div>
+
+    </div>
+
+  </div>

@@ -16,7 +16,7 @@ export class SearchBarComponent implements OnInit {
   results: Array<any>;
   productsByQueryObservable: Observable<Array<any>>;
 
-  constructor(private productsService: ProductsService,) {
+  constructor(private productsService: ProductsService) {
     this.showSearchSection = false;
     this.isSearching = true;
     this.results = [];
