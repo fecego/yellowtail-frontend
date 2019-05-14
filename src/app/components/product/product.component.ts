@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationsService } from '../../services/notifications.service';
 import { ProductsService } from '../../services/products.service'
 import { CartService } from '../../services/cart.service';
+import { formatPrice } from '../../utils/formatUtils';
 
 import { ModalProductComponent } from './../../components/modal-product/modal-product.component';
 @Component({
@@ -29,6 +30,10 @@ export class ProductComponent implements OnInit {
   openProductModal() {
     this.productsService.changeSelectedProduct(this.product);
     this.modalService.open(ModalProductComponent);
+  }
+
+  getPrice(price: number) {
+    return formatPrice(price);
   }
 
   addQuantity() {

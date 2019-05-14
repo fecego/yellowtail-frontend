@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CartService } from '../../../services/cart.service';
+import { formatPrice } from '../../../utils/formatUtils';
+
 @Component({
   selector: 'app-cart-product',
   templateUrl: './cart-product.component.html',
@@ -13,10 +15,16 @@ export class CartProductComponent implements OnInit {
   constructor(private cartService: CartService) { }
 
   ngOnInit() {
+
+  }
+
+  getPrice(price: number) {
+    return formatPrice(price);
   }
 
   getTotalPrice() {
-    return this.product.price * this.product.quantity;
+    const total = this.product.price * this.product.quantity;
+    return formatPrice(total);
   }
 
   addQuantity() {

@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { CartService } from '../../services/cart.service';
 import { AuthService } from '../../services/auth.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { formatPrice } from '../../utils/formatUtils';
+
 import { ModalUserComponent } from '../../components/modal-user/modal-user.component';
 
 declare var $: any;
@@ -36,10 +38,11 @@ export class CartComponent implements OnInit {
   }
 
   getTotal() {
-    return this.products.reduce((accum, product) => {
+    const total = this.products.reduce((accum, product) => {
       const total = product.price * product.quantity;
       return accum + total;
     }, 0);
+    return formatPrice(total);
   }
 
   continuePurchase() {

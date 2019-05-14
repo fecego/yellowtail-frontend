@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { NotificationsService } from '../../services/notifications.service';
 import { ProductsService } from '../../services/products.service'
 import { CartService } from '../../services/cart.service';
+import { formatPrice } from '../../utils/formatUtils';
 
 @Component({
   selector: 'app-product-detail',
@@ -35,6 +36,10 @@ export class ProductDetailComponent implements OnInit {
     );
 
     this.productsService.getProductByUrl(productUrl);
+  }
+
+  getPrice(price: number) {
+    return formatPrice(price);
   }
 
   getImages() {

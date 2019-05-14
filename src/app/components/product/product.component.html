@@ -4,7 +4,7 @@
       <img class="img-fluid d-block mx-auto" src="{{getImage()}}" alt="">
       <h4 class="" id="nombre-producto">{{product.name}}</h4>
       <p>{{product.sku}}</p>
-      <p>$<span id="costo-producto">{{product.price}}</span></p>
+      <p><span id="costo-producto">{{getPrice(product.price)}}</span></p>
     </div>
     
     <div class="row">

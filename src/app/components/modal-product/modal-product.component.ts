@@ -3,6 +3,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationsService } from '../../services/notifications.service';
 import { ProductsService } from '../../services/products.service'
 import { CartService } from '../../services/cart.service';
+import { formatPrice } from '../../utils/formatUtils';
 
 import { Observable } from 'rxjs';
 
@@ -31,6 +32,10 @@ export class ModalProductComponent implements OnInit {
       product => this.product = product,
       error => console.log(error)
     );
+  }
+
+  getPrice(price: number) {
+    return formatPrice(price);
   }
 
   closeModal() {

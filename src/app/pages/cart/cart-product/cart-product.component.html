@@ -12,7 +12,7 @@
     <button class="btn btn-warning" (click)="addQuantity()">+</button>
   </div>
   <div class="col-sm">
-    {{product.price}}
+    {{getPrice(product.price)}}
   </div>
   <div class="col-sm">
     {{getTotalPrice()}}

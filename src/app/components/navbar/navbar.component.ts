@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { AuthService } from './../../services/auth.service';
 import { NotificationsService } from '../../services/notifications.service';
 import { CartService } from '../../services/cart.service';
+import { formatPrice } from '../../utils/formatUtils';
 
 import { ModalUserComponent } from './../modal-user/modal-user.component';
 
@@ -57,10 +58,11 @@ export class NavbarComponent implements OnInit {
   }
 
   getAmmount() {
-    return this.products.reduce((accum, product) => {
+    const ammount = this.products.reduce((accum, product) => {
       const total = product.price * product.quantity;
       return accum + total;
     }, 0);
+    return formatPrice(ammount);
   }
 
   getProductsInCartCount() {
