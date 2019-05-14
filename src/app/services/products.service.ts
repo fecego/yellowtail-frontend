@@ -15,6 +15,7 @@ export class ProductsService {
   private featuredProductsObservable = new BehaviorSubject<Array<any>>([]);
   private productsByCategoryObservable = new BehaviorSubject<Array<any>>([]);
   private productByUrlObservable = new BehaviorSubject<any>(null);
+  private productsByQueryObservable = new BehaviorSubject<Array<any>>([]);
 
   constructor() {
     this.allProducts= allproducts.allProducts;
@@ -40,6 +41,10 @@ export class ProductsService {
     return this.productByUrlObservable;
   }
 
+  getProductByQueryObservable() {
+    return this.productsByQueryObservable;
+  }
+
   getNewProducts() {
     const products : any = this.allProducts.filter(product => product.newProduct);
     return this.newProductsObservable.next(products);
@@ -62,6 +67,13 @@ export class ProductsService {
   getProductByUrl(url: string) {
     const product : any = this.allProducts.find(product => product.url == url);
     return this.productByUrlObservable.next(product);
+  }
+
+  getProductsByQuery(query: string) {
+    setTimeout( () => {
+      const product  : any = this.allProducts.filter(product => product.name.includes(query));
+      return this.productsByQueryObservable.next(product);
+    }, 2000); 
   }
 
 }

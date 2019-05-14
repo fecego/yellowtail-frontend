@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { formatPrice } from '../../utils/formatUtils';
 
 @Component({
   selector: 'app-search-bar-product',
@@ -13,6 +14,14 @@ export class SearchBarProductComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  getPrice(price: number) {
+    return formatPrice(price);
+  }
+
+  getThumbnail(images: Array<string>) {
+    return images[0];
   }
 
 }

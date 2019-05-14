@@ -12,13 +12,29 @@
           </button>
         </span>
       </div>
-      <div class="resulsContainer" [ngClass]="{ 'searchDropdownShown': showResults, 'searchDropdownHiden': !showResults }">
-          <app-search-bar-product [product]="result" *ngFor="let result of results"></app-search-bar-product>
-          <div>
-            <a href="/resultados">
-              Ver más resultados
-            </a>
+      <div class="resulsContainer" [ngClass]="{ 'searchDropdownShown': showSearchSection, 'searchDropdownHiden': !showSearchSection }">
+        
+          <div *ngIf="isSearching">
+            <h3>Cargando</h3>
           </div>
+
+          <div *ngIf="!isSearching">
+
+              <div *ngIf="!showNoResuls">
+                  <app-search-bar-product [product]="result" *ngFor="let result of results"></app-search-bar-product>
+                  <div>
+                    <a href="/resultados">
+                      Ver más resultados
+                    </a>
+                  </div>
+              </div>
+
+              <div *ngIf="showNoResuls">
+                No hay resultados
+              </div>
+
+          </div>
+          
       </div>
     </form>
   </div>

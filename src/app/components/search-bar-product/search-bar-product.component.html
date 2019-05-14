@@ -1,9 +1,9 @@
 <div>
-  <a href="/producto">
+  <a href="/producto/{{product.url}}">
     <div class="searchBarProduct">
-      <img src="{{product.image}}">
+      <img src="{{getThumbnail(product.images)}}" style="max-width: 100px; max-height: 100px;">
       <p>{{product.name}}</p>
-      <p>${{product.price}}</p>
+      <p>{{getPrice(product.price)}}</p>
     </div>
   </a>
 </div>

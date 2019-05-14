@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ProductsService } from '../../services/products.service'
 
 @Component({
   selector: 'app-search-bar',
@@ -7,37 +9,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  showResults: Boolean;
+  showSearchSection: boolean;
+  isSearching: boolean;
+  showNoResuls: boolean;
   results: Array<any>;
+  productsByQueryObservable: Observable<Array<any>>;
 
-  constructor() {
-    this.showResults = false;
+  constructor(private productsService: ProductsService,) {
+    this.showSearchSection = false;
+    this.isSearching = true;
+    this.results = [];
+    this.showNoResuls = false;
+    this.productsByQueryObservable = this.productsService.getProductByQueryObservable();
   }
 
   ngOnInit() {
-    this.results = [
-      {
-        name: 'Kayak niño 1',
-        image: 'https://s7d2.scene7.com/is/image/SS/20705_29407_1?$256$',
-        price: 400
-      },
-      {
-        name: 'Kayak 2',
-        image: 'https://s7d2.scene7.com/is/image/SS/27415_29460_1?$256$',
-        price: 800
-      }
-    ]
+    this.productsByQueryObservable.subscribe(
+      products => this.newProductsFounded(products),
+      error => console.log(error)
+    );
   }
 
-  onSearchChange(value: String) {
+  newProductsFounded(products) {
+    console.log('Products found => ', products);
+    this.results = products;
+    this.isSearching = false;
+    this.showNoResuls = this.results.length == 0;
+  }
+
+  onSearchChange(value: string) {
     console.log(value, value.length);
-    if (value.length > 5) {
-      this.showResults = true;
+    this.isSearching = true;
+
+    if (value.length > 2) {
+      this.showSearchSection = true;
+      this.productsService.getProductsByQuery(value);
     } else {
-      this.showResults = false;  
+      this.showSearchSection = false;  
     }
   }
-
-
 
 }
