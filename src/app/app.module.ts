@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule }   from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ShareButtonsModule } from '@ngx-share/buttons';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -84,7 +86,9 @@ import { StoresComponent } from './pages/home/stores/stores.component';
     AppRoutingModule,
     NgbModule.forRoot(),
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ShareButtonsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],

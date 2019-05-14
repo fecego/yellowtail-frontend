@@ -2,6 +2,45 @@
 
     <div class="col-4">
       {{product.name}}
+      {{product.sku}}
+
+      <button>
+        Favorito
+      </button>
+      <button>
+        Compartir
+      </button>
+
+      <share-buttons
+        [include]="['facebook', 'twitter', 'google', 'messenger', 'whatsapp', 'email', 'print', 'copy']"
+        [show]="8"
+        [size]="2"
+        [url]="'https://twitter.com/'"
+        [autoSetMeta]="true">
+
+      </share-buttons>
+      <p>
+        {{product.short_description}}
+      </p>
+
+      <a href="{{product.url}}">
+        Ver más
+      </a>
+
+      <div class="row">
+        <div class="col-sm">
+          <button class="btn btn-warning" (click)="subtractQuantity()">-</button>
+        </div>
+        <div class="col-sm">
+          {{quantity}}
+        </div>
+        <div class="col-sm">
+          <button class="btn btn-warning" (click)="addQuantity()">+</button>
+        </div>
+      </div>
+  
+      <button class="btn btn-warning" (click)="addProductToCart()">Agregar al carrito</button>
+
     </div>
 
     <div class="col-8">
