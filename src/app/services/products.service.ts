@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { FavoritesService } from './favorites.service';
+
 
 import allproducts from './products.json';
 
@@ -17,8 +19,23 @@ export class ProductsService {
   private productByUrlObservable = new BehaviorSubject<any>(null);
   private productsByQueryObservable = new BehaviorSubject<Array<any>>([]);
 
-  constructor() {
+  constructor(private favoritesService: FavoritesService) {
     this.allProducts= allproducts.allProducts;
+  }
+
+  marksFavoritesProducts(products) {
+    const favorites = this.favoritesService.getFavorites();
+    return products.map(product => {
+      product.isFavorite = favorites.includes(product._id);
+      return product;
+    })
+  }
+
+  markFavoriteProduct(product) {
+    if (!product) return product;
+    const favorites = this.favoritesService.getFavorites();
+    product.isFavorite = favorites.includes(product._id);
+    return product;
   }
 
   getNewProductsObservable() {
@@ -46,33 +63,39 @@ export class ProductsService {
   }
 
   getNewProducts() {
-    const products : any = this.allProducts.filter(product => product.newProduct);
+    let products : any = this.allProducts.filter(product => product.newProduct);
+    products = this.marksFavoritesProducts(products);
     return this.newProductsObservable.next(products);
   }
 
   getFeaturedProducts() {
-    const products : any = this.allProducts.filter(product => product.featured);
+    let products : any = this.allProducts.filter(product => product.featured);
+    products = this.marksFavoritesProducts(products);
     return this.featuredProductsObservable.next(products);
   }
 
   getProductsByCategory(category) {
-    const products : any = this.allProducts.filter(product => product.category == category);
+    let products : any = this.allProducts.filter(product => product.category == category);
+    products = this.marksFavoritesProducts(products);
     return this.productsByCategoryObservable.next(products);
   }
 
   changeSelectedProduct(product) {
+    product = this.markFavoriteProduct(product);
     this.selectedProductObservable.next(product);
   }
 
   getProductByUrl(url: string) {
-    const product : any = this.allProducts.find(product => product.url == url);
+    let product : any = this.allProducts.find(product => product.url == url);
+    product = this.markFavoriteProduct(product);
     return this.productByUrlObservable.next(product);
   }
 
   getProductsByQuery(query: string) {
     setTimeout( () => {
-      const product  : any = this.allProducts.filter(product => product.name.includes(query));
-      return this.productsByQueryObservable.next(product);
+      let products  : any = this.allProducts.filter(product => product.name.includes(query));
+      products = this.marksFavoritesProducts(products);
+      return this.productsByQueryObservable.next(products);
     }, 2000); 
   }
 

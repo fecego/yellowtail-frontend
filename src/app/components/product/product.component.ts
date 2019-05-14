@@ -1,8 +1,11 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { Observable } from 'rxjs';
 import { NotificationsService } from '../../services/notifications.service';
 import { ProductsService } from '../../services/products.service'
+import { FavoritesService } from '../../services/favorites.service'
 import { CartService } from '../../services/cart.service';
+import { AuthService } from './../../services/auth.service';
 import { formatPrice } from '../../utils/formatUtils';
 
 import { ModalProductComponent } from './../../components/modal-product/modal-product.component';
@@ -17,15 +20,24 @@ export class ProductComponent implements OnInit {
   product: any;
 
   quantity: number;
+  private favoritesObservable: Observable<Array<string>>;
 
   constructor(private modalService: NgbModal,
               private notificationsService: NotificationsService,
               private cartService: CartService,
-              private productsService: ProductsService) {
+              private productsService: ProductsService,
+              private favoritesService: FavoritesService,
+              private authService: AuthService) {
     this.quantity = 1;
+    this.favoritesObservable = this.favoritesService.getFavoritesObservable();
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.favoritesObservable.subscribe(
+      favorites => this.updateFavorites(favorites),
+      error => console.log(error)
+    );
+  }
 
   openProductModal() {
     this.productsService.changeSelectedProduct(this.product);
@@ -55,6 +67,23 @@ export class ProductComponent implements OnInit {
 
   getImage() {
     return this.product.images[0];
+  }
+
+  toggleFavorite() {
+    if (!this.authService.getLoggedIn()) {
+      return console.log('Not logged');
+    }
+
+    const productId = this.product._id;
+    if (this.product.isFavorite) {
+      this.favoritesService.unmarkFavorite(productId);
+    } else {
+      this.favoritesService.markAsFavorite(productId);
+    }
+  }
+
+  updateFavorites(favorites) {
+    this.product.isFavorite = favorites.includes(this.product._id);
   }
 
 }

@@ -6,6 +6,15 @@
       <p>{{product.sku}}</p>
       <p><span id="costo-producto">{{getPrice(product.price)}}</span></p>
     </div>
+
+    <div class="row">
+      <div class="col-sm">
+        <div (click)="toggleFavorite()">
+          <i class="fas fa-heart" *ngIf="product.isFavorite"></i>
+          <i class="far fa-heart" *ngIf="!product.isFavorite"></i>
+        </div>
+      <div class="col-sm">
+    </div>
     
     <div class="row">
       <div class="col-sm">
