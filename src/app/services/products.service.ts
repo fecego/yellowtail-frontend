@@ -14,6 +14,7 @@ export class ProductsService {
   private newProductsObservable = new BehaviorSubject<Array<any>>([]);
   private featuredProductsObservable = new BehaviorSubject<Array<any>>([]);
   private productsByCategoryObservable = new BehaviorSubject<Array<any>>([]);
+  private productByUrlObservable = new BehaviorSubject<any>(null);
 
   constructor() {
     this.allProducts= allproducts.allProducts;
@@ -35,6 +36,10 @@ export class ProductsService {
     return this.selectedProductObservable;
   }
 
+  getProductByUrlObservable() {
+    return this.productByUrlObservable;
+  }
+
   getNewProducts() {
     const products : any = this.allProducts.filter(product => product.newProduct);
     return this.newProductsObservable.next(products);
@@ -45,7 +50,6 @@ export class ProductsService {
     return this.featuredProductsObservable.next(products);
   }
 
-
   getProductsByCategory(category) {
     const products : any = this.allProducts.filter(product => product.category == category);
     return this.productsByCategoryObservable.next(products);
@@ -53,6 +57,11 @@ export class ProductsService {
 
   changeSelectedProduct(product) {
     this.selectedProductObservable.next(product);
+  }
+
+  getProductByUrl(url: string) {
+    const product : any = this.allProducts.find(product => product.url == url);
+    return this.productByUrlObservable.next(product);
   }
 
 }

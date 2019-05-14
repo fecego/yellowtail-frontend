@@ -61,7 +61,7 @@ const routes: Routes = [
     component: ProfileComponent
   },
   {
-    path: 'producto/:name',
+    path: 'producto/:productUrl',
     component: ProductDetailComponent
   },
   {
