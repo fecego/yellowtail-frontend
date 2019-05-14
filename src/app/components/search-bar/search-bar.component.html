@@ -23,7 +23,7 @@
               <div *ngIf="!showNoResuls">
                   <app-search-bar-product [product]="result" *ngFor="let result of results"></app-search-bar-product>
                   <div>
-                    <a href="/resultados">
+                    <a href="/busqueda?query={{query}}">
                       Ver más resultados
                     </a>
                   </div>

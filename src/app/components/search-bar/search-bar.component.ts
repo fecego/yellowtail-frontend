@@ -12,6 +12,7 @@ export class SearchBarComponent implements OnInit {
   showSearchSection: boolean;
   isSearching: boolean;
   showNoResuls: boolean;
+  query: string;
   results: Array<any>;
   productsByQueryObservable: Observable<Array<any>>;
 
@@ -20,6 +21,7 @@ export class SearchBarComponent implements OnInit {
     this.isSearching = true;
     this.results = [];
     this.showNoResuls = false;
+    this.query = '';
     this.productsByQueryObservable = this.productsService.getProductByQueryObservable();
   }
 
@@ -42,6 +44,7 @@ export class SearchBarComponent implements OnInit {
     this.isSearching = true;
 
     if (value.length > 2) {
+      this.query = encodeURI(value);
       this.showSearchSection = true;
       this.productsService.getProductsByQuery(value);
     } else {

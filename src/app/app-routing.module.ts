@@ -69,7 +69,7 @@ const routes: Routes = [
     component: ResetPasswordComponent
   },
   {
-    path: 'resultados',
+    path: 'busqueda',
     component: SearchResultsComponent
   },
   {
