@@ -47,6 +47,21 @@
       <button>
         Compartir
       </button>
+
+      <div class="row" *ngIf="product.withVariants">
+        
+        <div *ngFor="let option of getOptions()">
+          <select (change)="changeSelect(option.key, $event.target.value)">
+            <option>Selecciona {{option.keyLabel}}</option>
+            <option *ngFor="let filteredOption of getOptionsValuesByKey(option.key)">{{filteredOption.value}}</option>
+          </select>
+        </div>
+
+        <div *ngIf="variant">
+          Precio {{getVariantPrice(variant.price)}}
+        </div>
+      
+      </div>
   
       <share-buttons
         [include]="['facebook', 'twitter', 'google', 'messenger', 'whatsapp', 'email', 'print', 'copy']"

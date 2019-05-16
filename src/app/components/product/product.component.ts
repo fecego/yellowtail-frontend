@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 import { NotificationsService } from '../../services/notifications.service';
 import { ProductsService } from '../../services/products.service'
 import { FavoritesService } from '../../services/favorites.service'
@@ -27,7 +28,8 @@ export class ProductComponent implements OnInit {
               private cartService: CartService,
               private productsService: ProductsService,
               private favoritesService: FavoritesService,
-              private authService: AuthService) {
+              private authService: AuthService,
+              private router: Router) {
     this.quantity = 1;
     this.favoritesObservable = this.favoritesService.getFavoritesObservable();
   }
@@ -45,6 +47,15 @@ export class ProductComponent implements OnInit {
   }
 
   getPrice(price: number) {
+    if (this.product.withVariants) {
+      const prices = this.product.variants.map(variant => variant.price);
+      const maxAndMin = {
+        max: Math.max(...prices),
+        min: Math.min(...prices),
+      };
+      return `${formatPrice(maxAndMin.max)} - ${formatPrice(maxAndMin.min)}`;
+    }
+
     return formatPrice(price);
   }
 
@@ -59,6 +70,10 @@ export class ProductComponent implements OnInit {
   }
 
   addProductToCart() {
+    if (this.product.withVariants) {
+      return this.goToDetail();
+    }
+
     const tempProduct = Object.assign({}, this.product);
     tempProduct.quantity = this.quantity;
     this.notificationsService.addProductToCart(tempProduct);
@@ -84,6 +99,10 @@ export class ProductComponent implements OnInit {
 
   updateFavorites(favorites) {
     this.product.isFavorite = favorites.includes(this.product._id);
+  }
+
+  goToDetail() {
+    this.router.navigate(['/producto', this.product.url]);
   }
 
 }

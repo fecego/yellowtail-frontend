@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationsService } from '../../services/notifications.service';
 import { ProductsService } from '../../services/products.service'
 import { CartService } from '../../services/cart.service';
 import { formatPrice } from '../../utils/formatUtils';
-
 import { Observable } from 'rxjs';
 
 @Component({
@@ -22,7 +22,8 @@ export class ModalProductComponent implements OnInit {
   constructor(public activeModal: NgbActiveModal,
               private productsService: ProductsService,
               private notificationsService: NotificationsService,
-              private cartService: CartService) {
+              private cartService: CartService,
+              private router: Router) {
     this.selectedProductObservable = this.productsService.getSelectedProductObservable();
     this.quantity = 1;
   }
@@ -35,6 +36,15 @@ export class ModalProductComponent implements OnInit {
   }
 
   getPrice(price: number) {
+    if (this.product.withVariants) {
+      const prices = this.product.variants.map(variant => variant.price);
+      const maxAndMin = {
+        max: Math.max(...prices),
+        min: Math.min(...prices),
+      };
+      return `${formatPrice(maxAndMin.max)} - ${formatPrice(maxAndMin.min)}`;
+    }
+    
     return formatPrice(price);
   }
 
@@ -62,10 +72,18 @@ export class ModalProductComponent implements OnInit {
   }
 
   addProductToCart() {
+    if (this.product.withVariants) {
+      return this.goToDetail();
+    }
+
     const tempProduct = Object.assign({}, this.product);
     tempProduct.quantity = this.quantity;
     this.notificationsService.addProductToCart(tempProduct);
     this.cartService.addProductToCart(tempProduct);
+  }
+
+  goToDetail() {
+    this.router.navigate(['/producto', this.product.url]);
   }
 
 }
