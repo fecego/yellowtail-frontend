@@ -300,6 +300,154 @@
         "13",
         "2"
       ]
+    },
+    {
+      "_id": "15",
+      "name": "Jig katana",
+      "url": "Jig-katana",
+      "sku": "",
+      "price": 0,
+      "withVariants" : true,
+      "description": "Ideal para profundidades de 100 m hasta 220 m. Cuenta con un anzuelo armando, argolla doble reforzada y una argolla ciega.",
+      "short_description": "Ideal para profundidades de 100 m hasta 220 m.",
+      "images": [
+        "http://www.yellowtailpesca.com/wp-content/uploads/2018/05/29974-YELLOW-TAIL-JIG-YTKTN160-CLN-KATANA-595x738.jpg"
+      ],
+      "category": "senuelos",
+      "subcategory": "subcategoria1",
+      "newProduct": false,
+      "featured": false,
+      "related": [
+        "13",
+        "2"
+      ],
+      "variants": [
+        {
+          "_id": "029965",
+          "name": "Katana pearl 160 g",
+          "realName": "JIG YTKTN160-PRL KATANA",
+          "sku": "YTKTN160-PRL",
+          "model": "YTKTN160-PRL",
+          "unit": "Pieza",
+          "price": 145,
+          "description": "IDEAL PARA PROFUNDIDADES DE 100 M HASTA 220 M.\\NCUENTA CON UN ANZUELO ARMANDO, ARGOLLA DOBLE REFORZADA Y UNA ARGOLLA CIEGA.\\NPESO: 160 GR\\NMATERIAL: PLOMO\\NMEDIDA DEL ANZUELO: 6/0\\N",
+          "images": [
+            "http://www.yellowtailpesca.com/wp-content/uploads/2018/05/29965-YELLOW-TAIL-JIG-YTKTN160-PRL-KATANA-595x738.jpg"
+          ],
+          "options" : [
+            {
+              "key": "color",
+              "keyLabel": "Color",
+              "value": "Pearl"
+            },
+            {
+              "key": "weight",
+              "keyLabel": "Peso",
+              "value": "160g"
+            }
+          ]
+        },
+        {
+          "_id": "029970",
+          "name": "Katana blue mackarel 160 g",
+          "realName": "JIG YTKTN160-BM  KATANA",
+          "sku": "YTKTN160-BM",
+          "model": "YTKTN160-BM",
+          "unit": "Pieza",
+          "price": 145,
+          "description": "IDEAL PARA PROFUNDIDADES DE 100 M HASTA 220 M.\\NCUENTA CON UN ANZUELO ARMANDO, ARGOLLA DOBLE REFORZADA Y UNA ARGOLLA CIEGA.\\NPESO: 160 GR\\NMATERIAL: PLOMO\\NMEDIDA DEL ANZUELO: 6/0\\N",
+          "images": [
+            "http://www.yellowtailpesca.com/wp-content/uploads/2018/05/29970-YELLOW-TAIL-JIG-YTKTN160-BM-KATANA.jpg"
+          ],
+          "options" : [
+            {
+              "key": "color",
+              "keyLabel": "Color",
+              "value": "Blue mackerel"
+            },
+            {
+              "key": "weight",
+              "keyLabel": "Peso",
+              "value": "160g"
+            }
+          ]
+        },
+        {
+          "_id": "029975",
+          "name": "Katana pearl 200 g",
+          "realName": "JIG YTKTN200-PRL KATANA",
+          "sku": "YTKTN200-PRL",
+          "model": "YTKTN200-PRL",
+          "unit": "Pieza",
+          "price": 169,
+          "description": "IDEAL PARA PROFUNDIDADES DE 100 M HASTA 220 M.\\NCUENTA CON UN ANZUELO ARMANDO, ARGOLLA DOBLE REFORZADA Y UNA ARGOLLA CIEGA.\\NPESO: 200 GR\\NMATERIAL: PLOMO\\NMEDIDA DEL ANZUELO: 6/0\\N",
+          "images": [
+            "http://www.yellowtailpesca.com/wp-content/uploads/2018/05/29965-YELLOW-TAIL-JIG-YTKTN160-PRL-KATANA-595x738.jpg"
+          ],
+          "options" : [
+            {
+              "key": "color",
+              "keyLabel": "Color",
+              "value": "Pearl"
+            },
+            {
+              "key": "weight",
+              "keyLabel": "Peso",
+              "value": "200g"
+            }
+          ]
+        },
+        {
+          "_id": "029976",
+          "name": "Katana blue mackarel 200 g",
+          "realName": "JIG YTKTN200-BM  KATANA",
+          "sku": "YTKTN200-BM",
+          "model": "YTKTN200-BM",
+          "unit": "Pieza",
+          "price": 169,
+          "description": "IDEAL PARA PROFUNDIDADES DE 100 M HASTA 220 M.\\NCUENTA CON UN ANZUELO ARMANDO, ARGOLLA DOBLE REFORZADA Y UNA ARGOLLA CIEGA.\\NPESO: 200 GR\\NMATERIAL: PLOMO\\NMEDIDA DEL ANZUELO: 6/0\\N",
+          "images": [
+            "http://www.yellowtailpesca.com/wp-content/uploads/2018/05/29970-YELLOW-TAIL-JIG-YTKTN160-BM-KATANA.jpg"
+          ],
+          "options" : [
+            {
+              "key": "color",
+              "keyLabel": "Color",
+              "value": "Blue mackerel"
+            },
+            {
+              "key": "weight",
+              "keyLabel": "Peso",
+              "value": "200g"
+            }
+          ]
+        },
+        {
+          "_id": "029977",
+          "name": "Katana pink blue 200 g",
+          "realName": "JIG YTKTN200-PB  KATANA",
+          "sku": "YTKTN200-PB",
+          "model": "YTKTN200-PB",
+          "unit": "Pieza",
+          "price": 169,
+          "description": "IDEAL PARA PROFUNDIDADES DE 100 M HASTA 220 M.\\NCUENTA CON UN ANZUELO ARMANDO, ARGOLLA DOBLE REFORZADA Y UNA ARGOLLA CIEGA.\\NPESO: 200 GR\\NMATERIAL: PLOMO\\NMEDIDA DEL ANZUELO: 6/0\\N",
+          "images": [
+            "http://www.yellowtailpesca.com/wp-content/uploads/2018/05/29971-YELLOW-TAIL-JIG-YTKTN160-PB-KATANA-595x738.jpg"
+          ],
+          "options" : [
+            {
+              "key": "color",
+              "keyLabel": "Color",
+              "value": "Pink-blue"
+            },
+            {
+              "key": "weight",
+              "keyLabel": "Peso",
+              "value": "200g"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
