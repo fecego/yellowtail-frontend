@@ -1,16 +1,21 @@
-<div class="row">
+<div class="container">
+  <div class="row">
 
-    <div class="col-4">
-      {{product.name}}
-      {{product.sku}}
-      {{getPrice(product.price)}}
+    <div class="col-4 content-info text-center">
+      <h4 class="">
+        {{product.name}}
+        <small class="text-muted product-sku">{{product.sku}}</small>
+      </h4>
+      <h3 class="">{{getPrice(product.price)}}</h3>
 
-      <button>
-        Favorito
-      </button>
-      <button>
-        Compartir
-      </button>
+      <div>
+        <button>
+          Favorito
+        </button>
+        <button>
+          Compartir
+        </button>
+      </div>
 
       <share-buttons
         [include]="['facebook', 'twitter', 'google', 'messenger', 'whatsapp', 'email', 'print', 'copy']"
@@ -18,50 +23,53 @@
         [size]="2"
         [url]="'https://twitter.com/'"
         [autoSetMeta]="true">
-
       </share-buttons>
-      <p>
+
+      <p class="text-justify">
         {{product.short_description}}
       </p>
 
-      <a href="/producto/{{product.url}}">
-        Ver más
-      </a>
+      <p class="text-right product-sku">
+        <a href="/producto/{{product.url}}">
+          Ver más
+        </a>
+      </p>
 
       <div class="row">
         <div class="col-sm">
-          <button class="btn btn-warning" (click)="subtractQuantity()">-</button>
+          <button class="btn btn-outline-warning" (click)="subtractQuantity()">-</button>
         </div>
         <div class="col-sm">
           {{quantity}}
         </div>
         <div class="col-sm">
-          <button class="btn btn-warning" (click)="addQuantity()">+</button>
+          <button class="btn btn-outline-warning" (click)="addQuantity()">+</button>
         </div>
       </div>
   
-      <button class="btn btn-warning" (click)="addProductToCart()">Agregar al carrito</button>
+      <button class="btn btn-warning btn-productToCart" (click)="addProductToCart()">Agregar al carrito</button>
 
     </div>
 
-    <div class="col-8">
+    <div class="col-8 carousel-content">
       
-    <div id="carouselProductControls" class="carousel slide" data-ride="carousel">
-      <div class="carousel-inner">
-        <div [ngClass]="['carousel-item', item.activeClass]" *ngFor="let item of getImages()">
-          <img src="{{item.image}}" class="d-block w-100" alt="">
+      <div id="carouselProductControls" class="carousel slide carousel-size" data-ride="carousel">
+        <div class="carousel-inner">
+          <div [ngClass]="['carousel-item', item.activeClass]" *ngFor="let item of getImages()">
+            <img src="{{item.image}}" class="d-block image-carousel" alt="">
+          </div>
         </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselProductControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselProductControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
+        <a class="carousel-control-prev" href="#carouselProductControls" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon icon-carousel" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselProductControls" role="button" data-slide="next">
+          <span class="carousel-control-next-icon icon-carousel" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
 
     </div>
+  </div>
 
 </div>

@@ -1,3 +1,28 @@
 .modal-dialog {
   max-width: 80% !important;
 }
+.content-info {
+  padding: 1rem 0rem 1rem 2rem;;
+}
+.product-sku {
+  display: block;
+}
+.btn-productToCart {
+  border-radius: 35px;
+}
+.carousel-content {
+  margin: 1em 0;
+  display: flex;
+  align-items: center;
+}
+.carousel-size {
+  width: 100%;
+  height: 65vh;
+}
+.image-carousel {
+  margin: auto;
+  height: 55vh;
+}
+.icon-carousel {
+  background-color: aqua;
+}

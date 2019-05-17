@@ -4,3 +4,26 @@
     padding: 4px 4px 8px 4px;
     border-radius: 5px;
 }
+.content-img {
+    height: 25vh;
+    margin: 0.5rem 0;
+}
+.content-title {
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+.img-productNew {
+    height: 100%;
+}
+.title-productNew {
+    margin: auto;
+    font-size: 1.7vw!important;
+}
+.row-controls {
+    margin: 1rem 0;
+}
+.btn-productToCart {
+    border-radius: 35px;
+}
