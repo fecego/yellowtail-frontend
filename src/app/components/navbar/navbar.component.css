@@ -4,3 +4,6 @@
 .bg-nav-buscar{
     background-color: #f8f9fa;
 }
+.dropdown-content {
+    margin-left: -243%;
+}
