@@ -14,7 +14,7 @@
     </div>
 
 
-    <div class="row">
+    <div class="row" *ngIf="product">
 
       <div class="col-8">
       
@@ -36,7 +36,7 @@
 
     </div>
 
-    <div class="col-4">
+    <div class="col-4" *ngIf="product">
       <p>
         {{getPrice(product.price)}}
       </p>
@@ -57,7 +57,7 @@
           </select>
         </div>
 
-        <div *ngIf="variant">
+        <div *ngIf="getVariant()">
           Precio {{getVariantPrice(variant.price)}}
         </div>
       
@@ -83,7 +83,9 @@
         </div>
       </div>
     
-      <button class="btn btn-warning" (click)="addProductToCart()">Agregar al carrito</button>
+      <div>
+        <button class="btn btn-warning" (click)="addProductToCart()">Agregar al carrito</button>
+      </div>
 
     </div>
 

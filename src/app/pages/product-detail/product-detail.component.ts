@@ -37,11 +37,16 @@ export class ProductDetailComponent implements OnInit {
     console.log(productUrl);
 
     this.productObservable.subscribe(
-      product => this.product = product,
+      product => this.initProduct(product),
       error => console.log(error)
     );
 
     this.productsService.getProductByUrl(productUrl);
+  }
+
+  initProduct(product) {
+    if (!product) return;
+    this.product = product;
   }
 
   getPrice(price: number) {
@@ -81,6 +86,10 @@ export class ProductDetailComponent implements OnInit {
 
   addProductToCart() {
     const tempProduct = Object.assign({}, this.product);
+    if (tempProduct.withVariants && !this.variant) {
+      return alert('Selecciona las opciones');
+    }
+
     tempProduct.quantity = this.quantity;
     this.notificationsService.addProductToCart(tempProduct);
     this.cartService.addProductToCart(tempProduct);
@@ -109,11 +118,26 @@ export class ProductDetailComponent implements OnInit {
   }
 
   getVariant() {
-    const keyFilters = Object.keys(this.filters);
-    if (keyFilters.length == 0) return;
-    this.product.variants.filter(variant => {
+    const filters = this.filters;
+    const keyFilters = Object.keys(filters);
+    const options = this.getOptions();
+    const keys = options.map(option => option.key);
+    //Si ya selecciono todos los parametros
+    if ( keys.every( key => keyFilters.includes(key) ) ) {
+      this.variant = this.getVariantByFilters(this.product.variants, filters);
+    } else {
+      this.variant = null;
+    }
+    return this.variant;
+  }
+
+  getVariantByFilters(variants, filters) {
+    return variants.find(variant => {
       const { options } = variant;
-      
+      return options.every(option => {
+        const {key, value} = option;
+        return (filters[key] == value);
+      });
     });
   }
 
