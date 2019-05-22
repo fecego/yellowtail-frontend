@@ -47,10 +47,8 @@ export class NavbarComponent implements OnInit {
 
   openFormModal(tab: string) {
     console.log('Open => ', tab);
-    this.modalService.open(ModalUserComponent); 
-    setTimeout( () => {
-      $('.nav-tabs a[href="#' +  tab + '"]').tab('show'); 
-    }, 100);
+    const modal = this.modalService.open(ModalUserComponent);
+    modal.componentInstance.showTab(tab, '/');
   }
 
   logout(){
