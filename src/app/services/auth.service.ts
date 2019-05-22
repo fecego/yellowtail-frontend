@@ -16,7 +16,7 @@ export class AuthService {
     this.isLoggedIn = false;
   }
 
-  login(credentials: any, nextRoute?: any){
+  login(credentials: any, nextRoute?: any) {
     if (!nextRoute) {
       nextRoute = '/';
     }
