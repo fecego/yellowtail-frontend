@@ -1,4 +1,17 @@
-.searchBarProduct {
+.item-search {
+  padding: 0.5em;
   display: flex;
   flex-flow: row wrap;
+}
+.item-search:hover {
+  background-color: #cccccc;
+}
+.title-search {
+  color: #212529;
+  font-weight: bold;
+  margin-bottom: 0%!important;
+}
+.text-search {
+  margin-bottom: 0!important;
+  text-decoration: none;
 }

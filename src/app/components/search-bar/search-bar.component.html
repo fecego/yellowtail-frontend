@@ -1,8 +1,8 @@
 
   <div class="justify-content-center">
     <form class="my-auto d-inline w-50">
-      <div class="input-group">
-        <input  type="text" 
+      <div class="input-group search-navbar">
+        <input type="text" 
                 class="form-control border border-right-0" 
                 placeholder="Buscar..."
                 (input)="onSearchChange($event.target.value)">
@@ -14,24 +14,24 @@
       </div>
       <div class="resulsContainer" [ngClass]="{ 'searchDropdownShown': showSearchSection, 'searchDropdownHiden': !showSearchSection }">
         
-          <div *ngIf="isSearching">
-            <h3>Cargando</h3>
+          <div class="content-modal" *ngIf="isSearching">
+            <h4 class="text-muted">Cargando...</h4>
           </div>
 
           <div *ngIf="!isSearching">
 
-              <div *ngIf="!showNoResuls">
-                  <app-search-bar-product [product]="result" *ngFor="let result of results"></app-search-bar-product>
-                  <div>
-                    <a href="/busqueda?query={{query}}">
-                      Ver más resultados
-                    </a>
-                  </div>
+            <div *ngIf="!showNoResuls">
+              <app-search-bar-product [product]="result" *ngFor="let result of results"></app-search-bar-product>
+              <div class="text-footer text-center">
+                <a href="/busqueda?query={{query}}">
+                  Ver más resultados
+                </a>
               </div>
+            </div>
 
-              <div *ngIf="showNoResuls">
-                No hay resultados
-              </div>
+            <div class="content-modal" *ngIf="showNoResuls">
+              <h4 class="text-muted text-center">No hay resultados</h4>
+            </div>
 
           </div>
           

@@ -1,10 +1,14 @@
 
   <div class="text-center justify-content-center box-producto">
     <div (click)="openProductModal()">
-      <img class="img-fluid d-block mx-auto" src="{{getImage()}}" alt="">
-      <h4 class="" id="nombre-producto">{{product.name}}</h4>
-      <p>{{product.sku}}</p>
-      <p><span id="costo-producto">{{getPrice(product.price)}}</span></p>
+      <div class="content-img">
+        <img class="img-fluid d-block mx-auto img-productNew" src="{{getImage()}}" alt="">
+      </div>
+      <div class="content-title">
+        <h4 class="title-productNew" id="nombre-producto">{{product.name}}</h4>
+      </div>
+      <p class="text-muted">{{product.sku}}</p>
+      <h4><span id="costo-producto">{{getPrice(product.price)}}</span></h4>
     </div>
 
     <div class="row">
@@ -16,17 +20,17 @@
       <div class="col-sm">
     </div>
     
-    <div class="row">
-      <div class="col-sm">
-        <button class="btn btn-warning" (click)="subtractQuantity()">-</button>
+    <div class="row row-controls">
+      <div class="col">
+        <button class="btn btn-outline-warning" (click)="subtractQuantity()">-</button>
       </div>
-      <div class="col-sm">
+      <div class="col">
         {{quantity}}
       </div>
-      <div class="col-sm">
-        <button class="btn btn-warning" (click)="addQuantity()">+</button>
+      <div class="col">
+        <button class="btn btn-outline-warning" (click)="addQuantity()">+</button>
       </div>
     </div>
 
-    <button class="btn btn-warning" (click)="addProductToCart()">Agregar al carrito</button>
+    <button class="btn btn-warning btn-productToCart" (click)="addProductToCart()">Agregar al carrito</button>
   </div>

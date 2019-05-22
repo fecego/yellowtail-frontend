@@ -1,9 +1,11 @@
-<div>
-  <a href="/producto/{{product.url}}">
-    <div class="searchBarProduct">
-      <img src="{{getThumbnail(product.images)}}" style="max-width: 100px; max-height: 100px;">
-      <p>{{product.name}}</p>
-      <p>{{getPrice(product.price)}}</p>
+<a class="text-search" href="/producto/{{product.url}}">
+  <div class="item-search">
+    <div class="col-4">
+      <img src="{{getThumbnail(product.images)}}" style="max-width: 100%; max-height: 100px;">
     </div>
-  </a>
-</div>
+    <div class="col-8">
+      <p class="title-search">{{product.name}}</p>
+      <p class="text-right text-muted">{{getPrice(product.price)}}</p>
+    </div>
+  </div>
+</a>

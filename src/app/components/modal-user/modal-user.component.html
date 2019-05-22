@@ -1,71 +1,91 @@
-<div class="modal-body">
-  <ul class="nav nav-tabs" role="tablist">
-    <li class="nav-item">
-      <a class="nav-link" href="#login" role="tab" data-toggle="tab">Inicio de sesión</a>
+<div class="contentRegister-login">
+  <ul class="nav nav-tabs nav-content-login" role="tablist">
+    <li class="nav-item nav-item-login">
+      <a class="nav-link text-center" href="#login" role="tab" data-toggle="tab"><h5>Inicio de sesión</h5></a>
     </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#register" role="tab" data-toggle="tab">Registrate</a>
+    <li class="nav-item nav-item-login">
+      <a class="nav-link text-center" href="#register" role="tab" data-toggle="tab"><h5>Registrate</h5></a>
     </li>
   </ul> 
   <!-- CONTENIDO DEL MODAL INTERNO -->
-  <div class="tab-content">
+  <div class="tab-content content-user">
     
     <!-- APARTADO DE REGISTRO-->
     <div role="tabpanel" class="tab-pane fade in active" id="register">
       <form class="pt-3" name="registerForm" #registerForm="ngForm" (ngSubmit)="register(registerForm)">
-        <div class="form-group">
-          <label for="registerInputName">Nombre</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fa fa-user"></i></div>
+          </div>
           <input name="name" class="form-control" id="registerInputName" aria-describedby="nameHelp" placeholder="Nombre" ngModel required>
         </div>
-        <div class="form-group">
-          <label for="registerInputLastName">Apellido</label>
+        <div class="input-group item-register">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fa fa-user"></i></div>
+          </div>
           <input name="lastName" class="form-control" id="registerInputLastName" aria-describedby="nameHelp" placeholder="Apellido" ngModel required>
         </div>
-        <div class="form-group">
-            <label for="registerInputEmail" class="pt-3">Correo Electrónico</label>
-            <input name="email" type="email" class="form-control" id="registerInputEmail" aria-describedby="emailHelp" placeholder="ejemplo@correo.com" ngModel email required>
-            <!--<small id="emailHelp" class="form-text text-muted">Recuerda que nunca compartiremos tu datos con terceros</small> -->
+        <div class="input-group item-register">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fa fa-envelope"></i></div>
           </div>
-        <div class="form-group">
-          <label for="registerInputPassword">Contraseña</label>
-          <input name="password" type="password" class="form-control" id="registerInputPassword" placeholder="********" ngModel required>
-          <small id="emailHelp" class="form-text text-muted">Recuerda utilizar 8 carácteres, entre ellos 1 número y 1 carácter especial</small> 
+          <input name="email" type="email" class="form-control" id="registerInputEmail" aria-describedby="emailHelp" placeholder="ejemplo@correo.com" ngModel email required>
         </div>
-        <div class="text-center">
-          <button type="submit" class="btn btn-warning" [disabled]="!registerForm.form.valid">
+        <!--<small id="emailHelp" class="form-text text-muted">Recuerda que nunca compartiremos tu datos con terceros</small> -->
+        <div class="input-group item-register">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fa fa-key"></i></div>
+          </div>
+          <input name="password" type="password" class="form-control" id="registerInputPassword" placeholder="********" ngModel required>
+        </div>
+        <p><small id="emailHelp" class="form-text text-muted">Recuerda utilizar 8 carácteres, entre ellos 1 número y 1 carácter especial</small></p>
+        <div class="text-center item-register">
+          <button type="submit" class="btn btn-warning btn-block button-register" [disabled]="!registerForm.form.valid">
             Registrarse
           </button>
         </div>
       </form>
     </div>
-
+  
     <!-- APARTADO DE INICIO DE SESIÓN-->
     <div role="tabpanel" class="tab-pane fade" id="login">
       <form class="pt-3" name="loginForm" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-        <div class="form-group">
-          <label for="loginInputEmail">Correo Electrónico</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fa fa-envelope"></i></div>
+          </div>
           <input type="email" name="email" class="form-control" id="loginInputEmail" aria-describedby="emailHelp" placeholder="ejemplo@correo.com" ngModel email required>
         </div>
-        <div class="form-group">
-          <label for="loginInputPassword">Contraseña</label>
-          <input type="password" name="password" class="form-control" id="loginInputPassword" placeholder="" ngModel required>
+        <div class="input-group item-register">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><i class="fa fa-key"></i></div>
+          </div>
+          <input type="password" name="password" class="form-control" id="loginInputPassword" placeholder="Contraseña" ngModel required>
         </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
+        <div class="form-row item-register">
+          <div class="col">
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
+            </div>
+          </div>
+          <div class="col">
+            <a href="#">¿Has olvidado la contraseña?</a>
+          </div>
         </div>
+  
         <div class="text-center">
-          <button type="submit" class="btn btn-warning" [disabled]="!loginForm.form.valid">
+          <button type="submit" class="btn btn-warning btn-block" [disabled]="!loginForm.form.valid">
             Iniciar Sesión
           </button>
         </div>
       </form>
     </div>
-    
   </div>
-</div>
-<div class="modal-footer">
-  <button class="btn btn-link" (click)="activeModal.dismiss('Close clicked')">
-    Cerrar
-  </button>
+  
+  <div class="modal-footer">
+    <button class="btn btn-link" (click)="activeModal.dismiss('Close clicked')">
+      Cerrar
+    </button>
+  </div>
 </div>

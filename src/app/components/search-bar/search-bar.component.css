@@ -1,21 +1,33 @@
 .holder {
   position: relative;
 }
+.search-navbar {
+  margin: 0.2rem 0;
+}
 
 .searchDropdownHiden {
   position: absolute;
-  border: 1px solid red;
+  border: 1px solid #cccccc;
   display: none;
   z-index: 30;
 }
 
 .searchDropdownShown {
   position: absolute;
-  border: 1px solid red;
+  border: 1px solid #cccccc;
   display: block;
   z-index: 3000;
 }
 
 .resulsContainer {
-  overflow: scroll;
+  width: 95%;
+  height: auto;
+  background: #ffffff;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.content-modal,
+.text-footer {
+  margin: 1rem;
 }
