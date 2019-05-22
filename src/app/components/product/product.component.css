@@ -10,7 +10,7 @@
     margin: 0.5rem 0;
 }
 .content-title {
-    height: 20vh;
+    height: 24.5vh;
     display: flex;
     justify-content: center;
     align-content: center;
@@ -20,7 +20,7 @@
 }
 .title-productNew {
     margin: auto;
-    font-size: 1.467vw!important;
+    font-size: 1.567vw!important;
 }
 .row-controls {
     margin: 1rem 0;
@@ -40,12 +40,12 @@
 }
 
 /*PHONES*/
-@media (max-width: 767px) and (min-width: 577px) {
+@media (max-width: 765px) and (min-width: 576px) {
     .title-productNew {
         font-size: 2.3vw!important;
     }
 }
-@media (max-width: 576px) {
+@media (max-width: 575px) {
     .title-productNew {
         font-size: 5vw!important;
     }
