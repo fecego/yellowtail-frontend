@@ -7,3 +7,7 @@
 .dropdown-content {
     margin-left: -243%;
 }
+.car-container {
+    border: 1px solid #ffffff;
+    margin: 0.2rem;
+}

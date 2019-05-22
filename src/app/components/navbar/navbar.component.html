@@ -2,9 +2,9 @@
   <!--NAVBAR INICIO DE SESION-->
   <nav class="navbar-dark bg-dark">
 
-    <ul class="nav justify-content-end">
+    <ul class="nav justify-content-around align-items-center">
 
-      <li class="col-sm-5">
+      <li class="col-sm-7">
         <app-search-bar></app-search-bar>
       </li>
 
@@ -18,14 +18,17 @@
         Salir
       </li>
       <ng-template #notLogged>
-        <li class="nav-item nav-link text-white pointer" (click)="openFormModal('login')">
+        <li class="nav-item nav-link text-white pointer pr-0" (click)="openFormModal('login')">
           Iniciar sesión
         </li>
-        <li class="nav-item nav-link text-decoration-none text-white pointer" (click)="openFormModal('register')">
+        <li class="nav-item nav-link text-white px-0">
+          |
+        </li>
+        <li class="nav-item nav-link text-decoration-none text-white pointer pl-0" (click)="openFormModal('register')">
           Crear cuenta
         </li>
       </ng-template>
-      <li>
+      <li class="car-container">
         <a class=" nav-link text-decoration-none text-white" href="/carrito">
           <i class="fas fa-shopping-cart"></i>
           <span> ({{getProductsInCartCount()}})</span> carrito <span>{{getAmmount()}}</span> MX
