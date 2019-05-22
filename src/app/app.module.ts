@@ -43,6 +43,10 @@ import { ToastComponent } from './components/toast/toast.component';
 import { CartProductComponent } from './pages/cart/cart-product/cart-product.component';
 import { StoresComponent } from './pages/home/stores/stores.component';
 import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { CheckoutProductComponent } from './pages/checkout/checkout-product/checkout-product.component';
+import { ModalAddressComponent } from './components/modal-address/modal-address.component';
+import { ModalTaxComponent } from './components/modal-tax/modal-tax.component';
 
 @NgModule({
   declarations: [
@@ -81,7 +85,11 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
     ToastComponent,
     CartProductComponent,
     StoresComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    CheckoutComponent,
+    CheckoutProductComponent,
+    ModalAddressComponent,
+    ModalTaxComponent
   ],
   imports: [
     BrowserModule,
@@ -96,7 +104,9 @@ import { ProductDetailComponent } from './pages/product-detail/product-detail.co
   bootstrap: [AppComponent],
   entryComponents: [
     ModalUserComponent,
-    ModalProductComponent
+    ModalProductComponent,
+    ModalAddressComponent,
+    ModalTaxComponent
   ]
 })
 export class AppModule { }

@@ -18,6 +18,8 @@ import { TrophiesComponent } from './pages/trophies/trophies.component';
 import { SearchResultsComponent } from './pages/search-results/search-results.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
+import { CheckoutProductComponent } from './pages/checkout/checkout-product/checkout-product.component';
+import { CheckoutComponent } from './pages/checkout/checkout.component';
 
 const routes: Routes = [
   {
@@ -35,6 +37,10 @@ const routes: Routes = [
   {
     path: 'categoria/:category',
     component: CategoriesComponent
+  },
+  {
+    path: 'pagar',
+    component: CheckoutComponent
   },
   {
     path: 'combos',

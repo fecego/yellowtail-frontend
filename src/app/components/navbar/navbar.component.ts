@@ -48,7 +48,7 @@ export class NavbarComponent implements OnInit {
   openFormModal(tab: string) {
     console.log('Open => ', tab);
     const modal = this.modalService.open(ModalUserComponent);
-    modal.componentInstance.showTab(tab, '/');
+    modal.componentInstance.showTab(tab);
   }
 
   logout(){

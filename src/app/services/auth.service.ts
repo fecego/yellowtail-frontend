@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
@@ -11,15 +11,21 @@ export class AuthService {
 
   private isLoggedIn: boolean;
   
-  constructor(private router: Router) {
+  constructor(private router: Router,
+    private route: ActivatedRoute) {
     this.isLoggedIn = false;
   }
 
-  login(credentials: any){
+  login(credentials: any, nextRoute?: any){
+    if (!nextRoute) {
+      nextRoute = '/';
+    }
+    console.log('nextRoute ', nextRoute);
+
     if (credentials.email !== '' && credentials.password !== '' ) {
       this.isLoggedIn = true;
       this.loggedInObservable.next(true);
-      this.router.navigate(['/home']);
+      this.router.navigate([nextRoute]);
     }
   }
 

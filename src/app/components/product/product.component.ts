@@ -10,6 +10,10 @@ import { AuthService } from './../../services/auth.service';
 import { formatPrice } from '../../utils/formatUtils';
 
 import { ModalProductComponent } from './../../components/modal-product/modal-product.component';
+import { ModalUserComponent } from '../../components/modal-user/modal-user.component';
+
+declare var $: any;
+
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -86,8 +90,8 @@ export class ProductComponent implements OnInit {
 
   toggleFavorite() {
     if (!this.authService.getLoggedIn()) {
-      alert('Inicia sesion');
-      return console.log('Not logged');
+      const modal = this.modalService.open(ModalUserComponent);
+      modal.componentInstance.showTab('login');
     }
 
     const productId = this.product._id;

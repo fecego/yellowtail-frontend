@@ -9,6 +9,7 @@ import { formatPrice } from '../../utils/formatUtils';
 import { ModalUserComponent } from '../../components/modal-user/modal-user.component';
 
 declare var $: any;
+
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
@@ -50,10 +51,8 @@ export class CartComponent implements OnInit {
     if (isLoggedIn) {
 
     } else {
-      this.modalService.open(ModalUserComponent); 
-      setTimeout( () => {
-        $('.nav-tabs a[href="#login"]').tab('show'); 
-      }, 100);
+      const modal = this.modalService.open(ModalUserComponent);
+      modal.componentInstance.showTab('login', '/pagar');
     }
   }
 

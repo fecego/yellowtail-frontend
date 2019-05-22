@@ -1,0 +1,85 @@
+<div class="container">
+
+  <div class="row">
+    
+    <div class="col-sm">
+
+      <div>
+        <hr/>
+        Tipos de envio
+        <div *ngFor="let type of getShippingTypes()">
+          <input type="radio" name="shipping"/> {{type.name}}
+        </div> 
+      </div>
+
+      <div class="mt-3">
+        <hr/>
+        Direccion de envio
+        <div *ngFor="let address of getAddresses()">
+          <input type="radio" name="address"/> {{formatAdress(address)}}
+        </div>
+        <div>
+          <button (click)="newAddress()">Agregar direccion</button>
+        </div>
+      </div>
+
+      <div class="mt-3">
+        <hr/>
+        Forma de pago
+        <div *ngFor="let type of getPaymentTypes()">
+          <input type="radio" name="payment"/> {{type.name}}
+        </div>
+      </div>
+
+      <div class="mt-3">
+        <hr/>
+        Facturacion
+        <br/>
+        <input type="checkbox" name="payment" (change)="changeTaxContainer()" />Quiero factura
+      </div>
+
+      <div *ngIf="showTaxContainer" class="mt-3">
+        <div *ngFor="let taxInformation of getTaxInformations()">
+          <input type="radio" name="tax"/> {{formatTaxInformation(taxInformation)}}
+        </div>
+        <div>
+          <button (click)="newTaxInformation()">Agregar nueva informacion de facturación</button>
+        </div>
+      </div>
+    
+    </div>
+    
+    <div class="col-sm">
+
+      <h1>Pedido</h1>
+      <a href="/carrito">Modificar compra</a>
+
+      <div>
+        <app-checkout-product [product]="product" *ngFor="let product of products"></app-checkout-product>
+      </div>
+
+      <div>
+        Subtotal 
+      </div>
+
+      <div>
+        Envio 
+      </div>
+
+      <div>
+        Descuento 
+      </div>
+
+      <div>
+        Total 
+      </div>
+
+      <div>
+        <button>Pagar</button>
+      </div>
+      
+    </div>
+
+  </div>
+
+</div>
