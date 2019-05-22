@@ -1,0 +1,7 @@
+.btn-productToCart {
+  border-radius: 35px;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: brightness(0.777) sepia(0.11) hue-rotate(-0deg) saturate(1);
+}

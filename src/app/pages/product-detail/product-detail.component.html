@@ -10,14 +10,14 @@
     <div class="row" *ngIf="product">
       <div class="col-12">
         <h1>Producto {{product.name}}</h1>
+        <hr>
       </div>
     </div>
 
 
     <div class="row">
 
-      <div class="col-8">
-      
+      <div class="col-12 col-md-6 col-lg-8 col-xl-8">
         <div id="carouselProductControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div [ngClass]="['carousel-item', item.activeClass]" *ngFor="let item of getImages()">
@@ -36,39 +36,38 @@
 
     </div>
 
-    <div class="col-4">
-      <p>
-        {{getPrice(product.price)}}
-      </p>
-      <p>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-4">
+      <h3>{{getPrice(product.price)}}</h3>
+      <p class="text-justify">
         {{product.description}}
       </p>
 
       <button>
         Compartir
       </button>
-  
-      <share-buttons
-        [include]="['facebook', 'twitter', 'google', 'messenger', 'whatsapp', 'email', 'print', 'copy']"
-        [show]="8"
-        [size]="2"
-        [url]="'https://twitter.com/'"
-        [autoSetMeta]="true">
-      </share-buttons>
+      <div class="text-center">
+        <share-buttons
+          [include]="['facebook', 'twitter', 'google', 'messenger', 'whatsapp', 'email', 'print', 'copy']"
+          [show]="8"
+          [size]="2"
+          [url]="'https://twitter.com/'"
+          [autoSetMeta]="true">
+        </share-buttons>
+      </div>
 
-      <div class="row">
-        <div class="col-sm">
-          <button class="btn btn-warning" (click)="subtractQuantity()">-</button>
+      <div class="row text-center mt-3">
+        <div class="col-4">
+          <button class="btn btn-outline-warning" (click)="subtractQuantity()">-</button>
         </div>
-        <div class="col-sm">
+        <div class="col-4">
           {{quantity}}
         </div>
-        <div class="col-sm">
-          <button class="btn btn-warning" (click)="addQuantity()">+</button>
+        <div class="col-4">
+          <button class="btn btn-outline-warning" (click)="addQuantity()">+</button>
         </div>
       </div>
     
-      <button class="btn btn-warning" (click)="addProductToCart()">Agregar al carrito</button>
+      <button class="btn btn-warning btn-block btn-productToCart mt-3" (click)="addProductToCart()">Agregar al carrito</button>
 
     </div>
 

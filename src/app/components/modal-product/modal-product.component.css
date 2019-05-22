@@ -23,6 +23,7 @@
   margin: auto;
   height: 55vh;
 }
-.icon-carousel {
-  background-color: aqua;
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: brightness(0.777) sepia(0.11) hue-rotate(-0deg) saturate(1);
 }
