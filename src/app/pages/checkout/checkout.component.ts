@@ -17,11 +17,26 @@ export class CheckoutComponent implements OnInit {
 
   showTaxContainer: boolean;
   products: Array<any>;
+  addresses: Array<any>;
+  paymentTypes: Array<any>;
+  shippingTypes: Array<any>;
+  taxInformations: Array<any>;
+  options: any;
 
   constructor(private modalService: NgbModal,
               private cartService: CartService) {
     this.showTaxContainer = false;
     this.products = [];
+    this.addresses = this.getAddresses();
+    this.paymentTypes = this.getPaymentTypes();
+    this.shippingTypes = this.getShippingTypes();
+    this.taxInformations = this.getTaxInformations();
+    this.options = {
+      shipping: '',
+      address: '',
+      payment: '',
+      taxInformation: ''
+    };
     this.cartObservable = this.cartService.getCartObservable();
   }
 
@@ -72,9 +87,11 @@ export class CheckoutComponent implements OnInit {
   getTaxInformations() {
     return [
       {
+        _id: 'AA',
         rfc: 'DSAASDA324234SADASD'
       },
       {
+        _id: 'BB',
         rfc: 'XCVXVCV32434SA3434S'
       }
     ];
@@ -98,6 +115,17 @@ export class CheckoutComponent implements OnInit {
 
   newTaxInformation() {
     this.modalService.open(ModalTaxComponent);
+  }
+
+  completePurchase() {
+    const {shipping, address, payment, taxInformation } = this.options;
+    if (!shipping || !address || !payment) {
+      return alert('Selecciona opciones');
+    }
+    if (this.showTaxContainer && !taxInformation) {
+      return alert('Selecciona los datos de facturacion');
+    }
+    console.log(this.options);
   }
 
 }

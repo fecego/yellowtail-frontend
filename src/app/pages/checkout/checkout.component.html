@@ -7,16 +7,16 @@
       <div>
         <hr/>
         Tipos de envio
-        <div *ngFor="let type of getShippingTypes()">
-          <input type="radio" name="shipping"/> {{type.name}}
+        <div *ngFor="let type of shippingTypes">
+          <input type="radio" name="shipping" value="{{type._id}}" [(ngModel)]="options.shipping"/> {{type.name}}
         </div> 
       </div>
 
       <div class="mt-3">
         <hr/>
         Direccion de envio
-        <div *ngFor="let address of getAddresses()">
-          <input type="radio" name="address"/> {{formatAdress(address)}}
+        <div *ngFor="let address of addresses">
+          <input type="radio" name="address" value="{{address._id}}" [(ngModel)]="options.address"/> {{formatAdress(address)}}
         </div>
         <div>
           <button (click)="newAddress()">Agregar direccion</button>
@@ -26,8 +26,8 @@
       <div class="mt-3">
         <hr/>
         Forma de pago
-        <div *ngFor="let type of getPaymentTypes()">
-          <input type="radio" name="payment"/> {{type.name}}
+        <div *ngFor="let type of paymentTypes">
+          <input type="radio" name="payment" value="{{type._id}}" [(ngModel)]="options.payment"/> {{type.name}}
         </div>
       </div>
 
@@ -39,8 +39,8 @@
       </div>
 
       <div *ngIf="showTaxContainer" class="mt-3">
-        <div *ngFor="let taxInformation of getTaxInformations()">
-          <input type="radio" name="tax"/> {{formatTaxInformation(taxInformation)}}
+        <div *ngFor="let taxInformation of taxInformations">
+          <input type="radio" name="tax" value="{{taxInformation.rfc}}" [(ngModel)]="options.taxInformation"/> {{formatTaxInformation(taxInformation)}}
         </div>
         <div>
           <button (click)="newTaxInformation()">Agregar nueva informacion de facturación</button>
@@ -75,7 +75,7 @@
       </div>
 
       <div>
-        <button>Pagar</button>
+        <button (click)="completePurchase()">Pagar</button>
       </div>
       
     </div>
