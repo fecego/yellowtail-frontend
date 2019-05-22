@@ -86,6 +86,7 @@ export class ProductComponent implements OnInit {
 
   toggleFavorite() {
     if (!this.authService.getLoggedIn()) {
+      alert('Inicia sesion');
       return console.log('Not logged');
     }
 

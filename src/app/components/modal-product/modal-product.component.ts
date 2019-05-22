@@ -86,4 +86,8 @@ export class ModalProductComponent implements OnInit {
     this.router.navigate(['/producto', this.product.url]);
   }
 
+  getShareUrl() {
+    return `http://165.227.48.162/producto/${this.product.url}`;
+  }
+
 }

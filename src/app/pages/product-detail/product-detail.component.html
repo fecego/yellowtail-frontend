@@ -44,10 +44,6 @@
         {{product.description}}
       </p>
 
-      <button>
-        Compartir
-      </button>
-
       <div class="row" *ngIf="product.withVariants">
         
         <div *ngFor="let option of getOptions()">
@@ -62,12 +58,16 @@
         </div>
       
       </div>
+
+      <button>
+        Compartir
+      </button>
   
       <share-buttons
         [include]="['facebook', 'twitter', 'google', 'messenger', 'whatsapp', 'email', 'print', 'copy']"
         [show]="8"
         [size]="2"
-        [url]="'https://twitter.com/'"
+        [url]="getShareUrl()"
         [autoSetMeta]="true">
       </share-buttons>
 
