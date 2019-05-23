@@ -8,13 +8,13 @@
         <app-search-bar></app-search-bar>
       </li>
 
-      <li *ngIf="isLoggedIn | async; else notLogged">
+      <li *ngIf="isLoggedInObservable | async; else notLogged">
         <a class=" nav-link text-decoration-none text-white" href="/perfil">
-          <span>Hola &nbsp;&nbsp;</span>
+          <span>Hola {{username}}</span>
           <i class="fas fa-user"></i>
         </a>
       </li>
-      <li class="nav-item nav-link text-white pointer" (click)="logout()" *ngIf="isLoggedIn | async">
+      <li class="nav-item nav-link text-white pointer" (click)="logout()" *ngIf="isLoggedInObservable | async">
         Salir
       </li>
       <ng-template #notLogged>

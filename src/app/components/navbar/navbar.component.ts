@@ -16,25 +16,27 @@ declare var $: any;
 })
 export class NavbarComponent implements OnInit {
 
-  isLoggedIn: Observable<boolean>;
+  isLoggedInObservable: Observable<boolean>;
   cartObservable: Observable<Array<any>>;
 
+  username: string;
   products: Array<any>;
 
   constructor(private modalService: NgbModal,
               private authService: AuthService,
               private notificationsService: NotificationsService,
               private cartService: CartService) {
+
     this.products = [];
-    this.isLoggedIn = this.authService.getLoggedInObservable();
+    this.username = '';
+    this.isLoggedInObservable = this.authService.getLoggedInObservable();
     this.cartObservable = this.cartService.getCartObservable();
   }
 
   ngOnInit() {
-    this.isLoggedIn.subscribe(
-      newValue => console.log('Observer got a next value: ' + newValue),
-      error => console.error('Observer got an error: ' + error),
-      () => console.log('Observer got a complete notification')
+    this.isLoggedInObservable.subscribe(
+      isLoggedIn => this.changeLoggedIn(isLoggedIn),
+      error => console.error('Observer got an error: ' + error)
     );
  
     this.cartObservable.subscribe(
@@ -43,6 +45,13 @@ export class NavbarComponent implements OnInit {
 
     //Quitar el toast para poder dar click en el menu
     $('#toastContainer').hide();
+  }
+
+  changeLoggedIn(isLoggedIn: boolean) {
+    if (isLoggedIn) {
+      const user = this.authService.getLocalUser();
+      this.username = user.name;
+    }
   }
 
   openFormModal(tab: string) {
