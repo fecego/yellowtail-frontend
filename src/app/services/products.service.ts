@@ -18,6 +18,7 @@ export class ProductsService {
   private productsByCategoryObservable = new BehaviorSubject<Array<any>>([]);
   private productByUrlObservable = new BehaviorSubject<any>(null);
   private productsByQueryObservable = new BehaviorSubject<Array<any>>([]);
+  private relatedProductsObservable = new BehaviorSubject<Array<any>>([]);
 
   constructor(private favoritesService: FavoritesService) {
     this.allProducts= allproducts.allProducts;
@@ -62,6 +63,10 @@ export class ProductsService {
     return this.productsByQueryObservable;
   }
 
+  getRelatedProductsObservable() {
+    return this.relatedProductsObservable;
+  }
+
   getNewProducts() {
     let products : any = this.allProducts.filter(product => product.newProduct);
     products = this.marksFavoritesProducts(products);
@@ -97,6 +102,12 @@ export class ProductsService {
       products = this.marksFavoritesProducts(products);
       return this.productsByQueryObservable.next(products);
     }, 2000); 
+  }
+
+  getRealtedProducts(productIds: Array<string>) {
+    let products : any = this.allProducts.filter(product => productIds.includes(product._id));
+    products = this.marksFavoritesProducts(products);
+    return this.relatedProductsObservable.next(products);
   }
 
 }

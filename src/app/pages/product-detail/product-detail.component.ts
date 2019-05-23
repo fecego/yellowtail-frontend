@@ -16,8 +16,11 @@ import flatten from 'lodash.flatten';
 export class ProductDetailComponent implements OnInit {
 
   productObservable: Observable<any>;
+  relatedProductObservable: Observable<any>;
+
   product: any;
   quantity: number;
+  related: Array<any>;
   variant: any;
   filters: any;
 
@@ -26,18 +29,24 @@ export class ProductDetailComponent implements OnInit {
               private notificationsService: NotificationsService,
               private cartService: CartService) {
     this.productObservable = this.productsService.getProductByUrlObservable();
+    this.relatedProductObservable = this.productsService.getRelatedProductsObservable();
     this.product = null;
     this.quantity = 1;
     this.variant = null;
     this.filters = {};
+    this.related = [];
   }
 
   ngOnInit() {
     const productUrl = this.route.snapshot.paramMap.get("productUrl");
-    console.log(productUrl);
 
     this.productObservable.subscribe(
       product => this.initProduct(product),
+      error => console.log(error)
+    );
+
+    this.relatedProductObservable.subscribe(
+      products => this.related = products,
       error => console.log(error)
     );
 
@@ -47,6 +56,7 @@ export class ProductDetailComponent implements OnInit {
   initProduct(product) {
     if (!product) return;
     this.product = product;
+    this.productsService.getRealtedProducts(this.product.related);
   }
 
   getPrice(price: number) {
