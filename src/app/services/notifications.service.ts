@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 declare var $: any;
 
@@ -7,11 +8,21 @@ declare var $: any;
 })
 export class NotificationsService {
 
+  private dataObservable = new BehaviorSubject<any>(null);
+
   constructor() {
 
   }
 
+  getDataObservable() {
+    return this.dataObservable;
+  }
+
   addProductToCart(product: any) {
+    this.dataObservable.next({
+      title: 'Carrito',
+      message: `${product.name} fue agregado al carrito`,
+    });
     $('#toastContainer').show();
     $('.toast').toast('show');
   }
