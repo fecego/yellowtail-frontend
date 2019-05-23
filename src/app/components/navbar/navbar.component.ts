@@ -49,8 +49,10 @@ export class NavbarComponent implements OnInit {
 
   changeLoggedIn(isLoggedIn: boolean) {
     if (isLoggedIn) {
-      const user = this.authService.getLocalUser();
-      this.username = user.name;
+      setTimeout( () => {
+        const user = this.authService.getLocalUser();
+        this.username = user.name;
+      }, 100);
     }
   }
 
