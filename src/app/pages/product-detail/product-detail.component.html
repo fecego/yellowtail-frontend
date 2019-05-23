@@ -6,18 +6,15 @@
         <h1>Cargando</h1>
       </div>
     </div>
-    
-    <div class="row" *ngIf="product">
-      <div class="col-12">
-        <h1>Producto {{product.name}}</h1>
-        <hr>
-      </div>
-    </div>
 
-
-    <div class="row" *ngIf="product">
+    <div class="row">
 
       <div class="col-12 col-md-6 col-lg-8 col-xl-8">
+        <div class="d-block d-md-none d-sm-block">
+          <h2 class="text-center">Producto {{product.name}}</h2>
+          <hr>
+          <h2 class="text-center">{{getPrice(product.price)}}</h2>
+        </div>
         <div id="carouselProductControls" class="carousel slide" data-ride="carousel">
           <div class="carousel-inner">
             <div [ngClass]="['carousel-item', item.activeClass]" *ngFor="let item of getImages()">
@@ -36,38 +33,26 @@
 
     </div>
 
-    <div class="col-12 col-md-6 col-lg-4 col-xl-4"  *ngIf="product">
-      <h3>{{getPrice(product.price)}}</h3>
+    <div class="col-12 col-md-6 col-lg-4 col-xl-4">
+      <h2 class="d-none d-md-block">Producto {{product.name}}</h2>
+      <hr class="d-none d-md-block">
+      <h2 class="d-none d-md-block">{{getPrice(product.price)}}</h2>
       <p class="text-justify">
         {{product.description}}
       </p>
 
-      <div class="row" *ngIf="product.withVariants">
-        
-        <div *ngFor="let option of getOptions()">
-          <select (change)="changeSelect(option.key, $event.target.value)">
-            <option>Selecciona {{option.keyLabel}}</option>
-            <option *ngFor="let filteredOption of getOptionsValuesByKey(option.key)">{{filteredOption.value}}</option>
-          </select>
-        </div>
-
-        <div *ngIf="getVariant()">
-          Precio {{getVariantPrice(variant.price)}}
-        </div>
-      
-      </div>
-
       <button>
         Compartir
       </button>
-  
-      <share-buttons
-        [include]="['facebook', 'twitter', 'google', 'messenger', 'whatsapp', 'email', 'print', 'copy']"
-        [show]="8"
-        [size]="2"
-        [url]="getShareUrl()"
-        [autoSetMeta]="true">
-      </share-buttons>
+      <div class="text-center">
+        <share-buttons
+          [include]="['facebook', 'twitter', 'google', 'messenger', 'whatsapp', 'email', 'print', 'copy']"
+          [show]="8"
+          [size]="2"
+          [url]="'https://twitter.com/'"
+          [autoSetMeta]="true">
+        </share-buttons>
+      </div>
 
       <div class="row text-center mt-3">
         <div class="col-4">
