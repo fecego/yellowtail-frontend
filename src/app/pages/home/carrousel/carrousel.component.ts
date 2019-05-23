@@ -7,9 +7,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarrouselComponent implements OnInit {
 
-  constructor() { }
+  items: Array<any>;
+
+  constructor() {
+    this.items = [];
+  }
 
   ngOnInit() {
+    this.items = this.getItems();
+  }
+
+  getItems() {
+    const items = [
+      {
+        image: '/assets/img/carrousel/1a.jpg',
+      },
+      {
+        image: '/assets/img/carrousel/2aa.jpg',
+      },
+      {
+        image: '/assets/img/carrousel/3aa.jpg'
+      }
+    ];
+    return items.map( (item: any, index: number) => {
+      item.class = index == 0? 'active': '';
+      return item;
+    });
   }
 
 }
