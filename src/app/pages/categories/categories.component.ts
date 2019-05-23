@@ -44,12 +44,14 @@ export class CategoriesComponent implements OnInit {
 
   productsObservable: Observable<Array<any>>;
 
-  name: String;
+  name: string;
   products: Array<any>;
+  sortBy: string;
 
   constructor(private route: ActivatedRoute,
               private productsService: ProductsService) {
     this.productsObservable = this.productsService.getProductsByCategoryObservable();
+    this.sortBy = '';
   }
 
   ngOnInit() {
@@ -67,7 +69,27 @@ export class CategoriesComponent implements OnInit {
   }
 
   getProducts() {
-    return this.products;
+    if (!this.sortBy) {
+      return this.products;
+    }
+    return this.products.sort(this.getSortFunction());
+  }
+
+  sortProducts(event) {
+    const newSort = event.target.value;
+    this.sortBy = newSort;
+  }
+
+  getSortFunction() {
+    let sortFunction;
+    if (this.sortBy == '1') {
+      sortFunction = (a: any, b: any) => a.name.localeCompare(b.name, 'en', { numeric: true });
+    } else if (this.sortBy == '2') {
+      sortFunction = (a: any, b: any) => a.price - b.price;
+    } else if (this.sortBy == '3') {
+      sortFunction = (a: any, b: any) => b.price - a.price;
+    }
+    return sortFunction;
   }
 
 }
