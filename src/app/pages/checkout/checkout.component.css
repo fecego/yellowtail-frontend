@@ -1,0 +1,26 @@
+.section-card {
+  font-weight: bold;
+  text-align: right;
+}
+.title-info {
+  font-weight: bold;
+  font-size: 16px;
+}
+.subtitle-info {
+  display: block;
+}
+.cart-content {
+  max-height: 25vh;
+  overflow-y: auto;
+}
+.content-tutorial {
+  color: #5a5c61;
+  text-decoration: none;
+}
+.content-tutorial:hover {
+  color: #131414;
+}
+.content-tutorial-img {
+  padding: 1rem;
+  text-align: center;
+}
