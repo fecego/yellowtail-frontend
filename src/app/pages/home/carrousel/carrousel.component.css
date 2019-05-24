@@ -20,3 +20,13 @@
   left: 0;
   z-index: 10;
 }
+
+.search-input-carousel {
+  margin: 10vh 40vh;
+}
+
+@media (max-width: 991px) and (min-width: 768px)  {
+  .search-input-carousel {
+    margin: 10vh 20vh;
+  }
+}
