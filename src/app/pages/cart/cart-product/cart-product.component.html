@@ -1,23 +1,36 @@
-<div class="row">
-  <div class="col-sm">
+<div class="row row-content-products">
+  <div class="col-3">
     {{product.name}}
   </div>
-  <div class="col-sm">
-    <button class="btn btn-warning" (click)="subtractQuantity()">-</button>
+  <div class="col-3">
+    <div class="row text-center">
+      <div class="col-12 col-md-4">
+        <button class="btn btn-outline-warning" (click)="subtractQuantity()">-</button>
+      </div>
+      <div class="col-12 col-md-4">
+        <p>{{product.quantity}}</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <button class="btn btn-outline-warning" (click)="addQuantity()">+</button>
+      </div>
+    </div>
   </div>
-  <div class="col-sm">
-    {{product.quantity}}
+  <div class="col-2">
+    <p class="text-center">
+      {{getPrice(product.price)}}
+    </p>
   </div>
-  <div class="col-sm">
-    <button class="btn btn-warning" (click)="addQuantity()">+</button>
+  <div class="col-2">
+    <p class="text-center">
+      {{getTotalPrice()}}
+    </p>
   </div>
-  <div class="col-sm">
-    {{getPrice(product.price)}}
-  </div>
-  <div class="col-sm">
-    {{getTotalPrice()}}
-  </div>
-  <div class="col-sm">
-    <button class="btn btn-warning" (click)="removeProduct()">Borrar</button>
+  <div class="col-2 text-center">
+    <button class="btn btn-warning" (click)="removeProduct()">
+      <span class="d-block d-sm-block d-md-none ">
+        <i class="fa fa-trash"></i>
+      </span>
+      <span class="d-none d-md-block ">Borrar</span>
+    </button>
   </div>
 </div>

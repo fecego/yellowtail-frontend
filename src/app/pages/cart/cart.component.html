@@ -4,59 +4,62 @@
   <div class="container pt-5 pb-5">
     <div class="row">
       <div class="col-12">
-        <h1>Carrito</h1>
+        <h1 class="title-view">Carrito</h1>
       </div>
     </div>
-
-    <div class="row pt-5" *ngIf="showPlaceholder">
+    <div class="row text-center" *ngIf="showPlaceholder">
       <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-        <h1>Carrito vacio</h1>
-      </div>
-      <button type="submit" class="btn btn-warning">
-        Ir a productos
-      </button>
-    </div>
-
-    <div class="row">
-      <div class="col-sm">
-        Nombre
-      </div>
-      <div class="col-sm">
-        &nbsp;
-      </div>
-      <div class="col-sm">
-        Cantidad
-      </div>
-      <div class="col-sm">
-        &nbsp;
-      </div>
-      <div class="col-sm">
-        Precio unitario
-      </div>
-      <div class="col-sm">
-        Precio total
-      </div>
-      <div class="col-sm">
-        Borrar
+        <span class="fa-stack fa-2x text-muted">
+          <i class="fas fa-shopping-cart fa-stack-1x"></i>
+          <i class="fas fa-ban fa-stack-2x"></i>
+        </span>
+        <h1 class="text-muted">Carrito vacío</h1>
+        <button type="submit" class="btn btn-warning">
+          Ir a productos
+        </button>
       </div>
     </div>
 
-    <div class="row pt-5" *ngIf="!showPlaceholder">
-      <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" *ngFor="let product of products">
-        <app-cart-product [product]="product"></app-cart-product>
-      </div>
-    </div>
-
-    <div class="row pt-5" *ngIf="!showPlaceholder">
+    <div class="row mt-3" *ngIf="!showPlaceholder">
       <div class="col-sm">
-        <h3>Total: {{getTotal()}}</h3>
+        <div class="row row-title">
+          <div class="col-3">
+            Nombre
+          </div>
+          <div class="col-3">
+            Cantidad
+          </div>
+          <div class="col-2">
+            Precio unitario
+          </div>
+          <div class="col-2">
+            Precio total
+          </div>
+          <div class="col-2">
+            Borrar
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12" *ngFor="let product of products">
+            <app-cart-product [product]="product"></app-cart-product>
+          </div>
+        </div>
       </div>
     </div>
 
     <div class="row pt-5" *ngIf="!showPlaceholder">
-      <button type="submit" class="btn btn-warning" (click)="continuePurchase()">
-        Continuar
-      </button>
+      <div class="col-sm">
+        <h3 class="float-right">Total: {{getTotal()}}</h3>
+      </div>
+    </div>
+
+    <div class="row pt-5" *ngIf="!showPlaceholder">
+      <div class="col-sm">
+        <button type="submit" class="btn btn-warning float-right" (click)="continuePurchase()">
+          Continuar
+        </button>
+      </div>
     </div>
 
   </div>
