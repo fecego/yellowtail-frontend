@@ -27,3 +27,19 @@ div.search-input-carousel div.resulsContainer {
         width: 70%;
     }
 }
+
+/* INPUT DE BUSQUEDA NAVBAR */
+li.search-input-navbar input.form-control,
+li.search-input-navbar button.btn-outline-secondary {
+    border: 0px!important;
+    background: #21252900;
+    border-bottom: 1px solid #dee2e68f!important;
+    border-radius: 0px;
+    color: #d0c3c3;
+}
+li.search-input-navbar input.form-control:focus {
+    box-shadow: 0 0 0 0.1rem rgba(174, 177, 179, 0.432)!important
+}
+div.search-input-carousel input.form-control:focus {
+    box-shadow: 0 0 0 0.1rem rgba(85, 87, 88, 0.205)!important
+}
