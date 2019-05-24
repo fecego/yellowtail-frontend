@@ -1,7 +1,10 @@
 .containerCarrousel {
-  width: 100%;
-  height: 700px;
   position: relative;
+}
+
+.containerCarrousel,
+.img-carousel-home {
+  height: 110vh;
 }
 
 .bottomCarrousel {
@@ -23,6 +26,35 @@
 
 .search-input-carousel {
   margin: 10vh 40vh;
+}
+
+@media (max-width: 1199px) and (min-width: 992px) {
+  .containerCarrousel,
+  .img-carousel-home {
+    height: 85vh;
+  }
+}
+
+/*TABLETS - Tablet posición vertical*/
+@media (max-width: 991px) and (min-width: 768px) {
+  .containerCarrousel,
+  .img-carousel-home {
+    height: 75vh;
+  }
+}
+
+/*PHONES*/
+@media (max-width: 767px) and (min-width: 577px) {
+  .containerCarrousel,
+  .img-carousel-home {
+    height: 65vh;
+  }
+}
+@media (max-width: 576px) {
+  .containerCarrousel,
+  .img-carousel-home {
+    height: 45vh;
+  }
 }
 
 @media (max-width: 991px) and (min-width: 768px)  {
