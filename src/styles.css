@@ -8,9 +8,9 @@ body{
     cursor: pointer;
 }
 
-.modal-dialog {
+/* .modal-dialog {
     max-width: 80% !important;
-}
+} */
 
 /* INPUT DE BUSQUEDAD CARRUSEL */
 div.search-input-carousel input.form-control,

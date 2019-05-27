@@ -110,11 +110,11 @@ export class CheckoutComponent implements OnInit {
   }
 
   newAddress() {
-    this.modalService.open(ModalAddressComponent);
+    this.modalService.open(ModalAddressComponent, { size: 'lg', centered: true });
   }
 
   newTaxInformation() {
-    this.modalService.open(ModalTaxComponent);
+    this.modalService.open(ModalTaxComponent, { size: 'lg', centered: true });
   }
 
   completePurchase() {

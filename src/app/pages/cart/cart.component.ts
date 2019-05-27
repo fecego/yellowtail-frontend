@@ -51,7 +51,7 @@ export class CartComponent implements OnInit {
     if (isLoggedIn) {
 
     } else {
-      const modal = this.modalService.open(ModalUserComponent);
+      const modal = this.modalService.open(ModalUserComponent, { centered: true });
       modal.componentInstance.showTab('login', '/pagar');
     }
   }

@@ -47,7 +47,7 @@ export class ProductComponent implements OnInit {
 
   openProductModal() {
     this.productsService.changeSelectedProduct(this.product);
-    this.modalService.open(ModalProductComponent);
+    this.modalService.open(ModalProductComponent, { size: 'lg', centered: true });
   }
 
   getPrice(price: number) {
@@ -90,7 +90,7 @@ export class ProductComponent implements OnInit {
 
   toggleFavorite() {
     if (!this.authService.getLoggedIn()) {
-      const modal = this.modalService.open(ModalUserComponent);
+      const modal = this.modalService.open(ModalUserComponent, { centered: true });
       modal.componentInstance.showTab('login');
     }
 
