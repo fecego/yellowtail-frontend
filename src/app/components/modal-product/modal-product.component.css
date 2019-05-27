@@ -12,8 +12,6 @@
 }
 .carousel-content {
   margin: 1em 0;
-  display: flex;
-  align-items: center;
 }
 .carousel-size {
   width: 100%;
@@ -21,7 +19,9 @@
 }
 .image-carousel {
   margin: auto;
-  height: 55vh;
+  max-height: 65vh;
+  height: auto;
+  width: auto;
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {

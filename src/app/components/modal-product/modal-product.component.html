@@ -1,11 +1,11 @@
 <div class="container">
-  <div class="row">
+  <div class="row d-flex align-items-center">
 
     <div class="col-4 content-info text-center">
-      <h4 class="">
+      <h3 class="">
         {{product.name}}
         <small class="text-muted product-sku">{{product.sku}}</small>
-      </h4>
+      </h3>
       <h3 class="">{{getPrice(product.price)}}</h3>
 
       <div>
@@ -47,13 +47,13 @@
         </div>
       </div>
   
-      <button class="btn btn-warning btn-productToCart" (click)="addProductToCart()">Agregar al carrito</button>
+      <button class="mt-3 btn btn-warning btn-block btn-productToCart" (click)="addProductToCart()">Agregar al carrito</button>
 
     </div>
 
     <div class="col-8 carousel-content">
       
-      <div id="carouselProductControls" class="carousel slide carousel-size" data-ride="carousel">
+      <div id="carouselProductControls" class="carousel slide carousel-size d-flex align-items-center" data-ride="carousel">
         <div class="carousel-inner">
           <div [ngClass]="['carousel-item', item.activeClass]" *ngFor="let item of getImages()">
             <img src="{{item.image}}" class="d-block image-carousel" alt="">
