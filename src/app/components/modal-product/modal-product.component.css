@@ -2,7 +2,7 @@
   max-width: 80% !important;
 }
 .content-info {
-  padding: 1rem 0rem 1rem 2rem;;
+  padding: 1rem 0rem 1rem 2rem;
 }
 .product-sku {
   display: block;
@@ -19,11 +19,18 @@
 }
 .image-carousel {
   margin: auto;
-  max-height: 65vh;
   height: auto;
+  max-height: 65vh;
   width: auto;
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
   filter: brightness(0.777) sepia(0.11) hue-rotate(-0deg) saturate(1);
+}
+
+/*PHONES*/
+@media (max-width: 767px) {
+  .content-info {
+    padding: 1rem;
+  }
 }

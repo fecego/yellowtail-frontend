@@ -1,7 +1,7 @@
 <div class="container">
-  <div class="row d-flex align-items-center">
+  <div class="row align-items-center">
 
-    <div class="col-4 content-info text-center">
+    <div class="col-12 col-md-4 content-info text-center">
       <h3 class="">
         {{product.name}}
         <small class="text-muted product-sku">{{product.sku}}</small>
@@ -36,13 +36,13 @@
       </p>
 
       <div class="row">
-        <div class="col-sm">
+        <div class="col-4">
           <button class="btn btn-outline-warning" (click)="subtractQuantity()">-</button>
         </div>
-        <div class="col-sm">
+        <div class="col-4">
           {{quantity}}
         </div>
-        <div class="col-sm">
+        <div class="col-4">
           <button class="btn btn-outline-warning" (click)="addQuantity()">+</button>
         </div>
       </div>
@@ -51,12 +51,12 @@
 
     </div>
 
-    <div class="col-8 carousel-content">
+    <div class="col-12 col-md-8 carousel-content">
       
       <div id="carouselProductControls" class="carousel slide carousel-size d-flex align-items-center" data-ride="carousel">
         <div class="carousel-inner">
           <div [ngClass]="['carousel-item', item.activeClass]" *ngFor="let item of getImages()">
-            <img src="{{item.image}}" class="d-block image-carousel" alt="">
+            <img src="{{item.image}}" class="d-block image-carousel img-fluid" alt="">
           </div>
         </div>
         <a class="carousel-control-prev" href="#carouselProductControls" role="button" data-slide="prev">

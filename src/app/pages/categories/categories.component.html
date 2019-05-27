@@ -1,17 +1,22 @@
 <div class="container">
-  <div class="row pt-5">
-    <h2>
-      CATEGORIA <small class="text-muted"> <i class="fa fa-angle-right"></i> {{name}}</small>
-    </h2>
-
-    <div>
-      Ordenar por
-      <select (change)="sortProducts($event)">
-        <option value="">Ordenar</option>
-        <option value="1">Orden alfabetico</option>
-        <option value="2">Precio, menor a mayor</option>
-        <option value="3">Precio, mayor a menor</option>
-      </select>
+  <div class="row pt-5 mt-5 mt-md-0">
+    <div class="col-12 col-sm-6">
+      <h2>
+        CATEGORIA <small class="text-muted"> <i class="fa fa-angle-right"></i> {{name}}</small>
+      </h2>
+    </div>
+    <div class="col-12 col-sm-6 text-right mt-sm-0 mt-3">
+      <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-5 col-md-6 text-right col-form-label">Ordenar por</label>
+        <div class="col-sm-7 col-md-6">
+          <select class="custom-select" (change)="sortProducts($event)">
+            <option value="">Ordenar</option>
+            <option value="1">Orden alfabetico</option>
+            <option value="2">Precio, menor a mayor</option>
+            <option value="3">Precio, mayor a menor</option>
+          </select>
+        </div>
+      </div>
     </div>
 
   </div>
