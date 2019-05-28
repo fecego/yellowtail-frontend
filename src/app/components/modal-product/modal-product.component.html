@@ -6,15 +6,17 @@
         {{product.name}}
         <small class="text-muted product-sku">{{product.sku}}</small>
       </h3>
-      <h3 class="">{{getPrice(product.price)}}</h3>
+      <h3>{{getPrice(product.price)}}</h3>
 
-      <div>
-        <button>
-          Favorito
-        </button>
-        <button>
-          Compartir
-        </button>
+      <div class="d-flex justify-content-center mb-1">
+        <div class="btn-group btn-group-toggle">
+          <label class="btn btn-outline-warning">
+            <i class="fa fa-heart"></i>
+          </label>
+          <label class="btn btn-outline-warning">
+            <i class="fa fa-share"></i>
+          </label>
+        </div>
       </div>
 
       <share-buttons

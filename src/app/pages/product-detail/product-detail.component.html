@@ -43,9 +43,8 @@
         {{product.description}}
       </p>
 
-      <button>
-        Compartir
-      </button>
+      <hr>
+      <p class="text-center text-uppercase text-muted">Compartir</p>
       <div class="text-center">
         <share-buttons
           [include]="['facebook', 'twitter', 'google', 'messenger', 'whatsapp', 'email', 'print', 'copy']"
@@ -55,6 +54,7 @@
           [autoSetMeta]="true">
         </share-buttons>
       </div>
+      <hr>
 
       <div class="row text-center mt-3">
         <div class="col-4">

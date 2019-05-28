@@ -28,6 +28,13 @@
 .btn-productToCart {
     border-radius: 35px;
 }
+.btn-heart {
+    border: 0px!important;
+}
+.btn-heart:hover {
+    background-color: #ffffff;
+    color: #ffc107!important;
+}
 /* LARGE DESKTOP */
 @media (min-width: 1400px) {
     .content-img {
