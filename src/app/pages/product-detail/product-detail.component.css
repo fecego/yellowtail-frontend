@@ -12,7 +12,9 @@
 }
 .image-carousel {
   margin: auto;
-  height: 85vh;
+  height: auto;
+  max-height: 90vh;
+  width: auto;
 }
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
