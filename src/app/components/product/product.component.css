@@ -20,7 +20,7 @@
 }
 .title-productNew {
     margin: auto;
-    font-size: 1.567vw!important;
+    line-height: 0.76em;
 }
 .row-controls {
     margin: 1rem 0;
@@ -30,23 +30,10 @@
 }
 /* LARGE DESKTOP */
 @media (min-width: 1400px) {
-    .content-img,
-    .content-title {
+    .content-img {
         height: 10vh;
     }
-    .title-productNew {
-        font-size: 1.46vh!important;
-    }
-}
-
-/*PHONES*/
-@media (max-width: 765px) and (min-width: 576px) {
-    .title-productNew {
-        font-size: 2.3vw!important;
-    }
-}
-@media (max-width: 575px) {
-    .title-productNew {
-        font-size: 5vw!important;
+    .content-title {
+        height: 18vh;
     }
 }
