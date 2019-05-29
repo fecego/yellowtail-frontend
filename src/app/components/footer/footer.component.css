@@ -1,9 +1,20 @@
 footer{
     background-color: #ffeb00;
 }
-i{
+i,
+.item-faq {
     color: dimgray;
 }
-i:hover{
+i:hover,
+.item-faq:hover,
+.item-chat:hover {
     color: #3e3e3e;
+}
+.text-chat {
+    color: #ffffff;
+    position: relative;
+    margin: 25% 0;
+}
+.icon-chat {
+    position: absolute;
 }
