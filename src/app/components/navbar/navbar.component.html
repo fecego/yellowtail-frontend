@@ -4,7 +4,7 @@
 
     <ul class="nav justify-content-around align-items-center">
 
-      <li class="col-sm-7 search-input-navbar">
+      <li class="col-sm-5 col-md-5 col-lg-7 search-input-navbar order-last order-md-first">
         <app-search-bar *ngIf="showSearchBar"></app-search-bar>
       </li>
 
@@ -30,8 +30,10 @@
       </ng-template>
       <li class="car-container">
         <a class=" nav-link text-decoration-none text-white" href="/carrito">
-          <i class="fas fa-shopping-cart"></i>
-          <span> ({{getProductsInCartCount()}})</span> carrito <span>{{getAmmount()}}</span> MX
+          <i class="d-block d-sm-none fas fa-shopping-cart"></i>
+          <p class="d-none d-sm-block">
+            <i class="fas fa-shopping-cart"></i><span class="ml-1">({{getProductsInCartCount()}})</span> carrito <span>{{getAmmount()}}</span> MX
+          </p>
         </a>
       </li>
     </ul>
