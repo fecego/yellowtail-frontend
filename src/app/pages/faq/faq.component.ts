@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { trigger, transition, animate, style } from '@angular/animations'
 
 import data from './questions.json';
+import dataFaqs from '../../utils/faq.js';
 
 @Component({
   selector: 'app-faq',
@@ -26,7 +27,7 @@ export class FaqComponent implements OnInit {
 
   constructor() {
     this.show = false;
-    const renderFaqs = data.faqs.map((faq: any, index: number) => {
+    const renderFaqs = dataFaqs.map((faq: any, index: number) => {
       faq.index = index;
       faq.show = false;
       return faq;
@@ -35,7 +36,6 @@ export class FaqComponent implements OnInit {
   }
 
   ngOnInit() {
-
   }
 
   toggle(index: number) {
