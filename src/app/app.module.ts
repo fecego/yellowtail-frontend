@@ -48,6 +48,7 @@ import { CheckoutProductComponent } from './pages/checkout/checkout-product/chec
 import { ModalAddressComponent } from './components/modal-address/modal-address.component';
 import { ModalTaxComponent } from './components/modal-tax/modal-tax.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { InfoFooterComponent } from './components/info-footer/info-footer.component';
 
 @NgModule({
   declarations: [
@@ -91,7 +92,8 @@ import { LoadingComponent } from './components/loading/loading.component';
     CheckoutProductComponent,
     ModalAddressComponent,
     ModalTaxComponent,
-    LoadingComponent
+    LoadingComponent,
+    InfoFooterComponent
   ],
   imports: [
     BrowserModule,
