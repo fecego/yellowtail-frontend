@@ -14,37 +14,45 @@ export class CategoriesComponent implements OnInit {
   readonly CATEGORIES_INFO = {
     accesorios: {
       name: 'Accesorios',
-      key: 'accesorios'
+      key: 'accesorios',
+      image: '/assets/img/categorias/accesorios.png',
     },
     canas: {
       name: 'Cañas',
-      key: 'canas'
+      key: 'canas',
+      image: '/assets/img/categorias/canas.png',
     },
     carretes: {
       name: 'Carretes',
-      key: 'carretes'
+      key: 'carretes',
+      image: '/assets/img/categorias/carretes.png',
     },
     combos: {
       name: 'Combos',
-      key: 'combos'
+      key: 'combos',
+      image: '/assets/img/categorias/',
     },
     kayaks: {
       name: 'Kayaks',
-      key: 'kayaks'
+      key: 'kayaks',
+      image: '/assets/img/categorias/kayaks.png',
     },
     lineas: {
       name: 'Lineas',
-      key: 'lineas'
+      key: 'lineas',
+      image: '/assets/img/categorias/lineas.png',
     },
     senuelos: {
       name: 'Señuelos',
-      key: 'senuelos'
+      key: 'senuelos',
+      image: '/assets/img/categorias/senuelos.png',
     }
   };
 
   productsObservable: Observable<Array<any>>;
 
   name: string;
+  image: string;
   products: Array<any>;
   sortBy: string;
 
@@ -59,6 +67,7 @@ export class CategoriesComponent implements OnInit {
     console.log('Category => ', category);
     const categoryInfo = this.CATEGORIES_INFO[category];
     this.name = categoryInfo? categoryInfo.name: 'No existe';
+    this.image = categoryInfo? categoryInfo.image: '';
 
     this.productsObservable.subscribe(
       products => this.products = products,
