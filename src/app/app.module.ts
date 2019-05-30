@@ -5,6 +5,7 @@ import { FormsModule }   from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxImageZoomModule } from 'ngx-image-zoom';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -102,7 +103,8 @@ import { InfoFooterComponent } from './components/info-footer/info-footer.compon
     FormsModule,
     BrowserAnimationsModule,
     ShareButtonsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxImageZoomModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent],

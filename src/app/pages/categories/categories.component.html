@@ -18,8 +18,17 @@
         </div>
       </div>
     </div>
-
   </div>
+
+  <div class="row pt-5">
+    <div class="col-4 mt-sm-0 mt-3" *ngFor="let filter of filtersGroups">
+      <select (change)="changeFilter($event, filter.level)">
+        <option value="">Seleccione</option>
+        <option *ngFor="let option of filter.options" value="{{option.key}}">{{option.value}}</option>
+      </select>
+    </div>
+  </div>
+
   <div class="row pt-5">
     <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3" *ngFor="let product of getProducts()">
       <app-product [product]="product"></app-product>
