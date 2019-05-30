@@ -3,6 +3,7 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable } from 'rxjs';
 import { AuthService } from './../../services/auth.service';
 import { NotificationsService } from '../../services/notifications.service';
+import { SearchbarService } from '../../services/searchbar.service';
 import { CartService } from '../../services/cart.service';
 import { formatPrice } from '../../utils/formatUtils';
 
@@ -18,19 +19,24 @@ export class NavbarComponent implements OnInit {
 
   isLoggedInObservable: Observable<boolean>;
   cartObservable: Observable<Array<any>>;
+  showSearchBarObservable: Observable<boolean>;
 
   username: string;
   products: Array<any>;
+  showSearchBar: Boolean;
 
   constructor(private modalService: NgbModal,
               private authService: AuthService,
               private notificationsService: NotificationsService,
-              private cartService: CartService) {
+              private cartService: CartService,
+              private searchbarService: SearchbarService) {
 
     this.products = [];
     this.username = '';
+    this.showSearchBar = true;
     this.isLoggedInObservable = this.authService.getLoggedInObservable();
     this.cartObservable = this.cartService.getCartObservable();
+    this.showSearchBarObservable = this.searchbarService.getSearchBarObservable();
   }
 
   ngOnInit() {
@@ -41,6 +47,10 @@ export class NavbarComponent implements OnInit {
  
     this.cartObservable.subscribe(
       products => { this.products = products }
+    );
+
+    this.showSearchBarObservable.subscribe(
+      isVisible => this.showSearchBar = isVisible
     );
 
     //Quitar el toast para poder dar click en el menu

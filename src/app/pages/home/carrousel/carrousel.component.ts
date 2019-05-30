@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, HostListener, ElementRef } from '@angular/core';
+import { SearchbarService } from '../../../services/searchbar.service';
 @Component({
   selector: 'app-carrousel',
   templateUrl: './carrousel.component.html',
@@ -9,8 +9,10 @@ export class CarrouselComponent implements OnInit {
 
   items: Array<any>;
 
-  constructor() {
+  constructor(public el: ElementRef,
+              private searchbarService: SearchbarService) {
     this.items = [];
+    searchbarService.setSearchBarVisibility(true);
   }
 
   ngOnInit() {
@@ -33,6 +35,14 @@ export class CarrouselComponent implements OnInit {
       item.class = index == 0? 'active': '';
       return item;
     });
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  checkScroll() {
+    const componentPosition = this.el.nativeElement.offsetTop;
+    const scrollPosition = window.pageYOffset;
+    const showBar = (scrollPosition >= componentPosition);
+    this.searchbarService.setSearchBarVisibility(showBar);
   }
 
 }

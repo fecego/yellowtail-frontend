@@ -5,7 +5,7 @@
     <ul class="nav justify-content-around align-items-center">
 
       <li class="col-sm-7 search-input-navbar">
-        <app-search-bar></app-search-bar>
+        <app-search-bar *ngIf="showSearchBar"></app-search-bar>
       </li>
 
       <li *ngIf="isLoggedInObservable | async; else notLogged">
