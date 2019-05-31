@@ -2,7 +2,7 @@
 @import '~@ngx-share/button/themes/default/default-theme';
 
 body{
-    padding-top:9rem;
+    padding-top: 8rem;
 }
 .pointer {
     cursor: pointer;
