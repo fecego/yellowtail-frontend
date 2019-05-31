@@ -1,0 +1,10 @@
+.line-contact {
+  border-top: 10px solid rgb(255, 235, 0)!important;
+  margin-right: 15rem;
+}
+
+@media (max-width: 767px) {
+  .content-stores {
+    padding: 0 5rem;
+  }
+}
