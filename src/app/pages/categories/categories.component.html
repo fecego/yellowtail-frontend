@@ -20,12 +20,16 @@
     </div>
   </div>
 
-  <div class="row pt-5">
-    <div class="col-4 mt-sm-0 mt-3" *ngFor="let filter of filtersGroups">
-      <select (change)="changeFilter($event, filter.level)">
-        <option value="">Seleccione</option>
-        <option *ngFor="let option of filter.options" value="{{option.key}}">{{option.value}}</option>
-      </select>
+  <div class="row">
+    <div class="col-md-6 offset-md-6">
+      <div class="row">
+          <div class="col" *ngFor="let filter of filtersGroups">
+            <select class="form-control" (change)="changeFilter($event, filter.level)">
+              <option value="">Seleccione</option>
+              <option *ngFor="let option of filter.options" value="{{option.key}}">{{option.value}}</option>
+            </select>
+          </div>
+      </div>
     </div>
   </div>
 
@@ -34,6 +38,6 @@
       <app-product [product]="product"></app-product>
     </div>
 
-    <img src="{{image}}">
+    <img class="img-category-background" src="{{image}}">
   </div>
 </div>
