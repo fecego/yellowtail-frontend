@@ -1,0 +1,22 @@
+.content-second-footer {
+  background-color: #262626;
+  color: #878181;
+  padding: 3rem 5rem 5rem 5rem;
+}
+.subscribe-input {
+  background: #21252900;
+}
+.contact-icon {
+  color: #878181!important;
+}
+
+@media (min-width: 992px) {
+  .content-text-footer {
+    padding: 0 3rem;
+  }
+}
+@media (max-width: 767px) {
+  .content-second-footer {
+    padding: 2rem 3rem 3rem 3rem;
+  }
+}
