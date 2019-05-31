@@ -1,27 +1,25 @@
 
   <div class="text-center justify-content-center box-producto">
-    <div (click)="openProductModal()">
-      <div class="content-img">
-        <img class="img-fluid d-block mx-auto img-productNew" src="{{getImage()}}" alt="">
-      </div>
-      <div class="content-title">
-        <h3 class="title-productNew" id="nombre-producto"><small>{{product.name}}</small></h3>
-      </div>
-      <p class="text-muted">
-        <span>{{product.sku}}</span>
-        <span *ngIf="!product.sku">&nbsp;</span>
-      </p>
-      <h4><span id="costo-producto">{{getPrice(product.price)}}</span></h4>
-    </div>
 
-    <div class="row">
-      <div class="col-sm">
-        <div class="btn btn-outline-warning btn-heart" (click)="toggleFavorite()">
-          <i class="fas fa-heart" *ngIf="product.isFavorite"></i>
-          <i class="far fa-heart" *ngIf="!product.isFavorite"></i>
-        </div>
-      </div>
+    <div (click)="openProductModal()" class="content-img">
+      <img class="img-fluid d-block mx-auto img-productNew" src="{{getImage()}}" alt="">
     </div>
+    <div class="content-title">
+      <h3 class="title-productNew" id="nombre-producto">
+        <small (click)="openProductModal()">{{product.name}}</small>
+        <span>
+          <div class="btn btn-outline-warning btn-heart" (click)="toggleFavorite()">
+            <i class="fas fa-heart" *ngIf="product.isFavorite"></i>
+            <i class="far fa-heart" *ngIf="!product.isFavorite"></i>
+          </div>
+        </span>
+      </h3>
+    </div>
+    <p (click)="openProductModal()" class="text-muted">
+      <span>{{product.sku}}</span>
+      <span *ngIf="!product.sku">&nbsp;</span>
+    </p>
+    <h4 (click)="openProductModal()"><span id="costo-producto">{{getPrice(product.price)}}</span></h4>
     
     <div class="row row-controls">
       <div class="col-4">
