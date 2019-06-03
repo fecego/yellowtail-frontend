@@ -2,9 +2,13 @@
   position: relative;
 }
 
-.containerCarrousel,
-.img-carousel-home {
-  height: 110vh;
+.containerCarrousel {
+  height: 93%;
+}
+
+.img-carousel-home,
+.carousel-item {
+  height: -webkit-fill-available;
 }
 
 .bottomCarrousel {
@@ -28,34 +32,7 @@
   margin: 10vh 40vh;
 }
 
-@media (max-width: 1199px) and (min-width: 992px) {
-  .containerCarrousel,
-  .img-carousel-home {
-    height: 85vh;
-  }
-}
 
-/*TABLETS - Tablet posición vertical*/
-@media (max-width: 991px) and (min-width: 768px) {
-  .containerCarrousel,
-  .img-carousel-home {
-    height: 75vh;
-  }
-}
-
-/*PHONES*/
-@media (max-width: 767px) and (min-width: 577px) {
-  .containerCarrousel,
-  .img-carousel-home {
-    height: 65vh;
-  }
-}
-@media (max-width: 576px) {
-  .containerCarrousel,
-  .img-carousel-home {
-    height: 45vh;
-  }
-}
 
 @media (max-width: 991px) and (min-width: 768px)  {
   .search-input-carousel {
