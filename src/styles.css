@@ -1,8 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~@ngx-share/button/themes/default/default-theme';
 
+@font-face {
+    font-family: "Asap-Regular";
+    src: url("/assets/fonts/Asap-Regular.ttf");
+}
+@font-face {
+    font-family: "Asap-Medium";
+    src: url("/assets/fonts/Asap-Medium.ttf");
+}
+
 body{
     padding-top: 8rem;
+}
+body, p {
+    font-family: "Asap-Regular"!important;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Asap-Medium"!important;
 }
 .pointer {
     cursor: pointer;
