@@ -6,21 +6,21 @@
     margin-bottom: 1rem;
     background-color: #ffffffe6;
 }
+.box-producto .text-muted {
+    margin-bottom: 0!important;
+}
 .content-img {
     height: 25vh;
     margin: 0.5rem 0;
 }
 .content-title {
-    height: 24.5vh;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    height: 10vh;
+    margin-bottom: 0.5rem;
 }
 .img-productNew {
     height: 100%;
 }
 .title-productNew {
-    margin: auto;
     line-height: 0.76em;
 }
 .row-controls {
@@ -40,8 +40,5 @@
 @media (min-width: 1400px) {
     .content-img {
         height: 10vh;
-    }
-    .content-title {
-        height: 18vh;
     }
 }
