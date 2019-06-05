@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { FavoritesService } from './favorites.service';
 
-
 import allproducts from './products.json';
 
 @Injectable({
@@ -19,6 +18,7 @@ export class ProductsService {
   private productByUrlObservable = new BehaviorSubject<any>(null);
   private productsByQueryObservable = new BehaviorSubject<Array<any>>([]);
   private relatedProductsObservable = new BehaviorSubject<Array<any>>([]);
+  private productsByIdsObservable = new BehaviorSubject<Array<any>>([]);
 
   constructor(private favoritesService: FavoritesService) {
     this.allProducts= allproducts.allProducts;
@@ -67,6 +67,10 @@ export class ProductsService {
     return this.relatedProductsObservable;
   }
 
+  getProducsByIdsObservable() {
+    return this.productsByIdsObservable;
+  }
+
   getNewProducts() {
     let products : any = this.allProducts.filter(product => product.newProduct);
     products = this.marksFavoritesProducts(products);
@@ -108,6 +112,11 @@ export class ProductsService {
     let products : any = this.allProducts.filter(product => productIds.includes(product._id));
     products = this.marksFavoritesProducts(products);
     return this.relatedProductsObservable.next(products);
+  }
+
+  getProductsByIds(ids) {
+    const products : any = this.allProducts.filter(product => ids.includes(product._id));
+    return this.productsByIdsObservable.next(products);
   }
 
 }

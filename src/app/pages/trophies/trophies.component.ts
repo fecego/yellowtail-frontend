@@ -35,6 +35,10 @@ export class TrophiesComponent implements OnInit {
         ],
         images: [
           'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg'
+        ],
+        products: [
+          "1",
+          "2"
         ]
       },
       {
@@ -45,6 +49,10 @@ export class TrophiesComponent implements OnInit {
         ],
         images: [
           'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg'
+        ],
+        products: [
+          "3",
+          "4"
         ]
       },
       {
@@ -55,6 +63,10 @@ export class TrophiesComponent implements OnInit {
         ],
         images: [
           'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg'
+        ],
+        products: [
+          "5",
+          "6"
         ]
       },
       {
@@ -65,6 +77,10 @@ export class TrophiesComponent implements OnInit {
         ],
         images: [
           'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg'
+        ],
+        products: [
+          "7",
+          "8"
         ]
       },
       {
@@ -75,6 +91,10 @@ export class TrophiesComponent implements OnInit {
         ],
         images: [
           'https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg'
+        ],
+        products: [
+          "9",
+          "10"
         ]
       }
     ];

@@ -1,3 +1,23 @@
-<p>
-  chart works!
-</p>
+<div>
+
+  <div>
+    <div *ngFor="let product of products">
+      <img src="{{product.mainImage}}" style="width: 90px; height: 90px;">
+      <h1>+</h1>
+    </div>
+  </div>
+
+  <p>
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+  </p>
+
+  <div>
+    <ul>
+      <li *ngFor="let product of products">
+        <input type="checkbox"> {{product.name}}
+      </li>
+    </ul>
+    <button>Agregar a carrito</button>
+  </div>
+
+</div>
