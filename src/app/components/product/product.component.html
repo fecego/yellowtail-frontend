@@ -4,8 +4,8 @@
     <div (click)="openProductModal()" class="content-img">
       <img class="img-fluid d-block mx-auto img-productNew" src="{{getImage()}}" alt="">
     </div>
-    <div class="content-title">
-      <h3 class="title-productNew" id="nombre-producto">
+    <div class="content-title d-flex align-items-end">
+      <h4 class="title-productNew" id="nombre-producto">
         <small (click)="openProductModal()">{{product.name}}</small>
         <span>
           <div class="btn btn-outline-warning btn-heart" (click)="toggleFavorite()">
@@ -13,7 +13,7 @@
             <i class="far fa-heart" *ngIf="!product.isFavorite"></i>
           </div>
         </span>
-      </h3>
+      </h4>
     </div>
     <p (click)="openProductModal()" class="text-muted">
       <span>{{product.sku}}</span>
