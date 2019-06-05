@@ -12,6 +12,9 @@ export class StoresComponent implements OnInit {
   @ViewChild('gmap') gmapElement: any;
   map: google.maps.Map;
 
+  @ViewChild('mmap') mmapElement: any;
+  mmap: google.maps.Map;
+
   constructor() { }
 
   ngOnInit() {
@@ -21,6 +24,7 @@ export class StoresComponent implements OnInit {
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
+    this.mmap = new google.maps.Map(this.mmapElement.nativeElement, mapProp);
   }
 
 }
