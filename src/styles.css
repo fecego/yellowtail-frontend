@@ -29,8 +29,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* INPUT DE BUSQUEDAD CARRUSEL */
 div.search-input-carousel input.form-control,
-div.search-input-carousel button.btn-outline-secondary {
-    border-radius: 15px;
+div.search-input-carousel button.btn-outline-secondary,
+/* INPUT DE BUSQUEDA NAVBAR */
+li.search-input-navbar input.form-control,
+li.search-input-navbar button.btn-outline-secondary {
+    border-radius: 5px;
     background-color: rgba(255, 255, 255, 0.73);
 }
 div.search-input-carousel div.resulsContainer {
@@ -43,18 +46,7 @@ div.search-input-carousel div.resulsContainer {
     }
 }
 
-/* INPUT DE BUSQUEDA NAVBAR */
-li.search-input-navbar input.form-control,
-li.search-input-navbar button.btn-outline-secondary {
-    border: 0px!important;
-    background: #21252900;
-    border-bottom: 1px solid #dee2e68f!important;
-    border-radius: 0px;
-    color: #d0c3c3;
-}
-li.search-input-navbar input.form-control:focus {
-    box-shadow: 0 0 0 0.1rem rgba(174, 177, 179, 0.432)!important
-}
+li.search-input-navbar input.form-control:focus,
 div.search-input-carousel input.form-control:focus {
-    box-shadow: 0 0 0 0.1rem rgba(85, 87, 88, 0.205)!important
+    box-shadow: 0 0 0 0.1rem rgba(174, 177, 179, 0.432)!important
 }

@@ -2,9 +2,9 @@
   <!--NAVBAR INICIO DE SESION-->
   <nav class="navbar-dark bg-dark">
 
-    <ul class="nav justify-content-around align-items-center">
+    <ul class="nav justify-content-end align-items-center">
 
-      <li class="col-sm-5 col-md-5 col-lg-7 search-input-navbar order-last order-md-first">
+      <li class="col-sm-5 col-md-5 col-lg-5 search-input-navbar order-last order-md-first">
         <app-search-bar *ngIf="showSearchBar"></app-search-bar>
       </li>
 
@@ -18,13 +18,13 @@
         Salir
       </li>
       <ng-template #notLogged>
-        <li class="nav-item nav-link text-white pointer pr-0" (click)="openFormModal('login')">
+        <li class="nav-item nav-link text-white pointer" (click)="openFormModal('login')">
           Iniciar sesión
         </li>
         <li class="nav-item nav-link text-white px-0">
           |
         </li>
-        <li class="nav-item nav-link text-decoration-none text-white pointer pl-0" (click)="openFormModal('register')">
+        <li class="nav-item nav-link text-decoration-none text-white pointer" (click)="openFormModal('register')">
           Crear cuenta
         </li>
       </ng-template>
