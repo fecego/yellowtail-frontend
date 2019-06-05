@@ -50,6 +50,7 @@ import { ModalAddressComponent } from './components/modal-address/modal-address.
 import { ModalTaxComponent } from './components/modal-tax/modal-tax.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { InfoFooterComponent } from './components/info-footer/info-footer.component';
+import { InstagramComponent } from './pages/home/instagram/instagram.component';
 
 @NgModule({
   declarations: [
@@ -94,7 +95,8 @@ import { InfoFooterComponent } from './components/info-footer/info-footer.compon
     ModalAddressComponent,
     ModalTaxComponent,
     LoadingComponent,
-    InfoFooterComponent
+    InfoFooterComponent,
+    InstagramComponent
   ],
   imports: [
     BrowserModule,
