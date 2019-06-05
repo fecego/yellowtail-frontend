@@ -12,10 +12,11 @@ export class CarrouselComponent implements OnInit {
   constructor(public el: ElementRef,
               private searchbarService: SearchbarService) {
     this.items = [];
-    searchbarService.setSearchBarVisibility(true);
+    searchbarService.setSearchBarVisibility(false);
   }
 
   ngOnInit() {
+    this.searchbarService.setSearchBarVisibility(false);
     this.items = this.getItems();
   }
 
