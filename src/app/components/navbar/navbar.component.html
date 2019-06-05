@@ -10,9 +10,12 @@
 
       <li *ngIf="isLoggedInObservable | async; else notLogged">
         <a class=" nav-link text-decoration-none text-white" href="/perfil">
+          <i class="fas fa-user pr-2 pl-2"></i>
           <span>Hola {{username}}</span>
-          <i class="fas fa-user"></i>
         </a>
+      </li>
+      <li class="nav-item nav-link text-white px-0">
+        |
       </li>
       <li class="nav-item nav-link text-white pointer" (click)="logout()" *ngIf="isLoggedInObservable | async">
         Salir
@@ -28,7 +31,7 @@
           Crear cuenta
         </li>
       </ng-template>
-      <li class="car-container">
+      <li class="car-container mr-2">
         <a class=" nav-link text-decoration-none text-white" href="/carrito">
           <i class="d-block d-sm-none fas fa-shopping-cart"></i>
           <p class="d-none d-sm-block">
