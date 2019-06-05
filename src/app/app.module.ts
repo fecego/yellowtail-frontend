@@ -51,6 +51,7 @@ import { ModalTaxComponent } from './components/modal-tax/modal-tax.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { InfoFooterComponent } from './components/info-footer/info-footer.component';
 import { InstagramComponent } from './pages/home/instagram/instagram.component';
+import { ChartComponent } from './pages/trophies/chart/chart.component';
 
 @NgModule({
   declarations: [
@@ -96,7 +97,8 @@ import { InstagramComponent } from './pages/home/instagram/instagram.component';
     ModalTaxComponent,
     LoadingComponent,
     InfoFooterComponent,
-    InstagramComponent
+    InstagramComponent,
+    ChartComponent
   ],
   imports: [
     BrowserModule,
