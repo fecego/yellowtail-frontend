@@ -4,13 +4,19 @@
 .bg-nav-buscar{
     background-color: #f8f9fa;
 }
-.dropdown-content {
-    margin-left: -243%;
-}
 .car-container {
     border: 1px solid #ffffff;
     margin: 0.2rem;
 }
 .item-logo {
     padding-left: 1%;
+}
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+.dropdown>.dropdown-toggle:active {
+    pointer-events: none;
+}
+.menu-other {
+    left: -8rem;
 }
