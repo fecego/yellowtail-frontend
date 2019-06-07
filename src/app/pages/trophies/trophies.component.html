@@ -1,10 +1,14 @@
-<div class="grid">
+<div class="container">
+  <div class="row pt-5 mt-5 mb-5 mt-md-0">
+    <h2>Sala de trofeos</h2>
+  </div>
+</div>
 
+<div class="grid">
   <div [ngClass]="trophy.classesString" *ngFor="let trophy of trophies" (mouseover)="showChart(trophy._id)">
     <img src="{{trophy.mainImage}}" />
     <div class="content">
-      <app-chart [trophy]="trophy"  *ngIf="trophy._id == showingChart"></app-chart>
+      <app-chart class="content-items-thopies" [trophy]="trophy"  *ngIf="trophy._id == showingChart"></app-chart>
     </div>
   </div>
-  
 </div>

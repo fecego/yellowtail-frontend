@@ -50,3 +50,22 @@ li.search-input-navbar input.form-control:focus,
 div.search-input-carousel input.form-control:focus {
     box-shadow: 0 0 0 0.1rem rgba(174, 177, 179, 0.432)!important
 }
+
+.grid-item--height2 .content .content-items-thopies .content-chart {
+    padding: 0 3%;
+}
+.grid-item--height2 .content .content-items-thopies .description-chart {
+    margin-top: 0%;
+}
+.grid-item--height2 .content .content-items-thopies .content-chart .input-mini {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 767px) {
+    .grid-item--height2 .content .content-items-thopies .content-chart .justify-content-center .img-item-chart,
+    .grid-item--width4 .content .content-items-thopies .content-chart .justify-content-center .img-item-chart {
+        display: none;
+    }
+}
