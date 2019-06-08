@@ -1,3 +1,69 @@
-<p>
-  profile works!
-</p>
+<div class="container mb-3">
+  <div class="row mt-5 mt-md-0 pt-5">
+    <div class="col-12">
+      <h2>Perfil</h2>
+    </div>
+  </div>
+
+  <nav class="mt-3">
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+      <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="true">Perfil</a>
+      <a class="nav-item nav-link" id="nav-favorites-tab" data-toggle="tab" href="#nav-favorites" role="tab" aria-controls="nav-favorites" aria-selected="false">Favoritos</a>
+    </div>
+  </nav>
+  <div class="tab-content" id="nav-tabContent">
+    <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+      <div class="row">
+        <div class="col-md-7">
+          <app-personal-data></app-personal-data>
+          <app-address></app-address>
+          <app-history></app-history>
+        </div>
+        <div class="col-md-5">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Opciones de envío</h5>
+              <div class="row">
+                <div class="col-3 col-md-4 d-flex align-items-center justify-content-center ">
+                  <button type="button" class="btn btn-outline-warning btn-shipping">
+                    <span>Estafeta</span>
+                  </button>
+                </div>
+                <div class="col-9 col-md-8 content-shop border-left border-warning">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="shopCheck">
+                    <label class="custom-control-label" for="shopCheck">
+                      <h3 class="check-title">Deseo recogerlo en la tienda</h3>
+                    </label>
+                  </div>
+                
+                  <p class="mt-2">
+                    Díaz Mirón #5 Col. Centro C.P. 93620 <br>
+                    San Rafael, Veracruz
+                  </p>
+
+                  <p>Lunes a Viernes: <br>
+                    8:00 am a 2:00 pm y <br>
+                    4:00 pm a 8:00
+                  </p>
+
+                  <div class="row text-right">
+                    <div class="col">
+                      <button class="btn btn-outline-warning">
+                        <i class="fa fa-pen"></i> Editar
+                      </button>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div>
+    <div class="tab-pane fade" id="nav-favorites" role="tabpanel" aria-labelledby="nav-favorites-tab">
+      <app-favorites></app-favorites>
+    </div>
+  </div>
+</div>

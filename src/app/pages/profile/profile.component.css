@@ -1,0 +1,14 @@
+.check-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.content-shop {
+  padding: 2%;
+}
+.btn-shipping {
+  padding: 20%;
+}
+.btn-shipping span {
+  font-size: 1.3rem;
+  font-weight: bold;
+}

@@ -1,0 +1,30 @@
+.img-content-favorites {
+  height: 28vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img-content-favorites img {
+  height: auto;
+  width: auto;
+  max-height: 100%;
+  max-width: 100%;
+}
+.card-favorites a {
+  color: #323335;
+}
+.btn-heart {
+  border: 0px!important;
+}
+.btn-heart:hover {
+  background-color: #ffffff;
+  color: #ffc107!important;
+}
+.content-title-favorites {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.text-sku {
+  margin-bottom: 0;
+}

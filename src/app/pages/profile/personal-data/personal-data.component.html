@@ -1,3 +1,59 @@
-<p>
-  personal-data works!
-</p>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Datos personales</h5>
+    <form>
+      <div class="form-row">
+        <div class="col-12 col-md-4 text-md-right align-self-center">
+          <label>Correo electrónico</label>
+        </div>
+        <div class="col-12 col-md-4">
+          <input type="email" name="email" value="email@email.com" class="form-control" placeholder="email@email.com">
+        </div>
+        <div class="col-12 col-md-4 order-md-first align-self-center mt-2 mt-md-0">
+          <label>Nombre del usuario</label>
+        </div>
+      </div>
+
+      <div class="form-row mt-md-2">
+        <div class="col-6">
+          <input type="text" class="form-control" name="name" value="{{name}}" placeholder="Nombre">
+        </div>
+        <div class="col-6">
+          <input type="text" class="form-control" name="lastName" value="{{lastName}}" placeholder="Apellido paterno">
+        </div>
+      </div>
+
+      <div class="form-row mt-2">
+        <div class="col-12 col-md-4">
+          <label>Fecha de nacimiento</label>
+          <input type="text" name="birthday" value="{{birthday}}" placeholder="" class="form-control">
+        </div>
+        <div class="col-12 col-md-4 mt-2 mt-md-0">
+          <label>Sexo</label>
+          <div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="gender" name="gender" class="custom-control-input">
+              <label class="custom-control-label" for="gender">Mujer</label>
+            </div>
+            <div class="custom-control custom-radio custom-control-inline">
+              <input type="radio" id="gender2" name="gender" class="custom-control-input">
+              <label class="custom-control-label" for="gender2">Hombre</label>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mt-2 mt-md-0">
+          <label>Teléfono</label>
+          <input type="text" name="phone" value="{{phone}}" class="form-control">
+        </div>
+      </div>
+
+      <div class="form-row mt-2 text-right">
+        <div class="col">
+          <button class="btn btn-outline-warning">
+            <i class="fa fa-pen"></i> Editar
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
