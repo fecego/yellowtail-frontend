@@ -33,7 +33,23 @@
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+.section-instagram::before {
+  content: "";
+  height: 8rem;
+  margin-top: -8rem;
+  display: block;
+  visibility: hidden;
+}
 
+@media (max-width: 767px) {
+  .section-instagram::before {
+    content: "";
+    height: 12rem;
+    margin-top: -12rem;
+    display: block;
+    visibility: hidden;
+  }
+}
 @media (max-width: 767px) and (min-width: 577px) {
   .content-instagram {
     padding: 28% 36%;

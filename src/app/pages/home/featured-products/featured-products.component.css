@@ -1,3 +1,10 @@
 .bg-principales{
   background-color: #2D2D2D;
 }
+#featuredProductsSection::before {
+  content: "";
+  height: 7rem;
+  margin-top: -7rem;
+  display: block;
+  visibility: hidden;
+}
