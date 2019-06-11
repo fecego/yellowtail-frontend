@@ -20,6 +20,7 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { ResetPasswordComponent } from './pages/reset-password/reset-password.component';
 import { CheckoutProductComponent } from './pages/checkout/checkout-product/checkout-product.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
   {
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'categoria/:category',
     component: CategoriesComponent
+  },
+  {
+    path: 'contacto',
+    component: ContactComponent
   },
   {
     path: 'pagar',

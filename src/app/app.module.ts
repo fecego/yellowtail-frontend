@@ -52,6 +52,7 @@ import { LoadingComponent } from './components/loading/loading.component';
 import { InfoFooterComponent } from './components/info-footer/info-footer.component';
 import { InstagramComponent } from './pages/home/instagram/instagram.component';
 import { ChartComponent } from './pages/trophies/chart/chart.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -98,7 +99,8 @@ import { ChartComponent } from './pages/trophies/chart/chart.component';
     LoadingComponent,
     InfoFooterComponent,
     InstagramComponent,
-    ChartComponent
+    ChartComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
