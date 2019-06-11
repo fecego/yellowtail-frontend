@@ -6,8 +6,12 @@
 .subscribe-input {
   background: #21252900;
 }
-.contact-icon {
+.contact-icon,
+.item-sucursales {
   color: #878181!important;
+}
+.item-sucursales:hover {
+  color: #646060!important;
 }
 
 @media (min-width: 992px) {
