@@ -1,10 +1,8 @@
 .box-producto{
-    /*width: 100%;*/
-    border: 1px solid rgba(124, 125, 123, 0.39);
     padding: 4px 4px 8px 4px;
-    border-radius: 5px;
     margin-bottom: 1rem;
     background-color: #ffffffe6;
+    border-right: 1px solid rgba(124, 125, 123, 0.39);
 }
 .box-producto .text-muted {
     margin-bottom: 0!important;
@@ -41,4 +39,10 @@
     .content-img {
         height: 10vh;
     }
+}
+@media (max-width: 575px) {
+   .box-producto {
+        border-right: 0px;
+        border-bottom: 1px solid rgba(124, 125, 123, 0.39);
+   }
 }

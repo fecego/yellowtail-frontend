@@ -26,6 +26,15 @@ h1, h2, h3, h4, h5, h6 {
 /* .modal-dialog {
     max-width: 80% !important;
 } */
+div.row div.col-xl-3:last-child div.box-producto,
+div.row div.col-xl-3:nth-child(4n) div.box-producto {
+    border: 0px;
+}
+@media (max-width: 991px) and (min-width: 576px) {
+    div.row div.col-xl-3:nth-child(2n) div.box-producto {
+        border: 0px;
+    }
+}
 
 /* INPUT DE BUSQUEDAD CARRUSEL */
 div.search-input-carousel input.form-control,
