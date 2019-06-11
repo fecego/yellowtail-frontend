@@ -1,3 +1,64 @@
-<p>
-  contact works!
-</p>
+<div class="container">
+  <div class="row mt-5 mt-md-0 pt-5">
+    <div class="col-12">
+      <h2>Contacto</h2>
+    </div>
+  </div>
+
+  <div class="row mt-3 mb-3">
+    <div class="col-md-7">
+      <div class="card">
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="nameContact">Nombre</label>
+              <input type="text" class="form-control" id="nameContact" placeholder="Nombre">
+            </div>
+            <div class="form-group">
+              <label for="emailContact">Email address</label>
+              <input type="email" class="form-control" id="emailContact" placeholder="user@example.com">
+            </div>
+            <div class="form-group">
+              <label for="messageContact">Mensaje</label>
+              <textarea class="form-control" id="messageContact" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <div class="card text-white bg-dark">
+        <div class="card-body">
+          <h4 class="card-title">Tiendas físicas</h4>
+          <ul class="list-unstyled">
+            <li class="media">
+              <i class="fa fa-map-marked-alt mr-3 fa-2x"></i>
+              <div class="media-body">
+                <h4 class="mt-0 mb-1">Sucursal Veracruz</h4>
+                <em>FECEGO Marina</em> <br>
+                Díaz Mirón 5 C.P. 93620 San Rafael, Veracruz. <br>
+                <i class="fa fa-phone"></i> 01 232 324 9060 Ext. 123
+              </div>
+            </li>
+            <li>
+              <div #gmap class="map-store mt-1"></div>
+            </li>
+            <li class="media my-4">
+              <i class="fa fa-map-marked-alt mr-3 fa-2x"></i>
+              <div class="media-body">
+                <h4 class="mt-0 mb-1">Sucursal Mérida</h4>
+                <em>Yellowtail</em> <br>
+                Andrés García Lavín 307 C.P. 97117 San Ramón Norte <br>
+                Mérida, Yucatán.
+              </div>
+            </li>
+            <li>
+              <div #mmap class="map-store mt-1"></div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -13,6 +13,9 @@
 .item-sucursales:hover {
   color: #646060!important;
 }
+.line-contact {
+  border-color: #878181;
+}
 
 @media (min-width: 992px) {
   .content-text-footer {
