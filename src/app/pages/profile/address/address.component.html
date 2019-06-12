@@ -1,51 +1,51 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">Dirección</h5>
-    <form>
+    <!-- <form>
       <div class="form-row">
         <div class="col-12 col-md-8">
-          <label>Calle</label>
+          <label><strong>Calle</strong></label>
           <input type="text" name="street" value="{{address.street}}" class="form-control" placeholder="Calle">
         </div>
         <div class="col-6 col-md-2 mt-2 mt-md-0">
-          <label>Número</label>
+          <label><strong>Número</strong></label>
           <input type="text" name="number" value="{{address.number}}" class="form-control" placeholder="Número">
         </div>
         <div class="col-6 col-md-2 mt-2 mt-md-0">
-          <label>CP</label>
+          <label><strong>CP</strong></label>
           <input type="text" name="cp" value="{{address.cp}}" class="form-control" placeholder="Código postal">
         </div>
       </div>
 
       <div class="form-row mt-2">
         <div class="col-12 col-md-4">
-          <label>Colonia</label>
+          <label><strong>Colonia</strong></label>
           <input type="text" name="neighborhood" value="{{address.neighborhood}}" class="form-control" placeholder="Colonia">
         </div>
         <div class="col-12 col-md-4 mt-2 mt-md-0">
-          <label>Estado</label>
+          <label><strong>Estado</strong></label>
           <input type="text" name="state" value="{{address.state}}" class="form-control" placeholder="Estado">
         </div>
         <div class="col-12 col-md-4 mt-2 mt-md-0">
-          <label>País</label>
+          <label><strong>País</strong></label>
           <input type="text" name="country" value="{{address.country}}" class="form-control" placeholder="País">
         </div>
       </div>
 
       <div class="form-row mt-2">
         <div class="col">
-          <label>Referencia</label>
+          <label><strong>Referencia</strong></label>
           <input type="text" name="reference" value="{{address.reference}}" class="form-control" placeholder="Entre calles">
         </div>
       </div>
 
       <div class="form-row mt-2">
         <div class="col">
-          <label>Nombre de contacto</label>
+          <label><strong>Nombre de contacto</strong></label>
           <input type="text" name="contact" value="{{address.contact}}" class="form-control" placeholder="Nombre">
         </div>
         <div class="col">
-          <label>Teléfono</label>
+          <label><strong>Teléfono</strong></label>
           <input type="text" name="phone" value="{{address.phone}}" class="form-control" placeholder="Teléfono">
         </div>
       </div>
@@ -67,10 +67,75 @@
         </div>
         <div class="col text-right">
           <button class="btn btn-outline-warning">
-            <i class="fa fa-pen"></i> Editar
+            <i class="fa fa-save"></i> Guardar
           </button>
         </div>
       </div>
-    </form>
+    </form> -->
+    <div class="row">
+      <div class="col-12 col-md-8">
+        <label><strong>Calle</strong></label>
+        <p>{{address.street}} #{{address.number}}</p>
+      </div>
+      <div class="col-6 col-md-2 mt-2 mt-md-0">
+        <label><strong>CP</strong></label>
+        <p>{{address.cp}}</p>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-12 col-md-4">
+        <label><strong>Colonia</strong></label>
+        <p>{{address.neighborhood}}</p>
+      </div>
+      <div class="col-12 col-md-4 mt-2 mt-md-0">
+        <label><strong>Estado</strong></label>
+        <p>{{address.state}}</p>
+      </div>
+      <div class="col-12 col-md-4 mt-2 mt-md-0">
+        <label><strong>País</strong></label>
+        <p>{{address.country}}</p>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col">
+        <label><strong>Referencia</strong></label>
+        <p>{{address.reference}}</p>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-12 col-md-6">
+        <label><strong>Nombre de contacto</strong></label>
+        <p>{{address.contact}}</p>
+      </div>
+      <div class="col-12 col-md-6">
+        <label><strong>Teléfono</strong></label>
+        <p>{{address.phone}}</p>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="defaultCheck">
+          <label class="custom-control-label" for="defaultCheck">Dirección por default</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col">
+        <button class="btn btn-outline-warning">
+          <i class="fa fa-home"></i> Agregar nueva dirección
+        </button>
+      </div>
+      <div class="col text-right">
+        <button class="btn btn-outline-warning">
+          <i class="fa fa-pen"></i> Editar
+        </button>
+      </div>
+    </div>
   </div>
 </div>

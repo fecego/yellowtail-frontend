@@ -1,30 +1,31 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">Facturación</h5>
-    <form>
+
       <div class="form-row">
         <div class="col">
           <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="requiredCheck">
-            <label class="custom-control-label" for="requiredCheck">¿Requiere factura?</label>
+            <label data-toggle="collapse" data-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm" class="custom-control-label" for="requiredCheck">¿Requiere factura?</label>
           </div>
         </div>
       </div>
 
+    <!-- <form id="collapseForm" aria-expanded="false" class="collapse">
       <div class="form-row mt-2">
         <div class="col-6 col-md-8">
-          <label>Nombre legal</label>
+          <label><strong>Nombre legal</strong></label>
           <input type="text" name="legalName" value="{{taxInformation.legalName}}" class="form-control" placeholder="Nombre">
         </div>
         <div class="col-6 col-md-2">
-          <label>RFC</label>
+          <label><strong>RFC</strong></label>
           <input type="text" name="rfc" value="{{taxInformation.rfc}}" class="form-control" placeholder="RFC">
         </div>
       </div>
 
       <div class="form-row mt-2">
         <div class="col">
-          <label>Dirección</label>
+          <label><strong>Dirección</strong></label>
           <input type="text" name="addressId" value="{{taxInformation.addressId}}" class="form-control" placeholder="Dirección">
         </div>
       </div>
@@ -32,10 +33,38 @@
       <div class="form-row mt-2 text-right">
         <div class="col">
           <button class="btn btn-outline-warning">
+            <i class="fa fa-save"></i> Guardar
+          </button>
+        </div>
+      </div>
+    </form> -->
+
+    <div id="collapseForm" aria-expanded="false" class="collapse">
+      <div class="row mt-2">
+        <div class="col-6 col-md-8">
+          <label><strong>Nombre legal</strong></label>
+          <p>{{taxInformation.legalName}}</p>
+        </div>
+        <div class="col-6 col-md-2">
+          <label><strong>RFC</strong></label>
+          <p>{{taxInformation.rfc}}</p>
+        </div>
+      </div>
+  
+      <div class="row mt-2">
+        <div class="col">
+          <label><strong>Dirección</strong></label>
+          <p>{{taxInformation.addressId}}</p>
+        </div>
+      </div>
+  
+      <div class="row mt-2 text-right">
+        <div class="col">
+          <button class="btn btn-outline-warning">
             <i class="fa fa-pen"></i> Editar
           </button>
         </div>
       </div>
-    </form>
+    </div>
   </div>
 </div>

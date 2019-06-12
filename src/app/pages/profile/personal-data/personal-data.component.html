@@ -1,16 +1,16 @@
 <div class="card">
   <div class="card-body">
     <h5 class="card-title">Datos personales</h5>
-    <form>
+    <!-- <form>
       <div class="form-row">
         <div class="col-12 col-md-4 text-md-right align-self-center">
-          <label>Correo electrónico</label>
+          <label><strong>Correo electrónico</strong></label>
         </div>
         <div class="col-12 col-md-4">
-          <input type="email" name="email" value="email@email.com" class="form-control" placeholder="email@email.com">
+          <input type="email" name="email" value="{{email}}" class="form-control" placeholder="email@email.com">
         </div>
         <div class="col-12 col-md-4 order-md-first align-self-center mt-2 mt-md-0">
-          <label>Nombre del usuario</label>
+          <label><strong>Nombre del usuario</strong></label>
         </div>
       </div>
 
@@ -25,11 +25,11 @@
 
       <div class="form-row mt-2">
         <div class="col-12 col-md-4">
-          <label>Fecha de nacimiento</label>
+          <label><strong>Fecha de nacimiento</strong></label>
           <input type="text" name="birthday" value="{{birthday}}" placeholder="" class="form-control">
         </div>
         <div class="col-12 col-md-4 mt-2 mt-md-0">
-          <label>Sexo</label>
+          <label><strong>Sexo</strong></label>
           <div>
             <div class="custom-control custom-radio custom-control-inline">
               <input type="radio" id="gender" name="gender" class="custom-control-input">
@@ -42,7 +42,7 @@
           </div>
         </div>
         <div class="col-12 col-md-4 mt-2 mt-md-0">
-          <label>Teléfono</label>
+          <label><strong>Teléfono</strong></label>
           <input type="text" name="phone" value="{{phone}}" class="form-control">
         </div>
       </div>
@@ -50,10 +50,44 @@
       <div class="form-row mt-2 text-right">
         <div class="col">
           <button class="btn btn-outline-warning">
-            <i class="fa fa-pen"></i> Editar
+            <i class="fa fa-save"></i> Guardar
           </button>
         </div>
       </div>
-    </form>
+    </form> -->
+    <div class="row">
+      <div class="col-12 col-md-4">
+        <label><strong>Nombre del usuario</strong></label>
+        <p>{{name}} {{lastName}}</p>
+      </div>
+      <div class="col-12 col-md-6 mt-2 mt-md-0">
+        <label><strong>Correo electrónico</strong></label>
+        <p>{{email}}</p>
+      </div>
+      
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-12 col-md-4">
+        <label><strong>Fecha de nacimiento</strong></label>
+        <p>{{birthday}}</p>
+      </div>
+      <div class="col-12 col-md-4 mt-2 mt-md-0">
+        <label><strong>Sexo</strong></label>
+        <p>{{gender}}</p>
+      </div>
+      <div class="col-12 col-md-4 mt-2 mt-md-0">
+        <label><strong>Teléfono</strong></label>
+        <p>{{phone}}</p>
+      </div>
+    </div>
+
+    <div class="form-row mt-2 text-right">
+      <div class="col">
+        <button class="btn btn-outline-warning">
+          <i class="fa fa-pen"></i> Editar
+        </button>
+      </div>
+    </div>
   </div>
 </div>
