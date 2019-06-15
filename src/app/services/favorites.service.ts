@@ -31,7 +31,7 @@ export class FavoritesService {
   }
 
   unmarkFavorite(productId: string) {
-    this.favorites = this.favorites.filter(favorite => favorite == productId);
+    this.favorites = this.favorites.filter(favorite => favorite != productId);
     this.favoritesObservable.next(this.favorites);
   }
 

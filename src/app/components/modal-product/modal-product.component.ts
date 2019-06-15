@@ -1,11 +1,16 @@
 import { Component, OnInit } from '@angular/core';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Router } from '@angular/router';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { NotificationsService } from '../../services/notifications.service';
 import { ProductsService } from '../../services/products.service'
+import { AuthService } from './../../services/auth.service';
+import { FavoritesService } from '../../services/favorites.service'
 import { CartService } from '../../services/cart.service';
 import { formatPrice } from '../../utils/formatUtils';
 import { Observable } from 'rxjs';
+
+import { ModalUserComponent } from '../../components/modal-user/modal-user.component';
 
 @Component({
   selector: 'app-modal-product',
@@ -18,14 +23,19 @@ export class ModalProductComponent implements OnInit {
 
   product: any;
   quantity: number;
+  showShare: boolean;
 
   constructor(public activeModal: NgbActiveModal,
+              private modalService: NgbModal,
               private productsService: ProductsService,
               private notificationsService: NotificationsService,
+              private authService: AuthService,
+              private favoritesService: FavoritesService,
               private cartService: CartService,
               private router: Router) {
     this.selectedProductObservable = this.productsService.getSelectedProductObservable();
     this.quantity = 1;
+    this.showShare = false;
   }
 
   ngOnInit() {
@@ -88,6 +98,24 @@ export class ModalProductComponent implements OnInit {
 
   getShareUrl() {
     return `http://165.227.48.162/producto/${this.product.url}`;
+  }
+
+  toggleShare() {
+    this.showShare = !this.showShare;
+  }
+
+  toggleFavorite() {
+    if (!this.authService.getLoggedIn()) {
+      const modal = this.modalService.open(ModalUserComponent, { centered: true });
+      modal.componentInstance.showTab('login');
+    }
+
+    const productId = this.product._id;
+    if (this.product.isFavorite) {
+      this.favoritesService.unmarkFavorite(productId);
+    } else {
+      this.favoritesService.markAsFavorite(productId);
+    }
   }
 
 }
