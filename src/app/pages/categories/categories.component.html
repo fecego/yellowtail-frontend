@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="col-12 col-md-3" *ngFor="let filter of filtersGroups">
-          <select class="form-control mt-2 mt-md-0" (change)="changeFilter($event, filter.level)">
+          <select class="custom-select form-control mt-2 mt-md-0" (change)="changeFilter($event, filter.level)">
             <option value="">Seleccione</option>
             <option *ngFor="let option of filter.options" value="{{option.key}}">{{option.value}}</option>
           </select>
