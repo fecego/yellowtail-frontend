@@ -83,6 +83,7 @@ export class ModalProductComponent implements OnInit {
 
   addProductToCart() {
     if (this.product.withVariants) {
+      this.modalService.dismissAll();
       return this.goToDetail();
     }
 
