@@ -286,9 +286,11 @@ export class CategoriesComponent implements OnInit {
 
   name: string;
   image: string;
-  filtersGroups: Array<any>;
-  products: Array<any>;
   sortBy: string;
+  filtersGroups: Array<any>;
+  selectedFilters: any;
+  allProducts: Array<any>;
+  products: Array<any>;
 
   constructor(private route: ActivatedRoute,
               private productsService: ProductsService) {
@@ -297,6 +299,10 @@ export class CategoriesComponent implements OnInit {
     this.name = '';
     this.image = '';
     this.filtersGroups = [];
+    this.selectedFilters = {
+      0: '',
+      1: ''
+    };
   }
 
   ngOnInit() {
@@ -313,23 +319,40 @@ export class CategoriesComponent implements OnInit {
     console.log(this.filtersGroups);
 
     this.productsObservable.subscribe(
-      products => this.products = products,
+      products => {
+        this.allProducts = products;
+        this.updateProducts();
+      },
       error => console.log(error)
     );
 
     this.productsService.getProductsByCategory(categoryInfo.key);
   }
 
-  getProducts() {
-    if (!this.sortBy) {
-      return this.products;
+  updateProducts() {
+    let filteredProducts = this.allProducts;
+    if (this.selectedFilters[0]) {
+      filteredProducts = filteredProducts.filter(product => {
+        return product.filter1 == this.selectedFilters[0];
+      });
     }
-    return this.products.sort(this.getSortFunction());
+
+    if (this.selectedFilters[1]) {
+      filteredProducts = filteredProducts.filter(product => {
+        return product.filter2 == this.selectedFilters[1];
+      });
+    }
+
+    this.products = filteredProducts;
+    if (this.sortBy) {
+      this.products.sort(this.getSortFunction());
+    }
   }
 
   sortProducts(event) {
     const newSort = event.target.value;
     this.sortBy = newSort;
+    this.updateProducts();
   }
 
   getSortFunction() {
@@ -346,19 +369,18 @@ export class CategoriesComponent implements OnInit {
 
   changeFilter(event, level) {
     const newOption = event.target.value;
-    console.log('New option => ', newOption);
-    console.log('Level => ', level );
 
     if (level == 0) {
 
       if (this.filtersGroups.length > 1) {
         //Si ya tenia un subfiltro quitarlo
+        this.selectedFilters[1] = '';
         this.filtersGroups.pop();
       }
 
       const allOptions = this.filtersGroups[level].options;
       const selectedOption = allOptions.find( option => option.key == newOption );
-      if (selectedOption.subfilter && selectedOption.subfilter.length > 0) {
+      if (selectedOption && selectedOption.subfilter && selectedOption.subfilter.length > 0) {
         const newFilter = selectedOption.subfilter.reduce((accum, filter) => {
           accum.options.push(filter);
           return accum;
@@ -368,6 +390,8 @@ export class CategoriesComponent implements OnInit {
       
     }
 
+    this.selectedFilters[level] = newOption;
+    this.updateProducts();
   }
 
 }

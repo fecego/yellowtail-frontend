@@ -14,7 +14,7 @@
         "https://images-na.ssl-images-amazon.com/images/I/41788ZRXCZL._SX569_.jpg"
       ],
       "category": "accesorios",
-      "subcategory": "subcategoria1",
+      "filter1": "subcategoria1",
       "newProduct": true,
       "featured": false,
       "related": [
@@ -38,7 +38,7 @@
         "https://images-na.ssl-images-amazon.com/images/I/513o30iqaNL._SX569_.jpg"
       ],
       "category": "accesorios",
-      "subcategory": "subcategoria2",
+      "filter1": "subcategoria2",
       "newProduct": false,
       "featured": false,
       "related": [
@@ -61,7 +61,7 @@
         "https://images-na.ssl-images-amazon.com/images/I/41I7JT0j3wL._SX569_.jpg"
       ],
       "category": "canas",
-      "subcategory": "subcategoria1",
+      "filter1": "subcategoria1",
       "newProduct": false,
       "featured": false,
       "related": [
@@ -81,7 +81,7 @@
         "https://images-na.ssl-images-amazon.com/images/I/41SnmQBnuAL._SX569_.jpg"
       ],
       "category": "string",
-      "subcategory": "subcategoria2",
+      "filter1": "subcategoria2",
       "newProduct": false,
       "featured": false,
       "related": [
@@ -103,7 +103,8 @@
         "https://images-na.ssl-images-amazon.com/images/I/3134DPB8anL._SX569_.jpg"
       ],
       "category": "carretes",
-      "subcategory": "subcategoria1",
+      "filter1": "carretes_A",
+      "filter2": "carretes_A_1",
       "newProduct": true,
       "featured": false,
       "related": [
@@ -123,7 +124,8 @@
         "https://images-na.ssl-images-amazon.com/images/I/41zyzms7%2BlL._SX569_.jpg"
       ],
       "category": "carretes",
-      "subcategory": "subcategoria2",
+      "filter1": "carretes_B",
+      "filter2": "",
       "newProduct": false,
       "featured": false,
       "related": [
@@ -143,7 +145,7 @@
         "https://images-na.ssl-images-amazon.com/images/I/21ZpGIM-GwL._SX569_.jpg"
       ],
       "category": "combos",
-      "subcategory": "subcategoria1",
+      "filter1": "subcategoria1",
       "newProduct": true,
       "featured": false,
       "related": [
@@ -163,7 +165,7 @@
         "https://images-na.ssl-images-amazon.com/images/I/31mrUA6WNrL._SX569_.jpg"
       ],
       "category": "combos",
-      "subcategory": "subcategoria2",
+      "filter1": "subcategoria2",
       "newProduct": false,
       "featured": false,
       "related": [
@@ -186,7 +188,7 @@
         "https://images-na.ssl-images-amazon.com/images/I/414BCOSw3TL._SX569_.jpg"
       ],
       "category": "kayaks",
-      "subcategory": "subcategoria1",
+      "filter1": "subcategoria1",
       "newProduct": false,
       "featured": false,
       "related": [
@@ -209,7 +211,7 @@
         "https://images-na.ssl-images-amazon.com/images/I/515dGxLSxcL._SX569_.jpg"
       ],
       "category": "kayaks",
-      "subcategory": "subcategoria2",
+      "filter1": "subcategoria2",
       "newProduct": true,
       "featured": false,
       "related": [
@@ -229,7 +231,7 @@
         "https://images-na.ssl-images-amazon.com/images/I/41tHWIGIZbL._SX569_.jpg"
       ],
       "category": "lineas",
-      "subcategory": "subcategoria1",
+      "filter1": "subcategoria1",
       "newProduct": false,
       "featured": false,
       "related": [
@@ -250,7 +252,7 @@
         "https://images-na.ssl-images-amazon.com/images/I/41M6kbjyzzL._SX569_.jpg"
       ],
       "category": "lineas",
-      "subcategory": "subcategoria2",
+      "filter1": "subcategoria2",
       "newProduct": false,
       "featured": false,
       "related": [
@@ -273,7 +275,7 @@
         "https://images-na.ssl-images-amazon.com/images/I/41JWVZVXXCL._SX569_.jpg"
       ],
       "category": "senuelos",
-      "subcategory": "subcategoria1",
+      "filter1": "subcategoria1",
       "newProduct": false,
       "featured": false,
       "related": [
@@ -293,7 +295,7 @@
         "https://images-na.ssl-images-amazon.com/images/I/31TAdh4qcPL._SX569_.jpg"
       ],
       "category": "senuelos",
-      "subcategory": "subcategoria2",
+      "filter1": "subcategoria2",
       "newProduct": false,
       "featured": false,
       "related": [
@@ -314,7 +316,7 @@
         "http://www.yellowtailpesca.com/wp-content/uploads/2018/05/29974-YELLOW-TAIL-JIG-YTKTN160-CLN-KATANA-595x738.jpg"
       ],
       "category": "senuelos",
-      "subcategory": "subcategoria1",
+      "filter1": "subcategoria1",
       "newProduct": false,
       "featured": false,
       "related": [
