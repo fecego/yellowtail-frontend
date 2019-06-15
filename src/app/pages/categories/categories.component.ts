@@ -291,6 +291,7 @@ export class CategoriesComponent implements OnInit {
   selectedFilters: any;
   allProducts: Array<any>;
   products: Array<any>;
+  showNoProducts: boolean;
 
   constructor(private route: ActivatedRoute,
               private productsService: ProductsService) {
@@ -303,6 +304,7 @@ export class CategoriesComponent implements OnInit {
       0: '',
       1: ''
     };
+    this.showNoProducts = false;
   }
 
   ngOnInit() {
@@ -347,6 +349,8 @@ export class CategoriesComponent implements OnInit {
     if (this.sortBy) {
       this.products.sort(this.getSortFunction());
     }
+
+    this.showNoProducts = this.products.length == 0;
   }
 
   sortProducts(event) {
