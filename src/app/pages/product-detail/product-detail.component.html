@@ -56,6 +56,18 @@
       </div>
       <hr>
 
+      <div class="row" *ngIf="product.withVariants">
+        <div *ngFor="let option of getOptions()">
+          <select (change)="changeSelect(option.key, $event.target.value)">
+            <option>Selecciona {{option.keyLabel}}</option>
+            <option *ngFor="let filteredOption of getOptionsValuesByKey(option.key)">{{filteredOption.value}}</option>
+          </select>
+        </div>
+        <div *ngIf="getVariant()">
+          Precio {{getVariantPrice(variant.price)}}
+        </div>
+      </div>
+
       <div class="row text-center mt-3">
         <div class="col-4">
           <button class="btn btn-outline-warning" (click)="subtractQuantity()">-</button>
