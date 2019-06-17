@@ -1,0 +1,8 @@
+.content-noProducts {
+  height: 60vh;
+}
+@media (min-width: 2500px) {
+  .content-404 {
+    height: 89vh;
+  }
+}
