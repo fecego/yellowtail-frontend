@@ -1,8 +1,11 @@
 <div class="row row-content-products">
-  <div class="col-3">
+  <div class="col-md-2 content-image-cart align-items-center">
+    <img src="{{getThumbnail(product.images)}}" style="max-width: 100%; max-height: 100px;">
+  </div>
+  <div class="col-3 col-md-2 d-flex align-items-center">
     {{product.name}}
   </div>
-  <div class="col-3 d-flex justify-content-center align-items-center">
+  <div class="col-3 col-md-2 d-flex justify-content-center align-items-center">
     <div class="row text-center">
       <div class="col-12 col-md-4">
         <button class="btn btn-outline-warning" (click)="subtractQuantity()">-</button>
@@ -15,12 +18,12 @@
       </div>
     </div>
   </div>
-  <div class="col-2  d-flex justify-content-center align-items-center">
+  <div class="col-2 d-flex justify-content-center align-items-center">
     <p>
       {{getPrice(product.price)}}
     </p>
   </div>
-  <div class="col-2  d-flex justify-content-center align-items-center">
+  <div class="col-2 d-flex justify-content-center align-items-center">
     <p>
       {{getTotalPrice()}}
     </p>
@@ -30,7 +33,7 @@
       <span class="d-block d-sm-block d-md-none ">
         <i class="fa fa-trash"></i>
       </span>
-      <span class="d-none d-md-block ">Borrar</span>
+      <span class="d-none d-md-block">Borrar</span>
     </button>
   </div>
 </div>

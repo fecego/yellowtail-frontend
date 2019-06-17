@@ -42,4 +42,8 @@ export class CartProductComponent implements OnInit {
     this.cartService.removeProductFromCart(productId);
   }
 
+  getThumbnail(images: Array<string>) {
+    return images[0];
+  }
+
 }

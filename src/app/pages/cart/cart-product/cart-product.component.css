@@ -3,3 +3,14 @@
   vertical-align: top;
   border-top: 1px solid #dee2e6;
 }
+.content-image-cart {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+@media (max-width: 767px) {
+  .content-image-cart {
+    display: none;
+  }
+}
