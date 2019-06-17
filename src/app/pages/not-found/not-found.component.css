@@ -1,0 +1,8 @@
+.content-404 {
+  height: 80vh;
+}
+@media (min-width: 2500px) {
+  .content-404 {
+    height: 89vh;
+  }
+}
