@@ -34,6 +34,9 @@
     background-color: #ffffff;
     color: #ffc107!important;
 }
+.content-modal-product {
+    cursor: pointer;
+}
 /* LARGE DESKTOP */
 @media (min-width: 1400px) {
     .content-img {

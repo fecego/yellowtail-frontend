@@ -33,63 +33,68 @@
           </div>
         </div>
 
-    </div>
-
-    <div class="col-12 col-md-6 col-lg-4 col-xl-4">
-      <h2 class="d-none d-md-block">Producto {{product.name}}</h2>
-      <hr class="d-none d-md-block">
-      <h2 class="d-none d-md-block">{{getPrice(product.price)}}</h2>
-      <p class="text-justify">
-        {{product.description}}
-      </p>
-
-      <hr>
-      <p class="text-center text-uppercase text-muted">Compartir</p>
-      <div class="text-center">
-        <share-buttons
-          [include]="['facebook', 'twitter', 'google', 'messenger', 'whatsapp', 'email', 'print', 'copy']"
-          [show]="8"
-          [size]="2"
-          [url]="'https://twitter.com/'"
-          [autoSetMeta]="true">
-        </share-buttons>
-      </div>
-      <hr>
-
-      <div class="row" *ngIf="product.withVariants">
-        <div *ngFor="let option of getOptions()">
-          <select (change)="changeSelect(option.key, $event.target.value)">
-            <option>Selecciona {{option.keyLabel}}</option>
-            <option *ngFor="let filteredOption of getOptionsValuesByKey(option.key)">{{filteredOption.value}}</option>
-          </select>
-        </div>
-        <div *ngIf="getVariant()">
-          Precio {{getVariantPrice(variant.price)}}
-        </div>
       </div>
 
-      <div class="row text-center mt-3">
-        <div class="col-4">
-          <button class="btn btn-outline-warning" (click)="subtractQuantity()">-</button>
-        </div>
-        <div class="col-4">
-          {{quantity}}
-        </div>
-        <div class="col-4">
-          <button class="btn btn-outline-warning" (click)="addQuantity()">+</button>
-        </div>
-      </div>
-    
-      <button class="btn btn-warning btn-block btn-productToCart mt-3" (click)="addProductToCart()">Agregar al carrito</button>
+      <div class="col-12 col-md-6 col-lg-4 col-xl-4">
+        <h2 class="d-none d-md-block">Producto {{product.name}}</h2>
+        <hr class="d-none d-md-block">
+        <h2 class="d-none d-md-block">{{getPrice(product.price)}}</h2>
+        <p class="text-justify">
+          {{product.description}}
+        </p>
 
+        <hr>
+        <p class="text-center text-uppercase text-muted">Compartir</p>
+        <div class="text-center">
+          <share-buttons
+            [include]="['facebook', 'twitter', 'google', 'messenger', 'whatsapp', 'email', 'print', 'copy']"
+            [show]="8"
+            [size]="2"
+            [url]="'https://twitter.com/'"
+            [autoSetMeta]="true">
+          </share-buttons>
+        </div>
+        <hr>
+
+        <div *ngIf="product.withVariants">
+          <div class="variation-row" *ngFor="let option of getOptions()">
+            <select (change)="changeSelect(option.key, $event.target.value)">
+              <option class="item-option">Selecciona {{option.keyLabel}}</option>
+              <option class="item-option" *ngFor="let filteredOption of getOptionsValuesByKey(option.key)">{{filteredOption.value}}</option>
+            </select>
+          </div>
+          <div *ngIf="getVariant()" class="price-row">
+            <p>Precio</p>
+            <p class="text-price">{{getVariantPrice(variant.price)}} <br> <span class="badge badge-pill badge-primary">Primary</span></p>
+          </div>
+        </div>
+
+        <div class="row text-center mt-3">
+          <div class="col-4">
+            <button class="btn btn-outline-warning" (click)="subtractQuantity()">-</button>
+          </div>
+          <div class="col-4">
+            {{quantity}}
+          </div>
+          <div class="col-4">
+            <button class="btn btn-outline-warning" (click)="addQuantity()">+</button>
+          </div>
+        </div>
+      
+        <button class="btn btn-warning btn-block btn-productToCart mt-3" (click)="addProductToCart()">Agregar al carrito</button>
+
+      </div>
     </div>
 
     <div class="row pt-5">
-      <h4>Productos relacionados</h4>
-      <div class="row pt-3">
-        <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3" *ngFor="let product of related">
-          <app-product [product]="product"></app-product>
-        </div>
+      <div class="col">
+        <h4>Productos relacionados</h4>
+      </div>
+    </div>
+
+    <div class="row pt-3">
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3" *ngFor="let product of related">
+        <app-product [product]="product"></app-product>
       </div>
     </div>
 

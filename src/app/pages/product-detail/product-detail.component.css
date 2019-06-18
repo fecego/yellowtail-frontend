@@ -20,3 +20,44 @@
 .carousel-control-next-icon {
   filter: brightness(0.777) sepia(0.11) hue-rotate(-0deg) saturate(1);
 }
+.variation-row,
+.price-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto auto;
+  border-right: 1px solid #dadada;
+  border-left: 1px solid #dadada;
+  border-top: 1px solid #dadada;
+}
+.price-row {
+  padding: 11px 0 11px 16px;
+}
+.price-row p {
+  margin-bottom: 0%;
+}
+.variation-row:first-child::before  {
+  content: 'Color';
+  padding: 11px 0 11px 16px;
+}
+.variation-row:nth-child(2n)::before  {
+  content: 'Peso';
+  padding: 11px 0 11px 16px;
+}
+.variation-row > select {
+  border: 0 none;
+  outline: none!important;
+}
+.row .variation-row:last-child,
+.price-row {
+  border-bottom: 1px solid #dadada;
+}
+.text-price {
+  font-size: 20px;
+  line-height: 1;
+  color: #dc9814;
+}
+.item-option {
+  border: 1px solid #dadada;
+  text-align-last: right;
+}

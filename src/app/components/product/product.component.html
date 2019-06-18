@@ -1,5 +1,5 @@
 
-  <div class="text-center justify-content-center box-producto">
+  <div class="text-center justify-content-center box-producto content-modal-product">
 
     <div (click)="openProductModal()" class="content-img">
       <img class="img-fluid d-block mx-auto img-productNew" src="{{getImage()}}" alt="">
@@ -15,11 +15,11 @@
         </span>
       </h4>
     </div>
-    <p (click)="openProductModal()" class="text-muted">
+    <p (click)="openProductModal()" class="text-muted content-modal-product">
       <span>{{product.sku}}</span>
       <span *ngIf="!product.sku">&nbsp;</span>
     </p>
-    <h4 (click)="openProductModal()"><span id="costo-producto">{{getPrice(product.price)}}</span></h4>
+    <h4 (click)="openProductModal()" class="content-modal-product"><span id="costo-producto">{{getPrice(product.price)}}</span></h4>
     
     <div class="row row-controls">
       <div class="col-4">
