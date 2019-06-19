@@ -21,6 +21,7 @@ import { ResetPasswordComponent } from './pages/reset-password/reset-password.co
 import { CheckoutProductComponent } from './pages/checkout/checkout-product/checkout-product.component';
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { SummaryComponent } from './pages/summary/summary.component';
 
 const routes: Routes = [
   {
@@ -82,6 +83,10 @@ const routes: Routes = [
   {
     path: 'busqueda',
     component: SearchResultsComponent
+  },
+  {
+    path: 'resumen',
+    component: SummaryComponent
   },
   {
     path: 'tienda',

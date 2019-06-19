@@ -53,6 +53,7 @@ import { InfoFooterComponent } from './components/info-footer/info-footer.compon
 import { InstagramComponent } from './pages/home/instagram/instagram.component';
 import { ChartComponent } from './pages/trophies/chart/chart.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { SummaryComponent } from './pages/summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -100,7 +101,8 @@ import { ContactComponent } from './pages/contact/contact.component';
     InfoFooterComponent,
     InstagramComponent,
     ChartComponent,
-    ContactComponent
+    ContactComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,
