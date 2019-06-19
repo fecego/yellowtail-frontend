@@ -4,6 +4,7 @@
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
+  border-bottom: 1px solid #dad6d694;
 }
 .item-search:hover {
   background-color: #cccccc;
