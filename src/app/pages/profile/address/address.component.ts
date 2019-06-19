@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddressComponent implements OnInit {
 
+  address: any;
+
   constructor() { }
 
   ngOnInit() {

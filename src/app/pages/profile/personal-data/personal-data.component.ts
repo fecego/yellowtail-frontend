@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalDataComponent implements OnInit {
 
+  profile: any;
+
   constructor() { }
 
   ngOnInit() {
