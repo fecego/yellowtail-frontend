@@ -46,25 +46,9 @@ li.search-input-navbar button.btn-outline-secondary {
     background-color: rgba(255, 255, 255, 0.73);
 }
 
-@media (min-width: 1400px) {
-    div.search-input-carousel div.resulsContainer {
-        width: 50%!important;
-    }
-}
-@media (max-width: 1399px) and (min-width: 1200px) {
-    div.search-input-carousel div.resulsContainer {
-        width: 46%!important;
-    }
-}
-@media (max-width: 1199px) and (min-width: 992px) {
-    div.search-input-carousel div.resulsContainer {
-        width: 39%!important;
-    }
-}
-@media (max-width: 991px) {
-    div.search-input-carousel div.resulsContainer {
-        width: 70%!important;
-    }
+div.search-input-carousel div.resulsContainer {
+    width: 40vw;
+    margin: auto;
 }
 
 li.search-input-navbar input.form-control:focus,
