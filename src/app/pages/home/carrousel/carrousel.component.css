@@ -26,16 +26,10 @@
   top: 0;
   left: 0;
   z-index: 10;
+  padding: 20vh 0 0;
 }
 
 .search-input-carousel {
-  margin: 10vh 60vh;
-}
-
-
-
-@media (max-width: 991px) and (min-width: 768px)  {
-  .search-input-carousel {
-    margin: 10vh 20vh;
-  }
+  width: 40vw;
+  margin: auto;
 }
