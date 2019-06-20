@@ -1,0 +1,12 @@
+.row-title-table {
+  border-top: 1px solid #dee2e6;
+  border-bottom: 2px solid #dee2e6;
+  padding: .75rem;
+  text-align: center;
+  font-weight: bold;
+}
+.row-content-table {
+  padding: .75rem;
+  vertical-align: top;
+  border-bottom: 1px solid #dee2e6;
+}
