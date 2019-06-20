@@ -9,7 +9,9 @@ export class HistoryComponent implements OnInit {
 
   taxInformation:any;
 
-  constructor() { }
+  constructor() {
+    this.taxInformation = {};
+  }
 
   ngOnInit() {
   }

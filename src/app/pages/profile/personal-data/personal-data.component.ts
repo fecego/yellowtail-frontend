@@ -7,11 +7,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonalDataComponent implements OnInit {
 
+  showEdit: boolean;
   profile: any;
 
-  constructor() { }
+  constructor() {
+    this.showEdit = false;
+    this.profile = {};
+  }
 
   ngOnInit() {
+  }
+
+  clickEdit() {
+    this.showEdit = true;
+  }
+
+  cancelEdit() {
+    this.showEdit = false;
+  }
+
+  saveEdit() {
+    this.showEdit = false;
   }
 
 }
