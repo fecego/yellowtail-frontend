@@ -27,7 +27,7 @@
       <div class="form-row mt-2">
         <div class="col-12 col-md-4">
           <label><strong>Fecha de nacimiento</strong></label>
-          <input type="text" name="birthday" value="{{birthday}}" placeholder="" class="form-control">
+          <input type="text" name="birthday" value="{{birthday}}" placeholder="Ejemplo: 14 Enero 1990" class="form-control">
         </div>
         <div class="col-12 col-md-4 mt-2 mt-md-0">
           <label><strong>Sexo</strong></label>
@@ -44,7 +44,7 @@
         </div>
         <div class="col-12 col-md-4 mt-2 mt-md-0">
           <label><strong>Teléfono</strong></label>
-          <input type="text" name="phone" value="{{phone}}" class="form-control">
+          <input type="text" name="phone" value="{{phone}}" class="form-control" placeholder="Teléfono">
         </div>
       </div>
 
@@ -61,7 +61,7 @@
     </form>
 
     <div class="row" *ngIf="!showEdit">
-      <div class="col-12 col-md-4">
+      <div class="col-12 col-md-6">
         <label><strong>Nombre</strong></label>
         <p>{{profile.name}} {{profile.lastName}}</p>
       </div>
