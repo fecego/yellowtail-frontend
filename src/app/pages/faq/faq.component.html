@@ -4,17 +4,17 @@
     <h2>Preguntas frecuentes</h2>
   </div>
 
-  <div class="accordion panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="accordion panel-group mb-5" id="accordion" role="tablist" aria-multiselectable="true">
     <div *ngFor="let faq of faqs">
       <div class="card-header card-faq" role="tab" [id]="'heading'+faq.index">
         <h3>
-          <a class="text-decoration-none" role="button" data-toggle="collapse" data-parent="#accordion" [href]="'#collapse'+faq.index" aria-expanded="true" [attr.aria-controls]="'collapse'+faq.index">
-            <small><i class="fa fa-plus-circle"></i></small> {{faq.question}}
+          <a class="text-decoration-none text-warning" role="button" data-toggle="collapse" data-parent="#accordion" [href]="'#collapse'+faq.index" aria-expanded="true" [attr.aria-controls]="'collapse'+faq.index">
+            <small><i class="fa fa-plus-circle"></i> {{faq.question}}</small>
           </a>
         </h3>
       </div>
       <div [id]="'collapse'+faq.index" class="panel-collapse collapse" role="tabpanel" [attr.aria-labelledby]="'heading'+faq.index">
-        <div class="card-body text-justify" [innerHTML]="faq.answer"></div>
+        <h5 class="card-body text-justify" [innerHTML]="faq.answer"></h5>
       </div>
     </div>
   </div>
