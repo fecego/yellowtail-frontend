@@ -16,6 +16,25 @@ body{
 body, p {
     font-family: "Asap-Regular"!important;
 }
+body .container {
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+body .container:not(.container-trophies) {
+    min-height: 80vh;
+}
+@media (max-width: 705px) {
+    body .container {
+        padding-top: 20%;
+        padding-bottom: 5%;
+    }
+}
+@media (min-width: 2500px) {
+    body .container:not(.container-trophies) {
+        height: 89vh;
+    }
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: "Asap-Medium"!important;
 }
