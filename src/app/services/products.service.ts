@@ -19,22 +19,23 @@ export class ProductsService {
   private productsByQueryObservable = new BehaviorSubject<Array<any>>([]);
   private relatedProductsObservable = new BehaviorSubject<Array<any>>([]);
   private productsByIdsObservable = new BehaviorSubject<Array<any>>([]);
+  private favoritesObservable = new BehaviorSubject<Array<any>>([]);
 
   constructor(private favoritesService: FavoritesService) {
     this.allProducts= allproducts.allProducts;
   }
 
   marksFavoritesProducts(products) {
-    const favorites = this.favoritesService.getFavorites();
+    const favorites = this.favoritesService.getFavoritesIds();
     return products.map(product => {
       product.isFavorite = favorites.includes(product._id);
       return product;
-    })
+    });
   }
 
   markFavoriteProduct(product) {
     if (!product) return product;
-    const favorites = this.favoritesService.getFavorites();
+    const favorites = this.favoritesService.getFavoritesIds();
     product.isFavorite = favorites.includes(product._id);
     return product;
   }
@@ -69,6 +70,10 @@ export class ProductsService {
 
   getProducsByIdsObservable() {
     return this.productsByIdsObservable;
+  }
+
+  getFavoritesObservable() {
+    return this.favoritesObservable;
   }
 
   getNewProducts() {
@@ -115,8 +120,16 @@ export class ProductsService {
   }
 
   getProductsByIds(ids) {
-    const products : any = this.allProducts.filter(product => ids.includes(product._id));
+    let products : any = this.allProducts.filter(product => ids.includes(product._id));
+    products = this.marksFavoritesProducts(products);
     return this.productsByIdsObservable.next(products);
+  }
+
+  getFavorites() {
+    const ids = this.favoritesService.getFavoritesIds();
+    let products : any = this.allProducts.filter(product => ids.includes(product._id));
+    products = this.marksFavoritesProducts(products);
+    return this.favoritesObservable.next(products);
   }
 
 }

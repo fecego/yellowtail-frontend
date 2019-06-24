@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 import { LoadingService } from './loading.service';
+import { FavoritesService } from './favorites.service';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -15,11 +17,21 @@ export class AuthService {
   
   constructor(private router: Router,
               private route: ActivatedRoute,
-              private loadingService: LoadingService) {
+              private loadingService: LoadingService,
+              private favoritesService: FavoritesService,
+              private localStorageService: LocalStorageService) {
 
+    this.initUserData();
+  }
+
+  initUserData() {
     const user = this.getLocalUser();
     this.isLoggedIn = !!user;
     this.loggedInObservable.next(this.isLoggedIn);
+
+    if (this.isLoggedIn) {
+      this.favoritesService.initFavorites(['5']);
+    }
   }
 
   async login(credentials: any, nextRoute?: any) {
@@ -37,6 +49,7 @@ export class AuthService {
     if (response.success) {
       const user = response.user;
       this.saveLocalUser(user);
+      this.favoritesService.initFavorites(['5']);
       this.router.navigate([nextRoute]);
     } else {
       //Mensaje de datos erroneos
@@ -95,19 +108,15 @@ export class AuthService {
   }
 
   saveLocalUser(user: object) {
-    const USER_KEY = 'user';
-    localStorage.setItem(USER_KEY, JSON.stringify(user));
+    this.localStorageService.saveValue(LocalStorageService.KEY_USER, user);
   }
 
   getLocalUser() {
-    const USER_KEY = 'user';
-    const userString = localStorage.getItem(USER_KEY);
-    return JSON.parse(userString);
+    return this.localStorageService.getValue(LocalStorageService.KEY_USER);
   }
 
   deleteUser() {
-    const USER_KEY = 'user';
-    localStorage.removeItem(USER_KEY);
+    this.localStorageService.deleteValue(LocalStorageService.KEY_USER);
   }
 
 }

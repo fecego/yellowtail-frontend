@@ -19,9 +19,10 @@ export class FavoritesService {
 
   initFavorites(favorites: Array<string>) {
     this.favorites = favorites;
+    this.favoritesObservable.next(this.favorites);
   }
 
-  getFavorites() {
+  getFavoritesIds() {
     return this.favorites;
   }
 
