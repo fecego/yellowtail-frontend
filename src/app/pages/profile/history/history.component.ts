@@ -7,13 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HistoryComponent implements OnInit {
 
-  taxInformation:any;
+  showEditTax: boolean;
+  taxInformation: any;
 
   constructor() {
+    this.showEditTax = false;
     this.taxInformation = {};
   }
 
   ngOnInit() {
+
+  }
+
+  clickEditShowTax() {
+    this.showEditTax = !this.showEditTax;
   }
 
 }

@@ -2,16 +2,7 @@
   <div class="card-body">
     <h5 class="card-title">Facturación</h5>
 
-      <div class="form-row">
-        <div class="col">
-          <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="requiredCheck">
-            <label data-toggle="collapse" data-target="#collapseForm" aria-expanded="false" aria-controls="collapseForm" class="custom-control-label" for="requiredCheck">¿Requiere factura?</label>
-          </div>
-        </div>
-      </div>
-
-    <!-- <form id="collapseForm" aria-expanded="false" class="collapse">
+    <form id="collapseForm" *ngIf="showEditTax">
       <div class="form-row mt-2">
         <div class="col-6 col-md-8">
           <label><strong>Nombre legal</strong></label>
@@ -37,9 +28,9 @@
           </button>
         </div>
       </div>
-    </form> -->
+    </form>
 
-    <div id="collapseForm" aria-expanded="false" class="collapse">
+    <div id="collapseForm" *ngIf="!showEditTax">
       <div class="row mt-2">
         <div class="col-6 col-md-8">
           <label><strong>Nombre legal</strong></label>
@@ -60,11 +51,12 @@
   
       <div class="row mt-2 text-right">
         <div class="col">
-          <button class="btn btn-outline-warning">
+          <button class="btn btn-outline-warning" (click)="clickEditShowTax()">
             <i class="fa fa-pen"></i> Editar
           </button>
         </div>
       </div>
     </div>
+
   </div>
 </div>
