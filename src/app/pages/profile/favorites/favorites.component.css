@@ -28,3 +28,6 @@
 .text-sku {
   margin-bottom: 0;
 }
+.content-noProducts {
+  height: 60vh;
+}
