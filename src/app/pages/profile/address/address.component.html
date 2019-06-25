@@ -44,11 +44,11 @@
         </div>
   
         <div class="form-row mt-2">
-          <div class="col">
+          <div class="col-12 col-md-8">
             <label><strong>Nombre de contacto</strong></label>
             <input type="text" name="contact" value="{{address.contact}}" class="form-control" placeholder="Nombre">
           </div>
-          <div class="col">
+          <div class="col-12 col-md-4">
             <label><strong>Teléfono</strong></label>
             <input type="text" name="phone" value="{{address.phone}}" class="form-control" placeholder="Teléfono">
           </div>
@@ -63,13 +63,11 @@
           </div>
         </div>
   
-        <div class="form-row mt-2">
+        <div class="form-row mt-2 text-right">
           <div class="col">
             <button class="btn btn-outline-warning" (click)="cancelEdit(address)">
               <i class="fa fa-times"></i> Cancelar
             </button>
-          </div>
-          <div class="col text-right">
             <button class="btn btn-outline-warning" (click)="cancelEdit(address)">
               <i class="fa fa-save"></i> Guardar
             </button>
@@ -83,7 +81,7 @@
           <label><strong>Calle</strong></label>
           <p>{{address.street}} #{{address.number}}</p>
         </div>
-        <div class="col-6 col-md-2 mt-2 mt-md-0">
+        <div class="col-6 col-md-4 mt-2 mt-md-0">
           <label><strong>CP</strong></label>
           <p>{{address.cp}}</p>
         </div>
@@ -112,11 +110,11 @@
       </div>
   
       <div class="row mt-2" *ngIf="!address.edit">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-8">
           <label><strong>Nombre de contacto</strong></label>
           <p>{{address.contact}}</p>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-4">
           <label><strong>Teléfono</strong></label>
           <p>{{address.phone}}</p>
         </div>
@@ -131,16 +129,14 @@
         </div>
       </div>
   
-      <div class="row mt-2" *ngIf="!address.edit">
-        <div class="col text-left">
-          <button class="btn btn-outline-warning" (click)="clickEdit(address)">
-            <i class="fa fa-pen"></i> Editar
-          </button>
-        </div>
-        <div class="col text-right">
+      <div class="row mt-2 text-right" *ngIf="!address.edit">
+        <div class="col">
           <button class="btn btn-outline-danger">
             <i class="fa fa-trash-alt"></i> Eliminar
           </button>
+          <button class="btn btn-outline-warning" (click)="clickEdit(address)">
+            <i class="fa fa-pen"></i> Editar
+          </button>   
         </div>
       </div>
       <hr>
@@ -186,11 +182,11 @@
       </div>
   
       <div class="form-row mt-2">
-        <div class="col">
+        <div class="col-12 col-md-8">
           <label><strong>Nombre de contacto</strong></label>
           <input type="text" name="contact" value="{{address.contact}}" class="form-control" placeholder="Nombre">
         </div>
-        <div class="col">
+        <div class="col-12 col-md-4">
           <label><strong>Teléfono</strong></label>
           <input type="text" name="phone" value="{{address.phone}}" class="form-control" placeholder="Teléfono">
         </div>
@@ -205,13 +201,11 @@
         </div>
       </div>
 
-      <div class="form-row mt-2">
+      <div class="form-row mt-2 text-right">
         <div class="col">
           <button class="btn btn-outline-warning" (click)="cancelNewAddress()">
             <i class="fa fa-times"></i> Cancelar
           </button>
-        </div>
-        <div class="col text-right">
           <button class="btn btn-outline-warning" (click)="cancelNewAddress()">
             <i class="fa fa-save"></i> Guardar
           </button>
