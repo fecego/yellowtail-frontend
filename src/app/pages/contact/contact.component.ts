@@ -7,13 +7,22 @@ import {} from 'googlemaps';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
+
   @ViewChild('gmap') gmapElement: any;
   map: google.maps.Map;
 
   @ViewChild('mmap') mmapElement: any;
   mmap: google.maps.Map;
 
-  constructor() { }
+  contactForm: any;
+
+  constructor() {
+    this.contactForm = {
+      name: '',
+      email: '',
+      message: ''
+    };
+  }
 
   ngOnInit() {
     const mapProp = {
@@ -23,6 +32,10 @@ export class ContactComponent implements OnInit {
     };
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
     this.mmap = new google.maps.Map(this.mmapElement.nativeElement, mapProp);
+  }
+
+  sendForm() {
+
   }
 
 }
