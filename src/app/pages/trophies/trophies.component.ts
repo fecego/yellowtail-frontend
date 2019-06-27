@@ -21,7 +21,6 @@ export class TrophiesComponent implements OnInit {
   }
 
   showChart(_id: string) {
-    console.log('Show chart ', _id);
     this.showingChart = _id;
   }
 

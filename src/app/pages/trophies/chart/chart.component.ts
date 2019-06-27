@@ -1,7 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProductsService } from '../../../services/products.service';
-
+import { NotificationsService } from '../../../services/notifications.service';
+import { CartService } from './../../../services/cart.service';
 
 @Component({
   selector: 'app-chart',
@@ -16,7 +17,9 @@ export class ChartComponent implements OnInit {
 
   productsByIdsObservable: Observable<Array<any>>;
 
-  constructor(private productsService: ProductsService) {
+  constructor(private productsService: ProductsService,
+              private notificationsService: NotificationsService,
+              private cartService: CartService) {
     this.products = [];
     this.productsByIdsObservable = this.productsService.getProducsByIdsObservable();
   }
@@ -33,8 +36,34 @@ export class ChartComponent implements OnInit {
   prepareProducts(products: any) {
     this.products = products.map(product => {
       product.mainImage = product.images[0];
+      product.selected = false;
       return product;
     });
+  }
+
+  toggleCheckedProduct(event: any, productId: string) {;
+    this.products = this.products.map(product => {
+      if (product._id == productId) {
+        product.selected = event.currentTarget.checked;
+      }
+      return product;
+    });
+  }
+
+  addToCart() {
+    const selectProducts = this.products.filter(product => product.selected);
+    console.log(selectProducts);
+    if (selectProducts.length < 1) {
+      return;
+    }
+
+    this.notificationsService.addProductsToCart(selectProducts);
+    selectProducts.forEach(product => {
+      const tempProduct = Object.assign({}, product);
+      tempProduct.quantity = 1;
+      this.cartService.addProductToCart(tempProduct);
+    });
+
   }
 
 }

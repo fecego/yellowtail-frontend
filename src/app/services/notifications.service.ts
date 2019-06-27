@@ -27,6 +27,18 @@ export class NotificationsService {
     $('.toast').toast('show');
   }
 
+  addProductsToCart(products: any) {
+    const message = products.map(product => {
+      return ` <p>${product.name}</p> `;
+    });
+    this.dataObservable.next({
+      title: 'Carrito',
+      message: `${message} fueron agregados al carrito`,
+    });
+    $('#toastContainer').show();
+    $('.toast').toast('show');
+  }
+
   showError(error: string) {
     $('.toast').toast('show');
     $('#toastContainer').show();

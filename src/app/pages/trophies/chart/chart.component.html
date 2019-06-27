@@ -18,12 +18,12 @@
       <div class="col-12 col-md-8">
         <ul class="list-unstyled">
           <li *ngFor="let product of products" class="input-mini">
-            <input type="checkbox"> {{product.name}}
+            <input type="checkbox" (change)="toggleCheckedProduct($event, product._id)"> {{product.name}}
           </li>
         </ul>
       </div>
       <div class="col-12 col-md-4 align-self-center">
-        <button class="btn btn-warning btn-productToCart">
+        <button class="btn btn-warning btn-productToCart" (click)="addToCart()">
           <span class="d-block d-sm-block d-md-none">
             <i class="fas fa-shopping-cart"></i>
           </span>
