@@ -85,11 +85,6 @@ div.search-input-carousel input.form-control:focus {
 .grid-item--height2 .content .content-items-thopies .description-chart {
     margin-top: 0%;
 }
-.grid-item--height2 .content .content-items-thopies .content-chart .input-mini {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
 
 @media (max-width: 767px) {
     .grid-item--height2 .content .content-items-thopies .content-chart .justify-content-center .img-item-chart,

@@ -15,14 +15,25 @@
 
   <div class="bd-highlight mt-3">
     <div class="row">
-      <div class="col-12 col-md-8">
+      <div class="col-12 col-md-9">
         <ul class="list-unstyled">
           <li *ngFor="let product of products" class="input-mini">
-            <input type="checkbox" (change)="toggleCheckedProduct($event, product._id)"> {{product.name}} ${{product.price}}
+            <div class="row">
+              <div class="col-1 align-self-center">
+                <input type="checkbox" (change)="toggleCheckedProduct($event, product._id)">
+              </div>
+              <div class="col-8 pl-2">
+                {{product.name}}
+              </div>
+              <div class="col-2 text-left align-self-center">
+                ${{product.price}}
+              </div>
+            </div>
+            <hr class="line-products">
           </li>
         </ul>
       </div>
-      <div class="col-12 col-md-4 align-self-center">
+      <div class="col-12 col-md-3 align-self-center">
         <button class="btn btn-warning btn-productToCart" (click)="addToCart()">
           <span class="d-block d-sm-block d-md-none">
             <i class="fas fa-shopping-cart"></i>
