@@ -4,23 +4,30 @@
     
     <form *ngIf="showEdit">
       <div class="form-row">
-        <div class="col-12 col-md-4 text-md-right align-self-center">
-          <label><strong>Correo electrónico</strong></label>
-        </div>
-        <div class="col-12 col-md-4">
-          <input type="email" name="email" value="{{email}}" class="form-control" placeholder="email@email.com">
-        </div>
-        <div class="col-12 col-md-4 order-md-first align-self-center mt-2 mt-md-0">
+        <div class="col-12 col-md-8">
           <label><strong>Nombre del usuario</strong></label>
+          <div class="form-row">
+            <div class="col-6">
+              <input type="text" class="form-control" name="name" value="{{name}}" placeholder="Nombre">
+              <div class="alert alert-danger error-message-form" role="alert">
+                <strong><i class="fa fa-exclamation-circle"></i> Ingresa tu nombre</strong>
+              </div>
+            </div>
+            <div class="col-6">
+              <input type="text" class="form-control" name="lastName" value="{{lastName}}" placeholder="Apellido paterno">
+              <div class="alert alert-danger error-message-form" role="alert">
+                <strong><i class="fa fa-exclamation-circle"></i> Ingresa tu apellido</strong>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="form-row mt-md-2">
-        <div class="col-6">
-          <input type="text" class="form-control" name="name" value="{{name}}" placeholder="Nombre">
-        </div>
-        <div class="col-6">
-          <input type="text" class="form-control" name="lastName" value="{{lastName}}" placeholder="Apellido paterno">
+        <div class="col-12 col-md-4">
+          <label><strong>Correo electrónico</strong></label>
+          <input type="email" name="email" value="{{email}}" class="form-control" placeholder="email@email.com">
+          <div class="alert alert-danger error-message-form" role="alert">
+            <strong><i class="fa fa-exclamation-circle"></i> Correo inválido</strong>
+          </div>
         </div>
       </div>
 
@@ -28,6 +35,9 @@
         <div class="col-12 col-md-4">
           <label><strong>Fecha de nacimiento</strong></label>
           <input type="text" name="birthday" value="{{birthday}}" placeholder="Ejemplo: 14 Enero 1990" class="form-control">
+          <div class="alert alert-danger error-message-form" role="alert">
+            <strong><i class="fa fa-exclamation-circle"></i> Ingresa tu fecha de cumpleaños</strong>
+          </div>
         </div>
         <div class="col-12 col-md-4 mt-2 mt-md-0">
           <label><strong>Sexo</strong></label>
@@ -45,6 +55,9 @@
         <div class="col-12 col-md-4 mt-2 mt-md-0">
           <label><strong>Teléfono</strong></label>
           <input type="text" name="phone" value="{{phone}}" class="form-control" placeholder="Teléfono">
+          <div class="alert alert-danger error-message-form" role="alert">
+            <strong><i class="fa fa-exclamation-circle"></i> Teléfono inválido</strong>
+          </div>
         </div>
       </div>
 

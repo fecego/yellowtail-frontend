@@ -19,11 +19,21 @@
           </div>
           <input name="name" class="form-control" id="registerInputName" aria-describedby="nameHelp" placeholder="Nombre" ngModel required>
         </div>
+        <div class="alert alert-danger mt-2" role="alert">
+          <p class="text-center">
+            <strong><i class="fa fa-exclamation-circle"></i></strong> Nombre de usuario debe de ser más de un carácter.
+          </p>
+        </div>
         <div class="input-group item-register">
           <div class="input-group-prepend">
             <div class="input-group-text"><i class="fa fa-user"></i></div>
           </div>
           <input name="lastName" class="form-control" id="registerInputLastName" aria-describedby="nameHelp" placeholder="Apellido" ngModel required>
+        </div>
+        <div class="alert alert-danger mt-2" role="alert">
+          <p class="text-center">
+            <strong><i class="fa fa-exclamation-circle"></i></strong> Apellido de usuario debe de ser más de un caracter.
+          </p>
         </div>
         <div class="input-group item-register">
           <div class="input-group-prepend">
@@ -32,13 +42,23 @@
           <input name="email" type="email" class="form-control" id="registerInputEmail" aria-describedby="emailHelp" placeholder="ejemplo@correo.com" ngModel email required>
         </div>
         <!--<small id="emailHelp" class="form-text text-muted">Recuerda que nunca compartiremos tu datos con terceros</small> -->
+        <div class="alert alert-danger mt-2" role="alert">
+          <p class="text-center">
+            <strong><i class="fa fa-exclamation-circle"></i></strong> Correo no válido.
+          </p>
+        </div>
         <div class="input-group item-register">
           <div class="input-group-prepend">
             <div class="input-group-text"><i class="fa fa-key"></i></div>
           </div>
           <input name="password" type="password" class="form-control" id="registerInputPassword" placeholder="********" ngModel required>
         </div>
-        <p><small id="emailHelp" class="form-text text-muted">Recuerda utilizar 8 carácteres, entre ellos 1 número y 1 carácter especial</small></p>
+        <p><small id="emailHelp" class="form-text text-muted">Recuerda utilizar 8 caracteres, entre ellos 1 número y 1 carácter especial</small></p>
+        <div class="alert alert-danger mt-2" role="alert">
+          <p class="text-center">
+            <strong><i class="fa fa-exclamation-circle"></i></strong> La contraseña debe tener al menos 8 caracteres.
+          </p>
+        </div>
         <div class="text-center item-register">
           <button type="submit" class="btn btn-warning btn-block button-register" [disabled]="!registerForm.form.valid">
             Registrarse
@@ -56,11 +76,21 @@
           </div>
           <input type="email" name="email" class="form-control" id="loginInputEmail" aria-describedby="emailHelp" placeholder="ejemplo@correo.com" ngModel email required>
         </div>
+        <div class="alert alert-danger mt-2" role="alert">
+          <p class="text-center">
+            <strong><i class="fa fa-exclamation-circle"></i></strong> Correo electrónico no encontrado.
+          </p>
+        </div>
         <div class="input-group item-register">
           <div class="input-group-prepend">
             <div class="input-group-text"><i class="fa fa-key"></i></div>
           </div>
           <input type="password" name="password" class="form-control" id="loginInputPassword" placeholder="Contraseña" ngModel required>
+        </div>
+        <div class="alert alert-danger mt-2" role="alert">
+          <p class="text-center">
+            <strong><i class="fa fa-exclamation-circle"></i> </strong> Contraseña incorrecta.
+          </p>
         </div>
         <div class="form-row item-register">
           <div class="col">
@@ -85,7 +115,7 @@
     <div class="alert alert-danger mt-2" role="alert">
       <p class="text-center">
         <strong><i class="fa fa-exclamation-circle"></i> Error</strong><br>
-        Correo electrónico no válido.
+        Ocurrió un error.
       </p>
     </div>
   </div>

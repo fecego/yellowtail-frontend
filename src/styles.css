@@ -41,6 +41,10 @@ h1, h2, h3, h4, h5, h6 {
 .pointer {
     cursor: pointer;
 }
+div.error-message-form {
+    padding: 0.3em 0.4em!important;
+    margin-top: 0.3em!important;
+}
 
 /* .modal-dialog {
     max-width: 80% !important;
