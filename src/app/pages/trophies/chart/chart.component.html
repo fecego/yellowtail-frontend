@@ -18,7 +18,7 @@
       <div class="col-12 col-md-8">
         <ul class="list-unstyled">
           <li *ngFor="let product of products" class="input-mini">
-            <input type="checkbox" (change)="toggleCheckedProduct($event, product._id)"> {{product.name}}
+            <input type="checkbox" (change)="toggleCheckedProduct($event, product._id)"> {{product.name}} ${{product.price}}
           </li>
         </ul>
       </div>
