@@ -54,6 +54,7 @@ import { InstagramComponent } from './pages/home/instagram/instagram.component';
 import { ChartComponent } from './pages/trophies/chart/chart.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { SummaryComponent } from './pages/summary/summary.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 
 @NgModule({
   declarations: [
@@ -102,7 +103,8 @@ import { SummaryComponent } from './pages/summary/summary.component';
     InstagramComponent,
     ChartComponent,
     ContactComponent,
-    SummaryComponent
+    SummaryComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     BrowserModule,
