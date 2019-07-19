@@ -3,12 +3,23 @@
 }
 .nav-item-login {
   width: 50%;
+  border-radius: 12px;
+}
+.nav-login a {
+  border-top-left-radius: 12px!important;
+}
+.nav-register a {
+  border-top-right-radius: 12px!important;
+}
+.contentRegister-login .nav-tabs .nav-link {
+  border-top-left-radius: 0rem;
+  border-top-right-radius: 0rem;
 }
 .item-register {
   margin-top: 0.5rem;
 }
 .content-user {
-  padding: 1rem 3rem;
+  padding: 1rem 4rem;
 }
 .button-register {
   margin-top: 1rem;
@@ -17,5 +28,46 @@
   background-color: #FFFFFF;
 }
 .nav-link {
-  background-color: #DCDCDC
+  background-color: #ffc107;
+  color: white;
+}
+.btn-modal-user {
+  border-radius: 25px;
+  width: 40%;
+  margin: auto;
+}
+.contentRegister-login form input,
+.input-group-prepend .input-group-text {
+  border: none;
+  border-bottom: 1px solid #c9c9c9!important;
+  border-radius: 0px;
+}
+.input-group-prepend {
+  border: none;
+}
+.contentRegister-login form .input-group:not(:first-child) {
+  margin-right: 1em;
+}
+.input-group-prepend .input-group-text{
+  background-color: #ffffff00;
+  color: #aaaaaa;
+}
+.alert-modal-user {
+  background-color: #ffffff00;
+  font-size: 12px;
+  margin-bottom: 0.5rem!important;
+  padding: .75rem 1.25rem 0rem 1rem;
+  color: #9f3a38!important;
+  font-weight: bold;
+}
+
+@media (max-width: 576px) {
+  .content-user {
+    padding: 1rem 2rem;
+  }
+  .btn-modal-user {
+    border-radius: 25px;
+    width: 80%;
+    margin: auto;
+  }
 }
