@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from './../../services/auth.service';
-import { NgForm } from '@angular/forms';
+import { NgForm, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 declare var $: any;
 
@@ -12,10 +12,30 @@ declare var $: any;
 })
 export class ModalUserComponent implements OnInit {
 
+  loginForm: FormGroup;
+  loginError: any;
+
+  registerForm: FormGroup;
+  registerError: any;
+
   nextRoute: string;
 
   constructor(public activeModal: NgbActiveModal,
-              private authService: AuthService) {
+              private authService: AuthService,
+              private formBuilder: FormBuilder) {
+    
+    this.loginForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+
+    this.registerForm = this.formBuilder.group({
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      lastname: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
+
     this.nextRoute = '/';
   }
 
@@ -27,16 +47,22 @@ export class ModalUserComponent implements OnInit {
     this.activeModal.close('Modal Closed');
   }
 
-  login(loginForm: any) {
-    console.log(loginForm);
-    const credentials = loginForm.form.value;
+  submitLogin() {
+    if (this.loginForm.invalid) {
+      return;
+    }
+
+    const credentials = this.loginForm.value;
     this.authService.login(credentials, this.nextRoute);
     this.activeModal.close('Modal Closed');
   }
 
-  register(registerForm: NgForm) {
-    console.log(registerForm);
-    const credentials = registerForm.form.value;
+  submitRegister() {
+    if (this.registerForm.invalid) {
+      return;
+    }
+
+    const credentials = this.registerForm.value;
     this.authService.login(credentials, this.nextRoute);
     this.activeModal.close('Modal Closed');
   }
@@ -46,6 +72,14 @@ export class ModalUserComponent implements OnInit {
     setTimeout( () => {
       $(`.nav-tabs a[href="#${tab}"]`).tab('show'); 
     }, 100);
+  }
+
+  get loginControls() {
+    return this.loginForm.controls;
+  }
+
+  get registerControls() {
+    return this.registerForm.controls;
   }
 
 }

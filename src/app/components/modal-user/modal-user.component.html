@@ -12,14 +12,15 @@
     
     <!-- APARTADO DE REGISTRO-->
     <div role="tabpanel" class="tab-pane fade in active" id="register">
-      <form class="pt-3" name="registerForm" #registerForm="ngForm" (ngSubmit)="register(registerForm)">
+      <form class="pt-3" name="registerForm" [formGroup]="registerForm" (ngSubmit)="submitRegister()">
         <div class="input-group">
           <div class="input-group-prepend">
             <div class="input-group-text"><i class="fa fa-user"></i></div>
           </div>
-          <input name="name" class="form-control" id="registerInputName" aria-describedby="nameHelp" placeholder="Nombre" ngModel required>
+          <input name="name" class="form-control" aria-describedby="nameHelp" 
+                  placeholder="Nombre" formControlName="name">
         </div>
-        <div class="alert alert-danger mt-2" role="alert">
+        <div class="alert alert-danger mt-2" role="alert" *ngIf="registerControls.name.touched && registerControls.name.errors">
           <p class="text-center">
             <strong><i class="fa fa-exclamation-circle"></i></strong> Nombre de usuario debe de ser más de un carácter.
           </p>
@@ -28,9 +29,10 @@
           <div class="input-group-prepend">
             <div class="input-group-text"><i class="fa fa-user"></i></div>
           </div>
-          <input name="lastName" class="form-control" id="registerInputLastName" aria-describedby="nameHelp" placeholder="Apellido" ngModel required>
+          <input name="lastName" class="form-control" aria-describedby="nameHelp"
+                  placeholder="Apellido" formControlName="lastname">
         </div>
-        <div class="alert alert-danger mt-2" role="alert">
+        <div class="alert alert-danger mt-2" role="alert" *ngIf="registerControls.lastname.touched && registerControls.lastname.errors">
           <p class="text-center">
             <strong><i class="fa fa-exclamation-circle"></i></strong> Apellido de usuario debe de ser más de un caracter.
           </p>
@@ -39,10 +41,11 @@
           <div class="input-group-prepend">
             <div class="input-group-text"><i class="fa fa-envelope"></i></div>
           </div>
-          <input name="email" type="email" class="form-control" id="registerInputEmail" aria-describedby="emailHelp" placeholder="ejemplo@correo.com" ngModel email required>
+          <input name="email" type="email" class="form-control"
+                  aria-describedby="emailHelp" placeholder="ejemplo@correo.com" formControlName="email">
         </div>
         <!--<small id="emailHelp" class="form-text text-muted">Recuerda que nunca compartiremos tu datos con terceros</small> -->
-        <div class="alert alert-danger mt-2" role="alert">
+        <div class="alert alert-danger mt-2" role="alert" *ngIf="registerControls.email.touched && registerControls.email.errors">
           <p class="text-center">
             <strong><i class="fa fa-exclamation-circle"></i></strong> Correo no válido.
           </p>
@@ -51,16 +54,17 @@
           <div class="input-group-prepend">
             <div class="input-group-text"><i class="fa fa-key"></i></div>
           </div>
-          <input name="password" type="password" class="form-control" id="registerInputPassword" placeholder="********" ngModel required>
+          <input name="password" type="password" class="form-control" 
+                  placeholder="********" formControlName="password">
         </div>
         <p><small id="emailHelp" class="form-text text-muted">Recuerda utilizar 8 caracteres, entre ellos 1 número y 1 carácter especial</small></p>
-        <div class="alert alert-danger mt-2" role="alert">
+        <div class="alert alert-danger mt-2" role="alert" *ngIf="registerControls.password.touched && registerControls.password.errors">
           <p class="text-center">
             <strong><i class="fa fa-exclamation-circle"></i></strong> La contraseña debe tener al menos 8 caracteres.
           </p>
         </div>
         <div class="text-center item-register">
-          <button type="submit" class="btn btn-warning btn-block button-register" [disabled]="!registerForm.form.valid">
+          <button type="submit" class="btn btn-warning btn-block button-register" [disabled]="!registerForm.valid">
             Registrarse
           </button>
         </div>
@@ -69,14 +73,16 @@
   
     <!-- APARTADO DE INICIO DE SESIÓN-->
     <div role="tabpanel" class="tab-pane fade" id="login">
-      <form class="pt-3" name="loginForm" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+      <form class="pt-3" name="loginForm" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
         <div class="input-group">
           <div class="input-group-prepend">
             <div class="input-group-text"><i class="fa fa-envelope"></i></div>
           </div>
-          <input type="email" name="email" class="form-control" id="loginInputEmail" aria-describedby="emailHelp" placeholder="ejemplo@correo.com" ngModel email required>
+          <input  type="email" name="email" class="form-control" 
+                  aria-describedby="emailHelp" placeholder="ejemplo@correo.com"
+                  formControlName="email">
         </div>
-        <div class="alert alert-danger mt-2" role="alert">
+        <div class="alert alert-danger mt-2" role="alert" *ngIf="loginControls.email.touched && loginControls.email.errors">
           <p class="text-center">
             <strong><i class="fa fa-exclamation-circle"></i></strong> Correo electrónico no encontrado.
           </p>
@@ -85,9 +91,10 @@
           <div class="input-group-prepend">
             <div class="input-group-text"><i class="fa fa-key"></i></div>
           </div>
-          <input type="password" name="password" class="form-control" id="loginInputPassword" placeholder="Contraseña" ngModel required>
+          <input  type="password" name="password" class="form-control"
+                  placeholder="Contraseña" formControlName="password">
         </div>
-        <div class="alert alert-danger mt-2" role="alert">
+        <div class="alert alert-danger mt-2" role="alert" *ngIf="loginControls.email.touched && loginControls.password.errors">
           <p class="text-center">
             <strong><i class="fa fa-exclamation-circle"></i> </strong> Contraseña incorrecta.
           </p>
@@ -105,7 +112,7 @@
         </div>
   
         <div class="text-center">
-          <button type="submit" class="btn btn-warning btn-block" [disabled]="!loginForm.form.valid">
+          <button type="submit" class="btn btn-warning btn-block" [disabled]="!loginForm.valid">
             Iniciar Sesión
           </button>
         </div>

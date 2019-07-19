@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule }   from '@angular/forms';
+import { ReactiveFormsModule, FormsModule }   from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ShareButtonsModule } from '@ngx-share/buttons';
 import { HttpClientModule } from '@angular/common/http';
@@ -111,6 +111,7 @@ import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.co
     AppRoutingModule,
     NgbModule.forRoot(),
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     ShareButtonsModule,
     HttpClientModule,
