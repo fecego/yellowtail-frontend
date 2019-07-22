@@ -22,7 +22,7 @@
         </div>
         <div class="alert alert-modal-user" role="alert" *ngIf="registerControls.name.touched && registerControls.name.errors">
           <p class="mb-0">
-            <strong><i class="fa fa-exclamation-circle"></i></strong> Nombre de usuario debe de ser más de un carácter.
+            <strong><i class="fa fa-times"></i></strong> Nombre de usuario debe de ser más de un carácter.
           </p>
         </div>
         <div class="input-group item-register">
@@ -34,7 +34,7 @@
         </div>
         <div class="alert alert-modal-user" role="alert" *ngIf="registerControls.lastname.touched && registerControls.lastname.errors">
           <p class="mb-0">
-            <strong><i class="fa fa-exclamation-circle"></i></strong> Apellido de usuario debe de ser más de un caracter.
+            <strong><i class="fa fa-times"></i></strong> Apellido de usuario debe de ser más de un caracter.
           </p>
         </div>
         <div class="input-group item-register">
@@ -47,10 +47,10 @@
         <!--<small id="emailHelp" class="form-text text-muted">Recuerda que nunca compartiremos tu datos con terceros</small> -->
         <div class="alert alert-modal-user" role="alert" *ngIf="registerControls.email.touched && registerControls.email.errors">
           <p class="mb-0">
-            <strong><i class="fa fa-exclamation-circle"></i></strong> Correo no válido.
+            <strong><i class="fa fa-times"></i></strong> Correo no válido.
           </p>
           <p class="mb-0">
-            <strong><i class="fa fa-exclamation-circle"></i></strong> Correo ya registrado.
+            <strong><i class="fa fa-times"></i></strong> Correo ya registrado.
           </p>
         </div>
         <div class="input-group item-register">
@@ -60,10 +60,10 @@
           <input name="password" type="password" class="form-control" 
                   placeholder="********" formControlName="password">
         </div>
-        <p><small id="emailHelp" class="form-text text-muted">Recuerda utilizar 8 caracteres, entre ellos 1 número y 1 carácter especial</small></p>
+        <p><small id="emailHelp" class="form-text text-muted">* Recuerda utilizar 8 caracteres, entre ellos 1 número y 1 carácter especial</small></p>
         <div class="alert alert-modal-user" role="alert" *ngIf="registerControls.password.touched && registerControls.password.errors">
           <p class="mb-0">
-            <strong><i class="fa fa-exclamation-circle"></i></strong> La contraseña debe tener al menos 8 caracteres.
+            <strong><i class="fa fa-times"></i></strong> La contraseña debe tener al menos 8 caracteres.
           </p>
         </div>
         <div class="text-center item-register">
@@ -87,10 +87,10 @@
         </div>
         <div class="alert alert-modal-user" role="alert" *ngIf="loginControls.email.touched && loginControls.email.errors">
           <p class="mb-0">
-            <strong><i class="fa fa-exclamation-circle"></i></strong> Correo electrónico no encontrado.
+            <strong><i class="fa fa-times"></i></strong> Correo electrónico no encontrado.
           </p>
           <p class="mb-0">
-            <strong><i class="fa fa-exclamation-circle"></i></strong> Correo electrónico no válido.
+            <strong><i class="fa fa-times"></i></strong> Correo electrónico no válido.
           </p>
         </div>
         <div class="input-group item-register">
@@ -102,15 +102,16 @@
         </div>
         <div class="alert alert-modal-user" role="alert" *ngIf="loginControls.email.touched && loginControls.password.errors">
           <p class="mb-0">
-            <strong><i class="fa fa-exclamation-circle"></i></strong> Contraseña incorrecta.
+            <strong><i class="fa fa-times"></i></strong> Contraseña incorrecta.
           </p>
         </div>
         <div class="form-row item-register">
-          <div class="col pl-3 mt-2">
-            <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Recuerdame</label>
+          <div class="col pl-3 mb-3 d-flex flex-row justify-content-start align-items-center">
+            <div class="form-group form-check check-remember">
+              <input type="checkbox" class="form-check-input" id="remember">
+              <label class="form-check-label" for="remember"></label>
             </div>
+            <label class="ml-1 mb-0">Recuerdame</label>
           </div>
         </div>
   
@@ -125,17 +126,17 @@
       </form>
     </div>
 
-    <div class="alert alert-danger mt-2" role="alert">
+    <!-- <div class="alert alert-modal-user mt-2" role="alert">
       <p class="text-center">
         <strong><i class="fa fa-exclamation-circle"></i> Error</strong><br>
         Ocurrió un error.
       </p>
-    </div>
+    </div> -->
   </div>
   
   <div class="modal-footer">
     <button class="btn btn-link" (click)="activeModal.dismiss('Close clicked')">
-      Cerrar
+      <i class="fa fa-times"></i>
     </button>
   </div>
 </div>
