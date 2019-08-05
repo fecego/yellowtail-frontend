@@ -11,6 +11,7 @@ export class FavoritesComponent implements OnInit {
 
   productsFavoritesObservable: Observable<Array<any>>;
 
+  showNoProcuts: boolean;
   favoriteProducts: any;
 
   constructor(private productsService: ProductsService) {
@@ -19,10 +20,15 @@ export class FavoritesComponent implements OnInit {
 
   ngOnInit() {
     this.productsFavoritesObservable.subscribe(
-      products => this.favoriteProducts = products,
+      products => this.initFavorites(products),
       error => console.log(error)
     );
     this.productsService.getFavorites();
+  }
+
+  initFavorites(products) {
+    this.favoriteProducts = products;
+    this.showNoProcuts = this.favoriteProducts.length == 0;
   }
 
 }

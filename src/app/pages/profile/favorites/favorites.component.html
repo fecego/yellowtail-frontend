@@ -4,7 +4,7 @@
       <app-product [product]="product"></app-product>
     </div>
 
-    <div class="col-12">
+    <div class="col-12" *ngIf="showNoProcuts">
       <div class="d-flex flex-column content-noProducts justify-content-center align-items-center">
         <h1 class="text-warning"><small>¡No hay productos favoritos!</small><br></h1>
         <h1 class="text-warning"><i class="fa fa-heart-broken fa-2x"></i></h1>
