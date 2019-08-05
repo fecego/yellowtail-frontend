@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-address',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./address.component.css']
 })
 export class AddressComponent implements OnInit {
+
+  @Input()
+  user: any
 
   addresses: any;
   showNewAddress: boolean;
@@ -15,7 +18,7 @@ export class AddressComponent implements OnInit {
   }
 
   ngOnInit() {
-    const addresses = [{_id:1},{_id:2}];
+    const addresses = this.user.address || [];
     this.addresses = addresses.map(( address: any ) => {
       address.edit = false;
       return address;
