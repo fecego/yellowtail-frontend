@@ -85,10 +85,41 @@ export class AuthService {
             success: true,
             user: {
               _id: 'abcd',
-              name: 'Irving',
-              lastName: 'Gonzalez',
-              email: 'test@test.com',
-              favorites: [
+              name: 'Alejandro',               //Nombres
+              lastName: 'Dumas',           //Apellidos
+              email: 'test@test.com',              //Email
+              gender: 'H',             //Genero H/M
+              phone: '5533466083',              //Telefono
+              birthday: '01/01/1990',           //Fecha de nacimiento
+              favorites: [],
+              address: [                  //Arreglo de direcciones      
+                {
+                  _id: 'asdasd',            //ID de direccion
+                  street: 'Calle 5',         //Calle
+                  number: 'Interiro 78',         //Numero
+                  neighborhood: 'Alamos del norte',   //Colonia
+                  state: 'Ciudad de México',          //Estado
+                  country: 'México',        //Pais
+                  cp: '08789',             //Codigo Postal
+                  reference: 'Atras de un Walmart',      //Referencia
+                  contact: 'Alex Market',         //Nombre de contacto
+                  phone: '5534567890',           //Telefono
+                  default: true         //Si es su direccion por default
+                }
+              ],
+              taxInformation: {
+                required: true,         //Si requiere factura
+                legalName: 'Alejandro Dumas SA. CV',        //Razon social,
+                rfc: 'ADSA890765D34',              //RFC
+                addressId: 'asdasd'         //ID de la direccion  
+              },
+              payments: [
+                {
+                  _id: 'asdasd',             //Id de la forma de pago
+                  token: 'asdasdhjgafsdjhgasd',          //Token de la forma de pago
+                  method: 'Tarjeta de credito',         //Metodo de pago
+                  text: '9089',           //Texto, por ejemplo los ultimos 4 digitos de tarjeta
+                },
               ]
             }
           });

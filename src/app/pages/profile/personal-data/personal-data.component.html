@@ -9,13 +9,13 @@
           <label><strong>Nombre del usuario</strong></label>
           <div class="form-row">
             <div class="col-6">
-              <input type="text" class="form-control" name="name" value="{{name}}" placeholder="Nombre">
+              <input type="text" class="form-control" name="name" value="{{profile.name}}" placeholder="Nombre">
               <div class="alert alert-danger error-message-form" role="alert">
                 <strong><i class="fa fa-exclamation-circle"></i> Ingresa tu nombre</strong>
               </div>
             </div>
             <div class="col-6">
-              <input type="text" class="form-control" name="lastName" value="{{lastName}}" placeholder="Apellido paterno">
+              <input type="text" class="form-control" name="lastName" value="{{profile.lastName}}" placeholder="Apellido paterno">
               <div class="alert alert-danger error-message-form" role="alert">
                 <strong><i class="fa fa-exclamation-circle"></i> Ingresa tu apellido</strong>
               </div>
@@ -25,7 +25,7 @@
 
         <div class="col-12 col-md-4">
           <label><strong>Correo electrónico</strong></label>
-          <input type="email" name="email" value="{{email}}" class="form-control" placeholder="email@email.com">
+          <input type="email" name="email" value="{{profile.email}}" class="form-control" placeholder="email@email.com">
           <div class="alert alert-danger error-message-form" role="alert">
             <strong><i class="fa fa-exclamation-circle"></i> Correo inválido</strong>
           </div>
@@ -35,7 +35,7 @@
       <div class="form-row mt-2">
         <div class="col-12 col-md-4">
           <label><strong>Fecha de nacimiento</strong></label>
-          <input type="text" name="birthday" value="{{birthday}}" placeholder="Ejemplo: 14 Enero 1990" class="form-control">
+          <input type="text" name="birthday" value="{{profile.birthday}}" placeholder="Ejemplo: 14 Enero 1990" class="form-control">
           <div class="alert alert-danger error-message-form" role="alert">
             <strong><i class="fa fa-exclamation-circle"></i> Ingresa tu fecha de cumpleaños</strong>
           </div>
@@ -44,18 +44,18 @@
           <label><strong>Sexo</strong></label>
           <div>
             <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" id="gender" name="gender" class="custom-control-input">
+              <input type="radio" name="gender" class="custom-control-input" value="M" [checked]=" (profile.gender === 'M')?true:false">
               <label class="custom-control-label" for="gender">Mujer</label>
             </div>
             <div class="custom-control custom-radio custom-control-inline">
-              <input type="radio" id="gender2" name="gender" class="custom-control-input">
+              <input type="radio" name="gender" class="custom-control-input" value="H" [checked]="(profile.gender === 'H')?true:false">
               <label class="custom-control-label" for="gender2">Hombre</label>
             </div>
           </div>
         </div>
         <div class="col-12 col-md-4 mt-2 mt-md-0">
           <label><strong>Teléfono</strong></label>
-          <input type="text" name="phone" value="{{phone}}" class="form-control" placeholder="Teléfono">
+          <input type="text" name="phone" value="{{profile.phone}}" class="form-control" placeholder="Teléfono">
           <div class="alert alert-danger error-message-form" role="alert">
             <strong><i class="fa fa-exclamation-circle"></i> Teléfono inválido</strong>
           </div>
@@ -77,7 +77,7 @@
     <div class="row" *ngIf="!showEdit">
       <div class="col-12 col-md-6">
         <label><strong>Nombre</strong></label>
-        <p>{{profile.name}} {{profile.lastName}}</p>
+        <p>{{profile.fullname}}</p>
       </div>
       <div class="col-12 col-md-6 mt-2 mt-md-0">
         <label><strong>Correo electrónico</strong></label>
@@ -92,7 +92,7 @@
       </div>
       <div class="col-12 col-md-4 mt-2 mt-md-0">
         <label><strong>Sexo</strong></label>
-        <p>{{profile.gender}}</p>
+        <p>{{profile.displayGender}}</p>
       </div>
       <div class="col-12 col-md-4 mt-2 mt-md-0">
         <label><strong>Teléfono</strong></label>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-personal-data',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./personal-data.component.css']
 })
 export class PersonalDataComponent implements OnInit {
+
+  @Input()
+  user: any;
 
   showEdit: boolean;
   profile: any;
@@ -16,6 +19,24 @@ export class PersonalDataComponent implements OnInit {
   }
 
   ngOnInit() {
+    if (this.user) {
+      this.profile = {
+        name: this.user.name,
+        lastName: this.user.lastName,
+        fullname: `${this.user.name} ${this.user.lastName}`,
+        email: this.user.email,
+        phone: this.user.phone,
+        birthday: this.user.birthday,
+        gender: this.user.gender
+      };
+
+      if ( this.user.gender == 'H' || this.user.gender == 'M' ) {
+        this.profile.displayGender = ( this.user.gender == 'H'?'Hombre': 'Mujer' );
+      } else {
+        this.profile.displayGender = '-';
+      }
+      console.log('Final profile => ', this.profile);
+    }
   }
 
   clickEdit() {
