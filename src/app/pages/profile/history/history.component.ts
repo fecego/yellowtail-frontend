@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-history',
@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./history.component.css']
 })
 export class HistoryComponent implements OnInit {
+
+  @Input()
+  user: any
 
   showEditTax: boolean;
   taxInformation: any;
@@ -16,7 +19,9 @@ export class HistoryComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    if (this.user) {
+      this.taxInformation = this.user.taxInformation;
+    }
   }
 
   clickEditShowTax() {

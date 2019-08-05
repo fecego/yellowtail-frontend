@@ -111,7 +111,14 @@ export class AuthService {
                 required: true,         //Si requiere factura
                 legalName: 'Alejandro Dumas SA. CV',        //Razon social,
                 rfc: 'ADSA890765D34',              //RFC
-                addressId: 'asdasd'         //ID de la direccion  
+                address: {
+                  street: 'Calle 5',         //Calle
+                  number: 'Interiro 78',         //Numero
+                  neighborhood: 'Alamos del norte',   //Colonia
+                  state: 'Ciudad de México',          //Estado
+                  country: 'México',        //Pais
+                  cp: '08789'             //Codigo Postal
+                }
               },
               payments: [
                 {

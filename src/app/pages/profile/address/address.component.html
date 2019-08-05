@@ -96,19 +96,19 @@
 
       <div class="row" *ngIf="!address.edit">
         <div class="col-12 col-md-8">
-          <label><strong>Calle</strong></label>
-          <p>{{address.street}} #{{address.number}}</p>
+          <label><strong>Calle y número</strong></label>
+          <p>{{address.street}} {{address.number}}</p>
         </div>
         <div class="col-6 col-md-4 mt-2 mt-md-0">
-          <label><strong>CP</strong></label>
-          <p>{{address.cp}}</p>
+          <label><strong>Colonia</strong></label>
+          <p>{{address.neighborhood}}</p>
         </div>
       </div>
   
       <div class="row mt-2" *ngIf="!address.edit">
         <div class="col-12 col-md-6">
-          <label><strong>Colonia</strong></label>
-          <p>{{address.neighborhood}}</p>
+          <label><strong>CP</strong></label>
+          <p>{{address.cp}}</p>
         </div>
         <div class="col-12 col-md-6 mt-2 mt-md-0">
           <label><strong>Estado</strong></label>
