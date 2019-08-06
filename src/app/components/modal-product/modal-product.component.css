@@ -1,14 +1,55 @@
 /* .modal-dialog {
   max-width: 80% !important;
 } */
+.content-product {
+  background-color: white;
+  border-radius: 15px;
+}
 .content-info {
-  padding: 1rem 0rem 1rem 2rem;
+  padding: 1rem 2rem;
+  padding: 3%;
+  background-color: #2D2D2D;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  color: white;
+}
+.title-modal-product {
+  font-size: 21px;
+  text-transform: uppercase;
+}
+.content-price-modal {
+  border-bottom: 1px solid #dad7d7;
+  padding: 4% 0;
 }
 .product-sku {
   display: block;
 }
-.btn-productToCart {
-  border-radius: 35px;
+.product-sku a {
+  color: #e8b20d;;
+  text-decoration: none;
+}
+.product-sku a:hover {
+  color: #b88c0a;
+}
+.btn-productToCart-modal {
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.btn-favorite {
+  border: none;
+}
+.card-modal-product {
+  background-color: #ffffff00;
+  border-color: #ffffff3d;
+}
+.btn-modal-product {
+  border-radius: 50px;
+  height: 1.7rem;
+  width: 1.7rem;
+  padding: 0px;
 }
 .carousel-content {
   margin: 1em 0;
@@ -28,9 +69,13 @@
   filter: brightness(0.777) sepia(0.11) hue-rotate(-0deg) saturate(1);
 }
 
+.content-share-modal .btn-warning:hover {
+  color: white;
+}
+
 /*PHONES*/
 @media (max-width: 767px) {
   .content-info {
-    padding: 1rem;
+    padding: 2rem;
   }
 }

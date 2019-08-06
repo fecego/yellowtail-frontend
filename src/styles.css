@@ -49,18 +49,13 @@ div.error-message-form {
     background-color: #ffffff00!important;
     border: none!important;
 }
-.modal-content app-modal-user {
-    border-radius: 15px!important;
-}
-.modal-content app-modal-user .contentRegister-login {
-    border-radius: 15px;
-}
 .modal-content app-modal-address .container,
 .modal-content app-modal-product .container, 
 .modal-content app-modal-tax .container,
 .modal-content app-modal-user .contentRegister-login  {
     background-color: #ffffff!important;
     border: 1px solid rgba(0,0,0,.2);
+    border-radius: 15px;
 }
 div.row div.item-product:last-child,
 div.row div.item-product:nth-child(4n) {
