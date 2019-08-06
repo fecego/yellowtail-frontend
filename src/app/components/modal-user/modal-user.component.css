@@ -52,14 +52,6 @@
   background-color: #ffffff00;
   color: #aaaaaa;
 }
-.alert-modal-user {
-  background-color: #ffffff00;
-  font-size: 12px;
-  margin: 0.5rem 0;
-  color: #9f3a38!important;
-  font-weight: bold;
-  border: 1px solid #9f3a3873;
-}
 .check-remember {
   position: relative;
 }

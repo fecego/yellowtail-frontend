@@ -28,4 +28,8 @@ export class HistoryComponent implements OnInit {
     this.showEditTax = !this.showEditTax;
   }
 
+  cancelEdit() {
+    this.showEditTax = false; 
+  }
+
 }

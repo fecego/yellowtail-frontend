@@ -72,6 +72,15 @@ div.row div.item-product:nth-child(4n) {
     }
 }
 
+.message-error-form {
+    background-color: #ffffff00;
+    font-size: 12px;
+    margin: 0.5rem 0;
+    color: #9f3a38!important;
+    font-weight: bold;
+    border: 1px solid #9f3a3873!important;
+}
+
 /* INPUT DE BUSQUEDAD CARRUSEL */
 div.search-input-carousel input.form-control,
 div.search-input-carousel button.btn-outline-secondary,

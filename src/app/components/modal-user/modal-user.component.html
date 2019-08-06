@@ -20,7 +20,7 @@
           <input name="name" class="form-control" aria-describedby="nameHelp" 
                   placeholder="Nombre" formControlName="name">
         </div>
-        <div class="alert alert-modal-user" role="alert" *ngIf="registerControls.name.touched && registerControls.name.errors">
+        <div class="alert message-error-form" role="alert" *ngIf="registerControls.name.touched && registerControls.name.errors">
           <p class="mb-0">
             <strong><i class="fa fa-times"></i></strong> Nombre de usuario debe de ser más de un carácter.
           </p>
@@ -32,7 +32,7 @@
           <input name="lastName" class="form-control" aria-describedby="nameHelp"
                   placeholder="Apellido" formControlName="lastname">
         </div>
-        <div class="alert alert-modal-user" role="alert" *ngIf="registerControls.lastname.touched && registerControls.lastname.errors">
+        <div class="alert message-error-form" role="alert" *ngIf="registerControls.lastname.touched && registerControls.lastname.errors">
           <p class="mb-0">
             <strong><i class="fa fa-times"></i></strong> Apellido de usuario debe de ser más de un caracter.
           </p>
@@ -45,7 +45,7 @@
                   aria-describedby="emailHelp" placeholder="ejemplo@correo.com" formControlName="email">
         </div>
         <!--<small id="emailHelp" class="form-text text-muted">Recuerda que nunca compartiremos tu datos con terceros</small> -->
-        <div class="alert alert-modal-user" role="alert" *ngIf="registerControls.email.touched && registerControls.email.errors">
+        <div class="alert message-error-form" role="alert" *ngIf="registerControls.email.touched && registerControls.email.errors">
           <p class="mb-0">
             <strong><i class="fa fa-times"></i></strong> Correo no válido.
           </p>
@@ -61,7 +61,7 @@
                   placeholder="********" formControlName="password">
         </div>
         <p><small id="emailHelp" class="form-text text-muted">* Recuerda utilizar 8 caracteres, entre ellos 1 número y 1 carácter especial</small></p>
-        <div class="alert alert-modal-user" role="alert" *ngIf="registerControls.password.touched && registerControls.password.errors">
+        <div class="alert message-error-form" role="alert" *ngIf="registerControls.password.touched && registerControls.password.errors">
           <p class="mb-0">
             <strong><i class="fa fa-times"></i></strong> La contraseña debe tener al menos 8 caracteres.
           </p>
@@ -85,7 +85,7 @@
                   aria-describedby="emailHelp" placeholder="ejemplo@correo.com"
                   formControlName="email">
         </div>
-        <div class="alert alert-modal-user" role="alert" *ngIf="loginControls.email.touched && loginControls.email.errors">
+        <div class="alert message-error-form" role="alert" *ngIf="loginControls.email.touched && loginControls.email.errors">
           <p class="mb-0">
             <strong><i class="fa fa-times"></i></strong> Correo electrónico no encontrado.
           </p>
@@ -100,7 +100,7 @@
           <input  type="password" name="password" class="form-control"
                   placeholder="Contraseña" formControlName="password">
         </div>
-        <div class="alert alert-modal-user" role="alert" *ngIf="loginControls.email.touched && loginControls.password.errors">
+        <div class="alert message-error-form" role="alert" *ngIf="loginControls.email.touched && loginControls.password.errors">
           <p class="mb-0">
             <strong><i class="fa fa-times"></i></strong> Contraseña incorrecta.
           </p>
@@ -126,7 +126,7 @@
       </form>
     </div>
 
-    <!-- <div class="alert alert-modal-user mt-2" role="alert">
+    <!-- <div class="alert message-error-form mt-2" role="alert">
       <p class="text-center">
         <strong><i class="fa fa-exclamation-circle"></i> Error</strong><br>
         Ocurrió un error.

@@ -11,14 +11,18 @@
           <div class="form-row">
             <div class="col-6">
               <input type="text" class="form-control" name="name" value="{{profile.name}}" placeholder="Nombre">
-              <div class="alert alert-danger error-message-form" role="alert">
-                <strong><i class="fa fa-exclamation-circle"></i> Ingresa tu nombre</strong>
+              <div class="alert message-error-form" role="alert">
+                <p class="mb-0">
+                  <strong><i class="fa fa-times"></i></strong> Ingresa tu nombre.
+                </p>
               </div>
             </div>
             <div class="col-6">
-              <input type="text" class="form-control" name="lastName" value="{{profile.lastName}}" placeholder="Apellido paterno">
-              <div class="alert alert-danger error-message-form" role="alert">
-                <strong><i class="fa fa-exclamation-circle"></i> Ingresa tu apellido</strong>
+              <input type="text" class="form-control" name="lastName" value="{{profile.lastName}}" placeholder="Apellido">
+              <div class="alert message-error-form" role="alert">
+                <p class="mb-0">
+                  <strong><i class="fa fa-times"></i></strong> Ingresa uno de tus apellidos.
+                </p>
               </div>
             </div>
           </div>
@@ -26,17 +30,21 @@
 
         <div class="col-12 mt-2">
           <label><strong>Correo electrónico</strong></label>
-          <input type="email" name="email" value="{{profile.email}}" class="form-control" placeholder="email@email.com">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> Correo inválido</strong>
+          <input type="email" name="email" value="{{profile.email}}" class="form-control" placeholder="email@email.com" required>
+          <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> Correo electrónico no válido.
+            </p>
           </div>
         </div>
 
         <div class="col-12 mt-12">
           <label><strong>Fecha de nacimiento</strong></label>
           <input type="text" name="birthday" value="{{profile.birthday}}" placeholder="Ejemplo: 14 Enero 1990" class="form-control">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> Ingresa tu fecha de cumpleaños</strong>
+          <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> Ingresa tu fecha de cumpleaños.
+            </p>
           </div>
         </div>
 
@@ -57,15 +65,17 @@
         <div class="col-12 mt-2">
           <label><strong>Teléfono</strong></label>
           <input type="text" name="phone" value="{{profile.phone}}" class="form-control" placeholder="Teléfono">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> Teléfono inválido</strong>
+          <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> Teléfono inválido.
+            </p>
           </div>
         </div>
       </div>
 
       <div class="form-row mt-2 text-right">
         <div class="col">
-          <button class="btn btn-outline-warning" (click)="cancelEdit()">
+          <button class="btn btn-outline-warning mr-2" (click)="cancelEdit()">
             <i class="fa fa-times"></i> Cancelar
           </button>
           <button class="btn btn-outline-warning" (click)="saveEdit()">

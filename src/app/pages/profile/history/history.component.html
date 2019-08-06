@@ -16,15 +16,19 @@
         <div class="col-12 col-md-8">
           <label><strong>Nombre legal</strong></label>
           <input type="text" name="legalName" value="{{taxInformation.legalName}}" class="form-control" placeholder="Nombre">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> Ingresa un nombre</strong>
+          <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> Ingresa el nombre legal.
+            </p>
           </div>
         </div>
         <div class="col-12 col-md-4 mt-2 mt-md-0">
           <label><strong>RFC</strong></label>
           <input type="text" name="rfc" value="{{taxInformation.rfc}}" class="form-control" placeholder="RFC">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> RFC no válido</strong>
+          <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> RFC no válido.
+            </p>
           </div>
         </div>
       </div>
@@ -38,23 +42,29 @@
       <div class="form-row mt-2">
         <div class="col-12 col-md-8">
           <label><strong>Calle</strong></label>
-          <input type="text" name="street" value="{{address.street}}" class="form-control" placeholder="Calle">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> Ingresa el nombre de la calle</strong>
+          <input type="text" name="street" value="{{taxInformation.address.street}}" class="form-control" placeholder="Calle">
+          <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> Ingresa el nombre de la calle.
+            </p>
           </div>
         </div>
         <div class="col-6 col-md-2 mt-2 mt-md-0">
           <label><strong>Número</strong></label>
-          <input type="text" name="number" value="{{address.number}}" class="form-control" placeholder="Número">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> Ingresa un número</strong>
+          <input type="text" name="number" value="{{taxInformation.address.number}}" class="form-control" placeholder="Número">
+          <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> Ingresa el número de la dirección.
+            </p>
           </div>
         </div>
         <div class="col-6 col-md-2 mt-2 mt-md-0">
           <label><strong>CP</strong></label>
-          <input type="text" name="cp" value="{{address.cp}}" class="form-control" placeholder="Código postal">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> Ingresa un CP</strong>
+          <input type="text" name="cp" value="{{taxInformation.address.cp}}" class="form-control" placeholder="Código postal">
+          <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> Ingresa el código postal.
+            </p>
           </div>
         </div>
       </div>
@@ -62,23 +72,27 @@
       <div class="form-row mt-2">
         <div class="col-12 col-md-6">
           <label><strong>Colonia</strong></label>
-          <input type="text" name="neighborhood" value="{{address.neighborhood}}" class="form-control" placeholder="Colonia">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> Ingresa la colonia</strong>
+          <input type="text" name="neighborhood" value="{{taxInformation.address.neighborhood}}" class="form-control" placeholder="Colonia">
+           <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> Ingresa la colonia.
+            </p>
           </div>
         </div>
         <div class="col-12 col-md-6 mt-2 mt-md-0">
           <label><strong>Estado</strong></label>
-          <input type="text" name="state" value="{{address.state}}" class="form-control" placeholder="Estado">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> Ingresa el el nombre del Estado</strong>
+          <input type="text" name="state" value="{{taxInformation.address.state}}" class="form-control" placeholder="Estado">
+          <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> Ingresa el nombre del Estado.
+            </p>
           </div>
         </div>
       </div>
 
       <div class="form-row mt-2 text-right">
         <div class="col">
-          <button class="btn btn-outline-warning">
+          <button class="btn btn-outline-warning mr-2" (click)="cancelEdit()">
             <i class="fa fa-times"></i> Cancelar
           </button>
           <button class="btn btn-outline-warning">
@@ -90,11 +104,11 @@
 
     <div id="collapseForm" *ngIf="!showEditTax">
       <div class="row mt-2">
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-md-7">
           <label><strong>Nombre legal</strong></label>
           <p>{{taxInformation.legalName}}</p>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-5">
           <label><strong>RFC</strong></label>
           <p>{{taxInformation.rfc}}</p>
         </div>
@@ -107,22 +121,22 @@
       </div>
 
       <div class="row mt-2">
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-md-7">
           <label><strong>Calle y número</strong></label>
           <p>{{taxInformation.address.street}} #{{taxInformation.address.number}}</p>
         </div>
-        <div class="col-6 col-md-4 mt-2 mt-md-0">
+        <div class="col-6 col-md-5 mt-2 mt-md-0">
           <label><strong>CP</strong></label>
           <p>{{taxInformation.address.cp}}</p>
         </div>
       </div>
   
       <div class="row mt-2">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-7">
           <label><strong>Colonia</strong></label>
           <p>{{taxInformation.address.neighborhood}}</p>
         </div>
-        <div class="col-12 col-md-6 mt-2 mt-md-0">
+        <div class="col-12 col-md-5 mt-2 mt-md-0">
           <label><strong>Estado</strong></label>
           <p>{{taxInformation.address.state}}</p>
         </div>

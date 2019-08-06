@@ -5,25 +5,31 @@
 
       <form *ngIf="address.edit">
         <div class="form-row">
-          <div class="col-12 col-md-8">
+          <div class="col-12 col-md-6">
             <label><strong>Calle</strong></label>
             <input type="text" name="street" value="{{address.street}}" class="form-control" placeholder="Calle">
-            <div class="alert alert-danger error-message-form" role="alert">
-              <strong><i class="fa fa-exclamation-circle"></i> Ingresa el nombre de la calle</strong>
+            <div class="alert message-error-form" role="alert">
+              <p class="mb-0">
+                <strong><i class="fa fa-times"></i></strong> Ingresa el nombre de la calle.
+              </p>
             </div>
           </div>
-          <div class="col-6 col-md-2 mt-2 mt-md-0">
+          <div class="col-6 col-md-3 mt-2 mt-md-0">
             <label><strong>Número</strong></label>
             <input type="text" name="number" value="{{address.number}}" class="form-control" placeholder="Número">
-            <div class="alert alert-danger error-message-form" role="alert">
-              <strong><i class="fa fa-exclamation-circle"></i> Ingresa un número</strong>
+            <div class="alert message-error-form" role="alert">
+              <p class="mb-0">
+                <strong><i class="fa fa-times"></i></strong> Ingresa el número de la dirección.
+              </p>
             </div>
           </div>
-          <div class="col-6 col-md-2 mt-2 mt-md-0">
+          <div class="col-6 col-md-3 mt-2 mt-md-0">
             <label><strong>CP</strong></label>
             <input type="text" name="cp" value="{{address.cp}}" class="form-control" placeholder="Código postal">
-            <div class="alert alert-danger error-message-form" role="alert">
-              <strong><i class="fa fa-exclamation-circle"></i> Ingresa un CP</strong>
+            <div class="alert message-error-form" role="alert">
+              <p class="mb-0">
+                <strong><i class="fa fa-times"></i></strong> Ingresa el código postal.
+              </p>
             </div>
           </div>
         </div>
@@ -32,15 +38,19 @@
           <div class="col-12 col-md-6">
             <label><strong>Colonia</strong></label>
             <input type="text" name="neighborhood" value="{{address.neighborhood}}" class="form-control" placeholder="Colonia">
-            <div class="alert alert-danger error-message-form" role="alert">
-              <strong><i class="fa fa-exclamation-circle"></i> Ingresa la colonia</strong>
+            <div class="alert message-error-form" role="alert">
+              <p class="mb-0">
+                <strong><i class="fa fa-times"></i></strong> Ingresa la colonia.
+              </p>
             </div>
           </div>
           <div class="col-12 col-md-6 mt-2 mt-md-0">
             <label><strong>Estado</strong></label>
             <input type="text" name="state" value="{{address.state}}" class="form-control" placeholder="Estado">
-            <div class="alert alert-danger error-message-form" role="alert">
-              <strong><i class="fa fa-exclamation-circle"></i> Ingresa el el nombre del Estado</strong>
+            <div class="alert message-error-form" role="alert">
+              <p class="mb-0">
+                <strong><i class="fa fa-times"></i></strong> Ingresa el nombre del Estado.
+              </p>
             </div>
           </div>
         </div>
@@ -49,25 +59,31 @@
           <div class="col">
             <label><strong>Referencia</strong></label>
             <input type="text" name="reference" value="{{address.reference}}" class="form-control" placeholder="Entre calles">
-            <div class="alert alert-danger error-message-form" role="alert">
-              <strong><i class="fa fa-exclamation-circle"></i> Se necesitan referencias</strong>
+            <div class="alert message-error-form" role="alert">
+              <p class="mb-0">
+                <strong><i class="fa fa-times"></i></strong> Se necesita al menos una referencia.
+              </p>
             </div>
           </div>
         </div>
   
         <div class="form-row mt-4 pt-2">
-          <div class="col-12 col-md-8">
+          <div class="col-12 col-md-6">
             <label><strong>Nombre de contacto</strong></label>
             <input type="text" name="contact" value="{{address.contact}}" class="form-control" placeholder="Nombre">
-            <div class="alert alert-danger error-message-form" role="alert">
-              <strong><i class="fa fa-exclamation-circle"></i> Ingresa el nombre de a quien contactar</strong>
+            <div class="alert message-error-form" role="alert">
+              <p class="mb-0">
+                <strong><i class="fa fa-times"></i></strong> Ingresa el nombre de a quien contactar.
+              </p>
             </div>
           </div>
-          <div class="col-12 col-md-4">
+          <div class="col-12 col-md-6">
             <label><strong>Teléfono</strong></label>
             <input type="text" name="phone" value="{{address.phone}}" class="form-control" placeholder="Teléfono">
-            <div class="alert alert-danger error-message-form" role="alert">
-              <strong><i class="fa fa-exclamation-circle"></i> Telefóno no válido</strong>
+            <div class="alert message-error-form" role="alert">
+              <p class="mb-0">
+                <strong><i class="fa fa-times"></i></strong> Teléfono no válido.
+              </p>
             </div>
           </div>
         </div>
@@ -83,7 +99,7 @@
   
         <div class="form-row mt-2 text-right">
           <div class="col">
-            <button class="btn btn-outline-warning" (click)="cancelEdit(address)">
+            <button class="btn btn-outline-warning mr-2" (click)="cancelEdit(address)">
               <i class="fa fa-times"></i> Cancelar
             </button>
             <button class="btn btn-outline-warning" (click)="cancelEdit(address)">
@@ -95,22 +111,22 @@
 
 
       <div class="row" *ngIf="!address.edit">
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-md-7">
           <label><strong>Calle y número</strong></label>
           <p>{{address.street}} {{address.number}}</p>
         </div>
-        <div class="col-6 col-md-4 mt-2 mt-md-0">
-          <label><strong>Colonia</strong></label>
-          <p>{{address.neighborhood}}</p>
+        <div class="col-6 col-md-5 mt-2 mt-md-0">
+          <label><strong>CP</strong></label>
+          <p>{{address.cp}}</p>
         </div>
       </div>
   
       <div class="row mt-2" *ngIf="!address.edit">
-        <div class="col-12 col-md-6">
-          <label><strong>CP</strong></label>
-          <p>{{address.cp}}</p>
+        <div class="col-12 col-md-7">
+          <label><strong>Colonia</strong></label>
+          <p>{{address.neighborhood}}</p>
         </div>
-        <div class="col-12 col-md-6 mt-2 mt-md-0">
+        <div class="col-12 col-md-5 mt-2 mt-md-0">
           <label><strong>Estado</strong></label>
           <p>{{address.state}}</p>
         </div>
@@ -124,11 +140,11 @@
       </div>
   
       <div class="row mt-4 pt-2" *ngIf="!address.edit">
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-md-7">
           <label><strong>Nombre de contacto</strong></label>
           <p>{{address.contact}}</p>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-5">
           <label><strong>Teléfono</strong></label>
           <p>{{address.phone}}</p>
         </div>
@@ -145,7 +161,7 @@
   
       <div class="row mt-2 text-right" *ngIf="!address.edit">
         <div class="col">
-          <button class="btn btn-outline-danger">
+          <button class="btn btn-outline-danger mr-2">
             <i class="fa fa-trash-alt"></i> Eliminar
           </button>
           <button class="btn btn-outline-warning" (click)="clickEdit(address)">
@@ -159,25 +175,31 @@
 
     <form *ngIf="showNewAddress">
       <div class="form-row">
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-md-6">
           <label><strong>Calle</strong></label>
           <input type="text" name="street" value="{{address.street}}" class="form-control" placeholder="Calle">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> Ingresa el nombre de la calle</strong>
+          <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> Ingresa el nombre de la calle.
+            </p>
           </div>
         </div>
-        <div class="col-6 col-md-2 mt-2 mt-md-0">
+        <div class="col-6 col-md-3 mt-2 mt-md-0">
           <label><strong>Número</strong></label>
           <input type="text" name="number" value="{{address.number}}" class="form-control" placeholder="Número">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> Ingresa un número</strong>
+          <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> Ingresa el número de la dirección.
+            </p>
           </div>
         </div>
-        <div class="col-6 col-md-2 mt-2 mt-md-0">
+        <div class="col-6 col-md-3 mt-2 mt-md-0">
           <label><strong>CP</strong></label>
           <input type="text" name="cp" value="{{address.cp}}" class="form-control" placeholder="Código postal">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> Ingresa un CP</strong>
+          <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> Ingresa el código postal.
+            </p>
           </div>
         </div>
       </div>
@@ -186,15 +208,19 @@
         <div class="col-12 col-md-6">
           <label><strong>Colonia</strong></label>
           <input type="text" name="neighborhood" value="{{address.neighborhood}}" class="form-control" placeholder="Colonia">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> Ingresa la colonia</strong>
+          <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> Ingresa la colonia.
+            </p>
           </div>
         </div>
         <div class="col-12 col-md-6 mt-2 mt-md-0">
           <label><strong>Estado</strong></label>
           <input type="text" name="state" value="{{address.state}}" class="form-control" placeholder="Estado">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> Ingresa el el nombre del Estado</strong>
+          <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> Ingresa el nombre del Estado.
+            </p>
           </div>
         </div>
       </div>
@@ -203,25 +229,31 @@
         <div class="col">
           <label><strong>Referencia</strong></label>
           <input type="text" name="reference" value="{{address.reference}}" class="form-control" placeholder="Entre calles">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> Se necesitan referencias</strong>
+          <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> Se necesita al menos una referencia.
+            </p>
           </div>
         </div>
       </div>
   
       <div class="form-row mt-4 pt-2">
-        <div class="col-12 col-md-8">
+        <div class="col-12 col-md-6">
           <label><strong>Nombre de contacto</strong></label>
           <input type="text" name="contact" value="{{address.contact}}" class="form-control" placeholder="Nombre">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> Ingresa el nombre de a quien contactar</strong>
+          <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> Ingresa el nombre de a quien contactar.
+            </p>
           </div>
         </div>
-        <div class="col-12 col-md-4">
+        <div class="col-12 col-md-6">
           <label><strong>Teléfono</strong></label>
           <input type="text" name="phone" value="{{address.phone}}" class="form-control" placeholder="Teléfono">
-          <div class="alert alert-danger error-message-form" role="alert">
-            <strong><i class="fa fa-exclamation-circle"></i> Telefóno no válido</strong>
+          <div class="alert message-error-form" role="alert">
+            <p class="mb-0">
+              <strong><i class="fa fa-times"></i></strong> Teléfono no válido.
+            </p>
           </div>
         </div>
       </div>
@@ -237,7 +269,7 @@
 
       <div class="form-row mt-2 text-right">
         <div class="col">
-          <button class="btn btn-outline-warning" (click)="cancelNewAddress()">
+          <button class="btn btn-outline-warning mr-2" (click)="cancelNewAddress()">
             <i class="fa fa-times"></i> Cancelar
           </button>
           <button class="btn btn-outline-warning" (click)="cancelNewAddress()">
