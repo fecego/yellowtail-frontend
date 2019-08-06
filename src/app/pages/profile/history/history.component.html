@@ -1,5 +1,15 @@
 <div class="card mb-3">
   <div class="card-body">
+    <div class="form-row">
+      <div class="col d-flex flex-row justify-content-start align-items-center">
+        <div class="form-group form-check check-rfc">
+          <input type="checkbox" class="form-check-input" id="remember">
+          <label class="form-check-label" for="remember"></label>
+        </div>
+        <label class="ml-1 mb-0"><strong>¿Necesitas factura?</strong></label>
+      </div>
+    </div>
+    <hr>
 
     <form id="collapseForm" *ngIf="showEditTax">
       <div class="form-row mt-2">
@@ -19,9 +29,9 @@
         </div>
       </div>
 
-      <div class="form-row mt-3">
+      <div class="form-row mt-4">
         <div class="col">
-          <p class="card-title"><strong>Dirección</strong></p>
+          <p class="cardTitle-rfc"><strong>Dirección</strong></p>
         </div>
       </div>
 
@@ -90,9 +100,9 @@
         </div>
       </div>
   
-      <div class="row mt-2">
+      <div class="row mt-4">
         <div class="col">
-          <p class="card-title"><strong>Dirección</strong></p>
+          <p class="cardTitle-rfc"><strong>Dirección</strong></p>
         </div>
       </div>
 
