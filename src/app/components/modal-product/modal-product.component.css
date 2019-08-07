@@ -34,23 +34,6 @@
 .product-sku a:hover {
   color: #b88c0a;
 }
-.btn-productToCart-modal {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-}
-.btn-favorite {
-  border: none;
-}
-.card-modal-product {
-  background-color: #ffffff00;
-  border-color: #ffffff3d;
-}
-.btn-modal-product {
-  border-radius: 50px;
-  height: 1.7rem;
-  width: 1.7rem;
-  padding: 0px;
-}
 .carousel-content {
   margin: 1em 0;
 }

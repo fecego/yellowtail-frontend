@@ -33,6 +33,9 @@
     background-color: #ffffff;
     color: #ffc107!important;
 }
+.btn-section {
+    border-color: rgba(216, 218, 214, 0.58)!important;
+}
 .content-modal-product {
     cursor: pointer;
 }

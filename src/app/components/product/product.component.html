@@ -20,18 +20,20 @@
       <span *ngIf="!product.sku">&nbsp;</span>
     </p>
     <h4 (click)="openProductModal()" class="content-modal-product"><span id="costo-producto">{{getPrice(product.price)}}</span></h4>
-    
-    <div class="row row-controls">
-      <div class="col-4">
-        <button class="btn btn-outline-warning" (click)="subtractQuantity()">-</button>
-      </div>
-      <div class="col-4">
-        {{quantity}}
-      </div>
-      <div class="col-4">
-        <button class="btn btn-outline-warning" (click)="addQuantity()">+</button>
-      </div>
-    </div>
 
-    <button class="btn btn-warning btn-productToCart" (click)="addProductToCart()">Agregar al carrito</button>
+    <div class="card section-shop-product btn-section text-center">
+      <div class="row d-flex align-items-center pt-3 pb-3">
+        <div class="offset-3 col-2">
+          <button class="btn btn-outline-warning btn-circle-shop-product" (click)="subtractQuantity()">-</button>
+        </div>
+        <div class="col-2">
+          {{quantity}}
+        </div>
+        <div class="col-5 text-left">
+          <button class="btn btn-outline-warning btn-circle-shop-product" (click)="addQuantity()">+</button>
+        </div>
+      </div>
+    
+      <button class="btn btn-warning btn-block btn-productToCart-shop-product" (click)="addProductToCart()">Agregar al carrito</button>
+    </div>
   </div>
