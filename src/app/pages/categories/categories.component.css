@@ -1,6 +1,21 @@
 .content-noProducts {
   height: 60vh;
 }
+.img-container {
+  background-image: url('../../../assets/img/carrousel/4a.jpg');
+  background-attachment: fixed;
+  background-size: cover;
+}
+.img-content-categories {
+  background: #060708ba;
+  color: white;
+  text-transform: uppercase;
+}
+.content-filters {
+  background-color: white;
+  border-bottom: 1px solid #ececec;
+}
+
 @media (min-width: 2500px) {
   .content-noProducts {
     height: 80vh;

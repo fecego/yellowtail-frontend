@@ -57,6 +57,9 @@ div.error-message-form {
     border: 1px solid rgba(0,0,0,.2);
     border-radius: 15px;
 }
+div.row div.item-product {
+    border-right: 1px solid rgba(216, 218, 214, 0.58);
+}
 div.row div.item-product:last-child,
 div.row div.item-product:nth-child(4n) {
     border: 0px;

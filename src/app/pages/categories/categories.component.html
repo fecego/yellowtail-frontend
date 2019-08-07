@@ -1,37 +1,40 @@
-<div class="container">
-  <div class="row">
-    <div class="col-12 col-sm-5">
-      <h2>
-        CATEGORIA <small class="text-muted"> <i class="fa fa-angle-right"></i> {{name}}</small>
-      </h2>
+
+<div class="img-container">
+  <div class="jumbotron jumbotron-fluid img-content-categories mb-0 pt-4 pb-4">
+    <div class="container container-trophies">
+      <h1 class="display-4 text-center">{{name}}</h1>
     </div>
-    <div class="col-12 col-sm-7 text-right mt-sm-0 mt-3">
+  </div>
+</div>
+
+<div class="jumbotron content-filters mb-0 pt-0 pb-0">
+  <div class="container container-trophies pt-3 pb-3">
+    <div class="d-flex flex-row justify-content-end">
       <div class="row">
-        <div class="col-12 col-md-6">
-          <div class="form-group row">
-            <label for="inputEmail3" class="col-sm-5 col-md-6 text-right col-form-label">Ordenar por</label>
-            <div class="col-sm-7 col-md-6">
-              <select class="custom-select" (change)="sortProducts($event)">
-                <option value="">Ordenar</option>
-                <option value="1">Orden alfabetico</option>
-                <option value="2">Precio, menor a mayor</option>
-                <option value="3">Precio, mayor a menor</option>
-              </select>
-            </div>
-          </div>
-        </div>
-        <div class="col-12 col-md-3" *ngFor="let filter of filtersGroups">
-          <select class="custom-select form-control mt-2 mt-md-0" (change)="changeFilter($event, filter.level)">
-            <option value="">Seleccione</option>
-            <option *ngFor="let option of filter.options" value="{{option.key}}">{{option.value}}</option>
+        <label for="inputEmail3" class="col-sm-5 col-md-6 text-right col-form-label pr-0">Ordenar por:</label>
+        <div class="col-sm-7 col-md-6">
+          <select class="custom-select" (change)="sortProducts($event)">
+            <option value="">Ordenar</option>
+            <option value="1">Orden alfabético</option>
+            <option value="2">Precio, menor a mayor</option>
+            <option value="3">Precio, mayor a menor</option>
           </select>
         </div>
       </div>
+
+      <div class="ml-1" *ngFor="let filter of filtersGroups">
+        <select class="custom-select form-control mt-2 mt-md-0" (change)="changeFilter($event, filter.level)">
+          <option value="">Todo</option>
+          <option *ngFor="let option of filter.options" value="{{option.key}}">{{option.value}}</option>
+        </select>
+      </div>
     </div>
   </div>
+</div>
 
-  <div class="row pt-5">
-    <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3" *ngFor="let product of products">
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 item-product" *ngFor="let product of products">
       <app-product [product]="product"></app-product>
     </div>
   </div>
