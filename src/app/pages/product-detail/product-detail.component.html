@@ -11,9 +11,13 @@
 
       <div class="col-12 col-md-6 col-lg-8 col-xl-8">
         <div class="d-block d-md-none d-sm-block">
-          <h2 class="text-center">Producto {{product.name}}</h2>
+          <h2 class="text-center">{{product.name}}</h2>
+          <h2 class="text-center">{{product.sku}}</h2>
           <hr>
           <h2 class="text-center">{{getPrice(product.price)}}</h2>
+          <p class="text-justify">
+            {{product.short_description}}
+          </p>
         </div>
         <div class="carousel-content">
           <div id="carouselProductControls" class="carousel slide carousel-size" data-ride="carousel">
@@ -36,11 +40,12 @@
       </div>
 
       <div class="col-12 col-md-6 col-lg-4 col-xl-4">
-        <h2 class="d-none d-md-block">Producto {{product.name}}</h2>
+        <h2 class="d-none d-md-block">{{product.name}}</h2>
+        <h2 class="d-none d-md-block">{{product.sku}}</h2>
         <hr class="d-none d-md-block">
         <h2 class="d-none d-md-block">{{getPrice(product.price)}}</h2>
         <p class="text-justify">
-          {{product.description}}
+          {{product.short_description}}
         </p>
 
         <hr>
@@ -83,6 +88,19 @@
       
         <button class="btn btn-warning btn-block btn-productToCart mt-3" (click)="addProductToCart()">Agregar al carrito</button>
 
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h4>Descripcion</h4>
+        <p>{{product.description}}</p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <h4>Opiniones</h4>
       </div>
     </div>
 

@@ -55,6 +55,7 @@ export class ProductDetailComponent implements OnInit {
 
   initProduct(product) {
     if (!product) return;
+    console.log('Product => ', product);
     this.product = product;
     this.productsService.getRealtedProducts(this.product.related);
   }
