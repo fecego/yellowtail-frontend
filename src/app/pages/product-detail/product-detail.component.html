@@ -19,6 +19,14 @@
             {{product.short_description}}
           </p>
         </div>
+
+        <!-- Cuadros que van a laizquierda con las imagenes -->
+        <div>
+          <div *ngFor="let item of getImages()">
+            <img src="{{item.image}}" style="width: 100px; height: 100px; border-style: solid; border-width: 5px;" alt="">
+          </div>
+        </div>
+
         <div class="carousel-content">
           <div id="carouselProductControls" class="carousel slide carousel-size" data-ride="carousel">
             <div class="carousel-inner">
