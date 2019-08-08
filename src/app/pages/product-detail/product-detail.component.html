@@ -11,63 +11,65 @@
 
       <div class="col-12 col-md-6 col-lg-8 col-xl-8">
         <div class="d-block d-md-none d-sm-block">
-          <h2 class="text-center">{{product.name}}</h2>
-          <h2 class="text-center">{{product.sku}}</h2>
-          <hr>
+          <h2 class="text-center">
+            {{product.name}}
+            <label class="btn btn-outline-warning float-right" (click)="toggleFavorite()">
+              <i class="fas fa-heart" *ngIf="product.isFavorite"></i>
+              <i class="far fa-heart" *ngIf="!product.isFavorite"></i>
+            </label>
+          </h2>
           <h2 class="text-center">{{getPrice(product.price)}}</h2>
           <p class="text-justify">
             {{product.short_description}}
           </p>
+          <hr class="line-description">
         </div>
 
         <!-- Cuadros que van a laizquierda con las imagenes -->
-        <div>
-          <div *ngFor="let item of getImages()">
-            <img src="{{item.image}}" style="width: 100px; height: 100px; border-style: solid; border-width: 5px;" alt="">
+        <div class="row">
+          <div class="col-12 col-lg-2 img-content">
+            <div *ngFor="let item of getImages()" class="content-img-detail">
+              <img src="{{item.image}}" class="img-detail">
+            </div>
           </div>
-        </div>
-
-        <div class="carousel-content">
-          <div id="carouselProductControls" class="carousel slide carousel-size" data-ride="carousel">
-            <div class="carousel-inner">
-              <div [ngClass]="['carousel-item', item.activeClass]" *ngFor="let item of getImages()">
-                <img src="{{item.image}}" class="d-block image-carousel" alt="">
+          <div class="col-12 col-lg-10 align-self-center">
+            <div class="carousel-content">
+              <div id="carouselProductControls" class="carousel slide carousel-size d-flex align-items-center" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div [ngClass]="['carousel-item', item.activeClass]" *ngFor="let item of getImages()">
+                    <img src="{{item.image}}" class="d-block image-carousel" alt="">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselProductControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselProductControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
               </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselProductControls" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselProductControls" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
           </div>
         </div>
 
       </div>
 
       <div class="col-12 col-md-6 col-lg-4 col-xl-4">
-        <h2 class="d-none d-md-block">{{product.name}}</h2>
-        <h2 class="d-none d-md-block">{{product.sku}}</h2>
-        <hr class="d-none d-md-block">
-        <h2 class="d-none d-md-block">{{getPrice(product.price)}}</h2>
+        <h2 class="d-none d-md-block mb-0">{{product.name}}</h2>
+        <h2 class="d-none d-md-block text-muted mb-2">
+          <label class="btn btn-outline-warning float-right" (click)="toggleFavorite()">
+            <i class="fas fa-heart" *ngIf="product.isFavorite"></i>
+            <i class="far fa-heart" *ngIf="!product.isFavorite"></i>
+          </label>
+          <small>{{product.sku}}</small>
+        </h2>
         <p class="text-justify">
           {{product.short_description}}
         </p>
 
-        <hr>
-        <p class="text-center text-uppercase text-muted">Compartir</p>
-        <div class="text-center">
-          <share-buttons
-            [include]="['facebook', 'twitter', 'google', 'messenger', 'whatsapp', 'email', 'print', 'copy']"
-            [show]="8"
-            [size]="2"
-            [url]="'https://twitter.com/'"
-            [autoSetMeta]="true">
-          </share-buttons>
-        </div>
-        <hr>
+        <hr class="line-description">
+        <h2 class="d-none d-md-block text-center">{{getPrice(product.price)}}</h2>
 
         <div *ngIf="product.withVariants">
           <div class="variation-row" *ngFor="let option of getOptions()">
@@ -82,34 +84,79 @@
           </div>
         </div>
 
-        <div class="row text-center mt-3">
-          <div class="col-4">
-            <button class="btn btn-outline-warning" (click)="subtractQuantity()">-</button>
+        <div class="card section-shop-product text-center mt-3 btn-section">
+          <div class="row d-flex align-items-center pt-3 pb-3">
+            <div class="offset-3 col-2">
+              <button class="btn btn-outline-warning btn-circle-shop-product" (click)="subtractQuantity()">-</button>
+            </div>
+            <div class="col-2">
+              {{quantity}}
+            </div>
+            <div class="col-5 text-left">
+              <button class="btn btn-outline-warning btn-circle-shop-product" (click)="addQuantity()">+</button>
+            </div>
           </div>
-          <div class="col-4">
-            {{quantity}}
-          </div>
-          <div class="col-4">
-            <button class="btn btn-outline-warning" (click)="addQuantity()">+</button>
-          </div>
+        
+          <button class="btn btn-warning btn-block btn-productToCart-shop-product" (click)="addProductToCart()">Agregar al carrito</button>
         </div>
-      
-        <button class="btn btn-warning btn-block btn-productToCart mt-3" (click)="addProductToCart()">Agregar al carrito</button>
+
+        <share-buttons class="share-buttons"
+          [include]="['facebook', 'twitter', 'google', 'messenger', 'whatsapp', 'email', 'print', 'copy']"
+          [show]="8"
+          [size]="2"
+          [url]="'https://twitter.com/'"
+          [autoSetMeta]="true">
+        </share-buttons>
 
       </div>
     </div>
 
-    <div class="row">
+    <div class="row mt-3 mb-5">
       <div class="col">
-        <h4>Descripcion</h4>
+        <h4>Descripción</h4>
         <p>{{product.description}}</p>
       </div>
     </div>
 
-    <div class="row">
+    <hr class="mt-3 mb-3">
+
+    <div class="row mt-5">
       <div class="col">
         <h4>Opiniones</h4>
       </div>
+
+      <div class="col-12 mt-3 mb-1">
+        <p class="mb-0">
+          <span class="stars mr-2">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </span>
+          <strong>Excelente producto</strong>
+        </p>
+        <p class="text-muted mb-0">5 de junio de 2019</p>
+        <p class="text-muted mb-2">Característica 1: Resultado 1 <span class="pr-2 pl-2">|</span> Característica 2: Resultado 2</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab recusandae quis provident quo voluptate hic at quasi modi libero. Placeat minus ea ratione cumque possimus vero minima hic fugiat magni.</p>
+      </div>
+
+      <div class="col-12 mt-3 mb-1">
+        <p class="mb-0">
+          <span class="stars mr-2">
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="far fa-star"></i>
+          </span>
+          <strong>Excelente producto</strong>
+        </p>
+        <p class="text-muted mb-0">5 de junio de 2019</p>
+        <p class="text-muted mb-2">Característica 1: Resultado 1 <span class="pr-2 pl-2">|</span> Característica 2: Resultado 2</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab recusandae quis provident quo voluptate hic at quasi modi libero. Placeat minus ea ratione cumque possimus vero minima hic fugiat magni.</p>
+      </div>
+      
     </div>
 
     <div class="row mt-5">
@@ -119,7 +166,7 @@
     </div>
 
     <div class="row">
-      <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3" *ngFor="let product of related">
+      <div class="col-12 col-sm-6 col-md-6 col-lg-3 col-xl-3 item-product" *ngFor="let product of related">
         <app-product [product]="product"></app-product>
       </div>
     </div>

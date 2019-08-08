@@ -56,8 +56,8 @@ div.error-message-form {
     padding: 0px!important;
 }
 .btn-productToCart-shop-product {
-    border-top-left-radius: 0px;
-    border-top-right-radius: 0px;
+    border-top-left-radius: 0px!important;
+    border-top-right-radius: 0px!important;
 }
 .modal-content {
     background-color: #ffffff00!important;
