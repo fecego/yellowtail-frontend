@@ -7,14 +7,17 @@
   background: #21252900;
 }
 .contact-icon,
-.item-sucursales {
+.item-list-footer {
   color: #878181!important;
 }
-.item-sucursales:hover {
+.item-list-footer:hover {
   color: #646060!important;
 }
 .line-contact {
   border-color: #878181;
+}
+.content-list-menu {
+  padding: 0 12%;
 }
 
 @media (min-width: 992px) {
@@ -25,5 +28,8 @@
 @media (max-width: 767px) {
   .content-second-footer {
     padding: 2rem 3rem 3rem 3rem;
+  }
+  .content-list-menu {
+    text-align: center;
   }
 }

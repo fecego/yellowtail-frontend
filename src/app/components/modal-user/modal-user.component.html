@@ -66,6 +66,27 @@
             <strong><i class="fa fa-times"></i></strong> La contraseña debe tener al menos 8 caracteres.
           </p>
         </div>
+
+        <div class="form-row item-register">
+          <div class="col pl-3 d-flex flex-row justify-content-start align-items-center">
+            <div class="form-group form-check check-remember">
+              <input type="checkbox" class="form-check-input" id="terms" required>
+              <label class="form-check-label text-muted" for="terms"></label>
+            </div>
+            <label class="ml-1 mb-0">Estoy de acuerdo con los términos y condiciones</label>
+          </div>
+        </div>
+
+        <div class="form-row item-register">
+          <div class="col pl-3 mb-3 d-flex flex-row justify-content-start align-items-center">
+            <div class="form-group form-check check-remember">
+              <input type="checkbox" class="form-check-input" id="privacy" required>
+              <label class="form-check-label text-muted" for="privacy"></label>
+            </div>
+            <label class="ml-1 mb-0">Estoy de acuerdo con la política de privacidad</label>
+          </div>
+        </div>
+
         <div class="text-center item-register">
           <button type="submit" class="btn btn-warning button-register btn-modal-user" [disabled]="!registerForm.valid">
             Registrarse
