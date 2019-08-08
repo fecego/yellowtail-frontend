@@ -15,6 +15,36 @@
   background-color: white;
   border-bottom: 1px solid #ececec;
 }
+.row-filters-categories,
+.row-filters,
+.content-filters-extra {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.row-filters-categories {
+  justify-content: space-between;
+}
+.row-filters {
+  justify-content: end;
+}
+.select-filter {
+  width: 7rem;
+}
+
+@media (max-width: 767px) {
+  .row-filters-categories {
+    flex-direction: column;
+  }
+  .row-filters {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .select-filter {
+    width: 100%;
+  }
+  
+}
 
 @media (min-width: 2500px) {
   .content-noProducts {

@@ -9,24 +9,28 @@
 
 <div class="jumbotron content-filters mb-0 pt-0 pb-0">
   <div class="container container-trophies pt-3 pb-3">
-    <div class="d-flex flex-row justify-content-end">
-      <div class="row">
-        <label for="inputEmail3" class="col-sm-5 col-md-6 text-right col-form-label pr-0">Ordenar por:</label>
-        <div class="col-sm-7 col-md-6">
-          <select class="custom-select" (change)="sortProducts($event)">
-            <option value="">Ordenar</option>
-            <option value="1">Orden alfabético</option>
-            <option value="2">Precio, menor a mayor</option>
-            <option value="3">Precio, mayor a menor</option>
-          </select>
-        </div>
+    <div class="row-filters-categories">
+      <div>
+        <h4>
+          CATEGORÍA <small class="text-muted"> <i class="fa fa-angle-right"></i> {{name}}</small>
+        </h4>
       </div>
-
-      <div class="ml-1" *ngFor="let filter of filtersGroups">
-        <select class="custom-select form-control mt-2 mt-md-0" (change)="changeFilter($event, filter.level)">
-          <option value="">Todo</option>
-          <option *ngFor="let option of filter.options" value="{{option.key}}">{{option.value}}</option>
+      <div class="row-filters mt-3 mt-md-0">
+        <label class="mr-2 mb-0">Ordenar por:</label>
+        <select class="custom-select select-filter" (change)="sortProducts($event)">
+          <option value="">Ordenar</option>
+          <option value="1">Orden alfabético</option>
+          <option value="2">Precio, menor a mayor</option>
+          <option value="3">Precio, mayor a menor</option>
         </select>
+        <div class="content-filters-extra">
+          <div class="ml-1" *ngFor="let filter of filtersGroups">
+            <select class="custom-select form-control mt-2 mt-md-0 select-filter" (change)="changeFilter($event, filter.level)">
+              <option value="">Todo</option>
+              <option *ngFor="let option of filter.options" value="{{option.key}}">{{option.value}}</option>
+            </select>
+          </div>
+        </div>
       </div>
     </div>
   </div>
