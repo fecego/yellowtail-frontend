@@ -7,7 +7,7 @@
   background-size: cover;
 }
 .img-content-categories {
-  background: #060708ba;
+  background: rgba(6, 7, 8, 0.7294117647058823);
   color: white;
   text-transform: uppercase;
 }

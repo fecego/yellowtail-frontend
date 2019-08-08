@@ -1,5 +1,5 @@
 <div class="content-product">
-  <div class="row">
+  <div class="row row-modal-product">
 
     <div class="col-12 col-md-6 col-lg-7 carousel-content">
       <div id="carouselProductControls" class="carousel slide carousel-size d-flex align-items-center" data-ride="carousel">
@@ -27,9 +27,9 @@
 
       <div class="content-price-modal">
         
-        <div class="d-flex justify-content-between mb-1 mt-2">
-          <h2>{{getPrice(product.price)}}</h2>
-          <div class="d-flex justify-content-start mb-1 mt-2">
+        <div class="d-flex justify-content-between align-items-center mb-1 mt-2">
+          <h2 class="mb-0">{{getPrice(product.price)}}</h2>
+          <div class="d-flex justify-content-start align-items-center mb-1 mt-2">
             <div class="btn-group btn-group-toggle">
               <label class="btn btn-outline-warning" (click)="toggleFavorite()">
                 <i class="fas fa-heart" *ngIf="product.isFavorite"></i>

@@ -27,7 +27,7 @@
 
         <!-- Cuadros que van a laizquierda con las imagenes -->
         <div class="row">
-          <div class="col-12 col-lg-2 img-content">
+          <div class="col-12 col-lg-2 img-content mb-3 mb-md-0">
             <div *ngFor="let item of getImages()" class="content-img-detail">
               <img src="{{item.image}}" class="img-detail">
             </div>
@@ -73,7 +73,7 @@
 
         <div *ngIf="product.withVariants">
           <div class="variation-row" *ngFor="let option of getOptions()">
-            <select (change)="changeSelect(option.key, $event.target.value)">
+            <select class="custom-select form-control" (change)="changeSelect(option.key, $event.target.value)">
               <option class="item-option">Selecciona {{option.keyLabel}}</option>
               <option class="item-option" *ngFor="let filteredOption of getOptionsValuesByKey(option.key)">{{filteredOption.value}}</option>
             </select>

@@ -46,8 +46,9 @@ div.error-message-form {
     margin-top: 0.3em!important;
 }
 .section-shop-product {
-    background-color: #ffffff00!important;
-    border-color: #ffffff3d!important;
+
+    background-color: rgba(255, 255, 255, 0)!important;
+    border-color: rgba(255, 255, 255, 0.23921568627450981)!important;
 }
 .btn-circle-shop-product {
     border-radius: 50px!important;
@@ -60,7 +61,7 @@ div.error-message-form {
     border-top-right-radius: 0px!important;
 }
 .modal-content {
-    background-color: #ffffff00!important;
+    background-color: rgba(255, 255, 255, 0)!important;
     border: none!important;
 }
 .modal-content app-modal-address .container,
@@ -90,12 +91,12 @@ div.row div.item-product:nth-child(4n) {
 }
 
 .message-error-form {
-    background-color: #ffffff00;
+    background-color: rgba(255, 255, 255, 0);
     font-size: 12px;
     margin: 0.5rem 0;
     color: #9f3a38!important;
     font-weight: bold;
-    border: 1px solid #9f3a3873!important;
+    border: 1px solid rgba(159, 58, 56, 0.45098039215686275)!important;
 }
 
 /* INPUT DE BUSQUEDAD CARRUSEL */

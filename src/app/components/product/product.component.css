@@ -1,7 +1,7 @@
 .box-producto{
     padding: 4px 4px 8px 4px;
     margin-bottom: 1rem;
-    background-color: #ffffffe6;
+    background-color: rgba(255, 255, 255, 0.9019607843137255);
 }
 .box-producto .text-muted {
     margin-bottom: 0!important;

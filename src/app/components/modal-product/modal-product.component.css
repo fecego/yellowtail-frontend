@@ -1,6 +1,10 @@
 /* .modal-dialog {
   max-width: 80% !important;
 } */
+.row-modal-product {
+  background-color: white;
+  border-radius: 15px;
+}
 .content-product {
   background-color: white;
   border-radius: 15px;
@@ -28,7 +32,7 @@
   display: block;
 }
 .product-sku a {
-  color: #e8b20d;;
+  color: #e8b20d;
   text-decoration: none;
 }
 .product-sku a:hover {
@@ -60,5 +64,7 @@
 @media (max-width: 767px) {
   .content-info {
     padding: 2rem;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 15px;
   }
 }

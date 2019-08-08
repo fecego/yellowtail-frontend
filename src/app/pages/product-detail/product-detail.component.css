@@ -72,9 +72,10 @@
   content: 'Peso';
   padding: 11px 0 11px 16px;
 }
-.variation-row > select {
+.variation-row > select.custom-select {
   border: 0 none;
   outline: none!important;
+  height: 100%;
 }
 .row .variation-row:last-child,
 .price-row {
