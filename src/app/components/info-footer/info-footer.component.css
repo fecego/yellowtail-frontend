@@ -19,6 +19,9 @@
 .content-list-menu {
   padding: 0 12%;
 }
+.error-footer {
+  background-color: #f8d7da;
+}
 
 @media (min-width: 992px) {
   .content-text-footer {
