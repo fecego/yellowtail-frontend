@@ -55,6 +55,8 @@ import { ChartComponent } from './pages/trophies/chart/chart.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { SummaryComponent } from './pages/summary/summary.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { SelectCategoryComponent } from './components/select-category/select-category.component';
+import { MainCategoriesComponent } from './pages/main-categories/main-categories.component';
 
 @NgModule({
   declarations: [
@@ -104,7 +106,9 @@ import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.co
     ChartComponent,
     ContactComponent,
     SummaryComponent,
-    PrivacyPolicyComponent
+    PrivacyPolicyComponent,
+    SelectCategoryComponent,
+    MainCategoriesComponent
   ],
   imports: [
     BrowserModule,

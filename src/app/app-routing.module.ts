@@ -22,6 +22,7 @@ import { CheckoutProductComponent } from './pages/checkout/checkout-product/chec
 import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { SummaryComponent } from './pages/summary/summary.component';
+import { MainCategoriesComponent } from './pages/main-categories/main-categories.component';
 
 const routes: Routes = [
   {
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     path: 'categoria/:category',
     component: CategoriesComponent
+  },
+  {
+    path: 'categoria',
+    component: MainCategoriesComponent
   },
   {
     path: 'contacto',
