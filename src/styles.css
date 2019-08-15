@@ -24,7 +24,7 @@ body .container {
     padding-top: 3%;
     padding-bottom: 3%;
 }
-body .container:not(.container-trophies) {
+body .container:not(.container-auto) {
     min-height: 80vh;
 }
 .title-styleLogo {
@@ -41,8 +41,8 @@ body .container:not(.container-trophies) {
     }
 }
 @media (min-width: 2500px) {
-    body .container:not(.container-trophies) {
-        height: 89vh;
+    body .container:not(.container-auto) {
+        min-height: 89vh;
     }
 }
 
