@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummaryComponent implements OnInit {
 
-  constructor() { }
+  product: any;
+
+  constructor() {
+    this.product = {};
+  }
 
   ngOnInit() {
   }

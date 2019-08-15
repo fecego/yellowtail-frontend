@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainCategoriesComponent implements OnInit {
 
-  constructor() { }
+  hover: boolean;
+
+  constructor() {
+    this.hover = false;
+  }
 
   ngOnInit() {
   }

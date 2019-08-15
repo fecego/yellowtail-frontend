@@ -156,4 +156,8 @@ export class ProductDetailComponent implements OnInit {
     return `http://165.227.48.162/producto/${this.product.url}`;
   }
 
+  toggleFavorite() {
+    
+  }
+
 }
