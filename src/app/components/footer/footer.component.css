@@ -17,10 +17,27 @@ i:hover,
     margin: 25% 0;
 }
 .chat-img {
-    width: 20%;
-    position: absolute;
-    width: 5%;
+    width: 8%;
     position: absolute;
     top: 0;
     right: 0;
+}
+
+@media (min-width: 1200px) {
+    .chat-img {
+        width: 5%;
+    }
+}
+
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .chat-img {
+        width: 10%;
+    }
+}
+
+@media (max-width: 767px) {
+    .chat-img {
+        width: 20%;
+    }
 }
