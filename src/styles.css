@@ -9,6 +9,10 @@
     font-family: "Asap-Medium";
     src: url("/assets/fonts/Asap-Medium.ttf");
 }
+@font-face {
+    font-family: "Poolhouse";
+    src: url("/assets/fonts/Poolhouse.ttf");
+}
 
 body{
     padding-top: 7rem;
@@ -22,6 +26,13 @@ body .container {
 }
 body .container:not(.container-trophies) {
     min-height: 80vh;
+}
+.title-styleLogo {
+    font-family: "Poolhouse", cursive!important;
+}
+.line-title {
+    border-top: 2px solid #FBDF3E;
+    width: 30%;
 }
 @media (max-width: 705px) {
     body .container {
@@ -46,7 +57,6 @@ div.error-message-form {
     margin-top: 0.3em!important;
 }
 .section-shop-product {
-
     background-color: rgba(255, 255, 255, 0)!important;
     border-color: rgba(255, 255, 255, 0.23921568627450981)!important;
 }
