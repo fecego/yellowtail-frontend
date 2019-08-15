@@ -28,7 +28,7 @@
   background-color: #FFFFFF;
 }
 .nav-link {
-  background-color: #ffc107;
+  background-color: #FBDF3E;
   color: white;
 }
 .btn-modal-user {
@@ -84,8 +84,8 @@
   visibility: hidden;
 }
 .check-remember input[type="checkbox"]:checked + label {
-  background-color: #ffc107;
-  border-color: #ffc107;
+  background-color: #FBDF3E;
+  border-color: #FBDF3E;
 }
 .check-remember input[type="checkbox"]:checked + label:after {
   opacity: 1;

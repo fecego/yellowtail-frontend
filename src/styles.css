@@ -72,6 +72,32 @@ div.error-message-form {
     border: 1px solid rgba(0,0,0,.2);
     border-radius: 15px;
 }
+.text-yellow {
+    color: #FBDF3E!important;
+}
+a.text-yellow:hover {
+    color:  #ffcc33!important;
+}
+.btn-warning {
+    background-color: #FBDF3E!important;
+    border-color: #FBDF3E!important;
+}
+.btn-warning:hover {
+    background-color: #ffcc33!important;
+    border-color: #ffcc33!important;
+}
+.btn-outline-warning {
+    color: #FBDF3E!important;
+    border-color: #FBDF3E!important;
+}
+.btn-outline-warning:hover {
+    color: #212529!important;
+    background-color: #FBDF3E!important;
+    border-color: #FBDF3E!important;
+}
+.dropdown-item.active, .dropdown-item:active {
+    background-color: #FBDF3E!important;
+}
 div.row div.item-product {
     border-right: 1px solid rgba(216, 218, 214, 0.58);
 }

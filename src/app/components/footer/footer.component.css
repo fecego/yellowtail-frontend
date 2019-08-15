@@ -1,5 +1,5 @@
 footer{
-    background-color: #ffeb00;
+    background-color: #FBDF3E;
 }
 i,
 .item-faq {
@@ -13,8 +13,31 @@ i:hover,
 .text-chat {
     color: #ffffff;
     position: relative;
+    font-weight: bold;
     margin: 25% 0;
 }
-.icon-chat {
+.chat-img {
+    width: 8%;
     position: absolute;
+    top: 0;
+    right: 0;
+}
+
+@media (min-width: 1200px) {
+    .chat-img {
+        width: 5%;
+    }
+}
+
+
+@media (max-width: 991px) and (min-width: 768px) {
+    .chat-img {
+        width: 10%;
+    }
+}
+
+@media (max-width: 767px) {
+    .chat-img {
+        width: 20%;
+    }
 }
