@@ -32,11 +32,11 @@
   display: block;
 }
 .product-sku a {
-  color: #e8b20d;
+  color: #FBDF3E;
   text-decoration: none;
 }
 .product-sku a:hover {
-  color: #b88c0a;
+  color: #ffcc33;
 }
 .carousel-content {
   margin: 1em 0;

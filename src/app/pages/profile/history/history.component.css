@@ -29,8 +29,8 @@
   visibility: hidden;
 }
 .check-rfc input[type="checkbox"]:checked + label {
-  background-color: #ffc107;
-  border-color: #ffc107;
+  background-color: #FBDF3E;
+  border-color: #FBDF3E;
 }
 .check-rfc input[type="checkbox"]:checked + label:after {
   opacity: 1;
