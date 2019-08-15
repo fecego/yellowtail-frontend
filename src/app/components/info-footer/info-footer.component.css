@@ -23,6 +23,13 @@
   background-color: #f8d7da;
 }
 
+@media (min-width: 2000px) {
+  .logo-footer {
+    width: 50%!important;
+    margin: auto;
+  }
+}
+
 @media (min-width: 992px) {
   .content-text-footer {
     padding: 0 5rem;
