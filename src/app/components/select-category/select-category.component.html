@@ -1,9 +1,12 @@
+<div>
+  <h1>{{currentCategory}}</h1>
+</div>
 <div class="fondo-multiple">
-  <a class="box box-1" href="/categoria/accesorios"></a>
-  <a class="box box-2" href="/categoria/canas"></a>
-  <a class="box box-3" href="/categoria/carretes"></a>
-  <a class="box box-2" [ngStyle]="{ flex: hover==true ? 1 : 6 }" (mouseover)="hover=false" (mouseleave)="hover=true" href="/categoria/combos"></a>
-  <a class="box box-3" href="/categoria/kayaks"></a>
-  <a class="box box-4" href="/categoria/lineas"></a>
-  <a class="box box-1" href="/categoria/senuelos"></a>
+  <a class="box box-1" href="/categoria/accesorios" (mouseover)="overCategory('Accesorios')" (mouseleave)="leaveCategory()"></a>
+  <a class="box box-2" href="/categoria/canas" (mouseover)="overCategory('Cañas')" (mouseleave)="leaveCategory()"></a>
+  <a class="box box-3" href="/categoria/carretes" (mouseover)="overCategory('Carretes')" (mouseleave)="leaveCategory()"></a>
+  <a class="box box-2" href="/categoria/combos" (mouseover)="overCategory('Combos')" (mouseleave)="leaveCategory()"></a>
+  <a class="box box-3" href="/categoria/kayaks" (mouseover)="overCategory('Kayaks')" (mouseleave)="leaveCategory()"></a>
+  <a class="box box-4" href="/categoria/lineas" (mouseover)="overCategory('Lineas')" (mouseleave)="leaveCategory()"></a>
+  <a class="box box-1" href="/categoria/senuelos" (mouseover)="overCategory('Señuelos')" (mouseleave)="leaveCategory()"></a>
 </div>

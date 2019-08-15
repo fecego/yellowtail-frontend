@@ -57,6 +57,7 @@ import { SummaryComponent } from './pages/summary/summary.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
 import { SelectCategoryComponent } from './components/select-category/select-category.component';
 import { MainCategoriesComponent } from './pages/main-categories/main-categories.component';
+import { BestSellersComponent } from './pages/home/best-sellers/best-sellers.component';
 
 @NgModule({
   declarations: [
@@ -108,7 +109,8 @@ import { MainCategoriesComponent } from './pages/main-categories/main-categories
     SummaryComponent,
     PrivacyPolicyComponent,
     SelectCategoryComponent,
-    MainCategoriesComponent
+    MainCategoriesComponent,
+    BestSellersComponent
   ],
   imports: [
     BrowserModule,

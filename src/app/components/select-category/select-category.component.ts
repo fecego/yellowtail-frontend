@@ -7,13 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectCategoryComponent implements OnInit {
 
-  hover: boolean;
+  currentCategory: String;
 
   constructor() {
-    this.hover = false;
+    this.currentCategory = 'Categorias';
   }
 
   ngOnInit() {
+  }
+
+  overCategory(category) {
+    this.currentCategory = category;
+  }
+
+  leaveCategory() {
+    this.currentCategory = 'Categorias';
   }
 
 }
