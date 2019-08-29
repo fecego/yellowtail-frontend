@@ -6,6 +6,7 @@ import { NotificationsService } from '../../services/notifications.service';
 import { SearchbarService } from '../../services/searchbar.service';
 import { CartService } from '../../services/cart.service';
 import { formatPrice } from '../../utils/formatUtils';
+import { Router } from '@angular/router';
 
 import { ModalUserComponent } from './../modal-user/modal-user.component';
 
@@ -29,7 +30,8 @@ export class NavbarComponent implements OnInit {
               private authService: AuthService,
               private notificationsService: NotificationsService,
               private cartService: CartService,
-              private searchbarService: SearchbarService) {
+              private searchbarService: SearchbarService,
+              private router: Router) {
 
     this.products = [];
     this.username = '';
@@ -86,6 +88,14 @@ export class NavbarComponent implements OnInit {
 
   getProductsInCartCount() {
     return this.products.length;
+  }
+
+  goToPage(fragment: string) {
+    const currentRoute = this.router.url;
+    if (currentRoute.includes('/home')) {
+      return document.querySelector(`#${fragment}`).scrollIntoView({ behavior: 'smooth' });
+    }
+    this.router.navigate(['/home'], {fragment: fragment}); 
   }
 
 }

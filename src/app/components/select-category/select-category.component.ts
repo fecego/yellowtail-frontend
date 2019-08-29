@@ -17,11 +17,11 @@ export class SelectCategoryComponent implements OnInit {
   }
 
   overCategory(category) {
-    this.currentCategory = category;
+    //this.currentCategory = category;
   }
 
   leaveCategory() {
-    this.currentCategory = 'Categorias';
+    //this.currentCategory = 'Categorias';
   }
 
 }

@@ -16,8 +16,8 @@ i:hover,
 .text-chat {
     color: #ffffff;
     position: relative;
-    font-weight: bold;
     margin: 25% 0;
+    font-size: 13px;
 }
 .chat-img {
     width: 8%;

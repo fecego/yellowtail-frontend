@@ -247,7 +247,7 @@ export class CategoriesComponent implements OnInit {
       ]
     },
     lineas: {
-      name: 'Lineas',
+      name: 'Líneas',
       key: 'lineas',
       image: '/assets/img/categorias/lineas.png',
       filters: [
