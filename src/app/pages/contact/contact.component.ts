@@ -9,10 +9,10 @@ import {} from 'googlemaps';
 export class ContactComponent implements OnInit {
 
   @ViewChild('gmap') gmapElement: any;
-  map: google.maps.Map;
+  mapVeracruz: google.maps.Map;
 
   @ViewChild('mmap') mmapElement: any;
-  mmap: google.maps.Map;
+  mapMerida: google.maps.Map;
 
   contactForm: any;
 
@@ -25,13 +25,32 @@ export class ContactComponent implements OnInit {
   }
 
   ngOnInit() {
-    const mapProp = {
-      center: new google.maps.LatLng(18.5793, 73.8143),
+    const propsMerida = {
+      center: new google.maps.LatLng(21.0257935, -89.6063063),
       zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
-    this.mmap = new google.maps.Map(this.mmapElement.nativeElement, mapProp);
+    const propsVeracruz = {
+      center: new google.maps.LatLng(20.1889494, -96.8684576),
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+    this.mapMerida = new google.maps.Map(this.gmapElement.nativeElement, propsMerida);
+    this.mapVeracruz = new google.maps.Map(this.mmapElement.nativeElement, propsVeracruz);
+
+    let locationMerida = new google.maps.LatLng(21.0257935, -89.6063063);
+    new google.maps.Marker({
+      position: locationMerida,
+      map: this.mapMerida,
+      title: 'Yellowtail Merida'
+    });
+
+    let locationVeracruz = new google.maps.LatLng(20.1889494, -96.8684576);
+    new google.maps.Marker({
+      position: locationVeracruz,
+      map: this.mapVeracruz,
+      title: 'Yellowtail Veracruz'
+    });
   }
 
   sendForm() {

@@ -23,6 +23,8 @@ import { CheckoutComponent } from './pages/checkout/checkout.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { SummaryComponent } from './pages/summary/summary.component';
 import { MainCategoriesComponent } from './pages/main-categories/main-categories.component';
+import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+
 
 const routes: Routes = [
   {
@@ -104,6 +106,10 @@ const routes: Routes = [
   {
     path: 'trofeos',
     component: TrophiesComponent
+  },
+  {
+    path: 'contratos',
+    component: PrivacyPolicyComponent
   },
   {
     path: '',

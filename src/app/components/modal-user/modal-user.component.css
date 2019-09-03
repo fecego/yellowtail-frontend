@@ -24,13 +24,24 @@
 .button-register {
   margin-top: 1rem;
 }
+
 .nav-link[aria-expanded="true"]{
-  background-color: #FFFFFF;
+  background-color: #FBDF3E;
 }
 .nav-link {
+  background-color: #FFFFFF;
+  color: black;
+}
+
+.nav-link[aria-expanded="true"].active{
+  background-color: #FFFFFF;
+}
+.nav-link.active{
   background-color: #FBDF3E;
   color: white;
 }
+
+
 .btn-modal-user {
   border-radius: 25px;
   width: 40%;

@@ -8,17 +8,17 @@
     <div class="row">
       
       <div class="col-12 col-sm-6 col-md-4 col-xl-3" *ngFor="let photo of instagramPhotos">
-        <a href="{{photo.link}}" class="photo-box text-decoration-none">
+        <a href="{{photo.link}}" target="_blank" class="photo-box text-decoration-none">
           <div class="image-wrap">
             <div class="content-instagram">
               <i class="fab fa-instagram fa-5x"></i>
             </div>
             <img src="{{photo.image}}" class="img-thumbnail">
           </div>
-          <div class="description mt-2">
-            <p>#{{photo.tags}}</p>
-          </div>
         </a>
+        <div class="description mt-2">
+          <p class="description">#{{photo.tags}}</p>
+        </div>
       </div>
       
     </div>

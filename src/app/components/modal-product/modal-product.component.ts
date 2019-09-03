@@ -108,7 +108,7 @@ export class ModalProductComponent implements OnInit {
   toggleFavorite() {
     if (!this.authService.getLoggedIn()) {
       const modal = this.modalService.open(ModalUserComponent, { centered: true });
-      modal.componentInstance.showTab('login');
+      return modal.componentInstance.showTab('login');
     }
 
     const productId = this.product._id;

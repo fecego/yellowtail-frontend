@@ -58,6 +58,7 @@ import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.co
 import { SelectCategoryComponent } from './components/select-category/select-category.component';
 import { MainCategoriesComponent } from './pages/main-categories/main-categories.component';
 import { BestSellersComponent } from './pages/home/best-sellers/best-sellers.component';
+import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
 
 @NgModule({
   declarations: [
@@ -110,7 +111,8 @@ import { BestSellersComponent } from './pages/home/best-sellers/best-sellers.com
     PrivacyPolicyComponent,
     SelectCategoryComponent,
     MainCategoriesComponent,
-    BestSellersComponent
+    BestSellersComponent,
+    TermsAndConditionsComponent
   ],
   imports: [
     BrowserModule,
