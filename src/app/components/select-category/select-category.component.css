@@ -23,13 +23,13 @@
 .box:not(:last-child):after {
   content: "";
   border-bottom: 34rem solid #343a40;
-  border-left: 2rem solid transparent;
+  border-left: 0.95rem solid transparent;
   right: -0px;
 }
 .box:not(:first-child):before {
   content: "";
   border-bottom: 34rem solid transparent;
-  border-left: 2rem solid #343a40;
+  border-left: 0.95rem solid #343a40;
   left: -0px;
 }
 .box:hover,
