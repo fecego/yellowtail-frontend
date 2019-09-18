@@ -2,12 +2,15 @@
 .title-instagram {
   width: 16rem;
 }
-.photo-box img,
+.photo-box img {
+  width: auto;
+}
 .instagram-logo  {
   width: 100%;
 }
 .photo-box .image-wrap {
   position: relative;
+  width: 50%;
 }
 .content-instagram {
   position: absolute;
@@ -18,8 +21,10 @@
   display: none;
   z-index: 0;
   background-color: rgba(0, 0, 0, 0.65);
-  padding: 25% 38%;
   color: white;
+}
+.icon-hover {
+  height: 100%;
 }
 .photo-box:hover .content-instagram {
   display: block;

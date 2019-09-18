@@ -7,11 +7,13 @@
   <div class="instagram-content">
     <div class="row">
       
-      <div class="col-12 col-sm-6 col-md-4 col-xl-3" *ngFor="let photo of instagramPhotos">
-        <a href="{{photo.link}}" target="_blank" class="photo-box text-decoration-none">
+      <div class="col-3" *ngFor="let photo of instagramPhotos">
+        <a href="{{photo.link}}" target="_blank" class="photo-box text-decoration-none d-flex align-items-center justify-content-center">
           <div class="image-wrap">
             <div class="content-instagram">
-              <i class="fab fa-instagram fa-5x"></i>
+              <div class="icon-hover d-flex justify-content-center align-items-center">
+                <i class="fab fa-instagram fa-5x d-none d-lg-block"></i>
+              </div>
             </div>
             <img src="{{photo.image}}" class="img-thumbnail">
           </div>
