@@ -6,29 +6,6 @@
   </div>
 
   <div class="row mt-3 mb-3">
-    <div class="col-md-7">
-      <div class="card">
-        <div class="card-body">
-          <form>
-            <div class="form-group">
-              <label for="nameContact">Nombre</label>
-              <input  type="text" class="form-control" id="name" name="name" 
-                      placeholder="Nombre" required minlength="4"
-                      [(ngModel)]="contactForm.name" #name="ngModel">
-            </div>
-            <div class="form-group">
-              <label for="emailContact">Correo electronico</label>
-              <input type="email" class="form-control" id="email" name="email" placeholder="nombre@correo.com" required minlength="4">
-            </div>
-            <div class="form-group">
-              <label for="messageContact">Mensaje</label>
-              <textarea class="form-control" id="message" name="message" rows="3" required minlength="4"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-          </form>
-        </div>
-      </div>
-    </div>
     <div class="col-md-5">
       <div class="card text-white bg-dark">
         <div class="card-body">
@@ -59,6 +36,29 @@
               <div #mmap class="map-store mt-1"></div>
             </li>
           </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="card">
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label for="nameContact">Nombre</label>
+              <input  type="text" class="form-control" id="name" name="name" 
+                      placeholder="Nombre" required minlength="4"
+                      [(ngModel)]="contactForm.name" #name="ngModel">
+            </div>
+            <div class="form-group">
+              <label for="emailContact">Correo electronico</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="nombre@correo.com" required minlength="4">
+            </div>
+            <div class="form-group">
+              <label for="messageContact">Mensaje</label>
+              <textarea class="form-control" id="message" name="message" rows="3" required minlength="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          </form>
         </div>
       </div>
     </div>
