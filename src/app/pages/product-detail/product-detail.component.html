@@ -58,7 +58,7 @@
       <div class="col-12 col-md-6 col-lg-4 col-xl-4">
         <h2 class="d-none d-md-block mb-0">{{product.name}}</h2>
         <h2 class="d-none d-md-block text-muted mb-2">
-          <label class="btn btn-outline-warning float-right" (click)="toggleFavorite()">
+          <label class="btn btn-outline-warning btn-heart float-right" (click)="toggleFavorite()">
             <i class="fas fa-heart" *ngIf="product.isFavorite"></i>
             <i class="far fa-heart" *ngIf="!product.isFavorite"></i>
           </label>

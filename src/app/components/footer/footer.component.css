@@ -14,7 +14,7 @@ i:hover,
     margin-right: 1.4rem;
 }
 .text-chat {
-    color: #ffffff;
+    font-weight: bold;
     position: relative;
     margin: 25% 0;
     font-size: 13px;

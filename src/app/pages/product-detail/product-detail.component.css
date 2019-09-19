@@ -1,6 +1,12 @@
 .btn-productToCart {
   border-radius: 35px;
 }
+.btn-heart {
+  background-color: transparent;
+  border: none;
+  color: #FBDF3E;
+  cursor: pointer;
+}
 .carousel-content {
   margin: auto;
   display: flex;
