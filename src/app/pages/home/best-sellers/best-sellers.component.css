@@ -1,3 +1,18 @@
-#bestSellers .container {
-  padding-top: 0%;
+
+#bestSellers::before {
+  content: "";
+  height: 8rem;
+  margin-top: -8rem;
+  display: block;
+  visibility: hidden;
+}
+
+@media (max-width: 767px) {
+  #bestSellers::before {
+    content: "";
+    height: 12rem;
+    margin-top: -12rem;
+    display: block;
+    visibility: hidden;
+  }
 }

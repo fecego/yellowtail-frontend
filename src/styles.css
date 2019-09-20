@@ -27,9 +27,9 @@ body .container {
 body .container:not(.container-auto) {
     min-height: 80vh;
 }
-.title-styleLogo {
+/* .title-styleLogo {
     font-family: "Poolhouse", cursive!important;
-}
+} */
 .line-title {
     border-top: 2px solid #FBDF3E;
     width: 30%;
