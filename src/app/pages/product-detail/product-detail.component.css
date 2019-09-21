@@ -8,6 +8,9 @@
   background-color: #ffffff;
   color: #ffbf00!important
 }
+.badge-available {
+  background-color: #FBDF3E;
+}
 .carousel-content {
   margin: auto;
   display: flex;
