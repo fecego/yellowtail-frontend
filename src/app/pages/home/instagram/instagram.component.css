@@ -1,4 +1,14 @@
-
+#instagramSection::before {
+  content: "";
+  height: 8rem;
+  margin-top: -8rem;
+  display: block;
+  visibility: hidden;
+  padding-top: 1rem;
+}
+.section-instagram {
+  padding-top: 0%;
+}
 .title-instagram {
   width: 16rem;
 }

@@ -1,0 +1,7 @@
+#categoriesSection::before {
+  content: "";
+  height: 8rem;
+  margin-top: -8rem;
+  display: block;
+  visibility: hidden;
+}
