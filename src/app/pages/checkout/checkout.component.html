@@ -53,7 +53,7 @@
         <div class="card-header">
           <input type="checkbox" name="payment" (change)="changeTaxContainer()" /> Quiero factura
         </div>
-        <div *ngIf="showTaxContainer">
+        <div class="detail-tax" *ngIf="showTaxContainer">
           <div class="cart-content">
             <ul class="list-group list-group-flush" >
               <li class="list-group-item" *ngFor="let taxInformation of taxInformations">
@@ -72,53 +72,51 @@
         <div class="col-6">
           <h3>Pedido</h3>
         </div>
-        <div class="col-6 text-right">
+        <div class="col-6 d-flex justify-content-end align-items-end">
           <a href="/carrito">Modificar compra</a>
         </div>
       </div>
 
-      <div class="row">
-        <div class="card">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <app-checkout-product [product]="product" *ngFor="let product of products"></app-checkout-product>
-            </li>
-            <li class="list-group-item">
-              <div class="row">
-                <div class="col-8 col-sm-9">
-                  <p class="section-card">Subtotal</p>
-                </div>
-                <div class="col-4 col-sm-3 text-center">
-                  <p>345</p>
-                </div>
+      <div class="card mt-2">
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <app-checkout-product [product]="product" *ngFor="let product of products"></app-checkout-product>
+          </li>
+          <li class="list-group-item">
+            <div class="row">
+              <div class="col-8 col-sm-9">
+                <p class="section-card">Subtotal</p>
               </div>
-              <div class="row">
-                <div class="col-8 col-sm-9">
-                  <p class="section-card">Envio</p>
-                </div>
-                <div class="col-4 col-sm-3 text-center">
-                  <p>234</p>
-                </div>
+              <div class="col-4 col-sm-3 text-center">
+                <p>345</p>
               </div>
-              <div class="row">
-                <div class="col-8 col-sm-9">
-                  <p class="section-card">Descuento </p>
-                </div>
-                <div class="col-4 col-sm-3 text-center">
-                  <p>545</p>
-                </div>
+            </div>
+            <div class="row">
+              <div class="col-8 col-sm-9">
+                <p class="section-card">Envio</p>
               </div>
-              <div class="row">
-                <div class="col-8 col-sm-9">
-                  <p class="section-card">Total</p>
-                </div>
-                <div class="col-4 col-sm-3 text-center">
-                  <p>645</p>
-                </div>
+              <div class="col-4 col-sm-3 text-center">
+                <p>234</p>
               </div>
-            </li>
-          </ul>
-        </div>
+            </div>
+            <div class="row">
+              <div class="col-8 col-sm-9">
+                <p class="section-card">Descuento </p>
+              </div>
+              <div class="col-4 col-sm-3 text-center">
+                <p>545</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-8 col-sm-9">
+                <p class="section-card">Total</p>
+              </div>
+              <div class="col-4 col-sm-3 text-center">
+                <p>645</p>
+              </div>
+            </div>
+          </li>
+        </ul>
       </div>
 
       <div class="row mt-3">

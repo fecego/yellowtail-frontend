@@ -7,7 +7,7 @@
   <div class="instagram-content">
     <div class="row">
       
-      <div class="col-3" *ngFor="let photo of instagramPhotos">
+      <div class="col-3 mt-3 mb-3 text-center" *ngFor="let photo of instagramPhotos">
         <a href="{{photo.link}}" target="_blank" class="photo-box text-decoration-none d-flex align-items-center justify-content-center">
           <div class="image-wrap">
             <div class="content-instagram">
@@ -19,7 +19,7 @@
           </div>
         </a>
         <div class="description mt-2">
-          <p class="description">{{photo.tags}}</p>
+          <p class="description">#{{photo.tags}}</p>
         </div>
       </div>
       

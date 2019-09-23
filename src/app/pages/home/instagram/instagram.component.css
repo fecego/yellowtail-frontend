@@ -29,14 +29,8 @@
 .photo-box:hover .content-instagram {
   display: block;
 }
-.description {
-  height: 6vh;
-}
 .description p {
-  font-size: 17px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
+  font-size: 1rem;
 }
 .section-instagram::before {
   content: "";
