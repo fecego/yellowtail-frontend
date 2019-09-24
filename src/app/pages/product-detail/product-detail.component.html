@@ -69,7 +69,14 @@
         </p>
 
         <hr class="line-description">
-        <h2 class="d-none d-md-block text-center">{{getPrice(product.price)}}</h2>
+        <div class="d-none d-md-block text-center">
+          <h2 [ngClass]="{'priceNotDiscount': product.discount}" class="mb-0">
+            {{getPrice(product.price)}}
+          </h2>
+          <h2 [ngClass]="(product.discount)?'priceDiscount':'priceDisplayNone'" class="mb-0">
+            {{getPrice(product.discount)}}
+          </h2>
+        </div>
 
         <div *ngIf="product.withVariants">
           <div class="variation-row" *ngFor="let option of getOptions()">

@@ -8,6 +8,17 @@
   background-color: #ffffff;
   color: #ffbf00!important
 }
+.priceNotDiscount {
+  margin-bottom: 0rem;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+.priceDiscount {
+  color: #f00;
+}
+.priceDisplayNone {
+  display: none;
+}
 .badge-available {
   background-color: #FBDF3E;
 }
