@@ -19,7 +19,12 @@
       <span>{{product.sku}}</span>
       <span *ngIf="!product.sku">&nbsp;</span>
     </p>
-    <h4 (click)="openProductModal()" class="content-modal-product"><span id="costo-producto">{{getPrice(product.price)}}</span></h4>
+    <h4 (click)="openProductModal()" [ngClass]="{'priceNotDiscount': product.discount}" class="content-modal-product">
+      <span id="costo-producto">{{getPrice(product.price)}}</span>
+    </h4>
+    <h4 (click)="openProductModal()" [ngClass]="(product.discount)?'priceDiscount':'priceDisplayNone'" class="content-modal-product">
+      {{getPrice(product.discount)}}
+    </h4>
 
     <div class="card section-shop-product btn-section text-center">
       <div class="d-flex align-items-center justify-content-center pt-3 pb-3">

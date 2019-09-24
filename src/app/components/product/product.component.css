@@ -6,6 +6,17 @@
 .box-producto .text-muted {
     margin-bottom: 0!important;
 }
+.priceNotDiscount {
+    margin-bottom: 0rem;
+    font-size: 14px;
+    text-decoration: line-through;
+}
+.priceDiscount {
+    color: #f00;
+}
+.priceDisplayNone {
+    display: none;
+}
 .content-img {
     height: 25vh;
     margin: 0.5rem 0;

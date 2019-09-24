@@ -24,6 +24,17 @@
   font-size: 21px;
   text-transform: uppercase;
 }
+.priceNotDiscount {
+  margin-bottom: 0rem;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+.priceDiscount {
+  color: #f00;
+}
+.priceDisplayNone {
+  display: none;
+}
 .content-price-modal {
   border-bottom: 1px solid #dad7d7;
   padding: 4% 0;

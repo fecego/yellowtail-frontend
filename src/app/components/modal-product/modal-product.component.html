@@ -28,7 +28,14 @@
       <div class="content-price-modal">
         
         <div class="d-flex justify-content-between align-items-center mb-1 mt-2">
-          <h2 class="mb-0">{{getPrice(product.price)}}</h2>
+          <div>
+            <h2 [ngClass]="{'priceNotDiscount': product.discount}" class="mb-0">
+              {{getPrice(product.price)}}
+            </h2>
+            <h2 [ngClass]="(product.discount)?'priceDiscount':'priceDisplayNone'" class="mb-0">
+              {{getPrice(product.discount)}}
+            </h2>
+          </div>
           <div class="d-flex justify-content-start align-items-center mb-1 mt-2">
             <div class="btn-group btn-group-toggle">
               <label class="btn btn-outline-warning" (click)="toggleFavorite()">
