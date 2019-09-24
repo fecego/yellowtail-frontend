@@ -26,25 +26,27 @@
         </div>
 
         <!-- Cuadros que van a laizquierda con las imagenes -->
-        <div class="row">
-          <div class="col-12 col-lg-2 img-content mb-3 mb-md-0">
-            <div *ngFor="let item of getImages()" class="content-img-detail">
-              <img src="{{item.image}}" class="img-detail">
+        <div id="productDetailCarousel" class="carousel slide">
+          <div class="row">
+            <div class="col-12 col-lg-2 mb-3 mb-md-0">
+              <ul class="carousel-indicators mx-auto px-2">
+                <li class="list-inline-item" *ngFor="let item of getImages(); let indice=index" [ngClass]="['active', item.activeClass]">
+                  <a [id]="indice" [attr.data-slide-to]="indice" [ngClass]="['selected', item.activeClass]" data-target="#productDetailCarousel">
+                    <img src="{{item.image}}" class="img-detail">
+                  </a>
+                </li>
+              </ul>
             </div>
-          </div>
-          <div class="col-12 col-lg-10 align-self-center">
-            <div class="carousel-content">
-              <div id="carouselProductControls" class="carousel slide carousel-size d-flex align-items-center" data-ride="carousel">
-                <div class="carousel-inner">
-                  <div [ngClass]="['carousel-item', item.activeClass]" *ngFor="let item of getImages()">
-                    <img src="{{item.image}}" class="d-block image-carousel" alt="">
-                  </div>
+            <div class="col-12 col-lg-10 align-self-center">
+              <div class="carousel-inner">
+                <div [ngClass]="['carousel-item', item.activeClass]" [attr.data-slide-number]="indice" *ngFor="let item of getImages(); let indice=index">
+                  <img src="{{item.image}}" class="d-block image-carousel" alt="">
                 </div>
-                <a class="carousel-control-prev" href="#carouselProductControls" role="button" data-slide="prev">
+                <a class="carousel-control-prev" href="#productDetailCarousel" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#carouselProductControls" role="button" data-slide="next">
+                <a class="carousel-control-next" href="#productDetailCarousel" role="button" data-slide="next">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="sr-only">Next</span>
                 </a>
