@@ -8,7 +8,8 @@
   height: 35rem;
   background-position-x: initial;
   background-size: cover;
-  transition: 1s;
+  transition-duration: 1s;
+  transition-timing-function: linear;
   flex: 1;
   display: block;
   position: relative;
@@ -22,14 +23,14 @@
 }
 .box:not(:last-child):after {
   content: "";
-  border-bottom: 34rem solid #343a40;
+  border-bottom: 34rem solid #FBDF3E;
   border-left: 0.95rem solid transparent;
   right: -0px;
 }
 .box:not(:first-child):before {
   content: "";
   border-bottom: 34rem solid transparent;
-  border-left: 0.95rem solid #343a40;
+  border-left: 0.95rem solid #FBDF3E;
   left: -0px;
 }
 .box:hover,
@@ -56,4 +57,13 @@
   width: 100%;
   margin: 30px;
   color: #DDD
+}
+@media (max-width: 991px) {
+  .boxTitle {
+    width:20px;
+    word-wrap: break-word;
+    text-align: center;
+    line-height: 30px;
+    margin: 0.5rem;
+  }
 }

@@ -58,6 +58,11 @@
     display: block;
     visibility: hidden;
   }
+  .description p {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 @media (max-width: 767px) and (min-width: 577px) {
   .content-instagram {
