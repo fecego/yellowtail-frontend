@@ -26,7 +26,7 @@ export class ContactComponent implements OnInit {
 
   ngOnInit() {
     const propsMerida = {
-      center: new google.maps.LatLng(21.0257935, -89.6063063),
+      center: new google.maps.LatLng(21.0250974, -89.6055072),
       zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
@@ -35,10 +35,10 @@ export class ContactComponent implements OnInit {
       zoom: 15,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
-    this.mapMerida = new google.maps.Map(this.gmapElement.nativeElement, propsMerida);
-    this.mapVeracruz = new google.maps.Map(this.mmapElement.nativeElement, propsVeracruz);
+    this.mapMerida = new google.maps.Map(this.mmapElement.nativeElement, propsMerida);
+    this.mapVeracruz = new google.maps.Map(this.gmapElement.nativeElement, propsVeracruz);
 
-    let locationMerida = new google.maps.LatLng(21.0257935, -89.6063063);
+    let locationMerida = new google.maps.LatLng(21.0250974, -89.6055072);
     new google.maps.Marker({
       position: locationMerida,
       map: this.mapMerida,

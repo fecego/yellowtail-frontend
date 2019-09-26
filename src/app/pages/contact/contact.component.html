@@ -6,40 +6,37 @@
   </div>
 
   <div class="row mt-3 mb-3">
-    <div class="col-md-5">
+    <div class="col-12">
       <div class="card text-white bg-dark">
         <div class="card-body">
           <h4 class="card-title">Tiendas físicas</h4>
-          <ul class="list-unstyled">
-            <li class="media">
-              <i class="fa fa-map-marked-alt mr-3 fa-2x"></i>
-              <div class="media-body">
+            <div class="row">
+              <div class="col-12 col-md-6 content-map">
                 <h4 class="mt-0 mb-1">Sucursal Veracruz</h4>
-                <em>FECEGO Marina</em> <br>
-                Díaz Mirón 5 C.P. 93620 San Rafael, Veracruz. <br>
-                <i class="fa fa-phone"></i> 01 232 324 9060 Ext. 123
+                <p>
+                  <em>FECEGO Marina</em> <br>
+                  Díaz Mirón 5 C.P. 93620 San Rafael, Veracruz. <br>
+                  <i class="fa fa-phone"></i> 01 232 324 9060 Ext. 123
+                </p>
+                <div #gmap class="map-store mt-1"></div>
               </div>
-            </li>
-            <li>
-              <div #gmap class="map-store mt-1"></div>
-            </li>
-            <li class="media my-4">
-              <i class="fa fa-map-marked-alt mr-3 fa-2x"></i>
-              <div class="media-body">
+
+              <div class="col-12 col-md-6 content-map">
                 <h4 class="mt-0 mb-1">Sucursal Mérida</h4>
-                <em>Yellowtail</em> <br>
-                Andrés García Lavín 307 C.P. 97117 San Ramón Norte <br>
-                Mérida, Yucatán.
+                <p>
+                  <em>Yellowtail</em> <br>
+                  Av. Andrés García Lavín No. 301 interior 2 <br>
+                  C.P. 97117 San Ramón Norte Mérida, Yucatán.<br>
+                  <i class="fa fa-phone"></i> 999 912 7453
+                </p>
+                <div #mmap class="map-store mt-1"></div>
               </div>
-            </li>
-            <li>
-              <div #mmap class="map-store mt-1"></div>
-            </li>
-          </ul>
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-7">
+
+    <div class="col-12 mt-5">
       <div class="card">
         <div class="card-body">
           <form>
@@ -50,7 +47,7 @@
                       [(ngModel)]="contactForm.name" #name="ngModel">
             </div>
             <div class="form-group">
-              <label for="emailContact">Correo electronico</label>
+              <label for="emailContact">Correo electrónico</label>
               <input type="email" class="form-control" id="email" name="email" placeholder="nombre@correo.com" required minlength="4">
             </div>
             <div class="form-group">
