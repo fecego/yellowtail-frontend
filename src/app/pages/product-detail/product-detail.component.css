@@ -3,6 +3,7 @@
 }
 .btn-heart {
   border: 0px!important;
+  font-size: 1.3rem;
 }
 .btn-heart:hover {
   background-color: #ffffff;

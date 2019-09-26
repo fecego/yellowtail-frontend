@@ -23,6 +23,7 @@ export class ProductDetailComponent implements OnInit {
   related: Array<any>;
   variant: any;
   filters: any;
+  showShare: boolean;
 
   constructor(private productsService: ProductsService,
               private route: ActivatedRoute,
@@ -35,6 +36,7 @@ export class ProductDetailComponent implements OnInit {
     this.variant = null;
     this.filters = {};
     this.related = [];
+    this.showShare = false;
   }
 
   ngOnInit() {
@@ -154,6 +156,10 @@ export class ProductDetailComponent implements OnInit {
 
   getShareUrl() {
     return `http://165.227.48.162/producto/${this.product.url}`;
+  }
+
+  toggleShare() {
+    this.showShare = !this.showShare;
   }
 
   toggleFavorite() {
