@@ -28,7 +28,7 @@ export class InstagramComponent implements OnInit {
       const image  = item.images.thumbnail.url;
       let firstTags = item.tags.slice(0,3);
       if (firstTags.length == 0) firstTags = ['yellowtail'];
-      const tags = firstTags.join(' #');
+      const tags = firstTags.join(' ');
       return {
         image,
         tags,
