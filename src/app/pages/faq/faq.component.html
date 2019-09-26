@@ -8,7 +8,7 @@
     <div *ngFor="let faq of faqs">
       <div class="card-header card-faq" role="tab" [id]="'heading'+faq.index">
         <h3>
-          <a class="text-decoration-none text-yellow" role="button" data-toggle="collapse" data-parent="#accordion" [href]="'#collapse'+faq.index" aria-expanded="true" [attr.aria-controls]="'collapse'+faq.index">
+          <a class="text-decoration-none text-style" role="button" data-toggle="collapse" data-parent="#accordion" [href]="'#collapse'+faq.index" aria-expanded="true" [attr.aria-controls]="'collapse'+faq.index">
             <small><i class="fa fa-plus-circle"></i> {{faq.question}}</small>
           </a>
         </h3>
