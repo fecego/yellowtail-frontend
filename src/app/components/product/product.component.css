@@ -41,7 +41,7 @@
     border: 0px!important;
 }
 .btn-heart:hover {
-    background-color: #ffffff;
+    background-color: #ffffff!important;
     color: #ffbf00!important
 }
 .btn-section {

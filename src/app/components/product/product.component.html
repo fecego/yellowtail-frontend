@@ -7,12 +7,6 @@
     <div class="content-title d-flex align-items-end justify-content-center">
       <h4 class="title-productNew" id="nombre-producto">
         <small (click)="openProductModal()">{{product.name}}</small>
-        <span>
-          <div class="btn btn-outline-warning btn-heart" (click)="toggleFavorite()">
-            <i class="fas fa-heart" *ngIf="product.isFavorite"></i>
-            <i class="far fa-heart" *ngIf="!product.isFavorite"></i>
-          </div>
-        </span>
       </h4>
     </div>
     <p (click)="openProductModal()" class="text-muted content-modal-product">
@@ -35,6 +29,12 @@
         <button class="btn btn-outline-warning btn-circle-shop-product" (click)="addQuantity()">+</button>
       </div>
     
-      <button class="btn btn-warning btn-block btn-productToCart-shop-product" (click)="addProductToCart()">Agregar al carrito</button>
+      <div class="btn-group btn-group-toggle">
+        <button class="btn btn-warning btn-block btn-productToCart-shop-product" (click)="addProductToCart()">Agregar al carrito</button>
+        <div class="btn btn-outline-warning btn-heart" (click)="toggleFavorite()">
+          <i class="fas fa-heart" *ngIf="product.isFavorite"></i>
+          <i class="far fa-heart" *ngIf="!product.isFavorite"></i>
+        </div>
+      </div>
     </div>
   </div>
