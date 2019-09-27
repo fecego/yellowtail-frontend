@@ -179,7 +179,6 @@ div.search-input-carousel input.form-control:focus {
 }
 
 @media (max-width: 767px) {
-    .grid-item--height2 .content .content-items-thopies .content-chart .justify-content-center .img-item-chart,
     .grid-item--width4 .content .content-items-thopies .content-chart .justify-content-center .img-item-chart {
         display: none;
     }

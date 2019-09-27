@@ -26,12 +26,14 @@
   border-bottom: 34rem solid #FBDF3E;
   border-left: 0.95rem solid transparent;
   right: -0px;
+  z-index: 1;
 }
 .box:not(:first-child):before {
   content: "";
   border-bottom: 34rem solid transparent;
   border-left: 0.95rem solid #FBDF3E;
   left: -0px;
+  z-index: 1;
 }
 .box:hover,
 .box:active,
@@ -53,10 +55,11 @@
 
 .boxTitle{
   position: absolute;
-  bottom: 0;
+  top: 0;
   width: 100%;
-  margin: 30px;
-  color: #DDD
+  padding: 30px;
+  color: #DDD;
+  background-color: rgba(121, 121, 121, 0.4392156862745098);;
 }
 @media (max-width: 991px) {
   .boxTitle {
