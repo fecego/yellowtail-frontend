@@ -23,6 +23,9 @@
 }
 .button-register {
   margin-top: 1rem;
+  border-radius: .25rem;
+  width: 40%;
+  margin: auto;
 }
 
 .nav-link[aria-expanded="true"]{
@@ -38,14 +41,8 @@
 }
 .nav-link.active{
   background-color: #FBDF3E;
-  color: white;
-}
-
-
-.btn-modal-user {
-  border-radius: 25px;
-  width: 40%;
-  margin: auto;
+  color: #212529;
+  border-color: #dee2e6 #dee2e6 #FBDF3E;
 }
 .contentRegister-login form input,
 .input-group-prepend .input-group-text {
