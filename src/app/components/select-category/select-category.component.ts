@@ -10,7 +10,7 @@ export class SelectCategoryComponent implements OnInit {
   currentCategory: String;
 
   constructor() {
-    this.currentCategory = 'Categorias';
+    this.currentCategory = 'Categorías';
   }
 
   ngOnInit() {
