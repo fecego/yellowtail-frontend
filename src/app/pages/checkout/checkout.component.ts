@@ -128,4 +128,8 @@ export class CheckoutComponent implements OnInit {
     console.log(this.options);
   }
 
+  promoCode() {
+    console.log('Validación de cupón');
+  }
+
 }
