@@ -8,3 +8,9 @@
   display: block;
   visibility: hidden;
 }
+.description {
+  font-size: 17px;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 1rem;
+}
