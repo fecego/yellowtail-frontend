@@ -106,8 +106,12 @@ export class ProductsService {
   }
 
   getProductsByQuery(query: string) {
+    query = query.toLowerCase();
     setTimeout( () => {
-      let products  : any = this.allProducts.filter(product => product.name.includes(query));
+      let products  : any = this.allProducts.filter(product => {
+        const name = product.name.toLowerCase();
+        return name.includes(query);
+      });
       products = this.marksFavoritesProducts(products);
       return this.productsByQueryObservable.next(products);
     }, 2000); 

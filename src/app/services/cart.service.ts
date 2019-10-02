@@ -20,7 +20,24 @@ export class CartService {
   }
 
   addProductToCart(product: any) {
-    this.itemsInCart.push(product);
+    console.log('Todos => ', this.itemsInCart);
+    console.log('El que agrega => ', product);
+
+    const productInCart = this.itemsInCart.find(tempProduct => {
+      return tempProduct._id == product._id;
+    });
+
+    if (productInCart) {
+      this.itemsInCart = this.itemsInCart.map(tempProduct => {
+        if (tempProduct._id === product._id) {
+          tempProduct.quantity += product.quantity;
+        }
+        return tempProduct;
+      });
+    } else {
+      this.itemsInCart.push(product);
+    }
+
     this.cartObservable.next(this.itemsInCart);
     this.localStorageService.saveValue(LocalStorageService.KEY_CART, this.itemsInCart);
   }

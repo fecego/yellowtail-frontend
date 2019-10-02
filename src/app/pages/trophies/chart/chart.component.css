@@ -19,3 +19,6 @@
 ul.list-unstyled li.input-mini:last-child hr.line-products {
   border-top: 0px;
 }
+.linkProduct {
+  color: #ffffff;
+}

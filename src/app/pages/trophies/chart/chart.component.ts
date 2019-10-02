@@ -36,7 +36,7 @@ export class ChartComponent implements OnInit {
   prepareProducts(products: any) {
     this.products = products.map(product => {
       product.mainImage = product.images[0];
-      product.selected = false;
+      product.selected = true;
       return product;
     });
   }

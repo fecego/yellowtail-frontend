@@ -20,10 +20,12 @@
           <li *ngFor="let product of products" class="input-mini">
             <div class="row">
               <div class="col-1 align-self-center">
-                <input type="checkbox" (change)="toggleCheckedProduct($event, product._id)">
+                <input type="checkbox" [checked]="product.selected" (change)="toggleCheckedProduct($event, product._id)">
               </div>
               <div class="col-7 col-md-8 pl-2">
-                {{product.name}}
+                <a href="/producto/{{product.url}}" class="linkProduct">
+                  {{product.name}}
+                </a>    
               </div>
               <div class="col-3 col-md-2 text-left align-self-center">
                 ${{product.price}}
