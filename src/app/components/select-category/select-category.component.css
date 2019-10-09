@@ -24,14 +24,14 @@
 .box:not(:last-child):after {
   content: "";
   border-bottom: 34rem solid #FBDF3E;
-  border-left: 0.95rem solid transparent;
+  border-left: 0.5rem solid transparent;
   right: -0px;
   z-index: 1;
 }
 .box:not(:first-child):before {
   content: "";
   border-bottom: 34rem solid transparent;
-  border-left: 0.95rem solid #FBDF3E;
+  border-left: 0.5rem solid #FBDF3E;
   left: -0px;
   z-index: 1;
 }
