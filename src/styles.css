@@ -60,11 +60,23 @@ div.error-message-form {
     background-color: rgba(255, 255, 255, 0)!important;
     border-color: rgba(255, 255, 255, 0.23921568627450981)!important;
 }
-.btn-circle-shop-product {
+button.btn-circle-shop-product {
     border-radius: 50px!important;
     height: 1.7rem;
     width: 1.7rem;
     padding: 0px!important;
+    color: #212529!important;
+    border: 1.5px solid;
+}
+button.btn-yellow-text {
+    color: #ffcc33!important;
+}
+.btn-heart {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.btn-heart i {
+    font-size: 1.52rem;
 }
 .btn-productToCart-shop-product {
     border-top-left-radius: 0px!important;
