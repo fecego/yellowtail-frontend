@@ -25,6 +25,9 @@ export class ProductDetailComponent implements OnInit {
   filters: any;
   showShare: boolean;
 
+  currentImage: any;
+  imageIndex: number;
+
   constructor(private productsService: ProductsService,
               private route: ActivatedRoute,
               private notificationsService: NotificationsService,
@@ -37,6 +40,12 @@ export class ProductDetailComponent implements OnInit {
     this.filters = {};
     this.related = [];
     this.showShare = false;
+
+    this.imageIndex = 0;
+    this.currentImage = {
+      normal: "",
+      zoom: ""
+    };
   }
 
   ngOnInit() {
@@ -59,6 +68,11 @@ export class ProductDetailComponent implements OnInit {
     if (!product) return;
     console.log('Product => ', product);
     this.product = product;
+    const firstImage = product.images[this.imageIndex];
+    this.currentImage = {
+      normal: firstImage,
+      zoom: "/assets/img/zoom/kayakgrande.jpeg"
+    };
     this.productsService.getRealtedProducts(this.product.related);
   }
 
@@ -164,6 +178,38 @@ export class ProductDetailComponent implements OnInit {
 
   toggleFavorite() {
     
+  }
+
+  selectImageByIndex(index) {
+    this.imageIndex = index;
+    const image = this.product.images[index];
+    this.currentImage = {
+      normal: image,
+      zoom: "/assets/img/zoom/kayakgrande.jpeg"
+    };
+  }
+
+  changeImageByRol(rol) {
+    let newIndex = 0;
+    const imagesLength = this.product.images.length;
+
+    if (rol === 'prev') {
+      // Si apreto anterior y esta ya en la 0, poner la ultima
+      if (this.imageIndex === 0) {
+        newIndex = imagesLength - 1;
+      } else {
+        newIndex = this.imageIndex - 1;
+      }
+    } else if (rol === 'next') {
+      // Si apreto siguiente y esta ya en la ultima, poner la 0
+      if (this.imageIndex === (imagesLength - 1) ) {
+        newIndex = 0;
+      } else {
+        newIndex = this.imageIndex + 1;
+      }
+    }
+    this.imageIndex = newIndex;
+    this.selectImageByIndex(newIndex);
   }
 
 }

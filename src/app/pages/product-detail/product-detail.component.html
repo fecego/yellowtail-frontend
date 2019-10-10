@@ -26,8 +26,8 @@
           <div class="row">
             <div class="col-12 col-lg-2 mb-3 mb-md-0">
               <ul class="carousel-indicators mx-auto px-2">
-                <li class="list-inline-item" *ngFor="let item of getImages(); let indice=index" [ngClass]="['active', item.activeClass]">
-                  <a [id]="indice" [attr.data-slide-to]="indice" [ngClass]="['selected', item.activeClass]" data-target="#productDetailCarousel">
+                <li class="list-inline-item" *ngFor="let item of getImages(); let indice=index" [ngClass]="['active']">
+                  <a [ngClass]="['selected', 'active']" (click)="selectImageByIndex(indice)">
                     <img src="{{item.image}}" class="img-detail">
                   </a>
                 </li>
@@ -35,14 +35,15 @@
             </div>
             <div class="col-12 col-lg-10 align-self-center">
               <div class="carousel-inner">
-                <div [ngClass]="['carousel-item', item.activeClass]" [attr.data-slide-number]="indice" *ngFor="let item of getImages(); let indice=index">
-                  <img src="{{item.image}}" class="d-block image-carousel" alt="">
-                </div>
-                <a class="carousel-control-prev" href="#productDetailCarousel" role="button" data-slide="prev">
+                <ngx-image-zoom
+                  [thumbImage]="currentImage.normal"
+                  [fullImage]="currentImage.zoom"
+                ></ngx-image-zoom>
+                <a class="carousel-control-prev" (click)="changeImageByRol('prev')" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                   <span class="sr-only">Previous</span>
                 </a>
-                <a class="carousel-control-next" href="#productDetailCarousel" role="button" data-slide="next">
+                <a class="carousel-control-next" (click)="changeImageByRol('next')" role="button" data-slide="next">
                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
                   <span class="sr-only">Next</span>
                 </a>
