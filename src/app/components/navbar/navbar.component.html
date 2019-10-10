@@ -49,11 +49,11 @@
     <a class="navbar-brand item-logo" href="/home">
       <img style="height: 50px; width: 95px;" src="/assets/img/logo/logo-yellow-50.png">
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-hover="dropdown" data-target="#navbarsExample03" aria-controls="navbarsExample03" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-hover="dropdown" (click)="toggleNavbar()">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarsExample03">
-      <ul class="navbar-nav">
+    <div class="collapse navbar-collapse justify-content-end" id="navbarsExample03" [ngClass]="{ 'show': navbarOpen }">
+      <ul class="navbar-nav" (click)="toggleNavbar()">
         <li class="nav-item dropdown">
           <a class="nav-link" href="" id="dropdown03" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Inicio</a>
           <div class="dropdown-menu" aria-labelledby="dropdown03">

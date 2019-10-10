@@ -25,6 +25,7 @@ export class NavbarComponent implements OnInit {
   username: string;
   products: Array<any>;
   showSearchBar: Boolean;
+  navbarOpen = false;
 
   constructor(private modalService: NgbModal,
               private authService: AuthService,
@@ -39,6 +40,10 @@ export class NavbarComponent implements OnInit {
     this.isLoggedInObservable = this.authService.getLoggedInObservable();
     this.cartObservable = this.cartService.getCartObservable();
     this.showSearchBarObservable = this.searchbarService.getSearchBarObservable();
+  }
+  
+  toggleNavbar() {
+    this.navbarOpen = !this.navbarOpen;
   }
 
   ngOnInit() {
