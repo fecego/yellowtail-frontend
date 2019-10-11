@@ -27,6 +27,8 @@ export class ProductDetailComponent implements OnInit {
 
   currentImage: any;
   imageIndex: number;
+  unavailable: boolean = false;
+  limitedProducts: boolean = false;
 
   constructor(private productsService: ProductsService,
               private route: ActivatedRoute,

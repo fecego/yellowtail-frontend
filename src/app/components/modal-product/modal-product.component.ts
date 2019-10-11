@@ -24,6 +24,8 @@ export class ModalProductComponent implements OnInit {
   product: any;
   quantity: number;
   showShare: boolean;
+  unavailable: boolean = false;
+  limitedProducts: boolean = false;
 
   constructor(public activeModal: NgbActiveModal,
               private modalService: NgbModal,

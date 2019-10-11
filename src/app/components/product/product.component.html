@@ -19,6 +19,9 @@
     <h4 (click)="openProductModal()" [ngClass]="(product.discount)?'priceDiscount':'priceDisplayNone'" class="content-modal-product">
       {{getPrice(product.discount)}}
     </h4>
+    <div *ngIf="limitedProducts" class="text-muted mt-2">
+      <p>*Solo 5 disponibles</p>
+    </div>
 
     <div class="card section-shop-product btn-section text-center">
       <div class="d-flex align-items-center justify-content-center pt-3 pb-3">
@@ -30,7 +33,12 @@
       </div>
     
       <div class="btn-group btn-group-toggle">
-        <button class="btn btn-warning btn-block btn-productToCart-shop-product" (click)="addProductToCart()">Agregar al carrito</button>
+        <div *ngIf="!unavailable" class="content-status">
+          <button class="btn btn-warning btn-block btn-productToCart-shop-product" (click)="addProductToCart()">Agregar al carrito</button>
+        </div>
+        <div *ngIf="unavailable" class="content-status">
+          <div class="btn btn-warning btn-block btn-productToCart-shop-product btn-unavailable">Agotado</div>
+        </div>
         <div class="btn btn-outline-warning btn-heart" (click)="toggleFavorite()">
           <i class="fas fa-heart" *ngIf="product.isFavorite"></i>
           <i class="far fa-heart" *ngIf="!product.isFavorite"></i>

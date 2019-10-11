@@ -49,6 +49,11 @@
 .product-sku a:hover {
   color: #ffcc33;
 }
+.content-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .carousel-content {
   margin: 1em 0;
 }

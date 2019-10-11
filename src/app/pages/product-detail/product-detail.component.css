@@ -129,6 +129,11 @@
 .stars {
   color: #dc9814;
 }
+.content-price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 @media (max-width: 991px) {
   #productDetailCarousel .carousel-indicators {

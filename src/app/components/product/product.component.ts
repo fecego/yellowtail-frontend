@@ -26,6 +26,8 @@ export class ProductComponent implements OnInit {
 
   quantity: number;
   private favoritesObservable: Observable<Array<string>>;
+  unavailable: boolean = false;
+  limitedProducts: boolean = false;
 
   constructor(private modalService: NgbModal,
               private notificationsService: NotificationsService,

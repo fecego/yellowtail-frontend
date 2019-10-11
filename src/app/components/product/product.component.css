@@ -44,6 +44,9 @@
     background-color: #ffffff!important;
     color: #ffbf00!important
 }
+.btn-block {
+    height: 100%;
+}
 .btn-section {
     border-color: rgba(216, 218, 214, 0.58)!important;
 }
