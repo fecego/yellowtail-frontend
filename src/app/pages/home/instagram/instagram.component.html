@@ -4,25 +4,23 @@
       <img class="instagram-logo" src="/assets/img/principal/Instagram_logo.svg">
     </span>
   </div>
-  <div class="instagram-content">
-    <div class="row">
-      
-      <div class="col-3 mt-3 mb-3 text-center" *ngFor="let photo of instagramPhotos">
-        <a href="{{photo.link}}" target="_blank" class="photo-box text-decoration-none d-flex align-items-center justify-content-center">
-          <div class="image-wrap">
-            <div class="content-instagram">
-              <div class="icon-hover d-flex justify-content-center align-items-center">
-                <i class="fab fa-instagram fa-5x d-none d-lg-block"></i>
-              </div>
+</div>
+<div class="container-fluid instagram-content">
+  <div class="row p-0 mt-0">
+    <div class="col-6 col-md-3 mt-0 text-center p-0" *ngFor="let photo of instagramPhotos">
+      <a href="{{photo.link}}" target="_blank" class="photo-box text-decoration-none d-flex align-items-center justify-content-center">
+        <div class="image-wrap">
+          <div class="content-instagram">
+            <div class="icon-hover d-flex justify-content-center align-items-center">
+              <i class="fab fa-instagram fa-5x d-none d-lg-block"></i>
             </div>
-            <img src="{{photo.image}}" class="img-thumbnail">
           </div>
-        </a>
-        <div class="description mt-2">
-          <p class="description">{{photo.tags}}</p>
+          <img src="{{photo.image}}" >
         </div>
-      </div>
-      
+      </a>
+      <!-- <div class="description mt-2">
+        <p class="description">{{photo.tags}}</p>
+      </div> -->
     </div>
   </div>
 </div>
