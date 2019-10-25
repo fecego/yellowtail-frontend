@@ -13,13 +13,14 @@
   width: 16rem;
 }
 .photo-box img {
-  width: auto;
+  width: 100%;
 }
 .instagram-logo  {
   width: 100%;
 }
 .photo-box .image-wrap {
   position: relative;
+  width: 100%;
 }
 .content-instagram {
   position: absolute;
@@ -48,7 +49,21 @@
   display: block;
   visibility: hidden;
 }
-
+@media (min-width: 1200px) {
+  .photo-box img {
+    height: 55vh;
+  }
+}
+@media (max-width: 1199px) and (min-width: 992px) {
+  .photo-box img {
+    height: 43vh;
+  }
+}
+@media (max-width: 991px) and (min-width: 768px) {
+  .photo-box img {
+    height: 35vh;
+  }
+}
 @media (max-width: 767px) {
   .section-instagram::before {
     content: "";
@@ -61,6 +76,9 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  .photo-box img {
+    height: 35vh;
   }
 }
 @media (max-width: 767px) and (min-width: 577px) {

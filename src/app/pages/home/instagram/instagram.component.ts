@@ -25,7 +25,7 @@ export class InstagramComponent implements OnInit {
 
   preparePhotos(data) {
     const prepared = data.map(item => {
-      const image  = item.images.thumbnail.url;
+      const image  =  item.images.standard_resolution.url;
       let firstTags = item.tags.slice(0,3);
       if (firstTags.length == 0) firstTags = ['yellowtail'];
       const tags = firstTags.join(' ');
