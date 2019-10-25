@@ -3,6 +3,7 @@ import { Observable } from 'rxjs';
 import { ProductsService } from '../../../services/products.service';
 import { NotificationsService } from '../../../services/notifications.service';
 import { CartService } from './../../../services/cart.service';
+import { formatPrice } from '../../../utils/formatUtils';
 
 @Component({
   selector: 'app-chart',
@@ -64,6 +65,11 @@ export class ChartComponent implements OnInit {
       this.cartService.addProductToCart(tempProduct);
     });
 
+  }
+
+  getPrice(price: any) {
+    console.log('Price formated = >', formatPrice(price));
+    return formatPrice(price);
   }
 
 }
