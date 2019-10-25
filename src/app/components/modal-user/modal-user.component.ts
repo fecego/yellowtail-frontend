@@ -57,14 +57,23 @@ export class ModalUserComponent implements OnInit {
     this.activeModal.close('Modal Closed');
   }
 
-  submitRegister() {
+  async submitRegister() {
     if (this.registerForm.invalid) {
       return;
     }
 
-    const credentials = this.registerForm.value;
-    this.authService.login(credentials, this.nextRoute);
-    this.activeModal.close('Modal Closed');
+    const data = this.registerForm.value;
+    console.log('Data => ', data);
+
+    const response: any = await this.authService.register(data);
+    if (response.success) {
+      console.log('Se registro => ', response);
+    } else {
+      console.log('No se registro :( )=> ', response);
+    }
+
+    // 
+    // this.activeModal.close('Modal Closed');
   }
 
   showTab(tab: string, nextRoute?: string) {

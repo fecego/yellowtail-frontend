@@ -5,6 +5,7 @@ import { BehaviorSubject } from 'rxjs';
 import { LoadingService } from './loading.service';
 import { FavoritesService } from './favorites.service';
 import { LocalStorageService } from './local-storage.service';
+import { ApiService } from './api.service';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,8 @@ export class AuthService {
               private route: ActivatedRoute,
               private loadingService: LoadingService,
               private favoritesService: FavoritesService,
-              private localStorageService: LocalStorageService) {
+              private localStorageService: LocalStorageService,
+              private apiService: ApiService) {
 
     this.initUserData();
   }
@@ -54,6 +56,33 @@ export class AuthService {
     } else {
       //Mensaje de datos erroneos
     }
+
+    this.loadingService.setLoading(false);
+  }
+
+  async register(data: any) {
+    console.log('Register');
+    this.loadingService.setLoading(true);
+    
+    let response: any = { success: false };
+    try {
+      response = await this.apiService.register(data);
+      console.log('Response en try => ', response);
+    } catch(error) {
+      console.log('Error 1 => ', error);
+      this.loadingService.setLoading(false);
+      response.message = '' + error;
+      return response;
+    }
+
+    console.log(response);
+
+    // this.isLoggedIn = response.success;
+    // this.loggedInObservable.next(response.success);
+    // if (response.success) {
+    //} else {
+      //Mensaje de datos erroneos
+    //}
 
     this.loadingService.setLoading(false);
   }
