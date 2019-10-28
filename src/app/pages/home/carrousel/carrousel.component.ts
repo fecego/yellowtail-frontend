@@ -23,13 +23,13 @@ export class CarrouselComponent implements OnInit {
   getItems() {
     const items = [
       {
-        image: '/assets/img/carrousel/1a.jpg',
+        image: '/assets/img/carrousel/Banner-1.png',
       },
       {
-        image: '/assets/img/carrousel/2aa.jpg',
+        image: '/assets/img/carrousel/Banner-2.png',
       },
       {
-        image: '/assets/img/carrousel/3aa.jpg'
+        image: '/assets/img/carrousel/Banner-3.png'
       }
     ];
     return items.map( (item: any, index: number) => {

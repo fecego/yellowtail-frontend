@@ -6,9 +6,9 @@
 }
 .box {
   height: 35rem;
-  background-position-x: initial;
+  background-position-x: center;
   background-size: cover;
-  transition-duration: 1s;
+  transition-duration: 2s;
   transition-timing-function: linear;
   flex: 1;
   display: block;
@@ -41,16 +41,25 @@
   flex: 6;
 }
 .box-1 {
-  background-image: url('../../../assets/img/carrousel/1a.jpg');
+  background-image: url('/assets/img/categorias/Accesorios_completa.png');
 }
 .box-2 {
-  background-image: url('../../../assets/img/carrousel/2a.jpg');
+  background-image: url('/assets/img/categorias/Cañas_completa.png');
 }
 .box-3 {
-  background-image: url('../../../assets/img/carrousel/3a.jpg');
+  background-image: url('/assets/img/categorias/Carretes_completa.jpg');
 }
 .box-4 {
-  background-image: url('../../../assets/img/carrousel/4a.jpg');
+  background-image: url('../../../assets/img/carrousel/1a.jpg');
+}
+.box-5 {
+  background-image: url('/assets/img/categorias/Kayak_completo.png');
+}
+.box-6 {
+  background-image: url('/assets/img/categorias/Líneas_completo.png');
+}
+.box-7 {
+  background-image: url('/assets/img/categorias/Señuelos_completa.png');
 }
 
 .boxTitle{
