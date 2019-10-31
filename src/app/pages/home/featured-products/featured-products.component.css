@@ -14,10 +14,30 @@
   margin: auto;
   margin-bottom: 1rem;
 }
-.layer {
-  text-align: center;
+.img-featured {
+  width: 100%;
 }
-.layer img {
-  width: 70%;
-  margin-top: 3%;
+.content-1 {
+  background-image: url("/assets/img/principal/2.png");
+}
+.content-2 {
+  background-image: url("/assets/img/principal/4.png");
+}
+.content-3 {
+  background-image: url("/assets/img/principal/3.png");
+}
+.content-img {
+  background-position: center 85%;
+  height: 80vh;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+@media (max-width: 767px) {
+  .content-img {
+    background-position: center 70%;
+    background-size: 220%;
+    height: 70vh;
+  }
 }
