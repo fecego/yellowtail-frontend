@@ -137,6 +137,25 @@
         </div>
       </div>
 
+      <div>
+        Form para pagar
+        <form method="POST" id="formPagar" action="https://test.ipg-online.com/connect/gateway/processing">
+          <input type="hidden" name="txntype" value="sale" />
+          <input type="hidden" name="timezone" value="America/Mexico_City" />
+          <input type="hidden" name="txndatetime" value="2019:10:21-13:00:42" />
+          <input type="hidden" name="hash_algorithm" value="SHA256" />
+          <input type="hidden" name="hash" value="364d09bf329d15e6d023abbb238ba878f92b805b5e7a215c7fcdd274a74f151a" />
+          <input type="hidden" name="storename" value="3910046" />
+          <input type="hidden" name="mode" value="payonly" />
+          <input type="hidden" name="paymentMethod" value="M" />
+          <input type="hidden" name="responseSuccessURL" value="http://localhost:3000/pago" />
+          <input type="hidden" name="responseFailURL" value="http://localhost:3000/fallo" />
+          <input type="text" name="chargetotal" value="13.00" />
+          <input type="hidden" name="currency" value="484"/>
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+
       <div class="row mt-3 mb-5">
         <div class="col-12">
           <a href="#" class="content-tutorial">

@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class ApiService {
 
-  baseUrl = 'http://54.218.183.6:8080/yellowtailws/api';
+  baseUrl = '/api/yellowtailws/api';
 
   constructor(private http: HttpClient) {
 
@@ -22,7 +22,7 @@ export class ApiService {
     return this.http.get(url).toPromise();
   }
 
-  register(heroData: any) {
+  register(registerData: any) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
@@ -32,9 +32,9 @@ export class ApiService {
 
     const url = this.getUrl('register');
     console.log('Url => ', url);
-    console.log('Data => ', heroData);
+    console.log('Data => ', registerData);
 
-    const data = JSON.stringify(heroData);
+    const data = JSON.stringify(registerData);
     const promise = this.http.post(url, data, httpOptions).toPromise();
     console.log('Promise => ', promise);
     return promise;

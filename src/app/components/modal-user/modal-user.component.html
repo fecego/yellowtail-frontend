@@ -1,4 +1,8 @@
 <div class="contentRegister-login">
+
+  <h1 *ngIf="loading">Cargando</h1>
+
+
   <ul class="nav nav-tabs nav-content-login" role="tablist">
     <li class="nav-item nav-item-login nav-login">
       <a class="nav-link text-center" href="#login" role="tab" data-toggle="tab"><h5>Inicio de sesión</h5></a>
@@ -34,9 +38,9 @@
             <div class="input-group-text"><i class="fa fa-user"></i></div>
           </div>
           <input name="lastName" class="form-control" aria-describedby="nameHelp"
-                  placeholder="Apellido" formControlName="lastname">
+                  placeholder="Apellido" formControlName="lastName">
         </div>
-        <div class="alert message-error-form" role="alert" *ngIf="registerControls.lastname.touched && registerControls.lastname.errors">
+        <div class="alert message-error-form" role="alert" *ngIf="registerControls.lastName.touched && registerControls.lastName.errors">
           <p class="mb-0">
             <strong><i class="fa fa-times"></i></strong> Apellido de usuario debe de ser más de un caracter.
           </p>
@@ -155,12 +159,12 @@
       </form>
     </div>
 
-    <!-- <div class="alert message-error-form mt-2" role="alert">
+    <div class="alert message-error-form mt-2" role="alert" *ngIf="generalError">
       <p class="text-center">
         <strong><i class="fa fa-exclamation-circle"></i> Error</strong><br>
-        Ocurrió un error.
+        {{generalError}}
       </p>
-    </div> -->
+    </div>
   </div>
   
   <div class="modal-footer">

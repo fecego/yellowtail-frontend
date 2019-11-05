@@ -85,6 +85,7 @@ export class AuthService {
     //}
 
     this.loadingService.setLoading(false);
+    return response;
   }
 
   logout() {

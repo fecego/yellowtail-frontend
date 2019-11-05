@@ -20,6 +20,9 @@ export class ModalUserComponent implements OnInit {
 
   nextRoute: string;
 
+  loading: boolean;
+  generalError: string;
+
   constructor(public activeModal: NgbActiveModal,
               private authService: AuthService,
               private formBuilder: FormBuilder) {
@@ -31,12 +34,14 @@ export class ModalUserComponent implements OnInit {
 
     this.registerForm = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
-      lastname: ['', [Validators.required, Validators.minLength(3)]],
+      lastName: ['', [Validators.required, Validators.minLength(3)]],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
     });
 
     this.nextRoute = '/';
+    this.generalError = null;
+    this.loading = false;
   }
 
   ngOnInit() {
@@ -62,18 +67,28 @@ export class ModalUserComponent implements OnInit {
       return;
     }
 
+    let closeModal = false;
+
     const data = this.registerForm.value;
     console.log('Data => ', data);
 
+    this.loading = true;
+    this.generalError = null;
+
     const response: any = await this.authService.register(data);
+    this.loading = false;
+
     if (response.success) {
       console.log('Se registro => ', response);
+      closeModal = true;
     } else {
-      console.log('No se registro :( )=> ', response);
+      this.generalError = response.message;
+      console.log('No se registro :( => ', response);
     }
 
-    // 
-    // this.activeModal.close('Modal Closed');
+    if (closeModal) {
+      this.activeModal.close('Modal Closed');
+    }
   }
 
   showTab(tab: string, nextRoute?: string) {
