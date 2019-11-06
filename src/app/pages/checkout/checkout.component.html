@@ -5,14 +5,20 @@
     <div class="col-12 col-md-5 col-lg-6">
       <h3>Carrito de compra</h3>
       <p class="title-info"><i class="fa fa-angle-right"></i> Información</p>
-      <p class="subtitle-info">user@gmail.com</p>
+      <p class="subtitle-info">{{user.name}} {{user.lastName}}</p>
+      <p class="subtitle-info">{{user.email}}</p>
 
       <p class="title-info mt-3"><i class="fa fa-angle-right"></i> Tipos de envio</p>
       <div class="cart-content">
         <div class="card">
           <ul class="list-group list-group-flush">
             <li class="list-group-item" *ngFor="let type of shippingTypes">
-              <input type="radio" name="shipping" value="{{type._id}}" [(ngModel)]="options.shipping"/> {{type.name}}
+              <input  type="radio"
+                      name="shipping"
+                      value="{{type._id}}"
+                      [(ngModel)]="options.shipping"
+                      (change)="changeDeliveryMethod(type._id)"
+              /> {{type.name}}
             </li>
           </ul>
         </div>
@@ -42,7 +48,7 @@
         <div class="card">
           <ul class="list-group list-group-flush">
             <li class="list-group-item" *ngFor="let type of paymentTypes">
-              <input type="radio" name="payment" value="{{type._id}}" [(ngModel)]="options.payment"/> {{type.name}}
+              <input type="radio" name="payment" value="{{type._id}}" [(ngModel)]="options.payment" checked /> {{type.name}}
             </li>
           </ul>
         </div>
@@ -84,7 +90,7 @@
           </li>
           <li class="list-group-item"> 
             <div class="row">
-              <div class="col-12 col-md-5 col-lg-6 d-flex align-items-center justify-content-center">
+              <div class="col-12 col-md-4 col-lg-5 d-flex align-items-center justify-content-center">
                 <div class="input-group mb-3">
                   <input type="text" class="form-control" name="promocode" value="" placeholder="Código de descuento" aria-label="Recipient's username" aria-describedby="button-addon2">
                   <div class="input-group-append">
@@ -92,13 +98,13 @@
                   </div>
                 </div>
               </div>
-              <div class="col-12 col-md-7 col-lg-6 mt-3 mt-md-0">
+              <div class="col-12 col-md-8 col-lg-7 mt-3 mt-md-0">
                 <div class="row">
                   <div class="col-8 col-sm-9">
                     <p class="section-card">Subtotal</p>
                   </div>
                   <div class="col-4 col-sm-3 text-center">
-                    <p>345</p>
+                    <p>{{getPrice(paymentData.subtotal)}}</p>
                   </div>
                 </div>
                 <div class="row">
@@ -106,7 +112,7 @@
                     <p class="section-card">Envio</p>
                   </div>
                   <div class="col-4 col-sm-3 text-center">
-                    <p>234</p>
+                    <p>{{getPrice(paymentData.deliveryPrice)}}</p>
                   </div>
                 </div>
                 <div class="row">
@@ -114,7 +120,7 @@
                     <p class="section-card">Descuento </p>
                   </div>
                   <div class="col-4 col-sm-3 text-center">
-                    <p>545</p>
+                    <p>{{getPrice(paymentData.discount)}}</p>
                   </div>
                 </div>
                 <div class="row">
@@ -122,7 +128,7 @@
                     <p class="section-card">Total</p>
                   </div>
                   <div class="col-4 col-sm-3 text-center">
-                    <p>645</p>
+                    <p>{{getPrice(paymentData.total)}}</p>
                   </div>
                 </div>
               </div>
@@ -138,21 +144,19 @@
       </div>
 
       <div>
-        Form para pagar
         <form method="POST" id="formPagar" action="https://test.ipg-online.com/connect/gateway/processing">
           <input type="hidden" name="txntype" value="sale" />
           <input type="hidden" name="timezone" value="America/Mexico_City" />
-          <input type="hidden" name="txndatetime" value="2019:10:21-13:00:42" />
+          <input type="hidden" name="txndatetime" value="{{dataToGetaway.txndatetime}}" />
           <input type="hidden" name="hash_algorithm" value="SHA256" />
-          <input type="hidden" name="hash" value="364d09bf329d15e6d023abbb238ba878f92b805b5e7a215c7fcdd274a74f151a" />
+          <input type="hidden" name="hash" value="{{dataToGetaway.sha}}" />
           <input type="hidden" name="storename" value="3910046" />
           <input type="hidden" name="mode" value="payonly" />
           <input type="hidden" name="paymentMethod" value="M" />
-          <input type="hidden" name="responseSuccessURL" value="http://localhost:3000/pago" />
-          <input type="hidden" name="responseFailURL" value="http://localhost:3000/fallo" />
-          <input type="text" name="chargetotal" value="13.00" />
-          <input type="hidden" name="currency" value="484"/>
-          <input type="submit" value="Submit" />
+          <input type="hidden" name="responseSuccessURL" value="https://postman-echo.com/post" />
+          <input type="hidden" name="responseFailURL" value="https://postman-echo.com/post" />
+          <input type="hidden" name="chargetotal" value="{{dataToGetaway.chargetotal}}" />
+          <input type="hidden" name="currency" value="{{dataToGetaway.currency}}"/>
         </form>
       </div>
 

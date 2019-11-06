@@ -17,12 +17,9 @@ export class ApiService {
     return `${this.baseUrl}/${endpoint}?api-key=${apiKey}`
   }
 
-  login() {
-    const url = this.getUrl('login');
-    return this.http.get(url).toPromise();
-  }
-
-  register(registerData: any) {
+  postApi(url: string, json: any) {
+    console.log('Url POST => ', url);
+    console.log('Data POST => ', json);
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
@@ -30,13 +27,45 @@ export class ApiService {
       })
     };
 
-    const url = this.getUrl('register');
-    console.log('Url => ', url);
-    console.log('Data => ', registerData);
-
-    const data = JSON.stringify(registerData);
+    const data = JSON.stringify(json);
     const promise = this.http.post(url, data, httpOptions).toPromise();
     console.log('Promise => ', promise);
     return promise;
   }
+
+  getApi(url: string, queryParams?: any) {
+    let urlWithParams = url;
+    if (queryParams) {
+      const params = Object.keys(queryParams).map(function(key) {
+        return encodeURIComponent(key) + '=' + encodeURIComponent(queryParams[key]);
+      }).join('&');
+      urlWithParams = `${urlWithParams}&${params}`;
+    }
+    console.log('Url GET => ', urlWithParams);
+    const promise = this.http.get(urlWithParams).toPromise();
+    console.log('Promise => ', promise);
+    return promise;
+  }
+
+  login(loginData) {
+    const url = this.getUrl('login');
+    return this.postApi(url, loginData);
+  }
+
+  register(registerData: any) {
+    const url = this.getUrl('register');
+    return this.postApi(url, registerData);
+  }
+
+  profile(userId) {
+    const endpoint = `profile/${userId}`;
+    const url = this.getUrl(endpoint);
+    return this.getApi(url);
+  }
+
+  sha(shaData) {
+    const url = this.getUrl('sha');
+    return this.getApi(url, shaData);
+  }
+
 }

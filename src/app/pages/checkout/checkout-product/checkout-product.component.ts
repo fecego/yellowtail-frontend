@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { formatPrice } from '../../../utils/formatUtils';
 
 @Component({
   selector: 'app-checkout-product',
@@ -17,6 +18,11 @@ export class CheckoutProductComponent implements OnInit {
 
   getImage(allImages) {
     return allImages[0];
+  }
+
+  getPrice() {
+    const total = this.product.price * this.product.quantity;
+    return formatPrice(total);
   }
 
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 
 import { CartService } from '../../services/cart.service';
@@ -22,7 +23,8 @@ export class CartComponent implements OnInit {
   showPlaceholder: boolean;
   products: Array<any>;
 
-  constructor(private cartService: CartService,
+  constructor(private router: Router,
+              private cartService: CartService,
               private authService: AuthService,
               private modalService: NgbModal) {
     this.showPlaceholder = true;
@@ -49,7 +51,7 @@ export class CartComponent implements OnInit {
   continuePurchase() {
     const isLoggedIn = this.authService.getLoggedIn();
     if (isLoggedIn) {
-
+      this.router.navigate(['/pagar']);
     } else {
       const modal = this.modalService.open(ModalUserComponent, { centered: true });
       modal.componentInstance.showTab('login', '/pagar');

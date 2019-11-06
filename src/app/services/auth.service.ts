@@ -43,19 +43,46 @@ export class AuthService {
     
     console.log('Login');
     this.loadingService.setLoading(true);
-    const response: any = await this.checkEnpointLogin(credentials);
-    console.log(response);
-
-    this.isLoggedIn = response.success;
-    this.loggedInObservable.next(response.success);
-    if (response.success) {
-      const user = response.user;
-      this.saveLocalUser(user);
-      this.favoritesService.initFavorites(['5']);
-      this.router.navigate([nextRoute]);
-    } else {
-      //Mensaje de datos erroneos
+    let responseLogin: any = { success: false, message: 'Error al inciar sesion'};
+    
+    try {
+      responseLogin = await this.apiService.login(credentials);
+    } catch(error1) {
+      return;
     }
+
+    console.log('RL => ', responseLogin);
+
+    if (!responseLogin.succes) {
+      this.loadingService.setLoading(false);
+      return responseLogin;
+    }
+
+    let responseProfile: any = { success: false, message: 'Error al obtener tú perfil'};
+    try {
+      const userId = responseLogin.data._id;
+      console.log('User id => ', userId);
+      responseProfile = await this.apiService.profile(userId);
+    } catch(error1) {
+      return responseProfile;
+    }
+
+    console.log('RP => ', responseProfile);
+
+    if (!responseProfile.success) {
+      return responseProfile;
+    }
+
+    // Obtuvo los datos, mezclarlos
+    const user = Object.assign(responseLogin.data, responseProfile.data);
+    console.log('Usuario mezclado => ', user);
+
+    this.isLoggedIn = true;
+    this.loggedInObservable.next(true);
+
+    this.saveLocalUser(user);
+    this.favoritesService.initFavorites(user.favorites);
+    this.router.navigate([nextRoute]);
 
     this.loadingService.setLoading(false);
   }
