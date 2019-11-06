@@ -59,6 +59,7 @@ import { SelectCategoryComponent } from './components/select-category/select-cat
 import { MainCategoriesComponent } from './pages/main-categories/main-categories.component';
 import { BestSellersComponent } from './pages/home/best-sellers/best-sellers.component';
 import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
+import { ThanksShoppingComponent } from './pages/thanks-shopping/thanks-shopping.component';
 
 @NgModule({
   declarations: [
@@ -112,7 +113,8 @@ import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-
     SelectCategoryComponent,
     MainCategoriesComponent,
     BestSellersComponent,
-    TermsAndConditionsComponent
+    TermsAndConditionsComponent,
+    ThanksShoppingComponent
   ],
   imports: [
     BrowserModule,

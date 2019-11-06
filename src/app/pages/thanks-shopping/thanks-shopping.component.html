@@ -1,0 +1,93 @@
+<div class="container d-flex flex-column justify-content-center align-items-center">
+  <h1 class="display-4 text-yellow">¡Gracias por su compra!</h1>
+  <img src="/assets/img/logo/carro-de-la-compra.png" class="img-shopping" alt="Compra finalizada">
+  <p class="contact text-muted">Detalle de su compra:</p>
+
+  <div class="row row-content text-center">
+    <div class="col-md-2 d-none d-md-block">
+      <b>Producto</b>
+    </div>
+    <div class="col-3 col-md-2">
+      <b>Nombre</b>
+    </div>
+    <div class="col-3 col-md-2">
+      <b>Cantidad</b>
+    </div>
+    <div class="col-3">
+      <b>Precio unitario</b>
+    </div>
+    <div class="col-3">
+      <b>Precio total</b>
+    </div>
+  </div>
+
+  <div class="row row-content pt-2 pb-2">
+    <div class="col-md-2 content-image-cart align-items-center">
+      <img src="/assets/img/logo/carro-de-la-compra.png" class="img-productShopping">
+    </div>
+    <div class="col-3 col-md-2 content-center">
+      Producto nombre
+    </div>
+    <div class="col-3 col-md-2 content-center">
+      3
+    </div>
+    <div class="col-3 content-center">
+      <p>
+        $35,000.00
+      </p>
+    </div>
+    <div class="col-3 content-center">
+      <p>
+        $35,000.00
+      </p>
+    </div>
+  </div>
+  <div class="row row-content pt-2 pb-2">
+    <div class="col-9 text-right">
+      <p class="pr-5"><b>Total</b></p>
+    </div>
+    <div class="col-3 text-center">
+      <b>$45.345</b>
+    </div>
+  </div>
+
+
+  <div class="row content-center row-content mt-5 pt-2 pb-2">
+    <p class="contact text-muted mb-0 mr-3">Forma de pago:</p>
+    <p>Pago con tarjeta</p>
+  </div>
+
+  <div *ngIf="cardPayment" class="row content-center row-content pt-2 pb-2 mt-3">
+    <p class="contact text-muted mb-0">Información de la tarjeta:</p>
+  </div>
+  <div *ngIf="cardPayment" class="row row-content pt-2 pb-2">
+    <div class="col-md-6">
+      <p><b>Nombre en la tarjeta:</b></p>
+      <p>Linda Guadalupe López Rivera</p>
+    </div>
+    <div class="col-md-6">
+      <p><b>Número de tarjeta:</b></p>
+      <p>234 464 234 234</p>
+    </div>
+  </div>
+
+  <div class="row content-center row-content pt-2 pb-2 mt-3">
+    <p class="contact text-muted mb-0">Información del cliente:</p>
+  </div>
+  
+  <div class="row row-content pt-2 pb-2">
+    <div class="col-md-6">
+      <p><b>Nombre:</b></p>
+      <p>Linda Guadalupe López Rivera</p>
+    </div>
+    <div class="col-md-6">
+      <p><b>Correo electrónico:</b></p>
+      <p>test@test.com</p>
+    </div>
+  </div>
+  
+  <p class="contact text-muted mt-5">Si tiene alguna pregunta, no dude en comunicarse</p>
+  <a href="/categoria" class="btn btn-warning">
+    Seguir comprando
+  </a>
+</div>
