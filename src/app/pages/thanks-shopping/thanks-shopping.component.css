@@ -1,0 +1,37 @@
+p {
+  font-size: 1.18rem;
+}
+.img-shopping {
+  width: 15vw;
+  margin: 2rem 0px;
+}
+.img-productShopping {
+  width: 50px;
+  height: 50px;
+}
+.contact {
+  font-size: 1.5rem;
+}
+.detail-info {
+  font-size: 1.2rem;
+}
+.row-content {
+  width: 60%;
+  border-top: 1px solid #dee2e6;
+}
+.content-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.content-image-cart {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+@media (max-width: 767px) {
+  .content-image-cart {
+    display: none;
+  }
+}

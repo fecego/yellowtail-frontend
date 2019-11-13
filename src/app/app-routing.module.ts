@@ -24,6 +24,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { SummaryComponent } from './pages/summary/summary.component';
 import { MainCategoriesComponent } from './pages/main-categories/main-categories.component';
 import { PrivacyPolicyComponent } from './pages/privacy-policy/privacy-policy.component';
+import { ThanksShoppingComponent } from './pages/thanks-shopping/thanks-shopping.component';
 
 
 const routes: Routes = [
@@ -110,6 +111,10 @@ const routes: Routes = [
   {
     path: 'contratos',
     component: PrivacyPolicyComponent
+  },
+  {
+    path: 'gracias',
+    component: ThanksShoppingComponent
   },
   {
     path: '',
