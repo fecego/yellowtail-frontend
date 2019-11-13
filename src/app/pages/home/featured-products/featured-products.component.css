@@ -19,6 +19,7 @@
 }
 .content-1 {
   background-image: url("/assets/img/principal/2.png");
+  
 }
 .content-2 {
   background-image: url("/assets/img/principal/4.png");
@@ -33,11 +34,26 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-
+.content-degraded {
+  height: 80vh;
+}
+.link {
+  background: linear-gradient(to bottom, rgb(45, 45, 45) 0%, rgba(45, 45, 45, 0.41) 20%, rgba(45, 45, 45, 0) 55%, rgba(45, 45, 45, 0) 80%, rgb(45, 45, 45) 100%);
+  position: relative;
+  height: 80vh;
+  top: -80vh;
+}
 @media (max-width: 767px) {
   .content-img {
     background-position: center 70%;
     background-size: 220%;
     height: 70vh;
+  }
+  .content-degraded {
+    height: 70vh;
+  }
+  .link {
+    height: 70vh;
+    top: -70vh;
   }
 }
