@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-forgot-password',
@@ -7,13 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ForgotPasswordComponent implements OnInit {
 
-  constructor() { }
+  forgotForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder) {
+    this.forgotForm = this.formBuilder.group({
+      token: ['', [Validators.required, Validators.minLength(3)]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+      confirm: ['', [Validators.required, Validators.minLength(6)]],
+    });
+  }
 
   ngOnInit() {
+    
   }
 
   resetPassword() {
-    
+    const data = this.forgotForm.value;
+    console.log('Data => ', data);
   }
 
 }
