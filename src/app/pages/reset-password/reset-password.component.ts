@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-reset-password',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResetPasswordComponent implements OnInit {
 
-  constructor() { }
+  email: string;
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit() {
   }
 
+  async recoverPassword() {
+    console.log('Email => ', this.email);
+    const response = await this.apiService.passwordForgot(this.email);
+    console.log('Response => ', response);
+  }
 }

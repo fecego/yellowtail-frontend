@@ -28,6 +28,7 @@ export class ApiService {
     };
 
     const data = JSON.stringify(json);
+    console.log('POST DATA => ', data);
     const promise = this.http.post(url, data, httpOptions).toPromise();
     console.log('Promise => ', promise);
     return promise;
@@ -66,6 +67,44 @@ export class ApiService {
   sha(shaData) {
     const url = this.getUrl('sha');
     return this.getApi(url, shaData);
+  }
+
+  passwordRecover(recoverData: any) {
+    const url = this.getUrl('password/recover');
+    return this.postApi(url, recoverData);
+  }
+
+  passwordForgot(email: string) {
+    const url = this.getUrl('password/forgot');
+    const json = {
+      email,
+    };
+    return this.postApi(url, json);
+  }
+
+  getProducts() {
+
+  }
+
+  searchProducts(query: string) {
+    const url = this.getUrl('products');
+    const queryParams = {
+      search: query,
+    };
+    return this.getApi(url, queryParams);
+  }
+
+  getProductsByCategory(category: string) {
+    const url = this.getUrl('products');
+    const queryParams = {
+      category,
+    };
+    return this.getApi(url, queryParams);
+  }
+
+  getTrophies() {
+    const url = this.getUrl('trophies');
+    return this.getApi(url);
   }
 
 }
