@@ -18,30 +18,16 @@
   width: 100%;
 }
 .content-1 {
-  background-image: url("/assets/img/principal/2.png");
-  
+  background: url("/assets/img/principal/2.png") center 5rem / 100% 572px no-repeat fixed transparent;
+  height: 499px;
 }
 .content-2 {
-  background-image: url("/assets/img/principal/4.png");
+  background: url("/assets/img/principal/4.png") center 7.5rem / 100% 500px no-repeat fixed transparent;
+  height: 499px;
 }
 .content-3 {
-  background-image: url("/assets/img/principal/3.png");
-}
-.content-img {
-  background-position: center 85%;
-  height: 80vh;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-.content-degraded {
-  height: 80vh;
-}
-.link {
-  background: linear-gradient(to bottom, rgb(45, 45, 45) 0%, rgba(45, 45, 45, 0.41) 20%, rgba(45, 45, 45, 0) 55%, rgba(45, 45, 45, 0) 80%, rgb(45, 45, 45) 100%);
-  position: relative;
-  height: 80vh;
-  top: -80vh;
+  background: url("/assets/img/principal/3.png") center 5rem / 100% 572px no-repeat fixed transparent;
+  height: 499px;
 }
 @media (max-width: 767px) {
   .content-img {
