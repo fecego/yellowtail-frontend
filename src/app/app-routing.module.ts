@@ -56,10 +56,10 @@ const routes: Routes = [
     path: 'pagar',
     component: CheckoutComponent
   },
-  {
-    path: 'combos',
-    component: CombosComponent
-  },
+  // {
+  //   path: 'combos',
+  //   component: CombosComponent
+  // },
   {
     path: 'crear-usuario',
     component: CreateUserComponent
