@@ -23,10 +23,12 @@
 }
 .content-2 {
   background: url("/assets/img/principal/4.png") center 7.5rem / 100% 500px no-repeat fixed transparent;
+  border-top: 1px solid #ccc;
   height: 499px;
 }
 .content-3 {
   background: url("/assets/img/principal/3.png") center 5rem / 100% 572px no-repeat fixed transparent;
+  border-top: 1px solid #ccc;
   height: 499px;
 }
 @media (max-width: 767px) {
