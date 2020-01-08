@@ -18,30 +18,39 @@
   width: 100%;
 }
 .content-1 {
-  background: url("/assets/img/principal/2.png") center 5rem / 100% 572px no-repeat fixed transparent;
-  height: 499px;
+  background: url("/assets/img/principal/001.1.png") center 7rem / auto 85% no-repeat fixed transparent;
 }
 .content-2 {
-  background: url("/assets/img/principal/4.png") center 7.5rem / 100% 500px no-repeat fixed transparent;
-  border-top: 1px solid #ccc;
-  height: 499px;
+  background: url("/assets/img/principal/002.1.png") center 7rem / auto 85% no-repeat fixed transparent;
 }
 .content-3 {
-  background: url("/assets/img/principal/3.png") center 5rem / 100% 572px no-repeat fixed transparent;
+  background: url("/assets/img/principal/003.1.png") center 7rem / auto 85% no-repeat fixed transparent;
+}
+.content-4 {
+  background: url("/assets/img/principal/004.1.png") center 7rem / auto 85% no-repeat fixed transparent;
+}
+.content-5 {
+  background: url("/assets/img/principal/005.1.png") center 7rem / auto 85% no-repeat fixed transparent;
+}
+.content-6 {
+  background: url("/assets/img/principal/006.1.png") center 7rem / auto 85% no-repeat fixed transparent;
+}
+ul a:not(:first-child) li.content-img {
   border-top: 1px solid #ccc;
+}
+ul a li.content-img {
   height: 499px;
 }
+@media (max-width: 991px) and (min-width: 768px) {
+  ul a li.content-img {
+    background-position: center;
+    background-size: 80% auto;
+  }
+}
 @media (max-width: 767px) {
-  .content-img {
-    background-position: center 70%;
-    background-size: 220%;
-    height: 70vh;
-  }
-  .content-degraded {
-    height: 70vh;
-  }
-  .link {
-    height: 70vh;
-    top: -70vh;
+  ul a li.content-img {
+    background-position: center;
+    background-size: 80% auto;
+    height: 35vh;
   }
 }
