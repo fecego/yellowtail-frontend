@@ -1,77 +1,78 @@
-.fondo-multiple {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-.box {
-  height: 35rem;
-  background-position-x: center;
-  background-size: cover;
-  transition-duration: 2s;
-  transition-timing-function: linear;
-  flex: 1;
-  display: block;
-  position: relative;
-}
-.box:not(:last-child):after,
-.box:not(:first-child):before {
+.box-category:not(:last-child):after,
+.box-category:not(:first-child):before {
   content: "";
   position: absolute;
   top: 0;
   height: 35rem;
 }
-.box:not(:last-child):after {
+.box-category:not(:last-child):after {
   content: "";
   border-bottom: 34rem solid #FBDF3E;
-  border-left: 0.5rem solid transparent;
+  border-left: 0.3rem solid transparent;
   right: -0px;
   z-index: 1;
 }
-.box:not(:first-child):before {
+.box-category:not(:first-child):before {
   content: "";
   border-bottom: 34rem solid transparent;
-  border-left: 0.5rem solid #FBDF3E;
+  border-left: 0.3rem solid #FBDF3E;
   left: -0px;
   z-index: 1;
 }
-.box:hover,
-.box:active,
-.box:visited {
-  flex: 6;
+* { 
+  transition: all .3s ease 0s;
 }
-.box-1 {
-  background-image: url('/assets/img/categorias/Accesorios_completa.jpg');
+.content {
+  width: 100vw;
+  height: 35rem;
 }
-.box-2 {
-  background-image: url('/assets/img/categorias/Cañas_completa.jpg');
+.box-category:nth-child(2n) {
+  background: #fdb632;
 }
-.box-3 {
-  background-image: url('/assets/img/categorias/Carretes_completa.jpg');
+.box-category:nth-child(2n+1) {
+  background: #f37338;
 }
-.box-4 {
-  background-image: url('../../../assets/img/carrousel/1a.jpg');
+.content-categories .content {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  overflow: hidden;
 }
-.box-5 {
-  background-image: url('/assets/img/categorias/Kayak_completo.jpg');
+.content-categories .content .box-category {
+  flex: initial;
+  width: 20%;
+  height: 100%;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: bottom;
+  box-sizing: border-box;
+  position: relative;
 }
-.box-6 {
-  background-image: url('/assets/img/categorias/Líneas_completo.jpg');
+.content:hover .box-category {
+  flex: initial;
+  width: 10%;
 }
-.box-7 {
-  background-image: url('/assets/img/categorias/Señuelos_completa.jpg');
+.box-category:hover {
+  width: 40%!important;
 }
-
-.boxTitle{
-  position: absolute;
-  top: 0;
+.box-category > a img {
   width: 100%;
+  height: 100%;
+}
+.content .box-category > a h2 {
+  left: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  color: #fff;
   padding: 30px;
-  color: #DDD;
-  background-color: rgba(121, 121, 121, 0.4392156862745098);;
+  background-color: rgba(121, 121, 121, 0.4392156862745098);
 }
 @media (max-width: 991px) {
-  .boxTitle {
+  .content .box-category > a h2 {
     width:20px;
     word-wrap: break-word;
     text-align: center;
