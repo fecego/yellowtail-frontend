@@ -1,20 +1,21 @@
-
-<div class="container">
-  <div class="row mb-5">
-    <h2>Preguntas frecuentes</h2>
-  </div>
-
-  <div class="accordion panel-group mb-5" id="accordion" role="tablist" aria-multiselectable="true">
-    <div *ngFor="let faq of faqs">
-      <div class="card-header card-faq" role="tab" [id]="'heading'+faq.index">
-        <h3>
-          <a class="text-decoration-none text-style" role="button" data-toggle="collapse" data-parent="#accordion" [href]="'#collapse'+faq.index" aria-expanded="true" [attr.aria-controls]="'collapse'+faq.index">
-            <small><i class="fa fa-plus-circle"></i> {{faq.question}}</small>
-          </a>
-        </h3>
-      </div>
-      <div [id]="'collapse'+faq.index" class="panel-collapse collapse" role="tabpanel" [attr.aria-labelledby]="'heading'+faq.index">
-        <h5 class="card-body text-justify" [innerHTML]="faq.answer"></h5>
+<div class="jumbotron">
+  <img src="/assets/img/logo/YellowTail Amarillo y blanco.png" alt="Logo YellowTail">
+  <h1  class="display-3">Preguntas frecuentes</h1>
+</div>
+<div class="linear">
+  <div class="container">
+    <div class="accordion panel-group pb-5" id="accordion" role="tablist" aria-multiselectable="true">
+      <div *ngFor="let faq of faqs">
+        <div class="card-header card-faq" role="tab" [id]="'heading'+faq.index">
+          <h3>
+            <a class="text-decoration-none text-style" role="button" data-toggle="collapse" data-parent="#accordion" [href]="'#collapse'+faq.index" aria-expanded="true" [attr.aria-controls]="'collapse'+faq.index">
+              <small><i class="fa fa-plus-circle"></i> {{faq.question}}</small>
+            </a>
+          </h3>
+        </div>
+        <div [id]="'collapse'+faq.index" class="panel-collapse collapse" role="tabpanel" [attr.aria-labelledby]="'heading'+faq.index">
+          <h5 class="card-body text-justify" [innerHTML]="faq.answer"></h5>
+        </div>
       </div>
     </div>
   </div>

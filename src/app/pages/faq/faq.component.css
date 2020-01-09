@@ -1,6 +1,37 @@
 .card-faq {
-  background-color: #ffffff;
+  background-color: transparent;
 }
 .text-style {
   color: #545454;
+}
+.jumbotron {
+  background: -moz-linear-gradient(-45deg, rgba(251,223,62,1) 0%, rgba(251,223,62,1) 15%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 82%, rgba(251,223,62,1) 82%, rgba(251,223,62,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(251,223,62,1)), color-stop(15%, rgba(251,223,62,1)), color-stop(15%, rgba(0,0,0,1)), color-stop(82%, rgba(0,0,0,1)), color-stop(82%, rgba(251,223,62,1)), color-stop(100%, rgba(251,223,62,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(251,223,62,1) 0%, rgba(251,223,62,1) 15%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 82%, rgba(251,223,62,1) 82%, rgba(251,223,62,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(251,223,62,1) 0%, rgba(251,223,62,1) 15%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 82%, rgba(251,223,62,1) 82%, rgba(251,223,62,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(251,223,62,1) 0%, rgba(251,223,62,1) 15%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 82%, rgba(251,223,62,1) 82%, rgba(251,223,62,1) 100%);
+  background: linear-gradient(135deg, rgba(251,223,62,1) 0%, rgba(251,223,62,1) 15%, rgba(0,0,0,1) 15%, rgba(0,0,0,1) 82%, rgba(251,223,62,1) 82%, rgba(251,223,62,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbdf3e', endColorstr='#fbdf3e', GradientType=1 );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  color: white;
+  padding: 10rem 2rem 9rem 2rem;
+}
+.jumbotron img {
+  width: 10rem;
+  margin-right: 1rem;
+}
+.linear {
+  background: -moz-linear-gradient(45deg, rgba(251,223,62,1) 0%, rgba(251,223,62,1) 18%, rgba(255,255,255,1) 18%, rgba(255,255,255,1) 90%, rgba(251,223,62,1) 90%, rgba(251,223,62,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(251,223,62,1)), color-stop(18%, rgba(251,223,62,1)), color-stop(18%, rgba(255,255,255,1)), color-stop(90%, rgba(255,255,255,1)), color-stop(90%, rgba(251,223,62,1)), color-stop(100%, rgba(251,223,62,1)));
+  background: -webkit-linear-gradient(45deg, rgba(251,223,62,1) 0%, rgba(251,223,62,1) 18%, rgba(255,255,255,1) 18%, rgba(255,255,255,1) 90%, rgba(251,223,62,1) 90%, rgba(251,223,62,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(251,223,62,1) 0%, rgba(251,223,62,1) 18%, rgba(255,255,255,1) 18%, rgba(255,255,255,1) 90%, rgba(251,223,62,1) 90%, rgba(251,223,62,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(251,223,62,1) 0%, rgba(251,223,62,1) 18%, rgba(255,255,255,1) 18%, rgba(255,255,255,1) 90%, rgba(251,223,62,1) 90%, rgba(251,223,62,1) 100%);
+  background: linear-gradient(45deg, rgba(251,223,62,1) 0%, rgba(251,223,62,1) 18%, rgba(255,255,255,1) 18%, rgba(255,255,255,1) 90%, rgba(251,223,62,1) 90%, rgba(251,223,62,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbdf3e', endColorstr='#fbdf3e', GradientType=1 );
+}
+.linear .card-header {
+  border-bottom: 3px solid #fbdf3e;
 }
