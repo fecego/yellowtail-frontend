@@ -1,0 +1,100 @@
+.filter-header {
+  background: url("/assets/img/carrousel/Banner-1.jpg");
+  background-position: center;
+  background-attachment: fixed;
+}
+.section-header {
+  background-color: rgba(0, 0, 0, 0.56);
+  color: white;
+  padding: 8em;
+}
+.section-header h1 {
+  font-size: 60px;
+}
+.section-header a h1 {
+  font-size: 35px;
+  color: white;
+}
+.section-header a:hover {
+  color: #f2dd4f;
+}
+.section-header a:hover h1 {
+  color: #f2dd4f;
+}
+.section-header hr {
+  border-top: 1.5px solid white;
+  height: 10px;
+  width: 35%;
+  margin-left: initial;
+}
+.about .title {
+  font-size: 30px;
+}
+.about .title + p {
+  font-size: 18px;
+  text-align: justify;
+}
+.about img {
+  width: 100%;
+}
+.section-end {
+  background-color: black;
+  margin-top: 2rem;
+  margin-bottom: 0;
+  color: white;
+  padding: 1rem 0;
+}
+.section-end h2 a {
+  color: #fbdf3e;
+}
+.section-end h2 a:hover {
+  color: #ffcc33;
+}
+.section-end .link-end {
+  margin-top: 5rem;
+}
+.section-end .link-end img {
+  width: 10%;
+  margin-right: 1rem;
+}
+.section-end .link-end a h1 {
+  font-size: 60px;
+  color: white;
+}
+.section-end .link-end a:hover {
+  text-decoration: none;
+}
+.section-end .link-end a:hover h1 {
+  color: #f2dd4f;
+}
+@media (max-width: 767px) {
+  .section-header hr {
+    width: 55%;
+  }
+  .section-header {
+    padding: 8rem 2rem 6rem;
+  }
+  .about,
+  .section-end .container {
+    padding-top: 5%;
+  }
+}
+@media (max-width: 767px) and (min-width: 577px) {
+  .section-end .link-end a h1 {
+    font-size: 40px;
+  }
+}
+@media (max-width: 576px) {
+  .section-header h1 {
+    font-size: 45px;
+  }
+  .section-header a h1 {
+    font-size: 20px;
+  }
+  .section-end .link-end {
+    margin-top: 3rem;
+  }
+  .section-end .link-end a h1 {
+    font-size: 25px;
+  }
+}
