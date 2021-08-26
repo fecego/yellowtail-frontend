@@ -9,7 +9,7 @@ export class LoadingService {
   private loadingObservable = new BehaviorSubject<boolean>(false);
 
   constructor() {
-
+    
   }
 
   getLoadingObservable() {
